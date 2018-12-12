@@ -1,10 +1,18 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
     name: "Atk",
-    dependencies: [
-        .Package(url: "https://github.com/rhx/CAtk.git", majorVersion: 1),
-        .Package(url: "https://github.com/rhx/SwiftGObject.git", majorVersion: 2)
+    products: [
+        .library(name: "Atk", targets: ["Atk"]),
     ],
-    swiftLanguageVersions: [3, 4]
+    dependencies: [
+        .package(url: "https://github.com/rhx/CAtk.git", .branch("master")),
+        .package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master"))
+    ],
+    targets: [
+        .target(name: "Atk", dependencies: ["GLibObject"]),
+        .testTarget(name: "AtkTests", dependencies: ["Atk"]),
+    ]
 )

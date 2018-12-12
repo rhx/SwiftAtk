@@ -3,8 +3,9 @@
 # Configuration for the module to compile, the Swift toolchain, and
 # the compiler and linker flags to use.
 #
-Mod=Atk
-Module=${Mod}-1.0
+VER=1.0
+Mod=`grep name: Package.swift | head -n1 | cut -d'"' -f2`
+Module=${Mod}-${VER}
 module=`echo "${Module}" | tr '[:upper:]' '[:lower:]'`
 mod=`echo "${Mod}" | tr '[:upper:]' '[:lower:]'`
 BUILD_DIR=`pwd`/.build
