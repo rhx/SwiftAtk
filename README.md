@@ -7,7 +7,7 @@ A Swift wrapper around atk-1.x that is largely auto-generated from gobject-intro
 
 ### Swift
 
-To build, you need at least Swift 4.2 (Swift 5.x should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
+To build, you need at least Swift 4 (Swift 5.x should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
 	Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)
@@ -25,7 +25,9 @@ These Swift wrappers have been tested with glib-2.46, 2.48, 2.52, 2.56, 2.58, an
 
 #### Linux
 
-On Ubuntu 16.04, you can use the atk that comes with the distribution.  Just install with the `apt` package manager:
+##### Ubuntu
+
+On Ubuntu 18.04 and 16.04 you can use the atk that comes with the distribution.  Just install with the `apt` package manager:
 
 	sudo apt update
 	sudo apt install libatk1.0-dev gir1.2-atk-1.0 gobject-introspection libgirepository1.0-dev libxml2-dev
@@ -36,6 +38,12 @@ If you prefer a newer version of gtk, you can also install it from the GNOME 3 S
 	sudo apt update
 	sudo apt dist-upgrade
 	sudo apt install libatk1.0-dev gir1.2-atk-1.0 gobject-introspection libgirepository1.0-dev libxml2-dev
+
+##### Fedora
+
+On Fedora 29, you can use the gtk that comes with the distribution.  Just install with the `dnf` package manager:
+
+	sudo dnf install atk-devel glib2-devel gobject-introspection-devel libxml2-devel
 
 #### macOS
 
