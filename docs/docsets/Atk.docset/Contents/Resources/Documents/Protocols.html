@@ -1221,13 +1221,13 @@ Alternatively, use <code><a href="Structs/AttributeRef.html">AttributeRef</a></c
 
 <p>AtkAttribute is a string name/value pair representing a generic
 attribute. This can be used to expose additional information from
-an accessible object as a whole (see atk_object_get_attributes())
-or an document (see atk_document_get_attributes()). In the case of
-text attributes (see atk_text_get_default_attributes()),
+an accessible object as a whole (see <code>atk_object_get_attributes()</code>)
+or an document (see <code>atk_document_get_attributes()</code>). In the case of
+text attributes (see <code>atk_text_get_default_attributes()</code>),
 <code>AtkTextAttribute</code> enum defines all the possible text attribute
-names. You can use atk_text_attribute_get_name() to get the string
-name from the enum value. See also atk_text_attribute_for_name()
-and atk_text_attribute_get_value() for more information.</p>
+names. You can use <code>atk_text_attribute_get_name()</code> to get the string
+name from the enum value. See also <code>atk_text_attribute_for_name()</code>
+and <code>atk_text_attribute_get_value()</code> for more information.</p>
 
 <p>A string name/value pair representing a generic attribute.</p>
 
@@ -1592,7 +1592,7 @@ AtkHypertext object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-GObjectAccessible-Hyperlink.swift#L397-L403">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-GObjectAccessible-Hyperlink.swift#L396-L402">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2299,7 +2299,7 @@ factory type is specified.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Misc-NoOpObject.swift#L248-L254">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Misc-NoOpObject.swift#L247-L253">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2506,7 +2506,7 @@ subclass.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L235-L241">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L234-L240">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2632,7 +2632,7 @@ Alternatively, use <code><a href="Structs/ObjectFactoryRef.html">ObjectFactoryRe
 
 <p>This class is the base object class for a factory used to create an
 accessible object for a specific GType. The function
-atk_registry_set_factory_type() is normally called to store in the
+<code>atk_registry_set_factory_type()</code> is normally called to store in the
 registry the factory type to be used to create an accessible of a
 particular GType.</p>
 
@@ -2694,7 +2694,7 @@ Alternatively, use <code><a href="Structs/PlugRef.html">PlugRef</a></code> as a 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-ObjectFactory-Plug.swift#L240-L246">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-ObjectFactory-Plug.swift#L239-L245">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3214,7 +3214,7 @@ AtkRelations.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L238-L244">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L237-L243">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3268,7 +3268,7 @@ relationships.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L527-L533">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L525-L531">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3306,7 +3306,7 @@ Alternatively, use <code><a href="Structs/SocketRef.html">SocketRef</a></code> a
 accessibles from one process into another in a fashion that is
 transparent to assistive technologies. <code>AtkSocket</code> works as the
 container of <code>AtkPlug</code>, embedding it using the method
-atk_socket_embed(). Any accessible contained in the <code>AtkPlug</code> will
+<code>atk_socket_embed()</code>. Any accessible contained in the <code>AtkPlug</code> will
 appear to the assistive technologies as being inside the
 application that created the <code>AtkSocket</code>.</p>
 
@@ -3314,15 +3314,15 @@ application that created the <code>AtkSocket</code>.</p>
 the IPC layer of the accessibility framework, normally implemented
 by the D-Bus based implementation of AT-SPI (at-spi2). If that is
 the case, at-spi-atk2 is the responsible to implement the abstract
-methods atk_plug_get_id() and atk_socket_embed(), so an ATK
+methods <code>atk_plug_get_id()</code> and <code>atk_socket_embed()</code>, so an ATK
 implementor shouldn&rsquo;t reimplement them. The process that contains
 the <code>AtkPlug</code> is responsible to send the ID returned by
-atk_plug_id() to the process that contains the <code>AtkSocket</code>, so it
-could call the method atk_socket_embed() in order to embed it.</p>
+<code>atk_plug_id()</code> to the process that contains the <code>AtkSocket</code>, so it
+could call the method <code>atk_socket_embed()</code> in order to embed it.</p>
 
 <p>For the same reasons, an implementor doesn&rsquo;t need to implement
-atk_object_get_n_accessible_children() and
-atk_object_ref_accessible_child(). All the logic related to those
+<code>atk_object_get_n_accessible_children()</code> and
+<code>atk_object_ref_accessible_child()</code>. All the logic related to those
 functions will be implemented by the IPC layer.</p>
 
                         <a href="Protocols/SocketProtocol.html" class="slightly-smaller">See more</a>
@@ -3336,7 +3336,7 @@ functions will be implemented by the IPC layer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L823-L829">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L820-L826">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3554,7 +3554,7 @@ Alternatively, use <code><a href="Structs/StateSetRef.html">StateSetRef</a></cod
 
 <p>An AtkStateSet is a read-only representation of the full set of <code>AtkStates</code>
 that apply to an object at a given time. This set is not meant to be
-modified, but rather created when <code>atk_object_ref_state_set</code>() is called.</p>
+modified, but rather created when <code>atk_object_ref_state_set</code><code>()</code> is called.</p>
 
                         <a href="Protocols/StateSetProtocol.html" class="slightly-smaller">See more</a>
                       </div>
@@ -3617,7 +3617,7 @@ and toolkit version.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StateSet-Util.swift#L298-L304">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StateSet-Util.swift#L297-L303">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3869,7 +3869,7 @@ complex for languages which use ligatures.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L479-L485">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L478-L484">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4005,7 +4005,7 @@ Because value text and subrange descriptors are human-consumable,
 implementors are expected to provide localized strings which can be
 directly presented to end users via their assistive technology. In
 order to simplify this for implementors, implementors can use
-atk_value_type_get_localized_name() with the following
+<code>atk_value_type_get_localized_name()</code> with the following
 already-localized constants for commonly-needed values can be used:
 </para></p>
 
@@ -4055,7 +4055,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1107-L1113">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1106-L1112">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4436,7 +4436,7 @@ dialog.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

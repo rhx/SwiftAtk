@@ -1029,7 +1029,7 @@ Use <code>SocketRef</code> only as an <code>unowned</code> reference to an exist
 accessibles from one process into another in a fashion that is
 transparent to assistive technologies. <code>AtkSocket</code> works as the
 container of <code>AtkPlug</code>, embedding it using the method
-atk_socket_embed(). Any accessible contained in the <code>AtkPlug</code> will
+<code>atk_socket_embed()</code>. Any accessible contained in the <code>AtkPlug</code> will
 appear to the assistive technologies as being inside the
 application that created the <code>AtkSocket</code>.</p>
 
@@ -1037,15 +1037,15 @@ application that created the <code>AtkSocket</code>.</p>
 the IPC layer of the accessibility framework, normally implemented
 by the D-Bus based implementation of AT-SPI (at-spi2). If that is
 the case, at-spi-atk2 is the responsible to implement the abstract
-methods atk_plug_get_id() and atk_socket_embed(), so an ATK
+methods <code>atk_plug_get_id()</code> and <code>atk_socket_embed()</code>, so an ATK
 implementor shouldn&rsquo;t reimplement them. The process that contains
 the <code>AtkPlug</code> is responsible to send the ID returned by
-atk_plug_id() to the process that contains the <code>AtkSocket</code>, so it
-could call the method atk_socket_embed() in order to embed it.</p>
+<code>atk_plug_id()</code> to the process that contains the <code>AtkSocket</code>, so it
+could call the method <code>atk_socket_embed()</code> in order to embed it.</p>
 
 <p>For the same reasons, an implementor doesn&rsquo;t need to implement
-atk_object_get_n_accessible_children() and
-atk_object_ref_accessible_child(). All the logic related to those
+<code>atk_object_get_n_accessible_children()</code> and
+<code>atk_object_ref_accessible_child()</code>. All the logic related to those
 functions will be implemented by the IPC layer.</p>
 
           </div>
@@ -1081,7 +1081,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L860">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L857">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1122,7 +1122,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L865-L866">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L862-L863">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1152,7 +1152,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L869-L871">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L866-L868">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1183,7 +1183,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L875-L877">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L872-L874">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1214,7 +1214,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L881-L883">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L878-L880">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1245,7 +1245,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L887-L889">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L884-L886">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1276,7 +1276,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L893-L895">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L890-L892">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1307,7 +1307,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L899-L901">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L896-L898">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1337,7 +1337,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L904-L907">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L901-L904">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1350,7 +1350,7 @@ For type-safe access, use the generated, typed pointer <code>socket_ptr</code> p
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
