@@ -1030,7 +1030,7 @@ Alternatively, use <code><a href="../Structs/SocketRef.html">SocketRef</a></code
 accessibles from one process into another in a fashion that is
 transparent to assistive technologies. <code>AtkSocket</code> works as the
 container of <code>AtkPlug</code>, embedding it using the method
-atk_socket_embed(). Any accessible contained in the <code>AtkPlug</code> will
+<code>atk_socket_embed()</code>. Any accessible contained in the <code>AtkPlug</code> will
 appear to the assistive technologies as being inside the
 application that created the <code>AtkSocket</code>.</p>
 
@@ -1038,15 +1038,15 @@ application that created the <code>AtkSocket</code>.</p>
 the IPC layer of the accessibility framework, normally implemented
 by the D-Bus based implementation of AT-SPI (at-spi2). If that is
 the case, at-spi-atk2 is the responsible to implement the abstract
-methods atk_plug_get_id() and atk_socket_embed(), so an ATK
+methods <code>atk_plug_get_id()</code> and <code>atk_socket_embed()</code>, so an ATK
 implementor shouldn&rsquo;t reimplement them. The process that contains
 the <code>AtkPlug</code> is responsible to send the ID returned by
-atk_plug_id() to the process that contains the <code>AtkSocket</code>, so it
-could call the method atk_socket_embed() in order to embed it.</p>
+<code>atk_plug_id()</code> to the process that contains the <code>AtkSocket</code>, so it
+could call the method <code>atk_socket_embed()</code> in order to embed it.</p>
 
 <p>For the same reasons, an implementor doesn&rsquo;t need to implement
-atk_object_get_n_accessible_children() and
-atk_object_ref_accessible_child(). All the logic related to those
+<code>atk_object_get_n_accessible_children()</code> and
+<code>atk_object_ref_accessible_child()</code>. All the logic related to those
 functions will be implemented by the IPC layer.</p>
 
           </div>
@@ -1081,7 +1081,7 @@ functions will be implemented by the IPC layer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L825">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L822">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1119,7 +1119,7 @@ functions will be implemented by the IPC layer.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L828">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L825">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1247,7 +1247,7 @@ functions will be implemented by the IPC layer.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L1040-L1064">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L1037-L1061">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1339,7 +1339,7 @@ functions will be implemented by the IPC layer.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L1183-L1202">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L1179-L1198">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1378,7 +1378,7 @@ process.</p>
 <p>The class item used by this function should be filled in by the IPC
 layer (usually at-spi2-atk). The implementor of the AtkSocket
 should call this function and pass the id for the plug as returned
-by atk_plug_get_id().  It is the responsibility of the application
+by <code>atk_plug_get_id()</code>.  It is the responsibility of the application
 to pass the plug id on to the process implementing the <code>AtkSocket</code>
 as needed.</p>
 
@@ -1392,7 +1392,7 @@ as needed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L1219-L1222">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L1215-L1218">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1425,7 +1425,7 @@ as needed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L1224-L1230">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Registry-Socket.swift#L1220-L1226">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1438,7 +1438,7 @@ as needed.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
