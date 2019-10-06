@@ -250,7 +250,7 @@ public extension ActionProtocol {
     /// 
     /// For technical reasons, some toolkits cannot guarantee that the
     /// reported action is actually 'bound' to a nontrivial user event;
-    /// i.e. the result of some actions via atk_action_do_action() may be
+    /// i.e. the result of some actions via `atk_action_do_action()` may be
     /// NIL.
     func getName(i: CInt) -> String! {
         let rv = atk_action_get_name(cast(action_ptr), gint(i))

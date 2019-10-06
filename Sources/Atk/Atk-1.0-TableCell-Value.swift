@@ -232,27 +232,26 @@ public enum TableCellSignalName: String, SignalNameProtocol {
     /// Use the #AtkObject::state-change signal instead.
     case focusEvent = "focus-event"
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -266,9 +265,9 @@ public enum TableCellSignalName: String, SignalNameProtocol {
     /// reinstate the previous value.
     /// 
     /// Toolkit implementor note: ATK implementors should use
-    /// g_object_notify() to emit property-changed
-    /// notifications. `AtkObject`::property-changed is needed by the
-    /// implementation of atk_add_global_event_listener() because GObject
+    /// `g_object_notify()` to emit property-changed
+    /// notifications. `AtkObject::property`-changed is needed by the
+    /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"
     /// The "state-change" signal is emitted when an object's state
@@ -1066,7 +1065,7 @@ public extension TextProtocol {
 /// implementors are expected to provide localized strings which can be
 /// directly presented to end users via their assistive technology. In
 /// order to simplify this for implementors, implementors can use
-/// atk_value_type_get_localized_name() with the following
+/// `atk_value_type_get_localized_name()` with the following
 /// already-localized constants for commonly-needed values can be used:
 /// </para>
 /// 
@@ -1218,7 +1217,7 @@ public protocol ValueProtocol {
 /// implementors are expected to provide localized strings which can be
 /// directly presented to end users via their assistive technology. In
 /// order to simplify this for implementors, implementors can use
-/// atk_value_type_get_localized_name() with the following
+/// `atk_value_type_get_localized_name()` with the following
 /// already-localized constants for commonly-needed values can be used:
 /// </para>
 /// 
@@ -1410,7 +1409,7 @@ public extension ValueRef {
 /// implementors are expected to provide localized strings which can be
 /// directly presented to end users via their assistive technology. In
 /// order to simplify this for implementors, implementors can use
-/// atk_value_type_get_localized_name() with the following
+/// `atk_value_type_get_localized_name()` with the following
 /// already-localized constants for commonly-needed values can be used:
 /// </para>
 /// 
@@ -1634,9 +1633,9 @@ public extension ValueProtocol {
     /// object. In any case, it is possible that the value can't be
     /// modified (ie: a read-only component). If the value changes due this
     /// call, it is possible that the text could change, and will trigger
-    /// an `AtkValue`::value-changed signal emission.
+    /// an `AtkValue::value`-changed signal emission.
     /// 
-    /// Note for implementors: the deprecated atk_value_set_current_value()
+    /// Note for implementors: the deprecated `atk_value_set_current_value()`
     /// method returned TRUE or FALSE depending if the value was assigned
     /// or not. In the practice several implementors were not able to
     /// decide it, and returned TRUE in any case. For that reason it is not

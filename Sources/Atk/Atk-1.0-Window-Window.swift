@@ -210,7 +210,7 @@ public extension WindowProtocol {
 }
 
 public enum WindowSignalName: String, SignalNameProtocol {
-    /// The signal `AtkWindow`::activate is emitted when a window
+    /// The signal `AtkWindow::activate` is emitted when a window
     /// becomes the active window of the application or session.
     case activate = "activate"
     /// The "active-descendant-changed" signal is emitted by an object
@@ -222,13 +222,13 @@ public enum WindowSignalName: String, SignalNameProtocol {
     /// removed form an object. It supports two details: "add" and
     /// "remove"
     case childrenChanged = "children-changed"
-    /// The signal `AtkWindow`::create is emitted when a new window
+    /// The signal `AtkWindow::create` is emitted when a new window
     /// is created.
     case create = "create"
-    /// The signal `AtkWindow`::deactivate is emitted when a window is
+    /// The signal `AtkWindow::deactivate` is emitted when a window is
     /// no longer the active window of the application or session.
     case deactivate = "deactivate"
-    /// The signal `AtkWindow`::destroy is emitted when a window is
+    /// The signal `AtkWindow::destroy` is emitted when a window is
     /// destroyed.
     case destroy = "destroy"
     /// The signal "focus-event" is emitted when an object gained or lost
@@ -237,37 +237,36 @@ public enum WindowSignalName: String, SignalNameProtocol {
     /// **focus-event is deprecated:**
     /// Use the #AtkObject::state-change signal instead.
     case focusEvent = "focus-event"
-    /// The signal `AtkWindow`::maximize is emitted when a window
+    /// The signal `AtkWindow::maximize` is emitted when a window
     /// is maximized.
     case maximize = "maximize"
-    /// The signal `AtkWindow`::minimize is emitted when a window
+    /// The signal `AtkWindow::minimize` is emitted when a window
     /// is minimized.
     case minimize = "minimize"
-    /// The signal `AtkWindow`::move is emitted when a window
+    /// The signal `AtkWindow::move` is emitted when a window
     /// is moved.
     case move = "move"
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -281,15 +280,15 @@ public enum WindowSignalName: String, SignalNameProtocol {
     /// reinstate the previous value.
     /// 
     /// Toolkit implementor note: ATK implementors should use
-    /// g_object_notify() to emit property-changed
-    /// notifications. `AtkObject`::property-changed is needed by the
-    /// implementation of atk_add_global_event_listener() because GObject
+    /// `g_object_notify()` to emit property-changed
+    /// notifications. `AtkObject::property`-changed is needed by the
+    /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"
-    /// The signal `AtkWindow`::resize is emitted when a window
+    /// The signal `AtkWindow::resize` is emitted when a window
     /// is resized.
     case resize = "resize"
-    /// The signal `AtkWindow`::restore is emitted when a window
+    /// The signal `AtkWindow::restore` is emitted when a window
     /// is restored.
     case restore = "restore"
     /// The "state-change" signal is emitted when an object's state

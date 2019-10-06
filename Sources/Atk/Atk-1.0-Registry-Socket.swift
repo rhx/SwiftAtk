@@ -138,27 +138,26 @@ open class Registry: Object, RegistryProtocol {
 
 public enum RegistrySignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -298,7 +297,7 @@ public extension RelationRef {
     }
 
         /// Create a new relation for the specified key and the specified list
-    /// of targets.  See also atk_object_add_relationship().
+    /// of targets.  See also `atk_object_add_relationship()`.
     init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>>, nTargets n_targets: CInt, relationship: RelationType) {
         let rv = atk_relation_new(cast(targets), gint(n_targets), relationship)
         self.init(cast(rv))
@@ -352,7 +351,7 @@ open class Relation: Object, RelationProtocol {
     }
 
     /// Create a new relation for the specified key and the specified list
-    /// of targets.  See also atk_object_add_relationship().
+    /// of targets.  See also `atk_object_add_relationship()`.
     public convenience init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>>, nTargets n_targets: CInt, relationship: RelationType) {
         let rv = atk_relation_new(cast(targets), gint(n_targets), relationship)
         self.init(cast(rv))
@@ -404,27 +403,26 @@ public extension RelationProtocol {
 
 public enum RelationSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -466,7 +464,7 @@ public extension RelationProtocol {
     var relation_ptr: UnsafeMutablePointer<AtkRelation> { return ptr.assumingMemoryBound(to: AtkRelation.self) }
 
     /// Adds the specified AtkObject to the target for the relation, if it is
-    /// not already present.  See also atk_object_add_relationship().
+    /// not already present.  See also `atk_object_add_relationship()`.
     func add(target: ObjectProtocol) {
         atk_relation_add_target(cast(relation_ptr), cast(target.ptr))
     
@@ -660,27 +658,26 @@ open class RelationSet: Object, RelationSetProtocol {
 
 public enum RelationSetSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -802,7 +799,7 @@ public extension RelationSetProtocol {
 /// accessibles from one process into another in a fashion that is
 /// transparent to assistive technologies. `AtkSocket` works as the
 /// container of `AtkPlug`, embedding it using the method
-/// atk_socket_embed(). Any accessible contained in the `AtkPlug` will
+/// `atk_socket_embed()`. Any accessible contained in the `AtkPlug` will
 /// appear to the assistive technologies as being inside the
 /// application that created the `AtkSocket`.
 /// 
@@ -810,15 +807,15 @@ public extension RelationSetProtocol {
 /// the IPC layer of the accessibility framework, normally implemented
 /// by the D-Bus based implementation of AT-SPI (at-spi2). If that is
 /// the case, at-spi-atk2 is the responsible to implement the abstract
-/// methods atk_plug_get_id() and atk_socket_embed(), so an ATK
+/// methods `atk_plug_get_id()` and `atk_socket_embed()`, so an ATK
 /// implementor shouldn't reimplement them. The process that contains
 /// the `AtkPlug` is responsible to send the ID returned by
-/// atk_plug_id() to the process that contains the `AtkSocket`, so it
-/// could call the method atk_socket_embed() in order to embed it.
+/// `atk_plug_id()` to the process that contains the `AtkSocket`, so it
+/// could call the method `atk_socket_embed()` in order to embed it.
 /// 
 /// For the same reasons, an implementor doesn't need to implement
-/// atk_object_get_n_accessible_children() and
-/// atk_object_ref_accessible_child(). All the logic related to those
+/// `atk_object_get_n_accessible_children()` and
+/// `atk_object_ref_accessible_child()`. All the logic related to those
 /// functions will be implemented by the IPC layer.
 public protocol SocketProtocol: ObjectProtocol, ComponentProtocol {
     /// Untyped pointer to the underlying `AtkSocket` instance.
@@ -836,7 +833,7 @@ public protocol SocketProtocol: ObjectProtocol, ComponentProtocol {
 /// accessibles from one process into another in a fashion that is
 /// transparent to assistive technologies. `AtkSocket` works as the
 /// container of `AtkPlug`, embedding it using the method
-/// atk_socket_embed(). Any accessible contained in the `AtkPlug` will
+/// `atk_socket_embed()`. Any accessible contained in the `AtkPlug` will
 /// appear to the assistive technologies as being inside the
 /// application that created the `AtkSocket`.
 /// 
@@ -844,15 +841,15 @@ public protocol SocketProtocol: ObjectProtocol, ComponentProtocol {
 /// the IPC layer of the accessibility framework, normally implemented
 /// by the D-Bus based implementation of AT-SPI (at-spi2). If that is
 /// the case, at-spi-atk2 is the responsible to implement the abstract
-/// methods atk_plug_get_id() and atk_socket_embed(), so an ATK
+/// methods `atk_plug_get_id()` and `atk_socket_embed()`, so an ATK
 /// implementor shouldn't reimplement them. The process that contains
 /// the `AtkPlug` is responsible to send the ID returned by
-/// atk_plug_id() to the process that contains the `AtkSocket`, so it
-/// could call the method atk_socket_embed() in order to embed it.
+/// `atk_plug_id()` to the process that contains the `AtkSocket`, so it
+/// could call the method `atk_socket_embed()` in order to embed it.
 /// 
 /// For the same reasons, an implementor doesn't need to implement
-/// atk_object_get_n_accessible_children() and
-/// atk_object_ref_accessible_child(). All the logic related to those
+/// `atk_object_get_n_accessible_children()` and
+/// `atk_object_ref_accessible_child()`. All the logic related to those
 /// functions will be implemented by the IPC layer.
 public struct SocketRef: SocketProtocol {
     /// Untyped pointer to the underlying `AtkSocket` instance.
@@ -915,7 +912,7 @@ public extension SocketRef {
 /// accessibles from one process into another in a fashion that is
 /// transparent to assistive technologies. `AtkSocket` works as the
 /// container of `AtkPlug`, embedding it using the method
-/// atk_socket_embed(). Any accessible contained in the `AtkPlug` will
+/// `atk_socket_embed()`. Any accessible contained in the `AtkPlug` will
 /// appear to the assistive technologies as being inside the
 /// application that created the `AtkSocket`.
 /// 
@@ -923,15 +920,15 @@ public extension SocketRef {
 /// the IPC layer of the accessibility framework, normally implemented
 /// by the D-Bus based implementation of AT-SPI (at-spi2). If that is
 /// the case, at-spi-atk2 is the responsible to implement the abstract
-/// methods atk_plug_get_id() and atk_socket_embed(), so an ATK
+/// methods `atk_plug_get_id()` and `atk_socket_embed()`, so an ATK
 /// implementor shouldn't reimplement them. The process that contains
 /// the `AtkPlug` is responsible to send the ID returned by
-/// atk_plug_id() to the process that contains the `AtkSocket`, so it
-/// could call the method atk_socket_embed() in order to embed it.
+/// `atk_plug_id()` to the process that contains the `AtkSocket`, so it
+/// could call the method `atk_socket_embed()` in order to embed it.
 /// 
 /// For the same reasons, an implementor doesn't need to implement
-/// atk_object_get_n_accessible_children() and
-/// atk_object_ref_accessible_child(). All the logic related to those
+/// `atk_object_get_n_accessible_children()` and
+/// `atk_object_ref_accessible_child()`. All the logic related to those
 /// functions will be implemented by the IPC layer.
 open class Socket: Object, SocketProtocol {
     /// Designated initialiser from the underlying `C` data type.
@@ -1081,27 +1078,26 @@ public enum SocketSignalName: String, SignalNameProtocol {
     /// Use the #AtkObject::state-change signal instead.
     case focusEvent = "focus-event"
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -1115,9 +1111,9 @@ public enum SocketSignalName: String, SignalNameProtocol {
     /// reinstate the previous value.
     /// 
     /// Toolkit implementor note: ATK implementors should use
-    /// g_object_notify() to emit property-changed
-    /// notifications. `AtkObject`::property-changed is needed by the
-    /// implementation of atk_add_global_event_listener() because GObject
+    /// `g_object_notify()` to emit property-changed
+    /// notifications. `AtkObject::property`-changed is needed by the
+    /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"
     /// The "state-change" signal is emitted when an object's state
@@ -1213,7 +1209,7 @@ public extension SocketProtocol {
     /// The class item used by this function should be filled in by the IPC
     /// layer (usually at-spi2-atk). The implementor of the AtkSocket
     /// should call this function and pass the id for the plug as returned
-    /// by atk_plug_get_id().  It is the responsibility of the application
+    /// by `atk_plug_get_id()`.  It is the responsibility of the application
     /// to pass the plug id on to the process implementing the `AtkSocket`
     /// as needed.
     func embed(plugId plug_id: UnsafeMutablePointer<gchar>) {

@@ -12,7 +12,7 @@ import GLibObject
 ///
 /// This class is the base object class for a factory used to create an
 /// accessible object for a specific GType. The function
-/// atk_registry_set_factory_type() is normally called to store in the
+/// `atk_registry_set_factory_type()` is normally called to store in the
 /// registry the factory type to be used to create an accessible of a
 /// particular GType.
 public protocol ObjectFactoryProtocol: ObjectProtocol {
@@ -29,7 +29,7 @@ public protocol ObjectFactoryProtocol: ObjectProtocol {
 ///
 /// This class is the base object class for a factory used to create an
 /// accessible object for a specific GType. The function
-/// atk_registry_set_factory_type() is normally called to store in the
+/// `atk_registry_set_factory_type()` is normally called to store in the
 /// registry the factory type to be used to create an accessible of a
 /// particular GType.
 public struct ObjectFactoryRef: ObjectFactoryProtocol {
@@ -86,7 +86,7 @@ public extension ObjectFactoryRef {
 ///
 /// This class is the base object class for a factory used to create an
 /// accessible object for a specific GType. The function
-/// atk_registry_set_factory_type() is normally called to store in the
+/// `atk_registry_set_factory_type()` is normally called to store in the
 /// registry the factory type to be used to create an accessible of a
 /// particular GType.
 open class ObjectFactory: Object, ObjectFactoryProtocol {
@@ -135,27 +135,26 @@ open class ObjectFactory: Object, ObjectFactoryProtocol {
 
 public enum ObjectFactorySignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -456,27 +455,26 @@ public enum PlugSignalName: String, SignalNameProtocol {
     /// Use the #AtkObject::state-change signal instead.
     case focusEvent = "focus-event"
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -490,9 +488,9 @@ public enum PlugSignalName: String, SignalNameProtocol {
     /// reinstate the previous value.
     /// 
     /// Toolkit implementor note: ATK implementors should use
-    /// g_object_notify() to emit property-changed
-    /// notifications. `AtkObject`::property-changed is needed by the
-    /// implementation of atk_add_global_event_listener() because GObject
+    /// `g_object_notify()` to emit property-changed
+    /// notifications. `AtkObject::property`-changed is needed by the
+    /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"
     /// The "state-change" signal is emitted when an object's state
@@ -582,7 +580,7 @@ public extension PlugProtocol {
     var plug_ptr: UnsafeMutablePointer<AtkPlug> { return ptr.assumingMemoryBound(to: AtkPlug.self) }
 
     /// Gets the unique ID of an `AtkPlug` object, which can be used to
-    /// embed inside of an `AtkSocket` using atk_socket_embed().
+    /// embed inside of an `AtkSocket` using `atk_socket_embed()`.
     /// 
     /// Internally, this calls a class function that should be registered
     /// by the IPC layer (usually at-spi2-atk). The implementor of an
@@ -594,7 +592,7 @@ public extension PlugProtocol {
         return rv.map { String(cString: UnsafePointer<CChar>($0)) }
     }
     /// Gets the unique ID of an `AtkPlug` object, which can be used to
-    /// embed inside of an `AtkSocket` using atk_socket_embed().
+    /// embed inside of an `AtkSocket` using `atk_socket_embed()`.
     /// 
     /// Internally, this calls a class function that should be registered
     /// by the IPC layer (usually at-spi2-atk). The implementor of an
@@ -603,7 +601,7 @@ public extension PlugProtocol {
     /// `AtkSocket`, so it could embed the plug.
     var id: String! {
         /// Gets the unique ID of an `AtkPlug` object, which can be used to
-        /// embed inside of an `AtkSocket` using atk_socket_embed().
+        /// embed inside of an `AtkSocket` using `atk_socket_embed()`.
         /// 
         /// Internally, this calls a class function that should be registered
         /// by the IPC layer (usually at-spi2-atk). The implementor of an

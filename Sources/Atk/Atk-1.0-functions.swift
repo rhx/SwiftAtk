@@ -127,7 +127,7 @@ public func getBinaryAge() -> CUnsignedInt {
 /// registry.
 /// Note: For most toolkit maintainers, this will be the correct
 /// registry for registering new `AtkObject` factories. Following
-/// a call to this function, maintainers may call atk_registry_set_factory_type()
+/// a call to this function, maintainers may call `atk_registry_set_factory_type()`
 /// to associate an `AtkObjectFactory` subclass with the GType of objects
 /// for whom accessibility information will be provided.
 public func getDefaultRegistry() -> UnsafeMutablePointer<AtkRegistry>! {

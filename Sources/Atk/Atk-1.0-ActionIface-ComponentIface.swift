@@ -162,13 +162,13 @@ public extension ActionIfaceProtocol {
 ///
 /// AtkAttribute is a string name/value pair representing a generic
 /// attribute. This can be used to expose additional information from
-/// an accessible object as a whole (see atk_object_get_attributes())
-/// or an document (see atk_document_get_attributes()). In the case of
-/// text attributes (see atk_text_get_default_attributes()),
+/// an accessible object as a whole (see `atk_object_get_attributes()`)
+/// or an document (see `atk_document_get_attributes()`). In the case of
+/// text attributes (see `atk_text_get_default_attributes()`),
 /// `AtkTextAttribute` enum defines all the possible text attribute
-/// names. You can use atk_text_attribute_get_name() to get the string
-/// name from the enum value. See also atk_text_attribute_for_name()
-/// and atk_text_attribute_get_value() for more information.
+/// names. You can use `atk_text_attribute_get_name()` to get the string
+/// name from the enum value. See also `atk_text_attribute_for_name()`
+/// and `atk_text_attribute_get_value()` for more information.
 /// 
 /// A string name/value pair representing a generic attribute.
 public protocol AttributeProtocol {
@@ -185,13 +185,13 @@ public protocol AttributeProtocol {
 ///
 /// AtkAttribute is a string name/value pair representing a generic
 /// attribute. This can be used to expose additional information from
-/// an accessible object as a whole (see atk_object_get_attributes())
-/// or an document (see atk_document_get_attributes()). In the case of
-/// text attributes (see atk_text_get_default_attributes()),
+/// an accessible object as a whole (see `atk_object_get_attributes()`)
+/// or an document (see `atk_document_get_attributes()`). In the case of
+/// text attributes (see `atk_text_get_default_attributes()`),
 /// `AtkTextAttribute` enum defines all the possible text attribute
-/// names. You can use atk_text_attribute_get_name() to get the string
-/// name from the enum value. See also atk_text_attribute_for_name()
-/// and atk_text_attribute_get_value() for more information.
+/// names. You can use `atk_text_attribute_get_name()` to get the string
+/// name from the enum value. See also `atk_text_attribute_for_name()`
+/// and `atk_text_attribute_get_value()` for more information.
 /// 
 /// A string name/value pair representing a generic attribute.
 public struct AttributeRef: AttributeProtocol {
@@ -248,13 +248,13 @@ public extension AttributeRef {
 ///
 /// AtkAttribute is a string name/value pair representing a generic
 /// attribute. This can be used to expose additional information from
-/// an accessible object as a whole (see atk_object_get_attributes())
-/// or an document (see atk_document_get_attributes()). In the case of
-/// text attributes (see atk_text_get_default_attributes()),
+/// an accessible object as a whole (see `atk_object_get_attributes()`)
+/// or an document (see `atk_document_get_attributes()`). In the case of
+/// text attributes (see `atk_text_get_default_attributes()`),
 /// `AtkTextAttribute` enum defines all the possible text attribute
-/// names. You can use atk_text_attribute_get_name() to get the string
-/// name from the enum value. See also atk_text_attribute_for_name()
-/// and atk_text_attribute_get_value() for more information.
+/// names. You can use `atk_text_attribute_get_name()` to get the string
+/// name from the enum value. See also `atk_text_attribute_for_name()`
+/// and `atk_text_attribute_get_value()` for more information.
 /// 
 /// A string name/value pair representing a generic attribute.
 open class Attribute: AttributeProtocol {

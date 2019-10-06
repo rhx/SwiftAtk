@@ -20,8 +20,8 @@ public typealias EventListener = AtkEventListener
 public typealias EventListenerInit = AtkEventListenerInit
 
 /// The type of callback function used for
-/// atk_component_add_focus_handler() and
-/// atk_component_remove_focus_handler()
+/// `atk_component_add_focus_handler()` and
+/// `atk_component_remove_focus_handler()`
 ///
 /// **FocusHandler is deprecated:**
 /// Deprecated with atk_component_add_focus_handler()
@@ -41,7 +41,7 @@ public typealias KeySnoopFunc = AtkKeySnoopFunc
 
 /// An AtkPropertyChangeHandler is a function which is executed when an
 /// AtkObject's property changes value. It is specified in a call to
-/// atk_object_connect_property_change_handler().
+/// `atk_object_connect_property_change_handler()`.
 ///
 /// **PropertyChangeHandler is deprecated:**
 /// Since 2.12.

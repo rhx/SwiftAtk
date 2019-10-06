@@ -358,7 +358,7 @@ public extension SelectionProtocol {
     /// Note: callers should not rely on `nil` or on a zero value for
     /// indication of whether AtkSelectionIface is implemented, they should
     /// use type checking/interface checking macros or the
-    /// atk_get_accessible_value() convenience method.
+    /// `atk_get_accessible_value()` convenience method.
     func getSelectionCount() -> CInt {
         let rv = atk_selection_get_selection_count(cast(selection_ptr))
         return CInt(rv)
@@ -368,7 +368,7 @@ public extension SelectionProtocol {
     /// Note: callers should not rely on `nil` or on a zero value for
     /// indication of whether AtkSelectionIface is implemented, they should
     /// use type checking/interface checking macros or the
-    /// atk_get_accessible_value() convenience method.
+    /// `atk_get_accessible_value()` convenience method.
     func isChildSelected(i: CInt) -> Bool {
         let rv = atk_selection_is_child_selected(cast(selection_ptr), gint(i))
         return Bool(rv != 0)
@@ -379,7 +379,7 @@ public extension SelectionProtocol {
     /// Note: callers should not rely on `nil` or on a zero value for
     /// indication of whether AtkSelectionIface is implemented, they should
     /// use type checking/interface checking macros or the
-    /// atk_get_accessible_value() convenience method.
+    /// `atk_get_accessible_value()` convenience method.
     func refSelection(i: CInt) -> UnsafeMutablePointer<AtkObject>! {
         let rv = atk_selection_ref_selection(cast(selection_ptr), gint(i))
         return cast(rv)
@@ -401,13 +401,13 @@ public extension SelectionProtocol {
     /// Note: callers should not rely on `nil` or on a zero value for
     /// indication of whether AtkSelectionIface is implemented, they should
     /// use type checking/interface checking macros or the
-    /// atk_get_accessible_value() convenience method.
+    /// `atk_get_accessible_value()` convenience method.
     var selectionCount: CInt {
         /// Gets the number of accessible children currently selected.
         /// Note: callers should not rely on `nil` or on a zero value for
         /// indication of whether AtkSelectionIface is implemented, they should
         /// use type checking/interface checking macros or the
-        /// atk_get_accessible_value() convenience method.
+        /// `atk_get_accessible_value()` convenience method.
         get {
             let rv = atk_selection_get_selection_count(cast(selection_ptr))
             return CInt(rv)

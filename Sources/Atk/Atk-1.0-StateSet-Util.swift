@@ -12,7 +12,7 @@ import GLibObject
 ///
 /// An AtkStateSet is a read-only representation of the full set of `AtkStates`
 /// that apply to an object at a given time. This set is not meant to be
-/// modified, but rather created when `atk_object_ref_state_set`() is called.
+/// modified, but rather created when `atk_object_ref_state_set``()` is called.
 public protocol StateSetProtocol: ObjectProtocol {
     /// Untyped pointer to the underlying `AtkStateSet` instance.
     var ptr: UnsafeMutableRawPointer { get }
@@ -27,7 +27,7 @@ public protocol StateSetProtocol: ObjectProtocol {
 ///
 /// An AtkStateSet is a read-only representation of the full set of `AtkStates`
 /// that apply to an object at a given time. This set is not meant to be
-/// modified, but rather created when `atk_object_ref_state_set`() is called.
+/// modified, but rather created when `atk_object_ref_state_set``()` is called.
 public struct StateSetRef: StateSetProtocol {
     /// Untyped pointer to the underlying `AtkStateSet` instance.
     /// For type-safe access, use the generated, typed pointer `state_set_ptr` property instead.
@@ -87,7 +87,7 @@ public extension StateSetRef {
 ///
 /// An AtkStateSet is a read-only representation of the full set of `AtkStates`
 /// that apply to an object at a given time. This set is not meant to be
-/// modified, but rather created when `atk_object_ref_state_set`() is called.
+/// modified, but rather created when `atk_object_ref_state_set``()` is called.
 open class StateSet: Object, StateSetProtocol {
     /// Designated initialiser from the underlying `C` data type.
     /// Ownership is transferred to the `StateSet` instance.
@@ -139,27 +139,26 @@ open class StateSet: Object, StateSetProtocol {
 
 public enum StateSetSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.
@@ -413,27 +412,26 @@ open class Util: Object, UtilProtocol {
 
 public enum UtilSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
-    /// its value set through g_object_set_property(), g_object_set(), et al.
+    /// its value set through `g_object_set_property()`, `g_object_set()`, et al.
     /// 
     /// Note that getting this signal doesn’t itself guarantee that the value of
     /// the property has actually changed. When it is emitted is determined by the
     /// derived GObject class. If the implementor did not create the property with
-    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to g_object_set_property() results
-    /// in ::notify being emitted, even if the new value is the same as the old.
+    /// `G_PARAM_EXPLICIT_NOTIFY`, then any call to `g_object_set_property()` results
+    /// in `notify` being emitted, even if the new value is the same as the old.
     /// If they did pass `G_PARAM_EXPLICIT_NOTIFY`, then this signal is emitted only
-    /// when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+    /// when they explicitly call `g_object_notify()` or `g_object_notify_by_pspec()`,
     /// and common practice is to do that only when the value has actually changed.
     /// 
     /// This signal is typically used to obtain change notification for a
     /// single property, by specifying the property name as a detail in the
-    /// g_signal_connect() call, like this:
+    /// `g_signal_connect()` call, like this:
     /// (C Language Example):
     /// ```C
     /// g_signal_connect (text_view->buffer, "notify::paste-target-list",
     ///                   G_CALLBACK (gtk_text_view_target_list_notify),
     ///                   text_view)
     /// ```
-    /// 
     /// It is important to note that you must use
     /// [canonical parameter names][canonical-parameter-names] as
     /// detail strings for the notify signal.

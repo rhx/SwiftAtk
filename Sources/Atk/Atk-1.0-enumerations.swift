@@ -4,7 +4,7 @@ import GLib
 import GLibObject
 
 /// Specifies how xy coordinates are to be interpreted. Used by functions such
-/// as atk_component_get_position() and atk_text_get_character_extents()
+/// as `atk_component_get_position()` and `atk_text_get_character_extents()`
 public typealias CoordType = AtkCoordType
 
 public extension CoordType {
@@ -105,30 +105,30 @@ public extension RelationType {
     /// that their content can be more closely reviewed.
     static let described_by = ATK_RELATION_DESCRIBED_BY /* 14 */
     /// Reciprocal of `ATK_RELATION_DESCRIBED_BY`. Indicates that this
-    /// object provides descriptive information about the target object(s). See also
+    /// object provides descriptive information about the target `object(s)`. See also
     /// `ATK_RELATION_DETAILS_FOR` and `ATK_RELATION_ERROR_FOR`.
     static let description_for = ATK_RELATION_DESCRIPTION_FOR /* 15 */
     /// Indicates an object is a cell in a treetable and is expanded to display other cells in the same column.
     static let node_parent_of = ATK_RELATION_NODE_PARENT_OF /* 16 */
     /// Reciprocal of `ATK_RELATION_DETAILS_FOR`. Indicates that this object
     /// has a detailed or extended description, the contents of which can be found in the target
-    /// object(s). This relation type is most appropriate for information that is sufficiently
+    /// `object(s)`. This relation type is most appropriate for information that is sufficiently
     /// lengthy as to make navigation to the container of that information desirable. For less
     /// verbose information suitable for announcement only, see `ATK_RELATION_DESCRIBED_BY`. If
     /// the detailed information describes an error condition, `ATK_RELATION_ERROR_FOR` should be
-    /// used instead. `Since`: ATK-2.26.
+    /// used instead. `Since:` ATK-2.26.
     static let details = ATK_RELATION_DETAILS /* 17 */
     /// Reciprocal of `ATK_RELATION_DETAILS`. Indicates that this object
-    /// provides a detailed or extended description about the target object(s). See also
-    /// `ATK_RELATION_DESCRIPTION_FOR` and `ATK_RELATION_ERROR_FOR`. `Since`: ATK-2.26.
+    /// provides a detailed or extended description about the target `object(s)`. See also
+    /// `ATK_RELATION_DESCRIPTION_FOR` and `ATK_RELATION_ERROR_FOR`. `Since:` ATK-2.26.
     static let details_for = ATK_RELATION_DETAILS_FOR /* 18 */
     /// Reciprocal of `ATK_RELATION_ERROR_FOR`. Indicates that this object
     /// has one or more errors, the nature of which is described in the contents of the target
-    /// object(s). Objects that have this relation type should also contain `ATK_STATE_INVALID_ENTRY`
-    /// in their `AtkStateSet`. `Since`: ATK-2.26.
+    /// `object(s)`. Objects that have this relation type should also contain `ATK_STATE_INVALID_ENTRY`
+    /// in their `AtkStateSet`. `Since:` ATK-2.26.
     static let error_message = ATK_RELATION_ERROR_MESSAGE /* 19 */
     /// Reciprocal of `ATK_RELATION_ERROR_MESSAGE`. Indicates that this object
-    /// contains an error message describing an invalid condition in the target object(s). `Since`:
+    /// contains an error message describing an invalid condition in the target `object(s)`. `Since:`
     /// ATK_2.26.
     static let error_for = ATK_RELATION_ERROR_FOR /* 20 */
     /// Not used, this value indicates the end of the enumeration.
@@ -626,15 +626,15 @@ public extension StateType {
     /// Indicates that the object (typically a hyperlink) has already been 'activated', and/or its backing data has already been downloaded, rendered, or otherwise "visited".
     static let visited = ATK_STATE_VISITED /* 38 */
     /// Indicates this object has the potential to be
-    ///  checked, such as a checkbox or toggle-able table cell. `Since`:
+    ///  checked, such as a checkbox or toggle-able table cell. `Since:`
     ///  ATK-2.12
     static let checkable = ATK_STATE_CHECKABLE /* 39 */
     /// Indicates that the object has a popup context
     /// menu or sub-level menu which may or may not be showing. This means
     /// that activation renders conditional content.  Note that ordinary
-    /// tooltips are not considered popups in this context. `Since`: ATK-2.12
+    /// tooltips are not considered popups in this context. `Since:` ATK-2.12
     static let has_popup = ATK_STATE_HAS_POPUP /* 40 */
-    /// Indicates this object has a tooltip. `Since`: ATK-2.16
+    /// Indicates this object has a tooltip. `Since:` ATK-2.16
     static let has_tooltip = ATK_STATE_HAS_TOOLTIP /* 41 */
     /// Indicates that a widget which is ENABLED and SENSITIVE
     /// has a value which can be read, but not modified, by the user. Note that this
@@ -644,7 +644,7 @@ public extension StateType {
     /// with that widget is not possible. When the expected interaction with a
     /// widget does not include modification by the user, as is the case with
     /// labels and containers, ATK_STATE_READ_ONLY should not be applied. See also
-    /// ATK_STATE_EDITABLE. `Since`: ATK-2-16
+    /// ATK_STATE_EDITABLE. `Since:` ATK-2-16
     static let read_only = ATK_STATE_READ_ONLY /* 42 */
     /// Not a valid state, used for finding end of enumeration
     static let last_defined = ATK_STATE_LAST_DEFINED /* 43 */
@@ -785,7 +785,7 @@ public extension TextGranularity {
 
 /// Default types for a given value. Those are defined in order to
 /// easily get localized strings to describe a given value or a given
-/// subrange, using atk_value_type_get_localized_name().
+/// subrange, using `atk_value_type_get_localized_name()`.
 public typealias ValueType = AtkValueType
 
 public extension ValueType {
