@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Atk 2.34.1 Docs
         </a>
-         (92% documented)
+         (93% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -1013,7 +1013,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>TableRef</h1>
               <div class="declaration">
                 <div class="language">
@@ -1028,15 +1028,15 @@ Use <code>TableRef</code> only as an <code>unowned</code> reference to an existi
 <p><code>AtkTable</code> should be implemented by components which present
 elements ordered via rows and columns.  It may also be used to
 present tree-structured information if the nodes of the trees can
-be said to contain multiple <q>columns</q>.  Individual elements of an
-<code>AtkTable</code> are typically referred to as <q>cells</q>. Those cells should
+be said to contain multiple &ldquo;columns&rdquo;.  Individual elements of an
+<code>AtkTable</code> are typically referred to as &ldquo;cells&rdquo;. Those cells should
 implement the interface <code>AtkTableCell</code>, but <code>Atk</code> doesn&rsquo;t require
 them to be direct children of the current <code>AtkTable</code>. They can be
 grand-children, grand-grand-children etc. <code>AtkTable</code> provides the
 API needed to get a individual cell based on the row and column
 numbers.</p>
 
-<p>Children of <code>AtkTable</code> are frequently <q>lightweight</q> objects, that
+<p>Children of <code>AtkTable</code> are frequently &ldquo;lightweight&rdquo; objects, that
 is, they may not have backing widgets in the host UI toolkit.  They
 are therefore often transient.</p>
 
@@ -1087,7 +1087,7 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L306">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L353">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1098,9 +1098,11 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
               <div class="task-name-container">
                 <a name="/Table%20Interface"></a>
                 <a name="//apple_ref/swift/Section/Table Interface" class="dashAnchor"></a>
-                <a href="#/Table%20Interface">
-                  <h3 class="section-name">Table Interface</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Table%20Interface"></a>
+                  <h3 class="section-name"><p>Table Interface</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1128,7 +1130,7 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L311-L312">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L358-L359">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1158,7 +1160,7 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L315-L317">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L362-L364">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1189,7 +1191,7 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L321-L323">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L368-L370">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1220,7 +1222,7 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L327-L329">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L374-L376">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1251,7 +1253,7 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L333-L335">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L380-L382">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1282,7 +1284,7 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L339-L341">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L386-L388">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1313,7 +1315,7 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L345-L347">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-StreamableContent-Table.swift#L392-L394">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1326,8 +1328,8 @@ For type-safe access, use the generated, typed pointer <code>table_ptr</code> pr
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-03-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
