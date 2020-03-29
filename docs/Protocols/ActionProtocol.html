@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Atk 2.34.1 Docs
         </a>
-         (92% documented)
+         (93% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -1013,7 +1013,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>ActionProtocol</h1>
               <div class="declaration">
                 <div class="language">
@@ -1028,7 +1028,7 @@ Alternatively, use <code><a href="../Structs/ActionRef.html">ActionRef</a></code
 
 <p><code>AtkAction</code> should be implemented by instances of <code>AtkObject</code> classes
 with which the user can interact directly, i.e. buttons,
-checkboxes, scrollbars, e.g. components which are not <q>passive</q>
+checkboxes, scrollbars, e.g. components which are not &ldquo;passive&rdquo;
 providers of UI information.</p>
 
 <p>Exceptions: when the user interaction is already covered by another
@@ -1038,11 +1038,11 @@ exposed by <code>AtkAction</code> as well.</p>
 
 <p>Though most UI interactions on components should be invocable via
 keyboard as well as mouse, there will generally be a close mapping
-between <q>mouse actions</q> that are possible on a component and the
+between &ldquo;mouse actions&rdquo; that are possible on a component and the
 AtkActions.  Where mouse and keyboard actions are redundant in
 effect, <code>AtkAction</code> should expose only one action rather than
 exposing redundant actions if possible.  By convention we have been
-using <q>mouse centric</q> terminology for <code>AtkAction</code> names.</p>
+using &ldquo;mouse centric&rdquo; terminology for <code>AtkAction</code> names.</p>
 
           </div>
         </section>
@@ -1125,9 +1125,11 @@ using <q>mouse centric</q> terminology for <code>AtkAction</code> names.</p>
               <div class="task-name-container">
                 <a name="/no%20signals"></a>
                 <a name="//apple_ref/swift/Section/no signals" class="dashAnchor"></a>
-                <a href="#/no%20signals">
-                  <h3 class="section-name">no signals</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/no%20signals"></a>
+                  <h3 class="section-name"><p>no signals</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1158,7 +1160,7 @@ using <q>mouse centric</q> terminology for <code>AtkAction</code> names.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L189-L192">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L236-L239">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1191,7 +1193,7 @@ using <q>mouse centric</q> terminology for <code>AtkAction</code> names.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L195-L198">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L242-L245">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1215,27 +1217,27 @@ using <q>mouse centric</q> terminology for <code>AtkAction</code> names.</p>
                         <p>Gets the keybinding which can be used to activate this action, if one
 exists. The string returned should contain localized, human-readable,
 key sequences as they would appear when displayed on screen. It must
-be in the format <q>mnemonic;sequence;shortcut</q>.</p>
+be in the format &ldquo;mnemonic;sequence;shortcut&rdquo;.</p>
 
 <ul>
 <li>The mnemonic key activates the object if it is presently enabled onscreen.
 This typically corresponds to the underlined letter within the widget.
-Example: <q>n</q> in a traditional <q>New&hellip;</q> menu item or the <q>a</q> in <q>Apply</q> for
+Example: &ldquo;n&rdquo; in a traditional &ldquo;New&hellip;&rdquo; menu item or the &ldquo;a&rdquo; in &ldquo;Apply&rdquo; for
 a button.</li>
 <li>The sequence is the full list of keys which invoke the action even if the
 relevant element is not currently shown on screen. For instance, for a menu
 item the sequence is the keybindings used to open the parent menus before
-invoking. The sequence string is colon-delimited. Example: <q>Alt+F:N</q> in a
-traditional <q>New&hellip;</q> menu item.</li>
+invoking. The sequence string is colon-delimited. Example: &ldquo;Alt+F:N&rdquo; in a
+traditional &ldquo;New&hellip;&rdquo; menu item.</li>
 <li>The shortcut, if it exists, will invoke the same action without showing
-the component or its enclosing menus or dialogs. Example: <q>Ctrl+N</q> in a
-traditional <q>New&hellip;</q> menu item.</li>
+the component or its enclosing menus or dialogs. Example: &ldquo;Ctrl+N&rdquo; in a
+traditional &ldquo;New&hellip;&rdquo; menu item.</li>
 </ul>
 
-<p>Example: For a traditional <q>New&hellip;</q> menu item, the expected return value
-would be: <q>N;Alt+F:N;Ctrl+N</q> for the English locale and <q>N;Alt+D:N;Strg+N</q>
+<p>Example: For a traditional &ldquo;New&hellip;&rdquo; menu item, the expected return value
+would be: &ldquo;N;Alt+F:N;Ctrl+N&rdquo; for the English locale and &ldquo;N;Alt+D:N;Strg+N&rdquo;
 for the German locale. If, hypothetically, this menu item lacked a mnemonic,
-it would be represented by <q>;;Ctrl+N</q> and <q>;;Strg+N</q> respectively.</p>
+it would be represented by &ldquo;;;Ctrl+N&rdquo; and &ldquo;;;Strg+N&rdquo; respectively.</p>
 
                       </div>
                       <div class="declaration">
@@ -1247,7 +1249,7 @@ it would be represented by <q>;;Ctrl+N</q> and <q>;;Strg+N</q> respectively.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L222-L225">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L269-L272">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1280,7 +1282,7 @@ it would be represented by <q>;;Ctrl+N</q> and <q>;;Strg+N</q> respectively.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L228-L231">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L275-L278">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1303,7 +1305,7 @@ it would be represented by <q>;;Ctrl+N</q> and <q>;;Strg+N</q> respectively.</p>
                       <div class="abstract">
                         <p>Gets the number of accessible actions available on the object.
 If there are more than one, the first one is considered the
-<q>default</q> action of the object.</p>
+&ldquo;default&rdquo; action of the object.</p>
 
                       </div>
                       <div class="declaration">
@@ -1315,7 +1317,7 @@ If there are more than one, the first one is considered the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L236-L239">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L283-L286">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1342,8 +1344,8 @@ of the action, but instead names the &lsquo;interaction type&rsquo; which the
 object supports. By convention, the above strings should be used to
 represent the actions which correspond to the common point-and-click
 interaction techniques of the same name: i.e.
-<q>click</q>, <q>press</q>, <q>release</q>, <q>drag</q>, <q>drop</q>, <q>popup</q>, etc.
-The <q>popup</q> action should be used to pop up a context menu for the
+&ldquo;click&rdquo;, &ldquo;press&rdquo;, &ldquo;release&rdquo;, &ldquo;drag&rdquo;, &ldquo;drop&rdquo;, &ldquo;popup&rdquo;, etc.
+The &ldquo;popup&rdquo; action should be used to pop up a context menu for the
 object, if one exists.</p>
 
 <p>For technical reasons, some toolkits cannot guarantee that the
@@ -1361,7 +1363,7 @@ NIL.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L255-L258">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L302-L305">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1394,7 +1396,7 @@ NIL.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L261-L264">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L308-L311">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1417,7 +1419,7 @@ NIL.</p>
                       <div class="abstract">
                         <p>Gets the number of accessible actions available on the object.
 If there are more than one, the first one is considered the
-<q>default</q> action of the object.</p>
+&ldquo;default&rdquo; action of the object.</p>
 
                       </div>
                       <div class="declaration">
@@ -1429,7 +1431,7 @@ If there are more than one, the first one is considered the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L268-L276">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-Action-Component.swift#L315-L323">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1442,8 +1444,8 @@ If there are more than one, the first one is considered the
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-03-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

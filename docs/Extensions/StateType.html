@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Atk 2.34.1 Docs
         </a>
-         (92% documented)
+         (93% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -1013,7 +1013,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>StateType</h1>
               <div class="declaration">
                 <div class="language">
@@ -1257,7 +1257,7 @@ should contain ATK_STATE_READ_ONLY.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates that this object is enabled, i.e. that it currently reflects some application state. Objects that are <q>greyed out</q> may lack this state, and may lack the STATE_SENSITIVE if direct user interaction cannot cause them to acquire STATE_ENABLED. See also: ATK_STATE_SENSITIVE</p>
+                        <p>Indicates that this object is enabled, i.e. that it currently reflects some application state. Objects that are &ldquo;greyed out&rdquo; may lack this state, and may lack the STATE_SENSITIVE if direct user interaction cannot cause them to acquire STATE_ENABLED. See also: ATK_STATE_SENSITIVE</p>
 
                       </div>
                       <div class="declaration">
@@ -1710,7 +1710,7 @@ should contain ATK_STATE_READ_ONLY.</p>
                         <p>Indicates this object is sensitive, e.g. to user interaction.
 STATE_SENSITIVE usually accompanies STATE_ENABLED for user-actionable controls,
 but may be found in the absence of STATE_ENABLED if the current visible state of the
-control is <q>disconnected</q> from the application state.  In such cases, direct user interaction
+control is &ldquo;disconnected&rdquo; from the application state.  In such cases, direct user interaction
 can often result in the object gaining STATE_SENSITIVE, for instance if a user makes
 an explicit selection using an object whose current state is ambiguous or undefined.
 <code>see</code> STATE_ENABLED, STATE_INDETERMINATE.</p>
@@ -1744,7 +1744,7 @@ an explicit selection using an object whose current state is ambiguous or undefi
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Indicates this object, the object&rsquo;s parent, the object&rsquo;s parent&rsquo;s parent, and so on,
-are all &lsquo;shown&rsquo; to the end-user, i.e. subject to <q>exposure</q> if blocking or obscuring objects do not interpose
+are all &lsquo;shown&rsquo; to the end-user, i.e. subject to &ldquo;exposure&rdquo; if blocking or obscuring objects do not interpose
 between this object and the top of the window stack.</p>
 
                       </div>
@@ -1809,7 +1809,7 @@ between this object and the top of the window stack.</p>
 synchronized with the application state.  This is implied if the object has STATE_TRANSIENT,
 and can also occur towards the end of the object peer&rsquo;s lifecycle. It can also be used to indicate that
 the index associated with this object has changed since the user accessed the object (in lieu of
-<q>index-in-parent-changed</q> events).</p>
+&ldquo;index-in-parent-changed&rdquo; events).</p>
 
                       </div>
                       <div class="declaration">
@@ -1941,7 +1941,7 @@ algorithms.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates that <q>active-descendant-changed</q> event
+                        <p>Indicates that &ldquo;active-descendant-changed&rdquo; event
 is sent when children become &lsquo;active&rsquo; (i.e. are selected or navigated to onscreen).
 Used to prevent need to enumerate all children in very large containers, like tables.
 The presence of STATE_MANAGES_DESCENDANTS is an indication to the client.
@@ -2045,7 +2045,7 @@ neither checked nor unchecked.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates that explicit user interaction with an object is required by the user interface, e.g. a required field in a <q>web-form</q> interface.</p>
+                        <p>Indicates that explicit user interaction with an object is required by the user interface, e.g. a required field in a &ldquo;web-form&rdquo; interface.</p>
 
                       </div>
                       <div class="declaration">
@@ -2172,7 +2172,7 @@ events from the AtkText interface.  This state supplants <code>ATK_ROLE_AUTOCOMP
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates that the object is the <q>default</q> active component, i.e. the object which is activated by an end-user press of the <q>Enter</q> or <q>Return</q> key.  Typically a <q>close</q> or <q>submit</q> button.</p>
+                        <p>Indicates that the object is the &ldquo;default&rdquo; active component, i.e. the object which is activated by an end-user press of the &ldquo;Enter&rdquo; or &ldquo;Return&rdquo; key.  Typically a &ldquo;close&rdquo; or &ldquo;submit&rdquo; button.</p>
 
                       </div>
                       <div class="declaration">
@@ -2236,7 +2236,7 @@ static; this state is advisory.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates that the object (typically a hyperlink) has already been &lsquo;activated&rsquo;, and/or its backing data has already been downloaded, rendered, or otherwise <q>visited</q>.</p>
+                        <p>Indicates that the object (typically a hyperlink) has already been &lsquo;activated&rsquo;, and/or its backing data has already been downloaded, rendered, or otherwise &ldquo;visited&rdquo;.</p>
 
                       </div>
                       <div class="declaration">
@@ -2424,8 +2424,8 @@ ATK_STATE_EDITABLE. <code>Since:</code> ATK-2-16</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-03-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           Atk 2.34.1 Docs
         </a>
-         (92% documented)
+         (93% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -1013,7 +1013,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>Functions</h1>
             <p>The following functions are available globally.</p>
 
@@ -1043,14 +1043,14 @@ when an object receives focus.</p>
 <p><strong>add_focus_tracker is deprecated:</strong>
 Focus tracking has been dropped as a feature
 to be implemented by ATK itself. If you need focus tracking on your
-implementation, subscribe to the #AtkObject::state-change <q>focused</q> signal.</p>
+implementation, subscribe to the #AtkObject::state-change &ldquo;focused&rdquo; signal.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">focusTracker</span> <span class="nv">focus_tracker</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="Typealiases.html#/s:3Atk13EventListenera">EventListener</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedInt</span></code></pre>
 
                         </div>
@@ -1080,7 +1080,7 @@ when an ATK event of type event_type occurs.</p>
 <p>The format of event_type is the following:
  &ldquo;ATK:&lt;atk_type&gt;:&lt;atk_event&gt;:&lt;atk_event_detail&gt;</p>
 
-<p>Where <q>ATK</q> works as the namespace, &lt;atk_interface&gt; is the name of
+<p>Where &quot;ATK&rdquo; works as the namespace, &lt;atk_interface&gt; is the name of
 the ATK type (interface or object), &lt;atk_event&gt; is the name of the
 signal defined on that interface and &lt;atk_event_detail&gt; is the
 gsignal detail of that signal. You can find more info about gsignal
@@ -1213,7 +1213,7 @@ to be implemented by ATK itself.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">focusTrackerInit</span><span class="p">(</span><span class="nv">init_</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="Typealiases.html#/s:3Atk17EventListenerInita">EventListenerInit</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1252,7 +1252,7 @@ atk_object_notify_state_change() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">focusTrackerNotify</span><span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt"><a href="Protocols/ObjectProtocol.html">ObjectProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1728,7 +1728,7 @@ to be called when any object receives focus.</p>
 <p><strong>remove_focus_tracker is deprecated:</strong>
 Focus tracking has been dropped as a feature
   to be implemented by ATK itself. If you need focus tracking on your
-  implementation, subscribe to the #AtkObject::state-change <q>focused</q>
+  implementation, subscribe to the #AtkObject::state-change &ldquo;focused&rdquo;
   signal.</p>
 
                       </div>
@@ -1736,7 +1736,7 @@ Focus tracking has been dropped as a feature
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeFocusTracker</span><span class="p">(</span><span class="n">trackerId</span> <span class="nv">tracker_id</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1936,7 +1936,7 @@ submit a bug in order to add a new role to the specification.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">roleRegister</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AtkRole</span></code></pre>
 
                         </div>
@@ -2257,8 +2257,8 @@ and is NULL terminated.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-03-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

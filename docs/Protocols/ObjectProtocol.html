@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Atk 2.34.1 Docs
         </a>
-         (92% documented)
+         (93% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -1013,7 +1013,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>ObjectProtocol</h1>
               <div class="declaration">
                 <div class="language">
@@ -1079,7 +1079,7 @@ subclass.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L236">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L277">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1117,7 +1117,7 @@ subclass.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L239">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L280">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1128,9 +1128,11 @@ subclass.</p>
               <div class="task-name-container">
                 <a name="/Object%20Class"></a>
                 <a name="//apple_ref/swift/Section/Object Class" class="dashAnchor"></a>
-                <a href="#/Object%20Class">
-                  <h3 class="section-name">Object Class</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Object%20Class"></a>
+                  <h3 class="section-name"><p>Object Class</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1157,7 +1159,7 @@ subclass.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
-<span class="kd">func</span> <span class="n">bind</span><span class="o">&lt;</span><span class="kt">Q</span><span class="p">:</span> <span class="kt">PropertyNameProtocol</span><span class="p">,</span> <span class="kt">T</span><span class="p">:</span> <span class="kt">ObjectProtocol</span><span class="o">&gt;</span><span class="p">(</span><span class="n">property</span> <span class="nv">source_property</span><span class="p">:</span> <span class="kt"><a href="../Enums/ObjectPropertyName.html">ObjectPropertyName</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">_</span> <span class="nv">target_property</span><span class="p">:</span> <span class="kt">Q</span><span class="p">,</span> <span class="n">flags</span> <span class="nv">f</span><span class="p">:</span> <span class="kt">BindingFlags</span> <span class="o">=</span> <span class="o">.</span><span class="n">default_</span><span class="p">,</span> <span class="n">transformFrom</span> <span class="nv">transform_from</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLibObject</span><span class="o">.</span><span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">transform</span><span class="p">(</span><span class="nv">destValue</span><span class="p">:</span> <span class="nv">$1</span><span class="p">)</span> <span class="p">},</span> <span class="n">transformTo</span> <span class="nv">transform_to</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLibObject</span><span class="o">.</span><span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">transform</span><span class="p">(</span><span class="nv">destValue</span><span class="p">:</span> <span class="nv">$1</span><span class="p">)</span> <span class="p">})</span> <span class="o">-&gt;</span> <span class="kt">BindingRef</span><span class="o">!</span></code></pre>
+<span class="kd">func</span> <span class="n">bind</span><span class="o">&lt;</span><span class="kt">Q</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">property</span> <span class="nv">source_property</span><span class="p">:</span> <span class="kt"><a href="../Enums/ObjectPropertyName.html">ObjectPropertyName</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">_</span> <span class="nv">target_property</span><span class="p">:</span> <span class="kt">Q</span><span class="p">,</span> <span class="n">flags</span> <span class="nv">f</span><span class="p">:</span> <span class="kt">BindingFlags</span> <span class="o">=</span> <span class="o">.</span><span class="n">default_</span><span class="p">,</span> <span class="n">transformFrom</span> <span class="nv">transform_from</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLibObject</span><span class="o">.</span><span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">transform</span><span class="p">(</span><span class="nv">destValue</span><span class="p">:</span> <span class="nv">$1</span><span class="p">)</span> <span class="p">},</span> <span class="n">transformTo</span> <span class="nv">transform_to</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GLibObject</span><span class="o">.</span><span class="kt">ValueTransformer</span> <span class="o">=</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">transform</span><span class="p">(</span><span class="nv">destValue</span><span class="p">:</span> <span class="nv">$1</span><span class="p">)</span> <span class="p">})</span> <span class="o">-&gt;</span> <span class="kt">BindingRef</span><span class="o">!</span> <span class="k">where</span> <span class="kt">Q</span> <span class="p">:</span> <span class="kt">PropertyNameProtocol</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">ObjectProtocol</span></code></pre>
 
                         </div>
                       </div>
@@ -1245,22 +1247,11 @@ subclass.</p>
                         <p>binding reference or <code>nil</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L437-L461">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L519-L543">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Object%20Class2"></a>
-                <a name="//apple_ref/swift/Section/Object Class" class="dashAnchor"></a>
-                <a href="#/Object%20Class2">
-                  <h3 class="section-name">Object Class</h3>
-                </a>
-              </div>
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -1337,22 +1328,11 @@ subclass.</p>
                         <p>positive handler ID, or a value less than or equal to <code>0</code> in case of an error</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L579-L598">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L661-L680">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Object%20Class3"></a>
-                <a name="//apple_ref/swift/Section/Object Class" class="dashAnchor"></a>
-                <a href="#/Object%20Class3">
-                  <h3 class="section-name">Object Class</h3>
-                </a>
-              </div>
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -1381,7 +1361,7 @@ subclass.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L606-L609">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L688-L691">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1413,13 +1393,13 @@ Connect directly to #AtkObject::property-change or
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">connectPropertyChange</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">AtkPropertyChangeHandler</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedInt</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L616-L619">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L698-L701">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1452,7 +1432,7 @@ Connect directly to #AtkObject::property-change or
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L622-L625">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L704-L707">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1476,7 +1456,7 @@ Connect directly to #AtkObject::property-change or
                         <p>Get a list of properties applied to this object as a whole, as an <code>AtkAttributeSet</code> consisting of
 name-value pairs. As such these attributes may be considered weakly-typed properties or annotations,
 as distinct from strongly-typed object data available via other get/set methods.
-Not all objects have explicit <q>name-value pair</q> <code>AtkAttributeSet</code> properties.</p>
+Not all objects have explicit &ldquo;name-value pair&rdquo; <code>AtkAttributeSet</code> properties.</p>
 
                       </div>
                       <div class="declaration">
@@ -1488,7 +1468,7 @@ Not all objects have explicit <q>name-value pair</q> <code>AtkAttributeSet</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L631-L634">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L713-L716">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1521,7 +1501,7 @@ Not all objects have explicit <q>name-value pair</q> <code>AtkAttributeSet</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L637-L640">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L719-L722">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1555,7 +1535,7 @@ accessible does not have an accessible parent.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L644-L647">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L726-L729">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1586,13 +1566,13 @@ Use atk_component_get_layer instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">getLayer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AtkLayer</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L653-L656">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L735-L738">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1624,13 +1604,13 @@ Use atk_component_get_mdi_zorder instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">getMdiZorder</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CInt</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L663-L666">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L745-L748">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1663,7 +1643,7 @@ Use atk_component_get_mdi_zorder instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L669-L672">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L751-L754">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1696,7 +1676,7 @@ Use atk_component_get_mdi_zorder instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L675-L678">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L757-L760">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1730,7 +1710,7 @@ of <code>accessible</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L682-L685">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L764-L767">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1770,7 +1750,7 @@ without the need of assigning it manually with
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L695-L698">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L777-L780">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1803,7 +1783,7 @@ without the need of assigning it manually with
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L701-L704">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L783-L786">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1839,7 +1819,7 @@ to create an instance of a subclass of <code>AtkObject</code></p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L710-L713">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L792-L795">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1875,7 +1855,7 @@ emitting a notification is expected.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L719-L722">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L801-L804">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1914,7 +1894,7 @@ further reference.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L731-L734">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L813-L816">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1949,7 +1929,7 @@ at index 0, the second at index 1 and so on.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L739-L742">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L821-L824">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1982,7 +1962,7 @@ at index 0, the second at index 1 and so on.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L745-L748">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L827-L830">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2016,7 +1996,7 @@ unreference it when it is no longer needed.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L752-L755">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L834-L837">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2047,13 +2027,13 @@ See atk_object_connect_property_change_handler()</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">removePropertyChangeHandler</span><span class="p">(</span><span class="n">handlerId</span> <span class="nv">handler_id</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L761-L764">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L843-L846">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2086,7 +2066,7 @@ See atk_object_connect_property_change_handler()</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L767-L770">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L849-L852">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2123,7 +2103,7 @@ reading, or for automatic regression testing.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L777-L780">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L859-L862">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2159,7 +2139,7 @@ the name to a empty value you can use &ldquo;&rdquo;.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L786-L789">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L868-L871">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2195,7 +2175,7 @@ a empty value you can use &ldquo;&rdquo;.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L795-L798">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L877-L880">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2228,7 +2208,7 @@ a empty value you can use &ldquo;&rdquo;.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L801-L804">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L883-L886">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2261,7 +2241,7 @@ a empty value you can use &ldquo;&rdquo;.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L807-L810">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L889-L892">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2297,13 +2277,13 @@ atk_object_notify_state_change() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">func</span> <span class="nf">focusTrackerNotify</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L821-L824">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L903-L906">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2336,7 +2316,7 @@ atk_object_notify_state_change() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L826-L840">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L908-L922">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2360,7 +2340,7 @@ atk_object_notify_state_change() instead.</p>
                         <p>Get a list of properties applied to this object as a whole, as an <code>AtkAttributeSet</code> consisting of
 name-value pairs. As such these attributes may be considered weakly-typed properties or annotations,
 as distinct from strongly-typed object data available via other get/set methods.
-Not all objects have explicit <q>name-value pair</q> <code>AtkAttributeSet</code> properties.</p>
+Not all objects have explicit &ldquo;name-value pair&rdquo; <code>AtkAttributeSet</code> properties.</p>
 
                       </div>
                       <div class="declaration">
@@ -2372,7 +2352,7 @@ Not all objects have explicit <q>name-value pair</q> <code>AtkAttributeSet</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L846-L855">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L928-L937">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2405,7 +2385,7 @@ Not all objects have explicit <q>name-value pair</q> <code>AtkAttributeSet</code
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L858-L871">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L940-L953">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2439,7 +2419,7 @@ accessible does not have an accessible parent.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L875-L882">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L957-L964">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2475,7 +2455,7 @@ Use atk_component_get_layer instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L888-L897">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L970-L979">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2512,7 +2492,7 @@ Use atk_component_get_mdi_zorder instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L904-L914">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L986-L996">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2545,7 +2525,7 @@ Use atk_component_get_mdi_zorder instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L917-L923">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L999-L1005">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2578,7 +2558,7 @@ Use atk_component_get_mdi_zorder instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L926-L939">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L1008-L1021">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2612,7 +2592,7 @@ of <code>accessible</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L943-L950">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L1025-L1032">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2652,7 +2632,7 @@ without the need of assigning it manually with
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L960-L977">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L1042-L1059">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2685,7 +2665,7 @@ without the need of assigning it manually with
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L980-L990">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-NoOpObjectFactory-Object.swift#L1062-L1072">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2698,8 +2678,8 @@ without the need of assigning it manually with
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-03-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
