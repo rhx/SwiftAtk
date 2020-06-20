@@ -1,0 +1,2827 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StateType Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Extension/StateType" class="dashAnchor"></a>
+
+    <a title="StateType Extension Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Atk 2.36.0 Docs
+        </a>
+         (91% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/rhx/SwiftAtk">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://http%3A%2F%2Frhx%2Egithub%2Eio%2FSwiftAtk%2Fdocsets%2FAtk%2Exml">
+            <img class="header-icon" src="../img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Atk Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      StateType Extension Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Action.html">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ActionIface.html">ActionIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Attribute.html">Attribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Component.html">Component</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ComponentIface.html">ComponentIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Document.html">Document</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DocumentIface.html">DocumentIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/EditableText.html">EditableText</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/EditableTextIface.html">EditableTextIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GObjectAccessible.html">GObjectAccessible</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/GObjectAccessibleClass.html">GObjectAccessibleClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Hyperlink.html">Hyperlink</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/HyperlinkClass.html">HyperlinkClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/HyperlinkImpl.html">HyperlinkImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/HyperlinkImplIface.html">HyperlinkImplIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Hypertext.html">Hypertext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/HypertextIface.html">HypertextIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Image.html">Image</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ImageIface.html">ImageIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Implementor.html">Implementor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ImplementorIface.html">ImplementorIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/KeyEventStruct.html">KeyEventStruct</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Misc.html">Misc</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MiscClass.html">MiscClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NoOpObject.html">NoOpObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NoOpObjectClass.html">NoOpObjectClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NoOpObjectFactory.html">NoOpObjectFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NoOpObjectFactoryClass.html">NoOpObjectFactoryClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Object.html">Object</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ObjectClass.html">ObjectClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ObjectFactory.html">ObjectFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ObjectFactoryClass.html">ObjectFactoryClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Plug.html">Plug</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PlugClass.html">PlugClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PropertyValues.html">PropertyValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Range.html">Range</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Rectangle.html">Rectangle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Registry.html">Registry</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RegistryClass.html">RegistryClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Relation.html">Relation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RelationClass.html">RelationClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RelationSet.html">RelationSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RelationSetClass.html">RelationSetClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Selection.html">Selection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SelectionIface.html">SelectionIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Socket.html">Socket</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SocketClass.html">SocketClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/StateSet.html">StateSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/StateSetClass.html">StateSetClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/StreamableContent.html">StreamableContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/StreamableContentIface.html">StreamableContentIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Table.html">Table</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TableCell.html">TableCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TableCellIface.html">TableCellIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TableIface.html">TableIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Text.html">Text</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TextIface.html">TextIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TextRange.html">TextRange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TextRectangle.html">TextRectangle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Util.html">Util</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/UtilClass.html">UtilClass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Value.html">Value</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ValueIface.html">ValueIface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Window.html">Window</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/WindowIface.html">WindowIface</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3Atk10BINARY_AGEs5Int32Vvp">BINARY_AGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3Atk13INTERFACE_AGEs5Int32Vvp">INTERFACE_AGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3Atk13MAJOR_VERSIONs5Int32Vvp">MAJOR_VERSION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3Atk13MICRO_VERSIONs5Int32Vvp">MICRO_VERSION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3Atk13MINOR_VERSIONs5Int32Vvp">MINOR_VERSION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3Atk20VERSION_MIN_REQUIREDs5Int32Vvp">VERSION_MIN_REQUIRED</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ComponentSignalName.html">ComponentSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DocumentSignalName.html">DocumentSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/GObjectAccessiblePropertyName.html">GObjectAccessiblePropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/GObjectAccessibleSignalName.html">GObjectAccessibleSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/HyperlinkPropertyName.html">HyperlinkPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/HyperlinkSignalName.html">HyperlinkSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/HypertextSignalName.html">HypertextSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MiscSignalName.html">MiscSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/NoOpObjectFactorySignalName.html">NoOpObjectFactorySignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/NoOpObjectPropertyName.html">NoOpObjectPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/NoOpObjectSignalName.html">NoOpObjectSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ObjectFactorySignalName.html">ObjectFactorySignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ObjectPropertyName.html">ObjectPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ObjectSignalName.html">ObjectSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/PlugPropertyName.html">PlugPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/PlugSignalName.html">PlugSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RegistrySignalName.html">RegistrySignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RelationPropertyName.html">RelationPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RelationSetSignalName.html">RelationSetSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RelationSignalName.html">RelationSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/SelectionSignalName.html">SelectionSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/SocketPropertyName.html">SocketPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/SocketSignalName.html">SocketSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/StateSetSignalName.html">StateSetSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/TableCellPropertyName.html">TableCellPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/TableCellSignalName.html">TableCellSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/TableSignalName.html">TableSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/TextSignalName.html">TextSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/UtilSignalName.html">UtilSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ValueSignalName.html">ValueSignalName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/WindowPropertyName.html">WindowPropertyName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/WindowSignalName.html">WindowSignalName</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CoordType.html">CoordType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/KeyEventType.html">KeyEventType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Layer.html">Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/RelationType.html">RelationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Role.html">Role</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ScrollType.html">ScrollType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/StateType.html">StateType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextAttribute.html">TextAttribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextBoundary.html">TextBoundary</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextClipType.html">TextClipType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextGranularity.html">TextGranularity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ValueType.html">ValueType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk3add12focusTrackerSiySpySo01_A6ObjectVGSgXC_tF">add(focusTracker:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk14addGlobalEvent8listener9eventTypeSis5Int32VSpySo22_GSignalInvocationHintVGSg_s6UInt32VSPySo7_GValueVGSgSvSgtXC_SPys4Int8VGtF">addGlobalEvent(listener:eventType:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk11addKeyEvent8listener4dataSis5Int32VSpySo01_acD6StructVGSg_SvSgtXC_SvtF">addKeyEvent(listener:data:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk16attributeSetFree06attribC0ySpySo7_GSListVG_tF">attributeSetFree(attribSet:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk16focusTrackerInit5init_yyyXC_tF">focusTrackerInit(init_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk18focusTrackerNotify6objectyAA14ObjectProtocol_p_tF">focusTrackerNotify(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk12getBinaryAgeSiyF">getBinaryAge()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk18getDefaultRegistrySpySo01_aD0VGSgyF">getDefaultRegistry()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk14getFocusObjectSpySo01_aD0VGSgyF">getFocusObject()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk15getInterfaceAgeSiyF">getInterfaceAge()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk15getMajorVersionSiyF">getMajorVersion()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk15getMicroVersionSiyF">getMicroVersion()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk15getMinorVersionSiyF">getMinorVersion()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk7getRootSpySo01_A6ObjectVGSgyF">getRoot()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk14getToolkitNameSSSgyF">getToolkitName()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk17getToolkitVersionSSSgyF">getToolkitVersion()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk10getVersionSSSgyF">getVersion()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk15relationTypeFor4nameSo0a8RelationC0aSPys4Int8VG_tF">relationTypeFor(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk19relationTypeGetName4typeSSSgSo0a8RelationC0a_tF">relationTypeGetName(type:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk20relationTypeRegister4nameSo0a8RelationC0aSPys4Int8VG_tF">relationTypeRegister(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk18removeFocusTracker9trackerIdys6UInt32V_tF">removeFocusTracker(trackerId:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk25removeGlobalEventListener10listenerIdys6UInt32V_tF">removeGlobalEventListener(listenerId:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk22removeKeyEventListener10listenerIdys6UInt32V_tF">removeKeyEventListener(listenerId:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk7roleFor4nameSo0A4RoleaSPys4Int8VG_tF">roleFor(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk20roleGetLocalizedName0B0SSSgSo0A4Rolea_tF">roleGetLocalizedName(role:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk11roleGetName0B0SSSgSo0A4Rolea_tF">roleGetName(role:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk12roleRegister4nameSo0A4RoleaSPys4Int8VG_tF">roleRegister(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk12stateTypeFor4nameSo0a5StateC0aSPys4Int8VG_tF">stateTypeFor(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk16stateTypeGetName4typeSSSgSo0a5StateC0a_tF">stateTypeGetName(type:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk17stateTypeRegister4nameSo0a5StateC0aSPys4Int8VG_tF">stateTypeRegister(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk16textAttributeFor4nameSo0a4TextC0aSPys4Int8VG_tF">textAttributeFor(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk20textAttributeGetName4attrSSSgSo0a4TextC0a_tF">textAttributeGetName(attr:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk21textAttributeGetValue4attr6index_SSSgSo0a4TextC0a_s5Int32VtF">textAttributeGetValue(attr:index_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk21textAttributeRegister4nameSo0a4TextC0aSPys4Int8VG_tF">textAttributeRegister(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk8textFree6rangesySpySpySo01_A9TextRangeVGG_tF">textFree(ranges:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk25valueTypeGetLocalizedName0bC0SSSgSo0a5ValueC0a_tF">valueTypeGetLocalizedName(valueType:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3Atk16valueTypeGetName0bC0SSSgSo0a5ValueC0a_tF">valueTypeGetName(valueType:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ActionIfaceProtocol.html">ActionIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ActionProtocol.html">ActionProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/AttributeProtocol.html">AttributeProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ComponentIfaceProtocol.html">ComponentIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ComponentProtocol.html">ComponentProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DocumentIfaceProtocol.html">DocumentIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DocumentProtocol.html">DocumentProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/EditableTextIfaceProtocol.html">EditableTextIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/EditableTextProtocol.html">EditableTextProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/GObjectAccessibleClassProtocol.html">GObjectAccessibleClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/GObjectAccessibleProtocol.html">GObjectAccessibleProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/HyperlinkClassProtocol.html">HyperlinkClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/HyperlinkImplIfaceProtocol.html">HyperlinkImplIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/HyperlinkImplProtocol.html">HyperlinkImplProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/HyperlinkProtocol.html">HyperlinkProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/HypertextIfaceProtocol.html">HypertextIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/HypertextProtocol.html">HypertextProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ImageIfaceProtocol.html">ImageIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ImageProtocol.html">ImageProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ImplementorIfaceProtocol.html">ImplementorIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ImplementorProtocol.html">ImplementorProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/KeyEventStructProtocol.html">KeyEventStructProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MiscClassProtocol.html">MiscClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MiscProtocol.html">MiscProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/NoOpObjectClassProtocol.html">NoOpObjectClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/NoOpObjectFactoryClassProtocol.html">NoOpObjectFactoryClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/NoOpObjectFactoryProtocol.html">NoOpObjectFactoryProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/NoOpObjectProtocol.html">NoOpObjectProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ObjectClassProtocol.html">ObjectClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ObjectFactoryClassProtocol.html">ObjectFactoryClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ObjectFactoryProtocol.html">ObjectFactoryProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ObjectProtocol.html">ObjectProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/PlugClassProtocol.html">PlugClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/PlugProtocol.html">PlugProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/PropertyValuesProtocol.html">PropertyValuesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RangeProtocol.html">RangeProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RectangleProtocol.html">RectangleProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RegistryClassProtocol.html">RegistryClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RegistryProtocol.html">RegistryProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RelationClassProtocol.html">RelationClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RelationProtocol.html">RelationProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RelationSetClassProtocol.html">RelationSetClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RelationSetProtocol.html">RelationSetProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/SelectionIfaceProtocol.html">SelectionIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/SelectionProtocol.html">SelectionProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/SocketClassProtocol.html">SocketClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/SocketProtocol.html">SocketProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/StateSetClassProtocol.html">StateSetClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/StateSetProtocol.html">StateSetProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/StreamableContentIfaceProtocol.html">StreamableContentIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/StreamableContentProtocol.html">StreamableContentProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TableCellIfaceProtocol.html">TableCellIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TableCellProtocol.html">TableCellProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TableIfaceProtocol.html">TableIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TableProtocol.html">TableProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextIfaceProtocol.html">TextIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextProtocol.html">TextProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextRangeProtocol.html">TextRangeProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextRectangleProtocol.html">TextRectangleProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/UtilClassProtocol.html">UtilClassProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/UtilProtocol.html">UtilProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ValueIfaceProtocol.html">ValueIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ValueProtocol.html">ValueProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/WindowIfaceProtocol.html">WindowIfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/WindowProtocol.html">WindowProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ActionIfaceRef.html">ActionIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ActionRef.html">ActionRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/AttributeRef.html">AttributeRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ComponentIfaceRef.html">ComponentIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ComponentRef.html">ComponentRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DocumentIfaceRef.html">DocumentIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DocumentRef.html">DocumentRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EditableTextIfaceRef.html">EditableTextIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EditableTextRef.html">EditableTextRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/GObjectAccessibleClassRef.html">GObjectAccessibleClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/GObjectAccessibleRef.html">GObjectAccessibleRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HyperlinkClassRef.html">HyperlinkClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HyperlinkImplIfaceRef.html">HyperlinkImplIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HyperlinkImplRef.html">HyperlinkImplRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HyperlinkRef.html">HyperlinkRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HyperlinkStateFlags.html">HyperlinkStateFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HypertextIfaceRef.html">HypertextIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HypertextRef.html">HypertextRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ImageIfaceRef.html">ImageIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ImageRef.html">ImageRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ImplementorIfaceRef.html">ImplementorIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ImplementorRef.html">ImplementorRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/KeyEventStructRef.html">KeyEventStructRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MiscClassRef.html">MiscClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MiscRef.html">MiscRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoOpObjectClassRef.html">NoOpObjectClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoOpObjectFactoryClassRef.html">NoOpObjectFactoryClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoOpObjectFactoryRef.html">NoOpObjectFactoryRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoOpObjectRef.html">NoOpObjectRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ObjectClassRef.html">ObjectClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ObjectFactoryClassRef.html">ObjectFactoryClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ObjectFactoryRef.html">ObjectFactoryRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ObjectRef.html">ObjectRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/PlugClassRef.html">PlugClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/PlugRef.html">PlugRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/PropertyValuesRef.html">PropertyValuesRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RangeRef.html">RangeRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RectangleRef.html">RectangleRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RegistryClassRef.html">RegistryClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RegistryRef.html">RegistryRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RelationClassRef.html">RelationClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RelationRef.html">RelationRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RelationSetClassRef.html">RelationSetClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RelationSetRef.html">RelationSetRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SelectionIfaceRef.html">SelectionIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SelectionRef.html">SelectionRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SocketClassRef.html">SocketClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SocketRef.html">SocketRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StateSetClassRef.html">StateSetClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StateSetRef.html">StateSetRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StreamableContentIfaceRef.html">StreamableContentIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/StreamableContentRef.html">StreamableContentRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TableCellIfaceRef.html">TableCellIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TableCellRef.html">TableCellRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TableIfaceRef.html">TableIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TableRef.html">TableRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextIfaceRef.html">TextIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextRangeRef.html">TextRangeRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextRectangleRef.html">TextRectangleRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextRef.html">TextRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/UtilClassRef.html">UtilClassRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/UtilRef.html">UtilRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ValueIfaceRef.html">ValueIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ValueRef.html">ValueRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/WindowIfaceRef.html">WindowIfaceRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/WindowRef.html">WindowRef</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk12AttributeSeta">AttributeSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk9CoordTypea">CoordType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk13EventListenera">EventListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk17EventListenerInita">EventListenerInit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk12FocusHandlera">FocusHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk8Functiona">Function</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk12KeyEventTypea">KeyEventType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk12KeySnoopFunca">KeySnoopFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk5Layera">Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk21PropertyChangeHandlera">PropertyChangeHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk12RelationTypea">RelationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk4Rolea">Role</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk10ScrollTypea">ScrollType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk5Statea">State</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk9StateTypea">StateType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk13TextAttributea">TextAttribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk12TextBoundarya">TextBoundary</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk12TextClipTypea">TextClipType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk15TextGranularitya">TextGranularity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:3Atk9ValueTypea">ValueType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>StateType</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt"><a href="../Typealiases.html#/s:3Atk9StateTypea">StateType</a></span></code></pre>
+
+                </div>
+              </div>
+            
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7invalidABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/invalid" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7invalidABvpZ">invalid</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates an invalid state - probably an error condition.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">invalid</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L780">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E6activeABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/active" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E6activeABvpZ">active</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates a window is currently the active window, or an object is the active subelement within a container or table. ATK_STATE_ACTIVE should not be used for objects which have ATK_STATE_FOCUSABLE or ATK_STATE_SELECTABLE: Those objects should use ATK_STATE_FOCUSED and ATK_STATE_SELECTED respectively. ATK_STATE_ACTIVE is a means to indicate that an object which is not focusable and not selectable is the currently-active item within its parent container.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">active</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L782">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E5armedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/armed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E5armedABvpZ">armed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object is &lsquo;armed&rsquo;, i.e. will be activated by if a pointer button-release event occurs within its bounds.  Buttons often enter this state when a pointer click occurs within their bounds, as a precursor to activation. ATK_STATE_ARMED has been deprecated since ATK-2.16 and should not be used in newly-written code.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">armed</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L784">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E4busyABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/busy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E4busyABvpZ">busy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates the current object is busy, i.e. onscreen representation is in the process of changing, or the object is temporarily unavailable for interaction due to activity already in progress.  This state may be used by implementors of Document to indicate that content loading is underway.  It also may indicate other &lsquo;pending&rsquo; conditions; clients may wish to interrogate this object when the ATK_STATE_BUSY flag is removed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">busy</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L786">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7checkedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/checked" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7checkedABvpZ">checked</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object is currently checked, for instance a checkbox is &lsquo;non-empty&rsquo;.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">checked</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L788">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7defunctABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defunct" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7defunctABvpZ">defunct</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that this object no longer has a valid backing widget (for instance, if its peer object has been destroyed)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">defunct</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L790">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8editableABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/editable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8editableABvpZ">editable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that this object can contain text, and that the
+user can change the textual contents of this object by editing those contents
+directly. For an object which is expected to be editable due to its type, but
+which cannot be edited due to the application or platform preventing the user
+from doing so, that object&rsquo;s <code>AtkStateSet</code> should lack ATK_STATE_EDITABLE and
+should contain ATK_STATE_READ_ONLY.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">editable</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L797">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7enabledABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/enabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7enabledABvpZ">enabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that this object is enabled, i.e. that it currently reflects some application state. Objects that are &ldquo;greyed out&rdquo; may lack this state, and may lack the STATE_SENSITIVE if direct user interaction cannot cause them to acquire STATE_ENABLED. See also: ATK_STATE_SENSITIVE</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">enabled</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L799">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E10expandableABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/expandable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E10expandableABvpZ">expandable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object allows progressive disclosure of its children</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">expandable</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L801">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8expandedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/expanded" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8expandedABvpZ">expanded</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object its expanded - see ATK_STATE_EXPANDABLE above</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">expanded</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L803">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9focusableABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/focusable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9focusableABvpZ">focusable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object can accept keyboard focus, which means all events resulting from typing on the keyboard will normally be passed to it when it has focus</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">focusable</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L805">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7focusedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/focused" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7focusedABvpZ">focused</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object currently has the keyboard focus</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">focused</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L807">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E10horizontalABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/horizontal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E10horizontalABvpZ">horizontal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates the orientation of this object is horizontal; used, for instance, by objects of ATK_ROLE_SCROLL_BAR.  For objects where vertical/horizontal orientation is especially meaningful.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">horizontal</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L809">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9iconifiedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/iconified" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9iconifiedABvpZ">iconified</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object is minimized and is represented only by an icon</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">iconified</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L811">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E5modalABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/modal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E5modalABvpZ">modal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates something must be done with this object before the user can interact with an object in a different window</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">modal</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L813">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9multiLineABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/multiLine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9multiLineABvpZ">multiLine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this (text) object can contain multiple lines of text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">multiLine</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L815">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E15multiselectableABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/multiselectable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E15multiselectableABvpZ">multiselectable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object allows more than one of its children to be selected at the same time, or in the case of text objects, that the object supports non-contiguous text selections.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">multiselectable</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L817">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E6opaqueABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/opaque" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E6opaqueABvpZ">opaque</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object paints every pixel within its rectangular region.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">opaque</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L819">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7pressedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/pressed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7pressedABvpZ">pressed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object is currently pressed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">pressed</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L821">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9resizableABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/resizable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9resizableABvpZ">resizable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates the size of this object is not fixed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">resizable</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L823">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E10selectableABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/selectable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E10selectableABvpZ">selectable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object is the child of an object that allows its children to be selected and that this child is one of those children that can be selected</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">selectable</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L825">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8selectedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/selected" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8selectedABvpZ">selected</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object is the child of an object that allows its children to be selected and that this child is one of those children that has been selected</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">selected</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L827">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9sensitiveABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/sensitive" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9sensitiveABvpZ">sensitive</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object is sensitive, e.g. to user interaction.
+STATE_SENSITIVE usually accompanies STATE_ENABLED for user-actionable controls,
+but may be found in the absence of STATE_ENABLED if the current visible state of the
+control is &ldquo;disconnected&rdquo; from the application state.  In such cases, direct user interaction
+can often result in the object gaining STATE_SENSITIVE, for instance if a user makes
+an explicit selection using an object whose current state is ambiguous or undefined.
+<code>see</code> STATE_ENABLED, STATE_INDETERMINATE.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">sensitive</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L835">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7showingABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/showing" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7showingABvpZ">showing</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object, the object&rsquo;s parent, the object&rsquo;s parent&rsquo;s parent, and so on,
+are all &lsquo;shown&rsquo; to the end-user, i.e. subject to &ldquo;exposure&rdquo; if blocking or obscuring objects do not interpose
+between this object and the top of the window stack.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">showing</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L839">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E10singleLineABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/singleLine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E10singleLineABvpZ">singleLine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this (text) object can contain only a single line of text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">singleLine</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L841">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E5staleABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/stale" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E5staleABvpZ">stale</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the information returned for this object may no longer be
+synchronized with the application state.  This is implied if the object has STATE_TRANSIENT,
+and can also occur towards the end of the object peer&rsquo;s lifecycle. It can also be used to indicate that
+the index associated with this object has changed since the user accessed the object (in lieu of
+&ldquo;index-in-parent-changed&rdquo; events).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">stale</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L847">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9transientABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/transient" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9transientABvpZ">transient</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object is transient, i.e. a snapshot which may not emit events when its
+state changes.  Data from objects with ATK_STATE_TRANSIENT should not be cached, since there may be no
+notification given when the cached data becomes obsolete.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">transient</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L851">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8verticalABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/vertical" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8verticalABvpZ">vertical</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates the orientation of this object is vertical</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">vertical</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L853">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7visibleABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/visible" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7visibleABvpZ">visible</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object is visible, e.g. has been explicitly marked for exposure to the user.
+<strong>note</strong>: <code>ATK_STATE_VISIBLE</code> is no guarantee that the object is actually unobscured on the screen, only
+that it is &lsquo;potentially&rsquo; visible, barring obstruction, being scrolled or clipped out of the
+field of view, or having an ancestor container that has not yet made visible.
+A widget is potentially onscreen if it has both <code>ATK_STATE_VISIBLE</code> and <code>ATK_STATE_SHOWING</code>.
+The absence of <code>ATK_STATE_VISIBLE</code> and <code>ATK_STATE_SHOWING</code> is semantically equivalent to saying
+that an object is &lsquo;hidden&rsquo;.  See also <code>ATK_STATE_TRUNCATED</code>, which applies if an object with
+<code>ATK_STATE_VISIBLE</code> and <code>ATK_STATE_SHOWING</code> set lies within a viewport which means that its
+contents are clipped, e.g. a truncated spreadsheet cell or
+an image within a scrolling viewport.  Mostly useful for screen-review and magnification
+algorithms.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">visible</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L865">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E18managesDescendantsABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/managesDescendants" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E18managesDescendantsABvpZ">managesDescendants</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that &ldquo;active-descendant-changed&rdquo; event
+is sent when children become &lsquo;active&rsquo; (i.e. are selected or navigated to onscreen).
+Used to prevent need to enumerate all children in very large containers, like tables.
+The presence of STATE_MANAGES_DESCENDANTS is an indication to the client.
+that the children should not, and need not, be enumerated by the client.
+Objects implementing this state are expected to provide relevant state
+notifications to listening clients, for instance notifications of visibility
+changes and activation of their contained child objects, without the client
+having previously requested references to those children.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">managesDescendants</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L875">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E13indeterminateABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/indeterminate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E13indeterminateABvpZ">indeterminate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the value, or some other quantifiable
+property, of this AtkObject cannot be fully determined. In the case of a large
+data set in which the total number of items in that set is unknown (e.g. 1 of
+999+), implementors should expose the currently-known set size (999) along
+with this state. In the case of a check box, this state should be used to
+indicate that the check box is a tri-state check box which is currently
+neither checked nor unchecked.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">indeterminate</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L883">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9truncatedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/truncated" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9truncatedABvpZ">truncated</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that an object is truncated, e.g. a text value in a speradsheet cell.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">truncated</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L885">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8requiredABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/required" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8requiredABvpZ">required</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that explicit user interaction with an object is required by the user interface, e.g. a required field in a &ldquo;web-form&rdquo; interface.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">required</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L887">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E12invalidEntryABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/invalidEntry" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E12invalidEntryABvpZ">invalidEntry</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object has encountered an error condition due to failure of input validation. For instance, a form control may acquire this state in response to invalid or malformed user input.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">invalidEntry</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L889">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E22supportsAutocompletionABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/supportsAutocompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E22supportsAutocompletionABvpZ">supportsAutocompletion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object in question implements some form of ¨typeahead¨ or
+pre-selection behavior whereby entering the first character of one or more sub-elements
+causes those elements to scroll into view or become selected.  Subsequent character input
+may narrow the selection further as long as one or more sub-elements match the string.
+This state is normally only useful and encountered on objects that implement Selection.
+In some cases the typeahead behavior may result in full or partial ¨completion¨ of
+the data in the input field, in which case these input events may trigger text-changed
+events from the AtkText interface.  This state supplants <code>ATK_ROLE_AUTOCOMPLETE</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">supportsAutocompletion</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L898">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E14selectableTextABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/selectableText" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E14selectableTextABvpZ">selectableText</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object in question supports text selection. It should only be exposed on objects which implement the Text interface, in order to distinguish this state from <code>ATK_STATE_SELECTABLE</code>, which infers that the object in question is a selectable child of an object which implements Selection. While similar, text selection and subelement selection are distinct operations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">selectableText</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L900">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7defaultABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/default" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7defaultABvpZ">default</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object is the &ldquo;default&rdquo; active component, i.e. the object which is activated by an end-user press of the &ldquo;Enter&rdquo; or &ldquo;Return&rdquo; key.  Typically a &ldquo;close&rdquo; or &ldquo;submit&rdquo; button.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">let</span> <span class="p">`</span><span class="nv">default</span><span class="p">`:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L902">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8animatedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/animated" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8animatedABvpZ">animated</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object changes its appearance dynamically as an inherent part of its presentation.  This state may come and go if an object is only temporarily animated on the way to a &lsquo;final&rsquo; onscreen presentation.
+<strong>note</strong>: some applications, notably content viewers, may not be able to detect
+all kinds of animated content.  Therefore the absence of this state should not
+be taken as definitive evidence that the object&rsquo;s visual representation is
+static; this state is advisory.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L908">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E7visitedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/visited" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E7visitedABvpZ">visited</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object (typically a hyperlink) has already been &lsquo;activated&rsquo;, and/or its backing data has already been downloaded, rendered, or otherwise &ldquo;visited&rdquo;.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">visited</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L910">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9checkableABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/checkable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9checkableABvpZ">checkable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object has the potential to be
+ checked, such as a checkbox or toggle-able table cell. <code>Since:</code>
+ ATK-2.12</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">checkable</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L914">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8hasPopupABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/hasPopup" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8hasPopupABvpZ">hasPopup</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object has a popup context
+menu or sub-level menu which may or may not be showing. This means
+that activation renders conditional content.  Note that ordinary
+tooltips are not considered popups in this context. <code>Since:</code> ATK-2.12</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">hasPopup</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L919">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E10hasTooltipABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/hasTooltip" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E10hasTooltipABvpZ">hasTooltip</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object has a tooltip. <code>Since:</code> ATK-2.16</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">hasTooltip</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L921">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8readOnlyABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/readOnly" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8readOnlyABvpZ">readOnly</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that a widget which is ENABLED and SENSITIVE
+has a value which can be read, but not modified, by the user. Note that this
+state should only be applied to widget types whose value is normally directly
+user modifiable, such as check boxes, radio buttons, spin buttons, text input
+fields, and combo boxes, as a means to convey that the expected interaction
+with that widget is not possible. When the expected interaction with a
+widget does not include modification by the user, as is the case with
+labels and containers, ATK_STATE_READ_ONLY should not be applied. See also
+ATK_STATE_EDITABLE. <code>Since:</code> ATK-2-16</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">readOnly</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L931">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E11lastDefinedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/lastDefined" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E11lastDefinedABvpZ">lastDefined</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Not a valid state, used for finding end of enumeration</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">lastDefined</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L933">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E10multi_lineABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/multi_line" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E10multi_lineABvpZ">multi_line</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this (text) object can contain multiple lines of text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">multi_line</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L935">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E11single_lineABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/single_line" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E11single_lineABvpZ">single_line</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this (text) object can contain only a single line of text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">single_line</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L937">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E19manages_descendantsABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/manages_descendants" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E19manages_descendantsABvpZ">manages_descendants</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that &ldquo;active-descendant-changed&rdquo; event
+is sent when children become &lsquo;active&rsquo; (i.e. are selected or navigated to onscreen).
+Used to prevent need to enumerate all children in very large containers, like tables.
+The presence of STATE_MANAGES_DESCENDANTS is an indication to the client.
+that the children should not, and need not, be enumerated by the client.
+Objects implementing this state are expected to provide relevant state
+notifications to listening clients, for instance notifications of visibility
+changes and activation of their contained child objects, without the client
+having previously requested references to those children.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">manages_descendants</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L947">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9required_ABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/required_" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9required_ABvpZ">required_</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that explicit user interaction with an object is required by the user interface, e.g. a required field in a &ldquo;web-form&rdquo; interface.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">required_</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L949">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E13invalid_entryABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/invalid_entry" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E13invalid_entryABvpZ">invalid_entry</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object has encountered an error condition due to failure of input validation. For instance, a form control may acquire this state in response to invalid or malformed user input.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">invalid_entry</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L951">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E23supports_autocompletionABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/supports_autocompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E23supports_autocompletionABvpZ">supports_autocompletion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object in question implements some form of ¨typeahead¨ or
+pre-selection behavior whereby entering the first character of one or more sub-elements
+causes those elements to scroll into view or become selected.  Subsequent character input
+may narrow the selection further as long as one or more sub-elements match the string.
+This state is normally only useful and encountered on objects that implement Selection.
+In some cases the typeahead behavior may result in full or partial ¨completion¨ of
+the data in the input field, in which case these input events may trigger text-changed
+events from the AtkText interface.  This state supplants <code>ATK_ROLE_AUTOCOMPLETE</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">supports_autocompletion</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L960">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E15selectable_textABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/selectable_text" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E15selectable_textABvpZ">selectable_text</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object in question supports text selection. It should only be exposed on objects which implement the Text interface, in order to distinguish this state from <code>ATK_STATE_SELECTABLE</code>, which infers that the object in question is a selectable child of an object which implements Selection. While similar, text selection and subelement selection are distinct operations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">selectable_text</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L962">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E8default_ABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/default_" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E8default_ABvpZ">default_</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object is the &ldquo;default&rdquo; active component, i.e. the object which is activated by an end-user press of the &ldquo;Enter&rdquo; or &ldquo;Return&rdquo; key.  Typically a &ldquo;close&rdquo; or &ldquo;submit&rdquo; button.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">default_</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L964">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9has_popupABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/has_popup" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9has_popupABvpZ">has_popup</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that the object has a popup context
+menu or sub-level menu which may or may not be showing. This means
+that activation renders conditional content.  Note that ordinary
+tooltips are not considered popups in this context. <code>Since:</code> ATK-2.12</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">has_popup</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L969">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E11has_tooltipABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/has_tooltip" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E11has_tooltipABvpZ">has_tooltip</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates this object has a tooltip. <code>Since:</code> ATK-2.16</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">has_tooltip</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L971">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E9read_onlyABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/read_only" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E9read_onlyABvpZ">read_only</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates that a widget which is ENABLED and SENSITIVE
+has a value which can be read, but not modified, by the user. Note that this
+state should only be applied to widget types whose value is normally directly
+user modifiable, such as check boxes, radio buttons, spin buttons, text input
+fields, and combo boxes, as a means to convey that the expected interaction
+with that widget is not possible. When the expected interaction with a
+widget does not include modification by the user, as is the case with
+labels and containers, ATK_STATE_READ_ONLY should not be applied. See also
+ATK_STATE_EDITABLE. <code>Since:</code> ATK-2-16</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">read_only</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L981">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So12AtkStateTypea0A0E12last_definedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/last_defined" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So12AtkStateTypea0A0E12last_definedABvpZ">last_defined</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Not a valid state, used for finding end of enumeration</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">last_defined</span><span class="p">:</span> <span class="kt">AtkStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-enumerations.swift#L983">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-06-21)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
