@@ -17,7 +17,7 @@ import GLibObject
 /// atk_registry_set_factory_type call, passing the appropriate GType
 /// for application custom widget classes.
 public protocol RegistryProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkRegistry` instance.
+        /// Untyped pointer to the underlying `AtkRegistry` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkRegistry` instance.
@@ -35,7 +35,7 @@ public protocol RegistryProtocol: ObjectProtocol {
 /// atk_registry_set_factory_type call, passing the appropriate GType
 /// for application custom widget classes.
 public struct RegistryRef: RegistryProtocol {
-    /// Untyped pointer to the underlying `AtkRegistry` instance.
+        /// Untyped pointer to the underlying `AtkRegistry` instance.
     /// For type-safe access, use the generated, typed pointer `registry_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -93,7 +93,7 @@ public extension RegistryRef {
 /// atk_registry_set_factory_type call, passing the appropriate GType
 /// for application custom widget classes.
 open class Registry: Object, RegistryProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Registry` instance.
     /// - Parameter op: pointer to the underlying object
@@ -175,7 +175,7 @@ open class Registry: Object, RegistryProtocol {
 
 }
 
-// MARK: - no Registry properties
+// MARK: no Registry properties
 
 public enum RegistrySignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -212,8 +212,8 @@ public extension RegistryProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: RegistrySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: RegistrySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(registry_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -234,6 +234,7 @@ public extension RegistryProtocol {
     }
 }
 
+// MARK: Registry Class: RegistryProtocol extension (methods and fields)
 public extension RegistryProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRegistry` instance.
     var registry_ptr: UnsafeMutablePointer<AtkRegistry> { return ptr.assumingMemoryBound(to: AtkRegistry.self) }
@@ -241,7 +242,7 @@ public extension RegistryProtocol {
     /// Gets an `AtkObjectFactory` appropriate for creating `AtkObjects`
     /// appropriate for `type`.
     func getFactory(type: GType) -> UnsafeMutablePointer<AtkObjectFactory>! {
-        let rv = atk_registry_get_factory(cast(registry_ptr), type)
+        let rv: UnsafeMutablePointer<AtkObjectFactory>! = cast(atk_registry_get_factory(cast(registry_ptr), type))
         return cast(rv)
     }
 
@@ -249,7 +250,7 @@ public extension RegistryProtocol {
     /// associated with `type`.
     func getFactory(type: GType) -> GType {
         let rv = atk_registry_get_factory_type(cast(registry_ptr), type)
-        return rv
+        return cast(rv)
     }
 
     /// Associate an `AtkObjectFactory` subclass with a `GType`. Note:
@@ -260,6 +261,28 @@ public extension RegistryProtocol {
         atk_registry_set_factory_type(cast(registry_ptr), type, factory_type)
     
     }
+
+    var parent: GObject {
+        get {
+            let rv: GObject = cast(registry_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    var factoryTypeRegistry: UnsafeMutablePointer<GHashTable> {
+        get {
+            let rv: UnsafeMutablePointer<GHashTable> = cast(registry_ptr.pointee.factory_type_registry)
+            return rv
+        }
+    }
+
+    var factorySingletonCache: UnsafeMutablePointer<GHashTable> {
+        get {
+            let rv: UnsafeMutablePointer<GHashTable> = cast(registry_ptr.pointee.factory_singleton_cache)
+            return rv
+        }
+    }
+
 }
 
 
@@ -276,7 +299,7 @@ public extension RegistryProtocol {
 /// other objects are defined as an AtkRelationSet, which is a set of
 /// AtkRelations.
 public protocol RelationProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkRelation` instance.
+        /// Untyped pointer to the underlying `AtkRelation` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkRelation` instance.
@@ -292,7 +315,7 @@ public protocol RelationProtocol: ObjectProtocol {
 /// other objects are defined as an AtkRelationSet, which is a set of
 /// AtkRelations.
 public struct RelationRef: RelationProtocol {
-    /// Untyped pointer to the underlying `AtkRelation` instance.
+        /// Untyped pointer to the underlying `AtkRelation` instance.
     /// For type-safe access, use the generated, typed pointer `relation_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -340,7 +363,7 @@ public extension RelationRef {
         /// Create a new relation for the specified key and the specified list
     /// of targets.  See also `atk_object_add_relationship()`.
     init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>>, nTargets n_targets: CInt, relationship: RelationType) {
-        let rv = atk_relation_new(cast(targets), gint(n_targets), relationship)
+        let rv: UnsafeMutablePointer<AtkRelation>! = cast(atk_relation_new(cast(targets), gint(n_targets), relationship))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -354,7 +377,7 @@ public extension RelationRef {
 /// other objects are defined as an AtkRelationSet, which is a set of
 /// AtkRelations.
 open class Relation: Object, RelationProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Relation` instance.
     /// - Parameter op: pointer to the underlying object
@@ -435,7 +458,7 @@ open class Relation: Object, RelationProtocol {
     /// Create a new relation for the specified key and the specified list
     /// of targets.  See also `atk_object_add_relationship()`.
     public init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>>, nTargets n_targets: CInt, relationship: RelationType) {
-        let rv = atk_relation_new(cast(targets), gint(n_targets), relationship)
+        let rv: UnsafeMutablePointer<AtkRelation>! = cast(atk_relation_new(cast(targets), gint(n_targets), relationship))
         super.init(cast(rv))
     }
 
@@ -456,8 +479,8 @@ public extension RelationProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: RelationPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default_, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
-        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default_, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
+    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: RelationPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
             let to   = unsafeBitCast(transform_to,   to: BindingTransformFunc.self)
@@ -480,6 +503,23 @@ public extension RelationProtocol {
             return holder.transform_to(GLibObject.ValueRef(raw: $1), GLibObject.ValueRef(raw: $2)) ? 1 : 0
         }
         return rv
+    }
+
+    /// Get the value of a Relation property
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func get(property: RelationPropertyName) -> GLibObject.Value {
+        let v = GLibObject.Value()
+        g_object_get_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
+        return v
+    }
+
+    /// Set the value of a Relation property.
+    /// *Note* that this will only have an effect on properties that are writable and not construct-only!
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func set(property: RelationPropertyName, value v: GLibObject.Value) {
+        g_object_set_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
     }
 }
 
@@ -519,8 +559,8 @@ public extension RelationProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: RelationSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: RelationSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(relation_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -541,6 +581,7 @@ public extension RelationProtocol {
     }
 }
 
+// MARK: Relation Class: RelationProtocol extension (methods and fields)
 public extension RelationProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRelation` instance.
     var relation_ptr: UnsafeMutablePointer<AtkRelation> { return ptr.assumingMemoryBound(to: AtkRelation.self) }
@@ -555,12 +596,12 @@ public extension RelationProtocol {
     /// Gets the type of `relation`
     func getRelationType() -> AtkRelationType {
         let rv = atk_relation_get_relation_type(cast(relation_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the target list of `relation`
     func getTarget() -> UnsafeMutablePointer<GPtrArray>! {
-        let rv = atk_relation_get_target(cast(relation_ptr))
+        let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_relation_get_target(cast(relation_ptr)))
         return cast(rv)
     }
 
@@ -574,17 +615,34 @@ public extension RelationProtocol {
         /// Gets the type of `relation`
         get {
             let rv = atk_relation_get_relation_type(cast(relation_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
     var target: UnsafeMutablePointer<GPtrArray>! {
         /// Gets the target list of `relation`
         get {
-            let rv = atk_relation_get_target(cast(relation_ptr))
+            let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_relation_get_target(cast(relation_ptr)))
             return cast(rv)
         }
     }
+
+    var parent: GObject {
+        get {
+            let rv: GObject = cast(relation_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var _target is unavailable because target is void
+
+    var relationship: AtkRelationType {
+        get {
+            let rv: AtkRelationType = cast(relation_ptr.pointee.relationship)
+            return rv
+        }
+    }
+
 }
 
 
@@ -605,7 +663,7 @@ public extension RelationProtocol {
 /// content which "flows" between them, among other types of possible
 /// relationships.
 public protocol RelationSetProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkRelationSet` instance.
+        /// Untyped pointer to the underlying `AtkRelationSet` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkRelationSet` instance.
@@ -625,7 +683,7 @@ public protocol RelationSetProtocol: ObjectProtocol {
 /// content which "flows" between them, among other types of possible
 /// relationships.
 public struct RelationSetRef: RelationSetProtocol {
-    /// Untyped pointer to the underlying `AtkRelationSet` instance.
+        /// Untyped pointer to the underlying `AtkRelationSet` instance.
     /// For type-safe access, use the generated, typed pointer `relation_set_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -672,7 +730,7 @@ public extension RelationSetRef {
 
         /// Creates a new empty relation set.
     init() {
-        let rv = atk_relation_set_new()
+        let rv: UnsafeMutablePointer<AtkRelationSet>! = cast(atk_relation_set_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -690,7 +748,7 @@ public extension RelationSetRef {
 /// content which "flows" between them, among other types of possible
 /// relationships.
 open class RelationSet: Object, RelationSetProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `RelationSet` instance.
     /// - Parameter op: pointer to the underlying object
@@ -770,14 +828,14 @@ open class RelationSet: Object, RelationSetProtocol {
 
     /// Creates a new empty relation set.
     public init() {
-        let rv = atk_relation_set_new()
+        let rv: UnsafeMutablePointer<AtkRelationSet>! = cast(atk_relation_set_new())
         super.init(cast(rv))
     }
 
 
 }
 
-// MARK: - no RelationSet properties
+// MARK: no RelationSet properties
 
 public enum RelationSetSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -814,8 +872,8 @@ public extension RelationSetProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: RelationSetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: RelationSetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(relation_set_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -836,6 +894,7 @@ public extension RelationSetProtocol {
     }
 }
 
+// MARK: RelationSet Class: RelationSetProtocol extension (methods and fields)
 public extension RelationSetProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRelationSet` instance.
     var relation_set_ptr: UnsafeMutablePointer<AtkRelationSet> { return ptr.assumingMemoryBound(to: AtkRelationSet.self) }
@@ -875,20 +934,20 @@ public extension RelationSetProtocol {
     }
 
     /// Determines the number of relations in a relation set.
-    func getNRelations() -> CInt {
-        let rv = atk_relation_set_get_n_relations(cast(relation_set_ptr))
-        return CInt(rv)
+    func getNRelations() -> Int {
+        let rv: Int = cast(atk_relation_set_get_n_relations(cast(relation_set_ptr)))
+        return Int(rv)
     }
 
     /// Determines the relation at the specified position in the relation set.
     func getRelation(i: CInt) -> UnsafeMutablePointer<AtkRelation>! {
-        let rv = atk_relation_set_get_relation(cast(relation_set_ptr), gint(i))
+        let rv: UnsafeMutablePointer<AtkRelation>! = cast(atk_relation_set_get_relation(cast(relation_set_ptr), gint(i)))
         return cast(rv)
     }
 
     /// Finds a relation that matches the specified type.
     func getRelationByType(relationship: RelationType) -> UnsafeMutablePointer<AtkRelation>! {
-        let rv = atk_relation_set_get_relation_by_type(cast(relation_set_ptr), relationship)
+        let rv: UnsafeMutablePointer<AtkRelation>! = cast(atk_relation_set_get_relation_by_type(cast(relation_set_ptr), relationship))
         return cast(rv)
     }
 
@@ -900,13 +959,23 @@ public extension RelationSetProtocol {
     
     }
     /// Determines the number of relations in a relation set.
-    var nRelations: CInt {
+    var nRelations: Int {
         /// Determines the number of relations in a relation set.
         get {
-            let rv = atk_relation_set_get_n_relations(cast(relation_set_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_relation_set_get_n_relations(cast(relation_set_ptr)))
+            return Int(rv)
         }
     }
+
+    var parent: GObject {
+        get {
+            let rv: GObject = cast(relation_set_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var relations is unavailable because relations is void
+
 }
 
 
@@ -941,7 +1010,7 @@ public extension RelationSetProtocol {
 /// `atk_object_ref_accessible_child()`. All the logic related to those
 /// functions will be implemented by the IPC layer.
 public protocol SocketProtocol: ObjectProtocol, ComponentProtocol {
-    /// Untyped pointer to the underlying `AtkSocket` instance.
+        /// Untyped pointer to the underlying `AtkSocket` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkSocket` instance.
@@ -975,7 +1044,7 @@ public protocol SocketProtocol: ObjectProtocol, ComponentProtocol {
 /// `atk_object_ref_accessible_child()`. All the logic related to those
 /// functions will be implemented by the IPC layer.
 public struct SocketRef: SocketProtocol {
-    /// Untyped pointer to the underlying `AtkSocket` instance.
+        /// Untyped pointer to the underlying `AtkSocket` instance.
     /// For type-safe access, use the generated, typed pointer `socket_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1022,7 +1091,7 @@ public extension SocketRef {
 
         /// Creates a new `AtkSocket`.
     init() {
-        let rv = atk_socket_new()
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_socket_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -1054,7 +1123,7 @@ public extension SocketRef {
 /// `atk_object_ref_accessible_child()`. All the logic related to those
 /// functions will be implemented by the IPC layer.
 open class Socket: Object, SocketProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Socket` instance.
     /// - Parameter op: pointer to the underlying object
@@ -1134,7 +1203,7 @@ open class Socket: Object, SocketProtocol {
 
     /// Creates a new `AtkSocket`.
     public init() {
-        let rv = atk_socket_new()
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_socket_new())
         super.init(cast(rv))
     }
 
@@ -1198,8 +1267,8 @@ public extension SocketProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: SocketPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default_, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
-        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default_, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
+    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: SocketPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
             let to   = unsafeBitCast(transform_to,   to: BindingTransformFunc.self)
@@ -1222,6 +1291,23 @@ public extension SocketProtocol {
             return holder.transform_to(GLibObject.ValueRef(raw: $1), GLibObject.ValueRef(raw: $2)) ? 1 : 0
         }
         return rv
+    }
+
+    /// Get the value of a Socket property
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func get(property: SocketPropertyName) -> GLibObject.Value {
+        let v = GLibObject.Value()
+        g_object_get_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
+        return v
+    }
+
+    /// Set the value of a Socket property.
+    /// *Note* that this will only have an effect on properties that are writable and not construct-only!
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func set(property: SocketPropertyName, value v: GLibObject.Value) {
+        g_object_set_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
     }
 }
 
@@ -1340,8 +1426,8 @@ public extension SocketProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: SocketSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: SocketSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(socket_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -1362,6 +1448,7 @@ public extension SocketProtocol {
     }
 }
 
+// MARK: Socket Class: SocketProtocol extension (methods and fields)
 public extension SocketProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkSocket` instance.
     var socket_ptr: UnsafeMutablePointer<AtkSocket> { return ptr.assumingMemoryBound(to: AtkSocket.self) }
@@ -1376,7 +1463,7 @@ public extension SocketProtocol {
     /// by `atk_plug_get_id()`.  It is the responsibility of the application
     /// to pass the plug id on to the process implementing the `AtkSocket`
     /// as needed.
-    func embed(plugId plug_id: UnsafeMutablePointer<gchar>) {
+    func embed(plugId plug_id: UnsafePointer<gchar>) {
         atk_socket_embed(cast(socket_ptr), plug_id)
     
     }
@@ -1388,6 +1475,16 @@ public extension SocketProtocol {
             return Bool(rv != 0)
         }
     }
+
+    var parent: AtkObject {
+        get {
+            let rv: AtkObject = cast(socket_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var embeddedPlugId is unavailable because embedded_plug_id is private
+
 }
 
 

@@ -14,7 +14,7 @@ import GLibObject
 /// this is created by an AtkRegistry if no factory type has not been
 /// specified to create an accessible object of a particular type.
 public protocol NoOpObjectFactoryProtocol: ObjectFactoryProtocol {
-    /// Untyped pointer to the underlying `AtkNoOpObjectFactory` instance.
+        /// Untyped pointer to the underlying `AtkNoOpObjectFactory` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkNoOpObjectFactory` instance.
@@ -29,7 +29,7 @@ public protocol NoOpObjectFactoryProtocol: ObjectFactoryProtocol {
 /// this is created by an AtkRegistry if no factory type has not been
 /// specified to create an accessible object of a particular type.
 public struct NoOpObjectFactoryRef: NoOpObjectFactoryProtocol {
-    /// Untyped pointer to the underlying `AtkNoOpObjectFactory` instance.
+        /// Untyped pointer to the underlying `AtkNoOpObjectFactory` instance.
     /// For type-safe access, use the generated, typed pointer `no_op_object_factory_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -77,7 +77,7 @@ public extension NoOpObjectFactoryRef {
         /// Creates an instance of an `AtkObjectFactory` which generates primitive
     /// (non-functioning) `AtkObjects`.
     init() {
-        let rv = atk_no_op_object_factory_new()
+        let rv: UnsafeMutablePointer<AtkObjectFactory>! = cast(atk_no_op_object_factory_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -90,7 +90,7 @@ public extension NoOpObjectFactoryRef {
 /// this is created by an AtkRegistry if no factory type has not been
 /// specified to create an accessible object of a particular type.
 open class NoOpObjectFactory: ObjectFactory, NoOpObjectFactoryProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `NoOpObjectFactory` instance.
     /// - Parameter op: pointer to the underlying object
@@ -171,14 +171,14 @@ open class NoOpObjectFactory: ObjectFactory, NoOpObjectFactoryProtocol {
     /// Creates an instance of an `AtkObjectFactory` which generates primitive
     /// (non-functioning) `AtkObjects`.
     public init() {
-        let rv = atk_no_op_object_factory_new()
+        let rv: UnsafeMutablePointer<AtkObjectFactory>! = cast(atk_no_op_object_factory_new())
         super.init(cast(rv))
     }
 
 
 }
 
-// MARK: - no NoOpObjectFactory properties
+// MARK: no NoOpObjectFactory properties
 
 public enum NoOpObjectFactorySignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -215,8 +215,8 @@ public extension NoOpObjectFactoryProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: NoOpObjectFactorySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: NoOpObjectFactorySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(no_op_object_factory_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -237,9 +237,18 @@ public extension NoOpObjectFactoryProtocol {
     }
 }
 
+// MARK: NoOpObjectFactory Class: NoOpObjectFactoryProtocol extension (methods and fields)
 public extension NoOpObjectFactoryProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkNoOpObjectFactory` instance.
     var no_op_object_factory_ptr: UnsafeMutablePointer<AtkNoOpObjectFactory> { return ptr.assumingMemoryBound(to: AtkNoOpObjectFactory.self) }
+
+
+    var parent: AtkObjectFactory {
+        get {
+            let rv: AtkObjectFactory = cast(no_op_object_factory_ptr.pointee.parent)
+            return rv
+        }
+    }
 
 }
 
@@ -273,7 +282,7 @@ public extension NoOpObjectFactoryProtocol {
 /// See also: `AtkObjectFactory`, `AtkRegistry`.  (GTK+ users see also
 /// `GtkAccessible`).
 public protocol ObjectProtocol: GLibObject.ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkObject` instance.
+        /// Untyped pointer to the underlying `AtkObject` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkObject` instance.
@@ -305,7 +314,7 @@ public protocol ObjectProtocol: GLibObject.ObjectProtocol {
 /// See also: `AtkObjectFactory`, `AtkRegistry`.  (GTK+ users see also
 /// `GtkAccessible`).
 public struct ObjectRef: ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkObject` instance.
+        /// Untyped pointer to the underlying `AtkObject` instance.
     /// For type-safe access, use the generated, typed pointer `object_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -377,7 +386,7 @@ public extension ObjectRef {
 /// See also: `AtkObjectFactory`, `AtkRegistry`.  (GTK+ users see also
 /// `GtkAccessible`).
 open class Object: GLibObject.Object, ObjectProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Object` instance.
     /// - Parameter op: pointer to the underlying object
@@ -516,8 +525,8 @@ public extension ObjectProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: ObjectPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default_, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
-        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default_, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
+    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: ObjectPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
             let to   = unsafeBitCast(transform_to,   to: BindingTransformFunc.self)
@@ -540,6 +549,23 @@ public extension ObjectProtocol {
             return holder.transform_to(GLibObject.ValueRef(raw: $1), GLibObject.ValueRef(raw: $2)) ? 1 : 0
         }
         return rv
+    }
+
+    /// Get the value of a Object property
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func get(property: ObjectPropertyName) -> GLibObject.Value {
+        let v = GLibObject.Value()
+        g_object_get_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
+        return v
+    }
+
+    /// Set the value of a Object property.
+    /// *Note* that this will only have an effect on properties that are writable and not construct-only!
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func set(property: ObjectPropertyName, value v: GLibObject.Value) {
+        g_object_set_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
     }
 }
 
@@ -658,8 +684,8 @@ public extension ObjectProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: ObjectSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: ObjectSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(object_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -680,6 +706,7 @@ public extension ObjectProtocol {
     }
 }
 
+// MARK: Object Class: ObjectProtocol extension (methods and fields)
 public extension ObjectProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkObject` instance.
     var object_ptr: UnsafeMutablePointer<AtkObject> { return ptr.assumingMemoryBound(to: AtkObject.self) }
@@ -695,15 +722,15 @@ public extension ObjectProtocol {
     /// **connect_property_change_handler is deprecated:**
     /// Connect directly to #AtkObject::property-change or
     ///   the relevant #GObject::notify signal for each desired property.
-    @available(*, deprecated) func connectPropertyChange(handler: UnsafeMutablePointer<AtkPropertyChangeHandler>) -> CUnsignedInt {
-        let rv = atk_object_connect_property_change_handler(cast(object_ptr), cast(handler))
-        return CUnsignedInt(rv)
+    @available(*, deprecated) func connectPropertyChange(handler: UnsafeMutablePointer<AtkPropertyChangeHandler>) -> Int {
+        let rv: Int = cast(atk_object_connect_property_change_handler(cast(object_ptr), cast(handler)))
+        return Int(rv)
     }
 
     /// Gets the accessible id of the accessible.
     func getAccessibleId() -> String! {
-        let rv = atk_object_get_accessible_id(cast(object_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_object_get_accessible_id(cast(object_ptr)))
+        return cast(rv)
     }
 
     /// Get a list of properties applied to this object as a whole, as an `AtkAttributeSet` consisting of
@@ -711,21 +738,21 @@ public extension ObjectProtocol {
     /// as distinct from strongly-typed object data available via other get/set methods.
     /// Not all objects have explicit "name-value pair" `AtkAttributeSet` properties.
     func getAttributes() -> UnsafeMutablePointer<AtkAttributeSet>! {
-        let rv = atk_object_get_attributes(cast(object_ptr))
+        let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_object_get_attributes(cast(object_ptr)))
         return cast(rv)
     }
 
     /// Gets the accessible description of the accessible.
     func getDescription() -> String! {
-        let rv = atk_object_get_description(cast(object_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_object_get_description(cast(object_ptr)))
+        return cast(rv)
     }
 
     /// Gets the 0-based index of this accessible in its parent; returns -1 if the
     /// accessible does not have an accessible parent.
-    func getIndexInParent() -> CInt {
-        let rv = atk_object_get_index_in_parent(cast(object_ptr))
-        return CInt(rv)
+    func getIndexInParent() -> Int {
+        let rv: Int = cast(atk_object_get_index_in_parent(cast(object_ptr)))
+        return Int(rv)
     }
 
     /// Gets the layer of the accessible.
@@ -734,7 +761,7 @@ public extension ObjectProtocol {
     /// Use atk_component_get_layer instead.
     @available(*, deprecated) func getLayer() -> AtkLayer {
         let rv = atk_object_get_layer(cast(object_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the zorder of the accessible. The value G_MININT will be returned
@@ -742,28 +769,28 @@ public extension ObjectProtocol {
     ///
     /// **get_mdi_zorder is deprecated:**
     /// Use atk_component_get_mdi_zorder instead.
-    @available(*, deprecated) func getMdiZorder() -> CInt {
-        let rv = atk_object_get_mdi_zorder(cast(object_ptr))
-        return CInt(rv)
+    @available(*, deprecated) func getMdiZorder() -> Int {
+        let rv: Int = cast(atk_object_get_mdi_zorder(cast(object_ptr)))
+        return Int(rv)
     }
 
     /// Gets the number of accessible children of the accessible.
-    func getNAccessibleChildren() -> CInt {
-        let rv = atk_object_get_n_accessible_children(cast(object_ptr))
-        return CInt(rv)
+    func getNAccessibleChildren() -> Int {
+        let rv: Int = cast(atk_object_get_n_accessible_children(cast(object_ptr)))
+        return Int(rv)
     }
 
     /// Gets the accessible name of the accessible.
     func getName() -> String! {
-        let rv = atk_object_get_name(cast(object_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_object_get_name(cast(object_ptr)))
+        return cast(rv)
     }
 
     /// Gets a UTF-8 string indicating the POSIX-style LC_MESSAGES locale
     /// of `accessible`.
     func getObjectLocale() -> String! {
-        let rv = atk_object_get_object_locale(cast(object_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_object_get_object_locale(cast(object_ptr)))
+        return cast(rv)
     }
 
     /// Gets the accessible parent of the accessible. By default this is
@@ -775,14 +802,14 @@ public extension ObjectProtocol {
     /// If you are only interested on the parent assigned with
     /// `atk_object_set_parent()`, use `atk_object_peek_parent()`.
     func getParent() -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_object_get_parent(cast(object_ptr))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_object_get_parent(cast(object_ptr)))
         return cast(rv)
     }
 
     /// Gets the role of the accessible.
     func getRole() -> AtkRole {
         let rv = atk_object_get_role(cast(object_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// This function is called when implementing subclasses of `AtkObject`.
@@ -811,7 +838,7 @@ public extension ObjectProtocol {
     /// to be exposed to accessible tools. See `atk_object_get_parent()` for
     /// further reference.
     func peekParent() -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_object_peek_parent(cast(object_ptr))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_object_peek_parent(cast(object_ptr)))
         return cast(rv)
     }
 
@@ -819,20 +846,20 @@ public extension ObjectProtocol {
     /// The accessible children are 0-based so the first accessible child is
     /// at index 0, the second at index 1 and so on.
     func refAccessibleChild(i: CInt) -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_object_ref_accessible_child(cast(object_ptr), gint(i))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_object_ref_accessible_child(cast(object_ptr), gint(i)))
         return cast(rv)
     }
 
     /// Gets the `AtkRelationSet` associated with the object.
     func refRelationSet() -> UnsafeMutablePointer<AtkRelationSet>! {
-        let rv = atk_object_ref_relation_set(cast(object_ptr))
+        let rv: UnsafeMutablePointer<AtkRelationSet>! = cast(atk_object_ref_relation_set(cast(object_ptr)))
         return cast(rv)
     }
 
     /// Gets a reference to the state set of the accessible; the caller must
     /// unreference it when it is no longer needed.
     func refStateSet() -> UnsafeMutablePointer<AtkStateSet>! {
-        let rv = atk_object_ref_state_set(cast(object_ptr))
+        let rv: UnsafeMutablePointer<AtkStateSet>! = cast(atk_object_ref_state_set(cast(object_ptr)))
         return cast(rv)
     }
 
@@ -908,8 +935,8 @@ public extension ObjectProtocol {
     var accessibleId: String! {
         /// Gets the accessible id of the accessible.
         get {
-            let rv = atk_object_get_accessible_id(cast(object_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_object_get_accessible_id(cast(object_ptr)))
+            return cast(rv)
         }
         /// Sets the accessible ID of the accessible.  This is not meant to be presented
         /// to the user, but to be an ID which is stable over application development.
@@ -917,7 +944,7 @@ public extension ObjectProtocol {
         /// instance to identify a given well-known accessible object for tailored screen
         /// reading, or for automatic regression testing.
         nonmutating set {
-            atk_object_set_accessible_id(cast(object_ptr), newValue)
+            atk_object_set_accessible_id(cast(object_ptr), cast(newValue))
         }
     }
 
@@ -931,7 +958,7 @@ public extension ObjectProtocol {
         /// as distinct from strongly-typed object data available via other get/set methods.
         /// Not all objects have explicit "name-value pair" `AtkAttributeSet` properties.
         get {
-            let rv = atk_object_get_attributes(cast(object_ptr))
+            let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_object_get_attributes(cast(object_ptr)))
             return cast(rv)
         }
     }
@@ -940,26 +967,26 @@ public extension ObjectProtocol {
     var description: String! {
         /// Gets the accessible description of the accessible.
         get {
-            let rv = atk_object_get_description(cast(object_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_object_get_description(cast(object_ptr)))
+            return cast(rv)
         }
         /// Sets the accessible description of the accessible. You can't set
         /// the description to NULL. This is reserved for the initial value. In
         /// this aspect NULL is similar to ATK_ROLE_UNKNOWN. If you want to set
         /// the name to a empty value you can use "".
         nonmutating set {
-            atk_object_set_description(cast(object_ptr), newValue)
+            atk_object_set_description(cast(object_ptr), cast(newValue))
         }
     }
 
     /// Gets the 0-based index of this accessible in its parent; returns -1 if the
     /// accessible does not have an accessible parent.
-    var indexInParent: CInt {
+    var indexInParent: Int {
         /// Gets the 0-based index of this accessible in its parent; returns -1 if the
         /// accessible does not have an accessible parent.
         get {
-            let rv = atk_object_get_index_in_parent(cast(object_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_object_get_index_in_parent(cast(object_ptr)))
+            return Int(rv)
         }
     }
 
@@ -974,7 +1001,7 @@ public extension ObjectProtocol {
         /// Use atk_component_get_layer instead.
         @available(*, deprecated) get {
             let rv = atk_object_get_layer(cast(object_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
@@ -983,24 +1010,24 @@ public extension ObjectProtocol {
     ///
     /// **get_mdi_zorder is deprecated:**
     /// Use atk_component_get_mdi_zorder instead.
-    var mdiZorder: CInt {
+    var mdiZorder: Int {
         /// Gets the zorder of the accessible. The value G_MININT will be returned
         /// if the layer of the accessible is not ATK_LAYER_MDI.
         ///
         /// **get_mdi_zorder is deprecated:**
         /// Use atk_component_get_mdi_zorder instead.
         @available(*, deprecated) get {
-            let rv = atk_object_get_mdi_zorder(cast(object_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_object_get_mdi_zorder(cast(object_ptr)))
+            return Int(rv)
         }
     }
 
     /// Gets the number of accessible children of the accessible.
-    var nAccessibleChildren: CInt {
+    var nAccessibleChildren: Int {
         /// Gets the number of accessible children of the accessible.
         get {
-            let rv = atk_object_get_n_accessible_children(cast(object_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_object_get_n_accessible_children(cast(object_ptr)))
+            return Int(rv)
         }
     }
 
@@ -1008,15 +1035,15 @@ public extension ObjectProtocol {
     var name: String! {
         /// Gets the accessible name of the accessible.
         get {
-            let rv = atk_object_get_name(cast(object_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_object_get_name(cast(object_ptr)))
+            return cast(rv)
         }
         /// Sets the accessible name of the accessible. You can't set the name
         /// to NULL. This is reserved for the initial value. In this aspect
         /// NULL is similar to ATK_ROLE_UNKNOWN. If you want to set the name to
         /// a empty value you can use "".
         nonmutating set {
-            atk_object_set_name(cast(object_ptr), newValue)
+            atk_object_set_name(cast(object_ptr), cast(newValue))
         }
     }
 
@@ -1026,8 +1053,8 @@ public extension ObjectProtocol {
         /// Gets a UTF-8 string indicating the POSIX-style LC_MESSAGES locale
         /// of `accessible`.
         get {
-            let rv = atk_object_get_object_locale(cast(object_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_object_get_object_locale(cast(object_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1049,7 +1076,7 @@ public extension ObjectProtocol {
         /// If you are only interested on the parent assigned with
         /// `atk_object_set_parent()`, use `atk_object_peek_parent()`.
         get {
-            let rv = atk_object_get_parent(cast(object_ptr))
+            let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_object_get_parent(cast(object_ptr)))
             return cast(rv)
         }
         /// Sets the accessible parent of the accessible. `parent` can be NULL.
@@ -1063,13 +1090,63 @@ public extension ObjectProtocol {
         /// Gets the role of the accessible.
         get {
             let rv = atk_object_get_role(cast(object_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the role of the accessible.
         nonmutating set {
-            atk_object_set_role(cast(object_ptr), newValue)
+            atk_object_set_role(cast(object_ptr), cast(newValue))
         }
     }
+
+    var _parent: GObject {
+        get {
+            let rv: GObject = cast(object_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    var _description: UnsafePointer<CChar> {
+        get {
+            let rv: UnsafePointer<CChar> = cast(object_ptr.pointee.description)
+            return rv
+        }
+    }
+
+    var _name: UnsafePointer<CChar> {
+        get {
+            let rv: UnsafePointer<CChar> = cast(object_ptr.pointee.name)
+            return rv
+        }
+    }
+
+    var accessibleParent: UnsafeMutablePointer<AtkObject> {
+        get {
+            let rv: UnsafeMutablePointer<AtkObject> = cast(object_ptr.pointee.accessible_parent)
+            return rv
+        }
+    }
+
+    var _role: AtkRole {
+        get {
+            let rv: AtkRole = cast(object_ptr.pointee.role)
+            return rv
+        }
+    }
+
+    var relationSet: UnsafeMutablePointer<AtkRelationSet> {
+        get {
+            let rv: UnsafeMutablePointer<AtkRelationSet> = cast(object_ptr.pointee.relation_set)
+            return rv
+        }
+    }
+
+    var _layer: AtkLayer {
+        get {
+            let rv: AtkLayer = cast(object_ptr.pointee.layer)
+            return rv
+        }
+    }
+
 }
 
 

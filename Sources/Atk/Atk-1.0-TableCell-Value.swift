@@ -16,7 +16,7 @@ import GLibObject
 /// 
 /// See also `AtkTable`.
 public protocol TableCellProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkTableCell` instance.
+        /// Untyped pointer to the underlying `AtkTableCell` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkTableCell` instance.
@@ -33,7 +33,7 @@ public protocol TableCellProtocol: ObjectProtocol {
 /// 
 /// See also `AtkTable`.
 public struct TableCellRef: TableCellProtocol {
-    /// Untyped pointer to the underlying `AtkTableCell` instance.
+        /// Untyped pointer to the underlying `AtkTableCell` instance.
     /// For type-safe access, use the generated, typed pointer `table_cell_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -90,7 +90,7 @@ public extension TableCellRef {
 /// 
 /// See also `AtkTable`.
 open class TableCell: Object, TableCellProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `TableCell` instance.
     /// - Parameter op: pointer to the underlying object
@@ -229,8 +229,8 @@ public extension TableCellProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: TableCellPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default_, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
-        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default_, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
+    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: TableCellPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
             let to   = unsafeBitCast(transform_to,   to: BindingTransformFunc.self)
@@ -253,6 +253,23 @@ public extension TableCellProtocol {
             return holder.transform_to(GLibObject.ValueRef(raw: $1), GLibObject.ValueRef(raw: $2)) ? 1 : 0
         }
         return rv
+    }
+
+    /// Get the value of a TableCell property
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func get(property: TableCellPropertyName) -> GLibObject.Value {
+        let v = GLibObject.Value()
+        g_object_get_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
+        return v
+    }
+
+    /// Set the value of a TableCell property.
+    /// *Note* that this will only have an effect on properties that are writable and not construct-only!
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func set(property: TableCellPropertyName, value v: GLibObject.Value) {
+        g_object_set_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
     }
 }
 
@@ -371,8 +388,8 @@ public extension TableCellProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: TableCellSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: TableCellSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(table_cell_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -393,20 +410,21 @@ public extension TableCellProtocol {
     }
 }
 
+// MARK: TableCell Interface: TableCellProtocol extension (methods and fields)
 public extension TableCellProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTableCell` instance.
     var table_cell_ptr: UnsafeMutablePointer<AtkTableCell> { return ptr.assumingMemoryBound(to: AtkTableCell.self) }
 
     /// Returns the column headers as an array of cell accessibles.
     func getColumnHeaderCells() -> UnsafeMutablePointer<GPtrArray>! {
-        let rv = atk_table_cell_get_column_header_cells(cast(table_cell_ptr))
+        let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_table_cell_get_column_header_cells(cast(table_cell_ptr)))
         return cast(rv)
     }
 
     /// Returns the number of columns occupied by this cell accessible.
-    func getColumnSpan() -> CInt {
-        let rv = atk_table_cell_get_column_span(cast(table_cell_ptr))
-        return CInt(rv)
+    func getColumnSpan() -> Int {
+        let rv: Int = cast(atk_table_cell_get_column_span(cast(table_cell_ptr)))
+        return Int(rv)
     }
 
     /// Retrieves the tabular position of this cell.
@@ -427,36 +445,36 @@ public extension TableCellProtocol {
 
     /// Returns the row headers as an array of cell accessibles.
     func getRowHeaderCells() -> UnsafeMutablePointer<GPtrArray>! {
-        let rv = atk_table_cell_get_row_header_cells(cast(table_cell_ptr))
+        let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_table_cell_get_row_header_cells(cast(table_cell_ptr)))
         return cast(rv)
     }
 
     /// Returns the number of rows occupied by this cell accessible.
-    func getRowSpan() -> CInt {
-        let rv = atk_table_cell_get_row_span(cast(table_cell_ptr))
-        return CInt(rv)
+    func getRowSpan() -> Int {
+        let rv: Int = cast(atk_table_cell_get_row_span(cast(table_cell_ptr)))
+        return Int(rv)
     }
 
     /// Returns a reference to the accessible of the containing table.
     func getTable() -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_table_cell_get_table(cast(table_cell_ptr))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_cell_get_table(cast(table_cell_ptr)))
         return cast(rv)
     }
     /// Returns the column headers as an array of cell accessibles.
     var columnHeaderCells: UnsafeMutablePointer<GPtrArray>! {
         /// Returns the column headers as an array of cell accessibles.
         get {
-            let rv = atk_table_cell_get_column_header_cells(cast(table_cell_ptr))
+            let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_table_cell_get_column_header_cells(cast(table_cell_ptr)))
             return cast(rv)
         }
     }
 
     /// Returns the number of columns occupied by this cell accessible.
-    var columnSpan: CInt {
+    var columnSpan: Int {
         /// Returns the number of columns occupied by this cell accessible.
         get {
-            let rv = atk_table_cell_get_column_span(cast(table_cell_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_table_cell_get_column_span(cast(table_cell_ptr)))
+            return Int(rv)
         }
     }
 
@@ -464,17 +482,17 @@ public extension TableCellProtocol {
     var rowHeaderCells: UnsafeMutablePointer<GPtrArray>! {
         /// Returns the row headers as an array of cell accessibles.
         get {
-            let rv = atk_table_cell_get_row_header_cells(cast(table_cell_ptr))
+            let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_table_cell_get_row_header_cells(cast(table_cell_ptr)))
             return cast(rv)
         }
     }
 
     /// Returns the number of rows occupied by this cell accessible.
-    var rowSpan: CInt {
+    var rowSpan: Int {
         /// Returns the number of rows occupied by this cell accessible.
         get {
-            let rv = atk_table_cell_get_row_span(cast(table_cell_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_table_cell_get_row_span(cast(table_cell_ptr)))
+            return Int(rv)
         }
     }
 
@@ -482,10 +500,12 @@ public extension TableCellProtocol {
     var table: UnsafeMutablePointer<AtkObject>! {
         /// Returns a reference to the accessible of the containing table.
         get {
-            let rv = atk_table_cell_get_table(cast(table_cell_ptr))
+            let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_cell_get_table(cast(table_cell_ptr)))
             return cast(rv)
         }
     }
+
+
 }
 
 
@@ -517,7 +537,7 @@ public extension TableCellProtocol {
 /// character length; also bounding box glyph-to-offset mapping may be
 /// complex for languages which use ligatures.
 public protocol TextProtocol {
-    /// Untyped pointer to the underlying `AtkText` instance.
+        /// Untyped pointer to the underlying `AtkText` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkText` instance.
@@ -548,7 +568,7 @@ public protocol TextProtocol {
 /// character length; also bounding box glyph-to-offset mapping may be
 /// complex for languages which use ligatures.
 public struct TextRef: TextProtocol {
-    /// Untyped pointer to the underlying `AtkText` instance.
+        /// Untyped pointer to the underlying `AtkText` instance.
     /// For type-safe access, use the generated, typed pointer `text_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -619,7 +639,7 @@ public extension TextRef {
 /// character length; also bounding box glyph-to-offset mapping may be
 /// complex for languages which use ligatures.
 open class Text: TextProtocol {
-    /// Untyped pointer to the underlying `AtkText` instance.
+        /// Untyped pointer to the underlying `AtkText` instance.
     /// For type-safe access, use the generated, typed pointer `text_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -648,7 +668,7 @@ open class Text: TextProtocol {
         // no reference counting for AtkText, cannot ref(cast(text_ptr))
     }
 
-    /// Do-nothing destructor for`AtkText`.
+    /// Do-nothing destructor for `AtkText`.
     deinit {
         // no reference counting for AtkText, cannot unref(cast(text_ptr))
     }
@@ -716,7 +736,7 @@ open class Text: TextProtocol {
 
 }
 
-// MARK: - no Text properties
+// MARK: no Text properties
 
 public enum TextSignalName: String, SignalNameProtocol {
     /// The "text-attributes-changed" signal is emitted when the text
@@ -759,8 +779,8 @@ public extension TextProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: TextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: TextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(text_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -781,6 +801,7 @@ public extension TextProtocol {
     }
 }
 
+// MARK: Text Interface: TextProtocol extension (methods and fields)
 public extension TextProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkText` instance.
     var text_ptr: UnsafeMutablePointer<AtkText> { return ptr.assumingMemoryBound(to: AtkText.self) }
@@ -793,28 +814,31 @@ public extension TextProtocol {
 
     /// Get the ranges of text in the specified bounding box.
     func getBoundedRanges(rect: TextRectangleProtocol, coordType coord_type: CoordType, xClipType x_clip_type: TextClipType, yClipType y_clip_type: TextClipType) -> UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>>! {
-        let rv = atk_text_get_bounded_ranges(cast(text_ptr), cast(rect.ptr), coord_type, x_clip_type, y_clip_type)
+        let rv: UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>>! = cast(atk_text_get_bounded_ranges(cast(text_ptr), cast(rect.ptr), coord_type, x_clip_type, y_clip_type))
         return cast(rv)
     }
 
     /// Gets the offset of the position of the caret (cursor).
-    func getCaretOffset() -> CInt {
-        let rv = atk_text_get_caret_offset(cast(text_ptr))
-        return CInt(rv)
+    func getCaretOffset() -> Int {
+        let rv: Int = cast(atk_text_get_caret_offset(cast(text_ptr)))
+        return Int(rv)
     }
 
     /// Gets the specified text.
     func getCharacterAt(offset: CInt) -> gunichar {
         let rv = atk_text_get_character_at_offset(cast(text_ptr), gint(offset))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the character count.
-    func getCharacterCount() -> CInt {
-        let rv = atk_text_get_character_count(cast(text_ptr))
-        return CInt(rv)
+    func getCharacterCount() -> Int {
+        let rv: Int = cast(atk_text_get_character_count(cast(text_ptr)))
+        return Int(rv)
     }
 
+    /// If the extent can not be obtained (e.g. missing support), all of x, y, width,
+    /// height are set to -1.
+    /// 
     /// Get the bounding box containing the glyph representing the character at
     ///     a particular text offset.
     func getCharacterExtents(offset: CInt, x: UnsafeMutablePointer<CInt>, y: UnsafeMutablePointer<CInt>, width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>, coords: CoordType) {
@@ -827,25 +851,28 @@ public extension TextProtocol {
     /// attributes that can be returned. Note that other attributes may also be
     /// returned.
     func getDefaultAttributes() -> UnsafeMutablePointer<AtkAttributeSet>! {
-        let rv = atk_text_get_default_attributes(cast(text_ptr))
+        let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_text_get_default_attributes(cast(text_ptr)))
         return cast(rv)
     }
 
     /// Gets the number of selected regions.
-    func getNSelections() -> CInt {
-        let rv = atk_text_get_n_selections(cast(text_ptr))
-        return CInt(rv)
+    func getNSelections() -> Int {
+        let rv: Int = cast(atk_text_get_n_selections(cast(text_ptr)))
+        return Int(rv)
     }
 
     /// Gets the offset of the character located at coordinates `x` and `y`. `x` and `y`
     /// are interpreted as being relative to the screen or this widget's window
     /// depending on `coords`.
-    func getOffsetAtPoint(x: CInt, y: CInt, coords: CoordType) -> CInt {
-        let rv = atk_text_get_offset_at_point(cast(text_ptr), gint(x), gint(y), coords)
-        return CInt(rv)
+    func getOffsetAtPoint(x: CInt, y: CInt, coords: CoordType) -> Int {
+        let rv: Int = cast(atk_text_get_offset_at_point(cast(text_ptr), gint(x), gint(y), coords))
+        return Int(rv)
     }
 
     /// Get the bounding box for text within the specified range.
+    /// 
+    /// If the extents can not be obtained (e.g. or missing support), the rectangle
+    /// fields are set to -1.
     func getRangeExtents(startOffset start_offset: CInt, endOffset end_offset: CInt, coordType coord_type: CoordType, rect: TextRectangleProtocol) {
         atk_text_get_range_extents(cast(text_ptr), gint(start_offset), gint(end_offset), coord_type, cast(rect.ptr))
     
@@ -859,14 +886,14 @@ public extension TextProtocol {
     /// attributes that can be returned. Note that other attributes may also be
     /// returned.
     func getRunAttributes(offset: CInt, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> UnsafeMutablePointer<AtkAttributeSet>! {
-        let rv = atk_text_get_run_attributes(cast(text_ptr), gint(offset), cast(start_offset), cast(end_offset))
+        let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_text_get_run_attributes(cast(text_ptr), gint(offset), cast(start_offset), cast(end_offset)))
         return cast(rv)
     }
 
     /// Gets the text from the specified selection.
     func getSelection(selectionNum selection_num: CInt, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv = atk_text_get_selection(cast(text_ptr), gint(selection_num), cast(start_offset), cast(end_offset))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_text_get_selection(cast(text_ptr), gint(selection_num), cast(start_offset), cast(end_offset)))
+        return cast(rv)
     }
 
     /// Gets a portion of the text exposed through an `AtkText` according to a given `offset`
@@ -900,14 +927,14 @@ public extension TextProtocol {
     /// is from the start of the paragraph at or before the offset to the start
     /// of the following paragraph after the offset.
     func getStringAt(offset: CInt, granularity: TextGranularity, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv = atk_text_get_string_at_offset(cast(text_ptr), gint(offset), granularity, cast(start_offset), cast(end_offset))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_text_get_string_at_offset(cast(text_ptr), gint(offset), granularity, cast(start_offset), cast(end_offset)))
+        return cast(rv)
     }
 
     /// Gets the specified text.
     func getText(startOffset start_offset: CInt, endOffset end_offset: CInt) -> String! {
-        let rv = atk_text_get_text(cast(text_ptr), gint(start_offset), gint(end_offset))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_text_get_text(cast(text_ptr), gint(start_offset), gint(end_offset)))
+        return cast(rv)
     }
 
     /// Gets the specified text.
@@ -915,8 +942,8 @@ public extension TextProtocol {
     /// **get_text_after_offset is deprecated:**
     /// Please use atk_text_get_string_at_offset() instead.
     @available(*, deprecated) func getTextAfter(offset: CInt, boundaryType boundary_type: TextBoundary, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv = atk_text_get_text_after_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_text_get_text_after_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset)))
+        return cast(rv)
     }
 
     /// Gets the specified text.
@@ -948,8 +975,8 @@ public extension TextProtocol {
     /// This method is deprecated since ATK version
     /// 2.9.4. Please use atk_text_get_string_at_offset() instead.
     @available(*, deprecated) func getTextAt(offset: CInt, boundaryType boundary_type: TextBoundary, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv = atk_text_get_text_at_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_text_get_text_at_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset)))
+        return cast(rv)
     }
 
     /// Gets the specified text.
@@ -957,8 +984,8 @@ public extension TextProtocol {
     /// **get_text_before_offset is deprecated:**
     /// Please use atk_text_get_string_at_offset() instead.
     @available(*, deprecated) func getTextBefore(offset: CInt, boundaryType boundary_type: TextBoundary, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv = atk_text_get_text_before_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_text_get_text_before_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset)))
+        return cast(rv)
     }
 
     /// Removes the specified selection.
@@ -967,24 +994,36 @@ public extension TextProtocol {
         return Bool(rv != 0)
     }
 
-    /// Makes `text` visible on the screen by scrolling all necessary parents.
-    /// 
-    /// Contrary to atk_text_set_position, this does not actually move
-    /// `text` in its parent, this only makes the parents scroll so that the
-    /// object shows up on the screen, given its current position within the parents.
+    /// Makes a substring of `text` visible on the screen by scrolling all necessary parents.
     func scrollSubstringTo(startOffset start_offset: CInt, endOffset end_offset: CInt, type: ScrollType) -> Bool {
         let rv = atk_text_scroll_substring_to(cast(text_ptr), gint(start_offset), gint(end_offset), type)
         return Bool(rv != 0)
     }
 
-    /// Makes an object visible on the screen at a given position by scrolling all
-    /// necessary parents.
+    /// Move the top-left of a substring of `text` to a given position of the screen
+    /// by scrolling all necessary parents.
     func scrollSubstringToPoint(startOffset start_offset: CInt, endOffset end_offset: CInt, coords: CoordType, x: CInt, y: CInt) -> Bool {
         let rv = atk_text_scroll_substring_to_point(cast(text_ptr), gint(start_offset), gint(end_offset), coords, gint(x), gint(y))
         return Bool(rv != 0)
     }
 
     /// Sets the caret (cursor) position to the specified `offset`.
+    /// 
+    /// In the case of rich-text content, this method should either grab focus
+    /// or move the sequential focus navigation starting point (if the application
+    /// supports this concept) as if the user had clicked on the new caret position.
+    /// Typically, this means that the target of this operation is the node containing
+    /// the new caret position or one of its ancestors. In other words, after this
+    /// method is called, if the user advances focus, it should move to the first
+    /// focusable node following the new caret position.
+    /// 
+    /// Calling this method should also scroll the application viewport in a way
+    /// that matches the behavior of the application's typical caret motion or tab
+    /// navigation as closely as possible. This also means that if the application's
+    /// caret motion or focus navigation does not trigger a scroll operation, this
+    /// method should not trigger one either. If the application does not have a caret
+    /// motion or focus navigation operation, this method should try to scroll the new
+    /// caret position into view while minimizing unnecessary scroll motion.
     func setCaret(offset: CInt) -> Bool {
         let rv = atk_text_set_caret_offset(cast(text_ptr), gint(offset))
         return Bool(rv != 0)
@@ -996,24 +1035,40 @@ public extension TextProtocol {
         return Bool(rv != 0)
     }
     /// Gets the offset of the position of the caret (cursor).
-    var caretOffset: CInt {
+    var caretOffset: Int {
         /// Gets the offset of the position of the caret (cursor).
         get {
-            let rv = atk_text_get_caret_offset(cast(text_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_text_get_caret_offset(cast(text_ptr)))
+            return Int(rv)
         }
         /// Sets the caret (cursor) position to the specified `offset`.
+        /// 
+        /// In the case of rich-text content, this method should either grab focus
+        /// or move the sequential focus navigation starting point (if the application
+        /// supports this concept) as if the user had clicked on the new caret position.
+        /// Typically, this means that the target of this operation is the node containing
+        /// the new caret position or one of its ancestors. In other words, after this
+        /// method is called, if the user advances focus, it should move to the first
+        /// focusable node following the new caret position.
+        /// 
+        /// Calling this method should also scroll the application viewport in a way
+        /// that matches the behavior of the application's typical caret motion or tab
+        /// navigation as closely as possible. This also means that if the application's
+        /// caret motion or focus navigation does not trigger a scroll operation, this
+        /// method should not trigger one either. If the application does not have a caret
+        /// motion or focus navigation operation, this method should try to scroll the new
+        /// caret position into view while minimizing unnecessary scroll motion.
         nonmutating set {
-            let _ = atk_text_set_caret_offset(cast(text_ptr), gint(newValue))
+            _ = atk_text_set_caret_offset(cast(text_ptr), gint(newValue))
         }
     }
 
     /// Gets the character count.
-    var characterCount: CInt {
+    var characterCount: Int {
         /// Gets the character count.
         get {
-            let rv = atk_text_get_character_count(cast(text_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_text_get_character_count(cast(text_ptr)))
+            return Int(rv)
         }
     }
 
@@ -1027,19 +1082,21 @@ public extension TextProtocol {
         /// attributes that can be returned. Note that other attributes may also be
         /// returned.
         get {
-            let rv = atk_text_get_default_attributes(cast(text_ptr))
+            let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_text_get_default_attributes(cast(text_ptr)))
             return cast(rv)
         }
     }
 
     /// Gets the number of selected regions.
-    var nSelections: CInt {
+    var nSelections: Int {
         /// Gets the number of selected regions.
         get {
-            let rv = atk_text_get_n_selections(cast(text_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_text_get_n_selections(cast(text_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 
@@ -1192,7 +1249,7 @@ public extension TextProtocol {
 /// </para>
 /// </refsect1>
 public protocol ValueProtocol {
-    /// Untyped pointer to the underlying `AtkValue` instance.
+        /// Untyped pointer to the underlying `AtkValue` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkValue` instance.
@@ -1344,7 +1401,7 @@ public protocol ValueProtocol {
 /// </para>
 /// </refsect1>
 public struct ValueRef: ValueProtocol {
-    /// Untyped pointer to the underlying `AtkValue` instance.
+        /// Untyped pointer to the underlying `AtkValue` instance.
     /// For type-safe access, use the generated, typed pointer `value_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1536,7 +1593,7 @@ public extension ValueRef {
 /// </para>
 /// </refsect1>
 open class Value: ValueProtocol {
-    /// Untyped pointer to the underlying `AtkValue` instance.
+        /// Untyped pointer to the underlying `AtkValue` instance.
     /// For type-safe access, use the generated, typed pointer `value_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1565,7 +1622,7 @@ open class Value: ValueProtocol {
         // no reference counting for AtkValue, cannot ref(cast(value_ptr))
     }
 
-    /// Do-nothing destructor for`AtkValue`.
+    /// Do-nothing destructor for `AtkValue`.
     deinit {
         // no reference counting for AtkValue, cannot unref(cast(value_ptr))
     }
@@ -1633,7 +1690,7 @@ open class Value: ValueProtocol {
 
 }
 
-// MARK: - no Value properties
+// MARK: no Value properties
 
 public enum ValueSignalName: String, SignalNameProtocol {
     /// The 'value-changed' signal is emitted when the current value
@@ -1658,8 +1715,8 @@ public extension ValueProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: ValueSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: ValueSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(value_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -1680,6 +1737,7 @@ public extension ValueProtocol {
     }
 }
 
+// MARK: Value Interface: ValueProtocol extension (methods and fields)
 public extension ValueProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkValue` instance.
     var value_ptr: UnsafeMutablePointer<AtkValue> { return ptr.assumingMemoryBound(to: AtkValue.self) }
@@ -1698,9 +1756,9 @@ public extension ValueProtocol {
     /// changed.  If zero, the minimum increment is undefined, which may
     /// mean that it is limited only by the floating point precision of the
     /// platform.
-    func getIncrement() -> gdouble {
-        let rv = atk_value_get_increment(cast(value_ptr))
-        return rv
+    func getIncrement() -> Double {
+        let rv: Double = cast(atk_value_get_increment(cast(value_ptr)))
+        return cast(rv)
     }
 
     /// Gets the maximum value of this object.
@@ -1734,14 +1792,14 @@ public extension ValueProtocol {
 
     /// Gets the range of this object.
     func getRange() -> UnsafeMutablePointer<AtkRange>! {
-        let rv = atk_value_get_range(cast(value_ptr))
+        let rv: UnsafeMutablePointer<AtkRange>! = cast(atk_value_get_range(cast(value_ptr)))
         return cast(rv)
     }
 
     /// Gets the list of subranges defined for this object. See `AtkValue`
     /// introduction for examples of subranges and when to expose them.
     func getSubRanges() -> UnsafeMutablePointer<GSList>! {
-        let rv = atk_value_get_sub_ranges(cast(value_ptr))
+        let rv: UnsafeMutablePointer<GSList>! = cast(atk_value_get_sub_ranges(cast(value_ptr)))
         return cast(rv)
     }
 
@@ -1784,14 +1842,14 @@ public extension ValueProtocol {
     /// changed.  If zero, the minimum increment is undefined, which may
     /// mean that it is limited only by the floating point precision of the
     /// platform.
-    var increment: gdouble {
+    var increment: Double {
         /// Gets the minimum increment by which the value of this object may be
         /// changed.  If zero, the minimum increment is undefined, which may
         /// mean that it is limited only by the floating point precision of the
         /// platform.
         get {
-            let rv = atk_value_get_increment(cast(value_ptr))
-            return rv
+            let rv: Double = cast(atk_value_get_increment(cast(value_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1799,7 +1857,7 @@ public extension ValueProtocol {
     var range: UnsafeMutablePointer<AtkRange>! {
         /// Gets the range of this object.
         get {
-            let rv = atk_value_get_range(cast(value_ptr))
+            let rv: UnsafeMutablePointer<AtkRange>! = cast(atk_value_get_range(cast(value_ptr)))
             return cast(rv)
         }
     }
@@ -1810,10 +1868,12 @@ public extension ValueProtocol {
         /// Gets the list of subranges defined for this object. See `AtkValue`
         /// introduction for examples of subranges and when to expose them.
         get {
-            let rv = atk_value_get_sub_ranges(cast(value_ptr))
+            let rv: UnsafeMutablePointer<GSList>! = cast(atk_value_get_sub_ranges(cast(value_ptr)))
             return cast(rv)
         }
     }
+
+
 }
 
 

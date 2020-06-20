@@ -14,7 +14,7 @@ import GLibObject
 /// that apply to an object at a given time. This set is not meant to be
 /// modified, but rather created when `atk_object_ref_state_set``()` is called.
 public protocol StateSetProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkStateSet` instance.
+        /// Untyped pointer to the underlying `AtkStateSet` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkStateSet` instance.
@@ -29,7 +29,7 @@ public protocol StateSetProtocol: ObjectProtocol {
 /// that apply to an object at a given time. This set is not meant to be
 /// modified, but rather created when `atk_object_ref_state_set``()` is called.
 public struct StateSetRef: StateSetProtocol {
-    /// Untyped pointer to the underlying `AtkStateSet` instance.
+        /// Untyped pointer to the underlying `AtkStateSet` instance.
     /// For type-safe access, use the generated, typed pointer `state_set_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -76,7 +76,7 @@ public extension StateSetRef {
 
         /// Creates a new empty state set.
     init() {
-        let rv = atk_state_set_new()
+        let rv: UnsafeMutablePointer<AtkStateSet>! = cast(atk_state_set_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -89,7 +89,7 @@ public extension StateSetRef {
 /// that apply to an object at a given time. This set is not meant to be
 /// modified, but rather created when `atk_object_ref_state_set``()` is called.
 open class StateSet: Object, StateSetProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `StateSet` instance.
     /// - Parameter op: pointer to the underlying object
@@ -169,14 +169,14 @@ open class StateSet: Object, StateSetProtocol {
 
     /// Creates a new empty state set.
     public init() {
-        let rv = atk_state_set_new()
+        let rv: UnsafeMutablePointer<AtkStateSet>! = cast(atk_state_set_new())
         super.init(cast(rv))
     }
 
 
 }
 
-// MARK: - no StateSet properties
+// MARK: no StateSet properties
 
 public enum StateSetSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -213,8 +213,8 @@ public extension StateSetProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: StateSetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: StateSetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(state_set_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -235,6 +235,7 @@ public extension StateSetProtocol {
     }
 }
 
+// MARK: StateSet Class: StateSetProtocol extension (methods and fields)
 public extension StateSetProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkStateSet` instance.
     var state_set_ptr: UnsafeMutablePointer<AtkStateSet> { return ptr.assumingMemoryBound(to: AtkStateSet.self) }
@@ -265,7 +266,7 @@ public extension StateSetProtocol {
     /// Constructs the intersection of the two sets, returning `nil` if the
     /// intersection is empty.
     func andSets(compareSet compare_set: StateSetProtocol) -> UnsafeMutablePointer<AtkStateSet>! {
-        let rv = atk_state_set_and_sets(cast(state_set_ptr), cast(compare_set.ptr))
+        let rv: UnsafeMutablePointer<AtkStateSet>! = cast(atk_state_set_and_sets(cast(state_set_ptr), cast(compare_set.ptr)))
         return cast(rv)
     }
 
@@ -290,7 +291,7 @@ public extension StateSetProtocol {
 
     /// Constructs the union of the two sets.
     func orSets(compareSet compare_set: StateSetProtocol) -> UnsafeMutablePointer<AtkStateSet>! {
-        let rv = atk_state_set_or_sets(cast(state_set_ptr), cast(compare_set.ptr))
+        let rv: UnsafeMutablePointer<AtkStateSet>! = cast(atk_state_set_or_sets(cast(state_set_ptr), cast(compare_set.ptr)))
         return cast(rv)
     }
 
@@ -309,7 +310,7 @@ public extension StateSetProtocol {
     /// The set returned by this operation contains the states in exactly
     /// one of the two sets.
     func xorSets(compareSet compare_set: StateSetProtocol) -> UnsafeMutablePointer<AtkStateSet>! {
-        let rv = atk_state_set_xor_sets(cast(state_set_ptr), cast(compare_set.ptr))
+        let rv: UnsafeMutablePointer<AtkStateSet>! = cast(atk_state_set_xor_sets(cast(state_set_ptr), cast(compare_set.ptr)))
         return cast(rv)
     }
     /// Checks whether the state set is empty, i.e. has no states set.
@@ -320,6 +321,14 @@ public extension StateSetProtocol {
             return Bool(rv != 0)
         }
     }
+
+    var parent: GObject {
+        get {
+            let rv: GObject = cast(state_set_ptr.pointee.parent)
+            return rv
+        }
+    }
+
 }
 
 
@@ -336,7 +345,7 @@ public extension StateSetProtocol {
 /// of a process and information about the current ATK implementation
 /// and toolkit version.
 public protocol UtilProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkUtil` instance.
+        /// Untyped pointer to the underlying `AtkUtil` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkUtil` instance.
@@ -352,7 +361,7 @@ public protocol UtilProtocol: ObjectProtocol {
 /// of a process and information about the current ATK implementation
 /// and toolkit version.
 public struct UtilRef: UtilProtocol {
-    /// Untyped pointer to the underlying `AtkUtil` instance.
+        /// Untyped pointer to the underlying `AtkUtil` instance.
     /// For type-safe access, use the generated, typed pointer `util_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -408,7 +417,7 @@ public extension UtilRef {
 /// of a process and information about the current ATK implementation
 /// and toolkit version.
 open class Util: Object, UtilProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Util` instance.
     /// - Parameter op: pointer to the underlying object
@@ -490,7 +499,7 @@ open class Util: Object, UtilProtocol {
 
 }
 
-// MARK: - no Util properties
+// MARK: no Util properties
 
 public enum UtilSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -527,8 +536,8 @@ public extension UtilProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: UtilSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: UtilSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(util_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -549,9 +558,18 @@ public extension UtilProtocol {
     }
 }
 
+// MARK: Util Class: UtilProtocol extension (methods and fields)
 public extension UtilProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkUtil` instance.
     var util_ptr: UnsafeMutablePointer<AtkUtil> { return ptr.assumingMemoryBound(to: AtkUtil.self) }
+
+
+    var parent: GObject {
+        get {
+            let rv: GObject = cast(util_ptr.pointee.parent)
+            return rv
+        }
+    }
 
 }
 

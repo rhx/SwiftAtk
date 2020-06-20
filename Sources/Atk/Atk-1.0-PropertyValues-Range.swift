@@ -14,7 +14,7 @@ import GLibObject
 /// valid value. This is a field defined with the purpose of contain
 /// the previous value of the property, but is not used anymore.
 public protocol PropertyValuesProtocol {
-    /// Untyped pointer to the underlying `AtkPropertyValues` instance.
+        /// Untyped pointer to the underlying `AtkPropertyValues` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkPropertyValues` instance.
@@ -29,7 +29,7 @@ public protocol PropertyValuesProtocol {
 /// valid value. This is a field defined with the purpose of contain
 /// the previous value of the property, but is not used anymore.
 public struct PropertyValuesRef: PropertyValuesProtocol {
-    /// Untyped pointer to the underlying `AtkPropertyValues` instance.
+        /// Untyped pointer to the underlying `AtkPropertyValues` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -84,7 +84,7 @@ public extension PropertyValuesRef {
 /// valid value. This is a field defined with the purpose of contain
 /// the previous value of the property, but is not used anymore.
 open class PropertyValues: PropertyValuesProtocol {
-    /// Untyped pointer to the underlying `AtkPropertyValues` instance.
+        /// Untyped pointer to the underlying `AtkPropertyValues` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -113,7 +113,7 @@ open class PropertyValues: PropertyValuesProtocol {
         // no reference counting for AtkPropertyValues, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkPropertyValues`.
+    /// Do-nothing destructor for `AtkPropertyValues`.
     deinit {
         // no reference counting for AtkPropertyValues, cannot unref(cast(_ptr))
     }
@@ -181,14 +181,55 @@ open class PropertyValues: PropertyValuesProtocol {
 
 }
 
-// MARK: - no PropertyValues properties
+// MARK: no PropertyValues properties
 
-// MARK: - no signals
+// MARK: no PropertyValues signals
 
 
+// MARK: PropertyValues Record: PropertyValuesProtocol extension (methods and fields)
 public extension PropertyValuesProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkPropertyValues` instance.
     var _ptr: UnsafeMutablePointer<AtkPropertyValues> { return ptr.assumingMemoryBound(to: AtkPropertyValues.self) }
+
+
+    /// The name of the ATK property which has changed.
+    var propertyName: UnsafePointer<CChar> {
+        /// The name of the ATK property which has changed.
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.property_name)
+            return rv
+        }
+        /// The name of the ATK property which has changed.
+         set {
+            _ptr.pointee.property_name = cast(newValue)
+        }
+    }
+
+    /// NULL. This field is not used anymore.
+    var oldValue: GValue {
+        /// NULL. This field is not used anymore.
+        get {
+            let rv: GValue = cast(_ptr.pointee.old_value)
+            return rv
+        }
+        /// NULL. This field is not used anymore.
+         set {
+            _ptr.pointee.old_value = cast(newValue)
+        }
+    }
+
+    /// The new value of the named property.
+    var newValue: GValue {
+        /// The new value of the named property.
+        get {
+            let rv: GValue = cast(_ptr.pointee.new_value)
+            return rv
+        }
+        /// The new value of the named property.
+         set {
+            _ptr.pointee.new_value = cast(newValue)
+        }
+    }
 
 }
 
@@ -207,7 +248,7 @@ public extension PropertyValuesProtocol {
 /// splitted if available. See `AtkValue` documentation for further
 /// details.
 public protocol RangeProtocol {
-    /// Untyped pointer to the underlying `AtkRange` instance.
+        /// Untyped pointer to the underlying `AtkRange` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkRange` instance.
@@ -224,7 +265,7 @@ public protocol RangeProtocol {
 /// splitted if available. See `AtkValue` documentation for further
 /// details.
 public struct RangeRef: RangeProtocol {
-    /// Untyped pointer to the underlying `AtkRange` instance.
+        /// Untyped pointer to the underlying `AtkRange` instance.
     /// For type-safe access, use the generated, typed pointer `range_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -271,7 +312,7 @@ public extension RangeRef {
 
         /// Creates a new `AtkRange`.
     init( lower_limit: gdouble, upperLimit upper_limit: gdouble, description: UnsafePointer<gchar>) {
-        let rv = atk_range_new(lower_limit, upper_limit, description)
+        let rv: UnsafeMutablePointer<AtkRange>! = cast(atk_range_new(lower_limit, upper_limit, description))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -286,7 +327,7 @@ public extension RangeRef {
 /// splitted if available. See `AtkValue` documentation for further
 /// details.
 open class Range: RangeProtocol {
-    /// Untyped pointer to the underlying `AtkRange` instance.
+        /// Untyped pointer to the underlying `AtkRange` instance.
     /// For type-safe access, use the generated, typed pointer `range_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -315,7 +356,7 @@ open class Range: RangeProtocol {
         // no reference counting for AtkRange, cannot ref(cast(range_ptr))
     }
 
-    /// Do-nothing destructor for`AtkRange`.
+    /// Do-nothing destructor for `AtkRange`.
     deinit {
         // no reference counting for AtkRange, cannot unref(cast(range_ptr))
     }
@@ -381,25 +422,26 @@ open class Range: RangeProtocol {
 
     /// Creates a new `AtkRange`.
     public init( lower_limit: gdouble, upperLimit upper_limit: gdouble, description: UnsafePointer<gchar>) {
-        let rv = atk_range_new(lower_limit, upper_limit, description)
+        let rv: UnsafeMutablePointer<AtkRange>! = cast(atk_range_new(lower_limit, upper_limit, description))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
 
 }
 
-// MARK: - no Range properties
+// MARK: no Range properties
 
-// MARK: - no signals
+// MARK: no Range signals
 
 
+// MARK: Range Record: RangeProtocol extension (methods and fields)
 public extension RangeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRange` instance.
     var range_ptr: UnsafeMutablePointer<AtkRange> { return ptr.assumingMemoryBound(to: AtkRange.self) }
 
     /// Returns a new `AtkRange` that is a exact copy of `src`
     func copy() -> UnsafeMutablePointer<AtkRange>! {
-        let rv = atk_range_copy(cast(range_ptr))
+        let rv: UnsafeMutablePointer<AtkRange>! = cast(atk_range_copy(cast(range_ptr)))
         return cast(rv)
     }
 
@@ -411,47 +453,49 @@ public extension RangeProtocol {
 
     /// Returns the human readable description of `range`
     func getDescription() -> String! {
-        let rv = atk_range_get_description(cast(range_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_range_get_description(cast(range_ptr)))
+        return cast(rv)
     }
 
     /// Returns the lower limit of `range`
-    func getLowerLimit() -> gdouble {
-        let rv = atk_range_get_lower_limit(cast(range_ptr))
-        return rv
+    func getLowerLimit() -> Double {
+        let rv: Double = cast(atk_range_get_lower_limit(cast(range_ptr)))
+        return cast(rv)
     }
 
     /// Returns the upper limit of `range`
-    func getUpperLimit() -> gdouble {
-        let rv = atk_range_get_upper_limit(cast(range_ptr))
-        return rv
+    func getUpperLimit() -> Double {
+        let rv: Double = cast(atk_range_get_upper_limit(cast(range_ptr)))
+        return cast(rv)
     }
     /// Returns the human readable description of `range`
     var description: String! {
         /// Returns the human readable description of `range`
         get {
-            let rv = atk_range_get_description(cast(range_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_range_get_description(cast(range_ptr)))
+            return cast(rv)
         }
     }
 
     /// Returns the lower limit of `range`
-    var lowerLimit: gdouble {
+    var lowerLimit: Double {
         /// Returns the lower limit of `range`
         get {
-            let rv = atk_range_get_lower_limit(cast(range_ptr))
-            return rv
+            let rv: Double = cast(atk_range_get_lower_limit(cast(range_ptr)))
+            return cast(rv)
         }
     }
 
     /// Returns the upper limit of `range`
-    var upperLimit: gdouble {
+    var upperLimit: Double {
         /// Returns the upper limit of `range`
         get {
-            let rv = atk_range_get_upper_limit(cast(range_ptr))
-            return rv
+            let rv: Double = cast(atk_range_get_upper_limit(cast(range_ptr)))
+            return cast(rv)
         }
     }
+
+
 }
 
 

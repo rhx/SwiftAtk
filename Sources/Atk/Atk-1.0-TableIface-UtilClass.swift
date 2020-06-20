@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol TableIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTableIface` instance.
+        /// Untyped pointer to the underlying `AtkTableIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkTableIface` instance.
@@ -25,7 +25,7 @@ public protocol TableIfaceProtocol {
 ///
 
 public struct TableIfaceRef: TableIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTableIface` instance.
+        /// Untyped pointer to the underlying `AtkTableIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension TableIfaceRef {
 ///
 
 open class TableIface: TableIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTableIface` instance.
+        /// Untyped pointer to the underlying `AtkTableIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class TableIface: TableIfaceProtocol {
         // no reference counting for AtkTableIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkTableIface`.
+    /// Do-nothing destructor for `AtkTableIface`.
     deinit {
         // no reference counting for AtkTableIface, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,95 @@ open class TableIface: TableIfaceProtocol {
 
 }
 
-// MARK: - no TableIface properties
+// MARK: no TableIface properties
 
-// MARK: - no signals
+// MARK: no TableIface signals
 
 
+// MARK: TableIface Record: TableIfaceProtocol extension (methods and fields)
 public extension TableIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTableIface` instance.
     var _ptr: UnsafeMutablePointer<AtkTableIface> { return ptr.assumingMemoryBound(to: AtkTableIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var refAt is unavailable because ref_at is void
+
+    // var getIndexAt is unavailable because get_index_at is void
+
+    // var getColumnAtIndex is unavailable because get_column_at_index is void
+
+    // var getRowAtIndex is unavailable because get_row_at_index is void
+
+    // var getNColumns is unavailable because get_n_columns is void
+
+    // var getNRows is unavailable because get_n_rows is void
+
+    // var getColumnExtentAt is unavailable because get_column_extent_at is void
+
+    // var getRowExtentAt is unavailable because get_row_extent_at is void
+
+    // var getCaption is unavailable because get_caption is void
+
+    // var getColumnDescription is unavailable because get_column_description is void
+
+    // var getColumnHeader is unavailable because get_column_header is void
+
+    // var getRowDescription is unavailable because get_row_description is void
+
+    // var getRowHeader is unavailable because get_row_header is void
+
+    // var getSummary is unavailable because get_summary is void
+
+    // var setCaption is unavailable because set_caption is void
+
+    // var setColumnDescription is unavailable because set_column_description is void
+
+    // var setColumnHeader is unavailable because set_column_header is void
+
+    // var setRowDescription is unavailable because set_row_description is void
+
+    // var setRowHeader is unavailable because set_row_header is void
+
+    // var setSummary is unavailable because set_summary is void
+
+    // var getSelectedColumns is unavailable because get_selected_columns is void
+
+    // var getSelectedRows is unavailable because get_selected_rows is void
+
+    // var isColumnSelected is unavailable because is_column_selected is void
+
+    // var isRowSelected is unavailable because is_row_selected is void
+
+    // var isSelected is unavailable because is_selected is void
+
+    // var addRowSelection is unavailable because add_row_selection is void
+
+    // var removeRowSelection is unavailable because remove_row_selection is void
+
+    // var addColumnSelection is unavailable because add_column_selection is void
+
+    // var removeColumnSelection is unavailable because remove_column_selection is void
+
+    // var rowInserted is unavailable because row_inserted is void
+
+    // var columnInserted is unavailable because column_inserted is void
+
+    // var rowDeleted is unavailable because row_deleted is void
+
+    // var columnDeleted is unavailable because column_deleted is void
+
+    // var rowReordered is unavailable because row_reordered is void
+
+    // var columnReordered is unavailable because column_reordered is void
+
+    // var modelChanged is unavailable because model_changed is void
 
 }
 
@@ -197,7 +278,7 @@ public extension TableIfaceProtocol {
 ///
 
 public protocol TextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTextIface` instance.
+        /// Untyped pointer to the underlying `AtkTextIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkTextIface` instance.
@@ -210,7 +291,7 @@ public protocol TextIfaceProtocol {
 ///
 
 public struct TextIfaceRef: TextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTextIface` instance.
+        /// Untyped pointer to the underlying `AtkTextIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +344,7 @@ public extension TextIfaceRef {
 ///
 
 open class TextIface: TextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTextIface` instance.
+        /// Untyped pointer to the underlying `AtkTextIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +373,7 @@ open class TextIface: TextIfaceProtocol {
         // no reference counting for AtkTextIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkTextIface`.
+    /// Do-nothing destructor for `AtkTextIface`.
     deinit {
         // no reference counting for AtkTextIface, cannot unref(cast(_ptr))
     }
@@ -360,14 +441,75 @@ open class TextIface: TextIfaceProtocol {
 
 }
 
-// MARK: - no TextIface properties
+// MARK: no TextIface properties
 
-// MARK: - no signals
+// MARK: no TextIface signals
 
 
+// MARK: TextIface Record: TextIfaceProtocol extension (methods and fields)
 public extension TextIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTextIface` instance.
     var _ptr: UnsafeMutablePointer<AtkTextIface> { return ptr.assumingMemoryBound(to: AtkTextIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var getText is unavailable because get_text is void
+
+    // var getTextAfterOffset is unavailable because get_text_after_offset is void
+
+    // var getTextAtOffset is unavailable because get_text_at_offset is void
+
+    // var getCharacterAtOffset is unavailable because get_character_at_offset is void
+
+    // var getTextBeforeOffset is unavailable because get_text_before_offset is void
+
+    // var getCaretOffset is unavailable because get_caret_offset is void
+
+    // var getRunAttributes is unavailable because get_run_attributes is void
+
+    // var getDefaultAttributes is unavailable because get_default_attributes is void
+
+    // var getCharacterExtents is unavailable because get_character_extents is void
+
+    // var getCharacterCount is unavailable because get_character_count is void
+
+    // var getOffsetAtPoint is unavailable because get_offset_at_point is void
+
+    // var getNSelections is unavailable because get_n_selections is void
+
+    // var getSelection is unavailable because get_selection is void
+
+    // var addSelection is unavailable because add_selection is void
+
+    // var removeSelection is unavailable because remove_selection is void
+
+    // var setSelection is unavailable because set_selection is void
+
+    // var setCaretOffset is unavailable because set_caret_offset is void
+
+    // var textChanged is unavailable because text_changed is void
+
+    // var textCaretMoved is unavailable because text_caret_moved is void
+
+    // var textSelectionChanged is unavailable because text_selection_changed is void
+
+    // var textAttributesChanged is unavailable because text_attributes_changed is void
+
+    // var getRangeExtents is unavailable because get_range_extents is void
+
+    // var getBoundedRanges is unavailable because get_bounded_ranges is void
+
+    // var getStringAtOffset is unavailable because get_string_at_offset is void
+
+    // var scrollSubstringTo is unavailable because scroll_substring_to is void
+
+    // var scrollSubstringToPoint is unavailable because scroll_substring_to_point is void
 
 }
 
@@ -382,7 +524,7 @@ public extension TextIfaceProtocol {
 ///
 /// A structure used to describe a text range.
 public protocol TextRangeProtocol {
-    /// Untyped pointer to the underlying `AtkTextRange` instance.
+        /// Untyped pointer to the underlying `AtkTextRange` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkTextRange` instance.
@@ -395,7 +537,7 @@ public protocol TextRangeProtocol {
 ///
 /// A structure used to describe a text range.
 public struct TextRangeRef: TextRangeProtocol {
-    /// Untyped pointer to the underlying `AtkTextRange` instance.
+        /// Untyped pointer to the underlying `AtkTextRange` instance.
     /// For type-safe access, use the generated, typed pointer `text_range_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -448,7 +590,7 @@ public extension TextRangeRef {
 ///
 /// A structure used to describe a text range.
 open class TextRange: TextRangeProtocol {
-    /// Untyped pointer to the underlying `AtkTextRange` instance.
+        /// Untyped pointer to the underlying `AtkTextRange` instance.
     /// For type-safe access, use the generated, typed pointer `text_range_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -477,7 +619,7 @@ open class TextRange: TextRangeProtocol {
         // no reference counting for AtkTextRange, cannot ref(cast(text_range_ptr))
     }
 
-    /// Do-nothing destructor for`AtkTextRange`.
+    /// Do-nothing destructor for `AtkTextRange`.
     deinit {
         // no reference counting for AtkTextRange, cannot unref(cast(text_range_ptr))
     }
@@ -545,14 +687,68 @@ open class TextRange: TextRangeProtocol {
 
 }
 
-// MARK: - no TextRange properties
+// MARK: no TextRange properties
 
-// MARK: - no signals
+// MARK: no TextRange signals
 
 
+// MARK: TextRange Record: TextRangeProtocol extension (methods and fields)
 public extension TextRangeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTextRange` instance.
     var text_range_ptr: UnsafeMutablePointer<AtkTextRange> { return ptr.assumingMemoryBound(to: AtkTextRange.self) }
+
+
+    /// A rectangle giving the bounds of the text range
+    var bounds: AtkTextRectangle {
+        /// A rectangle giving the bounds of the text range
+        get {
+            let rv: AtkTextRectangle = cast(text_range_ptr.pointee.bounds)
+            return rv
+        }
+        /// A rectangle giving the bounds of the text range
+         set {
+            text_range_ptr.pointee.bounds = cast(newValue)
+        }
+    }
+
+    /// The start offset of a AtkTextRange
+    var startOffset: Int {
+        /// The start offset of a AtkTextRange
+        get {
+            let rv: Int = cast(text_range_ptr.pointee.start_offset)
+            return rv
+        }
+        /// The start offset of a AtkTextRange
+         set {
+            text_range_ptr.pointee.start_offset = gint(newValue)
+        }
+    }
+
+    /// The end offset of a AtkTextRange
+    var endOffset: Int {
+        /// The end offset of a AtkTextRange
+        get {
+            let rv: Int = cast(text_range_ptr.pointee.end_offset)
+            return rv
+        }
+        /// The end offset of a AtkTextRange
+         set {
+            text_range_ptr.pointee.end_offset = gint(newValue)
+        }
+    }
+
+    /// The text in the text range
+    var content: UnsafePointer<CChar> {
+        /// The text in the text range
+        get {
+            let rv: UnsafePointer<CChar> = cast(text_range_ptr.pointee.content)
+            return rv
+        }
+        /// The text in the text range
+         set {
+            text_range_ptr.pointee.content = cast(newValue)
+        }
+    }
 
 }
 
@@ -567,7 +763,7 @@ public extension TextRangeProtocol {
 ///
 /// A structure used to store a rectangle used by AtkText.
 public protocol TextRectangleProtocol {
-    /// Untyped pointer to the underlying `AtkTextRectangle` instance.
+        /// Untyped pointer to the underlying `AtkTextRectangle` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkTextRectangle` instance.
@@ -580,7 +776,7 @@ public protocol TextRectangleProtocol {
 ///
 /// A structure used to store a rectangle used by AtkText.
 public struct TextRectangleRef: TextRectangleProtocol {
-    /// Untyped pointer to the underlying `AtkTextRectangle` instance.
+        /// Untyped pointer to the underlying `AtkTextRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -633,7 +829,7 @@ public extension TextRectangleRef {
 ///
 /// A structure used to store a rectangle used by AtkText.
 open class TextRectangle: TextRectangleProtocol {
-    /// Untyped pointer to the underlying `AtkTextRectangle` instance.
+        /// Untyped pointer to the underlying `AtkTextRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -662,7 +858,7 @@ open class TextRectangle: TextRectangleProtocol {
         // no reference counting for AtkTextRectangle, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkTextRectangle`.
+    /// Do-nothing destructor for `AtkTextRectangle`.
     deinit {
         // no reference counting for AtkTextRectangle, cannot unref(cast(_ptr))
     }
@@ -730,14 +926,68 @@ open class TextRectangle: TextRectangleProtocol {
 
 }
 
-// MARK: - no TextRectangle properties
+// MARK: no TextRectangle properties
 
-// MARK: - no signals
+// MARK: no TextRectangle signals
 
 
+// MARK: TextRectangle Record: TextRectangleProtocol extension (methods and fields)
 public extension TextRectangleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTextRectangle` instance.
     var _ptr: UnsafeMutablePointer<AtkTextRectangle> { return ptr.assumingMemoryBound(to: AtkTextRectangle.self) }
+
+
+    /// The horizontal coordinate of a rectangle
+    var x: Int {
+        /// The horizontal coordinate of a rectangle
+        get {
+            let rv: Int = cast(_ptr.pointee.x)
+            return rv
+        }
+        /// The horizontal coordinate of a rectangle
+         set {
+            _ptr.pointee.x = gint(newValue)
+        }
+    }
+
+    /// The vertical coordinate of a rectangle
+    var y: Int {
+        /// The vertical coordinate of a rectangle
+        get {
+            let rv: Int = cast(_ptr.pointee.y)
+            return rv
+        }
+        /// The vertical coordinate of a rectangle
+         set {
+            _ptr.pointee.y = gint(newValue)
+        }
+    }
+
+    /// The width of a rectangle
+    var width: Int {
+        /// The width of a rectangle
+        get {
+            let rv: Int = cast(_ptr.pointee.width)
+            return rv
+        }
+        /// The width of a rectangle
+         set {
+            _ptr.pointee.width = gint(newValue)
+        }
+    }
+
+    /// The height of a rectangle
+    var height: Int {
+        /// The height of a rectangle
+        get {
+            let rv: Int = cast(_ptr.pointee.height)
+            return rv
+        }
+        /// The height of a rectangle
+         set {
+            _ptr.pointee.height = gint(newValue)
+        }
+    }
 
 }
 
@@ -752,7 +1002,7 @@ public extension TextRectangleProtocol {
 ///
 
 public protocol UtilClassProtocol {
-    /// Untyped pointer to the underlying `AtkUtilClass` instance.
+        /// Untyped pointer to the underlying `AtkUtilClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkUtilClass` instance.
@@ -765,7 +1015,7 @@ public protocol UtilClassProtocol {
 ///
 
 public struct UtilClassRef: UtilClassProtocol {
-    /// Untyped pointer to the underlying `AtkUtilClass` instance.
+        /// Untyped pointer to the underlying `AtkUtilClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -818,7 +1068,7 @@ public extension UtilClassRef {
 ///
 
 open class UtilClass: UtilClassProtocol {
-    /// Untyped pointer to the underlying `AtkUtilClass` instance.
+        /// Untyped pointer to the underlying `AtkUtilClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -847,7 +1097,7 @@ open class UtilClass: UtilClassProtocol {
         // no reference counting for AtkUtilClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkUtilClass`.
+    /// Do-nothing destructor for `AtkUtilClass`.
     deinit {
         // no reference counting for AtkUtilClass, cannot unref(cast(_ptr))
     }
@@ -915,14 +1165,37 @@ open class UtilClass: UtilClassProtocol {
 
 }
 
-// MARK: - no UtilClass properties
+// MARK: no UtilClass properties
 
-// MARK: - no signals
+// MARK: no UtilClass signals
 
 
+// MARK: UtilClass Record: UtilClassProtocol extension (methods and fields)
 public extension UtilClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkUtilClass` instance.
     var _ptr: UnsafeMutablePointer<AtkUtilClass> { return ptr.assumingMemoryBound(to: AtkUtilClass.self) }
+
+
+    var parent: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var addGlobalEventListener is unavailable because add_global_event_listener is void
+
+    // var removeGlobalEventListener is unavailable because remove_global_event_listener is void
+
+    // var addKeyEventListener is unavailable because add_key_event_listener is void
+
+    // var removeKeyEventListener is unavailable because remove_key_event_listener is void
+
+    // var getRoot is unavailable because get_root is void
+
+    // var getToolkitName is unavailable because get_toolkit_name is void
+
+    // var getToolkitVersion is unavailable because get_toolkit_version is void
 
 }
 

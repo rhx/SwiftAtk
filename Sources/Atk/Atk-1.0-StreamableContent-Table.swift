@@ -27,7 +27,7 @@ import GLibObject
 /// tied to the current user-agent view of the a particular document,
 /// but may in some cases give access to the underlying model data.
 public protocol StreamableContentProtocol {
-    /// Untyped pointer to the underlying `AtkStreamableContent` instance.
+        /// Untyped pointer to the underlying `AtkStreamableContent` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkStreamableContent` instance.
@@ -55,7 +55,7 @@ public protocol StreamableContentProtocol {
 /// tied to the current user-agent view of the a particular document,
 /// but may in some cases give access to the underlying model data.
 public struct StreamableContentRef: StreamableContentProtocol {
-    /// Untyped pointer to the underlying `AtkStreamableContent` instance.
+        /// Untyped pointer to the underlying `AtkStreamableContent` instance.
     /// For type-safe access, use the generated, typed pointer `streamable_content_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -123,7 +123,7 @@ public extension StreamableContentRef {
 /// tied to the current user-agent view of the a particular document,
 /// but may in some cases give access to the underlying model data.
 open class StreamableContent: StreamableContentProtocol {
-    /// Untyped pointer to the underlying `AtkStreamableContent` instance.
+        /// Untyped pointer to the underlying `AtkStreamableContent` instance.
     /// For type-safe access, use the generated, typed pointer `streamable_content_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -152,7 +152,7 @@ open class StreamableContent: StreamableContentProtocol {
         // no reference counting for AtkStreamableContent, cannot ref(cast(streamable_content_ptr))
     }
 
-    /// Do-nothing destructor for`AtkStreamableContent`.
+    /// Do-nothing destructor for `AtkStreamableContent`.
     deinit {
         // no reference counting for AtkStreamableContent, cannot unref(cast(streamable_content_ptr))
     }
@@ -220,11 +220,12 @@ open class StreamableContent: StreamableContentProtocol {
 
 }
 
-// MARK: - no StreamableContent properties
+// MARK: no StreamableContent properties
 
-// MARK: - no signals
+// MARK: no StreamableContent signals
 
 
+// MARK: StreamableContent Interface: StreamableContentProtocol extension (methods and fields)
 public extension StreamableContentProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkStreamableContent` instance.
     var streamable_content_ptr: UnsafeMutablePointer<AtkStreamableContent> { return ptr.assumingMemoryBound(to: AtkStreamableContent.self) }
@@ -232,19 +233,19 @@ public extension StreamableContentProtocol {
     /// Gets the character string of the specified mime type. The first mime
     /// type is at position 0, the second at position 1, and so on.
     func getMimeType(i: CInt) -> String! {
-        let rv = atk_streamable_content_get_mime_type(cast(streamable_content_ptr), gint(i))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_streamable_content_get_mime_type(cast(streamable_content_ptr), gint(i)))
+        return cast(rv)
     }
 
     /// Gets the number of mime types supported by this object.
-    func getNMimeTypes() -> CInt {
-        let rv = atk_streamable_content_get_n_mime_types(cast(streamable_content_ptr))
-        return CInt(rv)
+    func getNMimeTypes() -> Int {
+        let rv: Int = cast(atk_streamable_content_get_n_mime_types(cast(streamable_content_ptr)))
+        return Int(rv)
     }
 
     /// Gets the content in the specified mime type.
     func getStream(mimeType mime_type: UnsafePointer<gchar>) -> UnsafeMutablePointer<GIOChannel>! {
-        let rv = atk_streamable_content_get_stream(cast(streamable_content_ptr), mime_type)
+        let rv: UnsafeMutablePointer<GIOChannel>! = cast(atk_streamable_content_get_stream(cast(streamable_content_ptr), mime_type))
         return cast(rv)
     }
 
@@ -257,17 +258,19 @@ public extension StreamableContentProtocol {
     /// Note that it is possible for get_uri to return NULL but for
     /// get_stream to work nonetheless, since not all GIOChannels connect to URIs.
     func getUri(mimeType mime_type: UnsafePointer<gchar>) -> String! {
-        let rv = atk_streamable_content_get_uri(cast(streamable_content_ptr), mime_type)
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_streamable_content_get_uri(cast(streamable_content_ptr), mime_type))
+        return cast(rv)
     }
     /// Gets the number of mime types supported by this object.
-    var nMimeTypes: CInt {
+    var nMimeTypes: Int {
         /// Gets the number of mime types supported by this object.
         get {
-            let rv = atk_streamable_content_get_n_mime_types(cast(streamable_content_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_streamable_content_get_n_mime_types(cast(streamable_content_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 
@@ -308,7 +311,7 @@ public extension StreamableContentProtocol {
 /// expose other kind of children, like rows or captions. Right now,
 /// index-based methods are deprecated.
 public protocol TableProtocol {
-    /// Untyped pointer to the underlying `AtkTable` instance.
+        /// Untyped pointer to the underlying `AtkTable` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkTable` instance.
@@ -348,7 +351,7 @@ public protocol TableProtocol {
 /// expose other kind of children, like rows or captions. Right now,
 /// index-based methods are deprecated.
 public struct TableRef: TableProtocol {
-    /// Untyped pointer to the underlying `AtkTable` instance.
+        /// Untyped pointer to the underlying `AtkTable` instance.
     /// For type-safe access, use the generated, typed pointer `table_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -428,7 +431,7 @@ public extension TableRef {
 /// expose other kind of children, like rows or captions. Right now,
 /// index-based methods are deprecated.
 open class Table: TableProtocol {
-    /// Untyped pointer to the underlying `AtkTable` instance.
+        /// Untyped pointer to the underlying `AtkTable` instance.
     /// For type-safe access, use the generated, typed pointer `table_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -457,7 +460,7 @@ open class Table: TableProtocol {
         // no reference counting for AtkTable, cannot ref(cast(table_ptr))
     }
 
-    /// Do-nothing destructor for`AtkTable`.
+    /// Do-nothing destructor for `AtkTable`.
     deinit {
         // no reference counting for AtkTable, cannot unref(cast(table_ptr))
     }
@@ -525,7 +528,7 @@ open class Table: TableProtocol {
 
 }
 
-// MARK: - no Table properties
+// MARK: no Table properties
 
 public enum TableSignalName: String, SignalNameProtocol {
     /// The "column-deleted" signal is emitted by an object which
@@ -561,8 +564,8 @@ public extension TableProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: TableSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: TableSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(table_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -583,6 +586,7 @@ public extension TableProtocol {
     }
 }
 
+// MARK: Table Interface: TableProtocol extension (methods and fields)
 public extension TableProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTable` instance.
     var table_ptr: UnsafeMutablePointer<AtkTable> { return ptr.assumingMemoryBound(to: AtkTable.self) }
@@ -601,7 +605,7 @@ public extension TableProtocol {
 
     /// Gets the caption for the `table`.
     func getCaption() -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_table_get_caption(cast(table_ptr))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_caption(cast(table_ptr)))
         return cast(rv)
     }
 
@@ -609,27 +613,27 @@ public extension TableProtocol {
     ///
     /// **get_column_at_index is deprecated:**
     /// Since 2.12.
-    @available(*, deprecated) func getColumnAtIndex(index_: CInt) -> CInt {
-        let rv = atk_table_get_column_at_index(cast(table_ptr), gint(index_))
-        return CInt(rv)
+    @available(*, deprecated) func getColumnAtIndex(index_: CInt) -> Int {
+        let rv: Int = cast(atk_table_get_column_at_index(cast(table_ptr), gint(index_)))
+        return Int(rv)
     }
 
     /// Gets the description text of the specified `column` in the table
     func getColumnDescription(column: CInt) -> String! {
-        let rv = atk_table_get_column_description(cast(table_ptr), gint(column))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_table_get_column_description(cast(table_ptr), gint(column)))
+        return cast(rv)
     }
 
     /// Gets the number of columns occupied by the accessible object
     /// at the specified `row` and `column` in the `table`.
-    func getColumnExtentAt(row: CInt, column: CInt) -> CInt {
-        let rv = atk_table_get_column_extent_at(cast(table_ptr), gint(row), gint(column))
-        return CInt(rv)
+    func getColumnExtentAt(row: CInt, column: CInt) -> Int {
+        let rv: Int = cast(atk_table_get_column_extent_at(cast(table_ptr), gint(row), gint(column)))
+        return Int(rv)
     }
 
     /// Gets the column header of a specified column in an accessible table.
     func getColumnHeader(column: CInt) -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_table_get_column_header(cast(table_ptr), gint(column))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_column_header(cast(table_ptr), gint(column)))
         return cast(rv)
     }
 
@@ -639,68 +643,68 @@ public extension TableProtocol {
     /// **get_index_at is deprecated:**
     /// Since 2.12. Use atk_table_ref_at() in order to get the
     /// accessible that represents the cell at (@row, @column)
-    @available(*, deprecated) func getIndexAt(row: CInt, column: CInt) -> CInt {
-        let rv = atk_table_get_index_at(cast(table_ptr), gint(row), gint(column))
-        return CInt(rv)
+    @available(*, deprecated) func getIndexAt(row: CInt, column: CInt) -> Int {
+        let rv: Int = cast(atk_table_get_index_at(cast(table_ptr), gint(row), gint(column)))
+        return Int(rv)
     }
 
     /// Gets the number of columns in the table.
-    func getNColumns() -> CInt {
-        let rv = atk_table_get_n_columns(cast(table_ptr))
-        return CInt(rv)
+    func getNColumns() -> Int {
+        let rv: Int = cast(atk_table_get_n_columns(cast(table_ptr)))
+        return Int(rv)
     }
 
     /// Gets the number of rows in the table.
-    func getNRows() -> CInt {
-        let rv = atk_table_get_n_rows(cast(table_ptr))
-        return CInt(rv)
+    func getNRows() -> Int {
+        let rv: Int = cast(atk_table_get_n_rows(cast(table_ptr)))
+        return Int(rv)
     }
 
     /// Gets a `gint` representing the row at the specified `index_`.
     ///
     /// **get_row_at_index is deprecated:**
     /// since 2.12.
-    @available(*, deprecated) func getRowAtIndex(index_: CInt) -> CInt {
-        let rv = atk_table_get_row_at_index(cast(table_ptr), gint(index_))
-        return CInt(rv)
+    @available(*, deprecated) func getRowAtIndex(index_: CInt) -> Int {
+        let rv: Int = cast(atk_table_get_row_at_index(cast(table_ptr), gint(index_)))
+        return Int(rv)
     }
 
     /// Gets the description text of the specified row in the table
     func getRowDescription(row: CInt) -> String! {
-        let rv = atk_table_get_row_description(cast(table_ptr), gint(row))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_table_get_row_description(cast(table_ptr), gint(row)))
+        return cast(rv)
     }
 
     /// Gets the number of rows occupied by the accessible object
     /// at a specified `row` and `column` in the `table`.
-    func getRowExtentAt(row: CInt, column: CInt) -> CInt {
-        let rv = atk_table_get_row_extent_at(cast(table_ptr), gint(row), gint(column))
-        return CInt(rv)
+    func getRowExtentAt(row: CInt, column: CInt) -> Int {
+        let rv: Int = cast(atk_table_get_row_extent_at(cast(table_ptr), gint(row), gint(column)))
+        return Int(rv)
     }
 
     /// Gets the row header of a specified row in an accessible table.
     func getRowHeader(row: CInt) -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_table_get_row_header(cast(table_ptr), gint(row))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_row_header(cast(table_ptr), gint(row)))
         return cast(rv)
     }
 
     /// Gets the selected columns of the table by initializing **selected with
     /// the selected column numbers. This array should be freed by the caller.
-    func getSelectedColumns(selected: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>) -> CInt {
-        let rv = atk_table_get_selected_columns(cast(table_ptr), cast(selected))
-        return CInt(rv)
+    func getSelectedColumns(selected: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>) -> Int {
+        let rv: Int = cast(atk_table_get_selected_columns(cast(table_ptr), cast(selected)))
+        return Int(rv)
     }
 
     /// Gets the selected rows of the table by initializing **selected with
     /// the selected row numbers. This array should be freed by the caller.
-    func getSelectedRows(selected: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>) -> CInt {
-        let rv = atk_table_get_selected_rows(cast(table_ptr), cast(selected))
-        return CInt(rv)
+    func getSelectedRows(selected: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>) -> Int {
+        let rv: Int = cast(atk_table_get_selected_rows(cast(table_ptr), cast(selected)))
+        return Int(rv)
     }
 
     /// Gets the summary description of the table.
     func getSummary() -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_table_get_summary(cast(table_ptr))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_summary(cast(table_ptr)))
         return cast(rv)
     }
 
@@ -728,7 +732,7 @@ public extension TableProtocol {
     /// Get a reference to the table cell at `row`, `column`. This cell
     /// should implement the interface `AtkTableCell`
     func refAt(row: CInt, column: CInt) -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_table_ref_at(cast(table_ptr), gint(row), gint(column))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_ref_at(cast(table_ptr), gint(row), gint(column)))
         return cast(rv)
     }
 
@@ -783,7 +787,7 @@ public extension TableProtocol {
     var caption: UnsafeMutablePointer<AtkObject>! {
         /// Gets the caption for the `table`.
         get {
-            let rv = atk_table_get_caption(cast(table_ptr))
+            let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_caption(cast(table_ptr)))
             return cast(rv)
         }
         /// Sets the caption for the table.
@@ -793,20 +797,20 @@ public extension TableProtocol {
     }
 
     /// Gets the number of columns in the table.
-    var nColumns: CInt {
+    var nColumns: Int {
         /// Gets the number of columns in the table.
         get {
-            let rv = atk_table_get_n_columns(cast(table_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_table_get_n_columns(cast(table_ptr)))
+            return Int(rv)
         }
     }
 
     /// Gets the number of rows in the table.
-    var nRows: CInt {
+    var nRows: Int {
         /// Gets the number of rows in the table.
         get {
-            let rv = atk_table_get_n_rows(cast(table_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_table_get_n_rows(cast(table_ptr)))
+            return Int(rv)
         }
     }
 
@@ -814,7 +818,7 @@ public extension TableProtocol {
     var summary: UnsafeMutablePointer<AtkObject>! {
         /// Gets the summary description of the table.
         get {
-            let rv = atk_table_get_summary(cast(table_ptr))
+            let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_summary(cast(table_ptr)))
             return cast(rv)
         }
         /// Sets the summary description of the table.
@@ -822,6 +826,8 @@ public extension TableProtocol {
             atk_table_set_summary(cast(table_ptr), cast(newValue))
         }
     }
+
+
 }
 
 

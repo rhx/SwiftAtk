@@ -12,7 +12,7 @@ import GLibObject
 ///
 /// Usage of AtkMisc is deprecated since 2.12 and heavily discouraged.
 public protocol MiscClassProtocol {
-    /// Untyped pointer to the underlying `AtkMiscClass` instance.
+        /// Untyped pointer to the underlying `AtkMiscClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkMiscClass` instance.
@@ -25,7 +25,7 @@ public protocol MiscClassProtocol {
 ///
 /// Usage of AtkMisc is deprecated since 2.12 and heavily discouraged.
 public struct MiscClassRef: MiscClassProtocol {
-    /// Untyped pointer to the underlying `AtkMiscClass` instance.
+        /// Untyped pointer to the underlying `AtkMiscClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension MiscClassRef {
 ///
 /// Usage of AtkMisc is deprecated since 2.12 and heavily discouraged.
 open class MiscClass: MiscClassProtocol {
-    /// Untyped pointer to the underlying `AtkMiscClass` instance.
+        /// Untyped pointer to the underlying `AtkMiscClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class MiscClass: MiscClassProtocol {
         // no reference counting for AtkMiscClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkMiscClass`.
+    /// Do-nothing destructor for `AtkMiscClass`.
     deinit {
         // no reference counting for AtkMiscClass, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,29 @@ open class MiscClass: MiscClassProtocol {
 
 }
 
-// MARK: - no MiscClass properties
+// MARK: no MiscClass properties
 
-// MARK: - no signals
+// MARK: no MiscClass signals
 
 
+// MARK: MiscClass Record: MiscClassProtocol extension (methods and fields)
 public extension MiscClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkMiscClass` instance.
     var _ptr: UnsafeMutablePointer<AtkMiscClass> { return ptr.assumingMemoryBound(to: AtkMiscClass.self) }
+
+
+    var parent: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var threadsEnter is unavailable because threads_enter is void
+
+    // var threadsLeave is unavailable because threads_leave is void
+
+    // var vfuncs is unavailable because vfuncs is void
 
 }
 
@@ -197,7 +212,7 @@ public extension MiscClassProtocol {
 ///
 
 public protocol NoOpObjectClassProtocol {
-    /// Untyped pointer to the underlying `AtkNoOpObjectClass` instance.
+        /// Untyped pointer to the underlying `AtkNoOpObjectClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkNoOpObjectClass` instance.
@@ -210,7 +225,7 @@ public protocol NoOpObjectClassProtocol {
 ///
 
 public struct NoOpObjectClassRef: NoOpObjectClassProtocol {
-    /// Untyped pointer to the underlying `AtkNoOpObjectClass` instance.
+        /// Untyped pointer to the underlying `AtkNoOpObjectClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +278,7 @@ public extension NoOpObjectClassRef {
 ///
 
 open class NoOpObjectClass: NoOpObjectClassProtocol {
-    /// Untyped pointer to the underlying `AtkNoOpObjectClass` instance.
+        /// Untyped pointer to the underlying `AtkNoOpObjectClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +307,7 @@ open class NoOpObjectClass: NoOpObjectClassProtocol {
         // no reference counting for AtkNoOpObjectClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkNoOpObjectClass`.
+    /// Do-nothing destructor for `AtkNoOpObjectClass`.
     deinit {
         // no reference counting for AtkNoOpObjectClass, cannot unref(cast(_ptr))
     }
@@ -360,14 +375,23 @@ open class NoOpObjectClass: NoOpObjectClassProtocol {
 
 }
 
-// MARK: - no NoOpObjectClass properties
+// MARK: no NoOpObjectClass properties
 
-// MARK: - no signals
+// MARK: no NoOpObjectClass signals
 
 
+// MARK: NoOpObjectClass Record: NoOpObjectClassProtocol extension (methods and fields)
 public extension NoOpObjectClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkNoOpObjectClass` instance.
     var _ptr: UnsafeMutablePointer<AtkNoOpObjectClass> { return ptr.assumingMemoryBound(to: AtkNoOpObjectClass.self) }
+
+
+    var parentClass: AtkObjectClass {
+        get {
+            let rv: AtkObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
 
 }
 

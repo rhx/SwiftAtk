@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol SocketClassProtocol {
-    /// Untyped pointer to the underlying `AtkSocketClass` instance.
+        /// Untyped pointer to the underlying `AtkSocketClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkSocketClass` instance.
@@ -25,7 +25,7 @@ public protocol SocketClassProtocol {
 ///
 
 public struct SocketClassRef: SocketClassProtocol {
-    /// Untyped pointer to the underlying `AtkSocketClass` instance.
+        /// Untyped pointer to the underlying `AtkSocketClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension SocketClassRef {
 ///
 
 open class SocketClass: SocketClassProtocol {
-    /// Untyped pointer to the underlying `AtkSocketClass` instance.
+        /// Untyped pointer to the underlying `AtkSocketClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class SocketClass: SocketClassProtocol {
         // no reference counting for AtkSocketClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkSocketClass`.
+    /// Do-nothing destructor for `AtkSocketClass`.
     deinit {
         // no reference counting for AtkSocketClass, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,25 @@ open class SocketClass: SocketClassProtocol {
 
 }
 
-// MARK: - no SocketClass properties
+// MARK: no SocketClass properties
 
-// MARK: - no signals
+// MARK: no SocketClass signals
 
 
+// MARK: SocketClass Record: SocketClassProtocol extension (methods and fields)
 public extension SocketClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkSocketClass` instance.
     var _ptr: UnsafeMutablePointer<AtkSocketClass> { return ptr.assumingMemoryBound(to: AtkSocketClass.self) }
+
+
+    var parentClass: AtkObjectClass {
+        get {
+            let rv: AtkObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    // var embed is unavailable because embed is void
 
 }
 
@@ -197,7 +208,7 @@ public extension SocketClassProtocol {
 ///
 
 public protocol StateSetClassProtocol {
-    /// Untyped pointer to the underlying `AtkStateSetClass` instance.
+        /// Untyped pointer to the underlying `AtkStateSetClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkStateSetClass` instance.
@@ -210,7 +221,7 @@ public protocol StateSetClassProtocol {
 ///
 
 public struct StateSetClassRef: StateSetClassProtocol {
-    /// Untyped pointer to the underlying `AtkStateSetClass` instance.
+        /// Untyped pointer to the underlying `AtkStateSetClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +274,7 @@ public extension StateSetClassRef {
 ///
 
 open class StateSetClass: StateSetClassProtocol {
-    /// Untyped pointer to the underlying `AtkStateSetClass` instance.
+        /// Untyped pointer to the underlying `AtkStateSetClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +303,7 @@ open class StateSetClass: StateSetClassProtocol {
         // no reference counting for AtkStateSetClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkStateSetClass`.
+    /// Do-nothing destructor for `AtkStateSetClass`.
     deinit {
         // no reference counting for AtkStateSetClass, cannot unref(cast(_ptr))
     }
@@ -360,14 +371,23 @@ open class StateSetClass: StateSetClassProtocol {
 
 }
 
-// MARK: - no StateSetClass properties
+// MARK: no StateSetClass properties
 
-// MARK: - no signals
+// MARK: no StateSetClass signals
 
 
+// MARK: StateSetClass Record: StateSetClassProtocol extension (methods and fields)
 public extension StateSetClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkStateSetClass` instance.
     var _ptr: UnsafeMutablePointer<AtkStateSetClass> { return ptr.assumingMemoryBound(to: AtkStateSetClass.self) }
+
+
+    var parent: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
 
 }
 
@@ -382,7 +402,7 @@ public extension StateSetClassProtocol {
 ///
 
 public protocol StreamableContentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkStreamableContentIface` instance.
+        /// Untyped pointer to the underlying `AtkStreamableContentIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkStreamableContentIface` instance.
@@ -395,7 +415,7 @@ public protocol StreamableContentIfaceProtocol {
 ///
 
 public struct StreamableContentIfaceRef: StreamableContentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkStreamableContentIface` instance.
+        /// Untyped pointer to the underlying `AtkStreamableContentIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -448,7 +468,7 @@ public extension StreamableContentIfaceRef {
 ///
 
 open class StreamableContentIface: StreamableContentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkStreamableContentIface` instance.
+        /// Untyped pointer to the underlying `AtkStreamableContentIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -477,7 +497,7 @@ open class StreamableContentIface: StreamableContentIfaceProtocol {
         // no reference counting for AtkStreamableContentIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkStreamableContentIface`.
+    /// Do-nothing destructor for `AtkStreamableContentIface`.
     deinit {
         // no reference counting for AtkStreamableContentIface, cannot unref(cast(_ptr))
     }
@@ -545,14 +565,52 @@ open class StreamableContentIface: StreamableContentIfaceProtocol {
 
 }
 
-// MARK: - no StreamableContentIface properties
+// MARK: no StreamableContentIface properties
 
-// MARK: - no signals
+// MARK: no StreamableContentIface signals
 
 
+// MARK: StreamableContentIface Record: StreamableContentIfaceProtocol extension (methods and fields)
 public extension StreamableContentIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkStreamableContentIface` instance.
     var _ptr: UnsafeMutablePointer<AtkStreamableContentIface> { return ptr.assumingMemoryBound(to: AtkStreamableContentIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var getNMimeTypes is unavailable because get_n_mime_types is void
+
+    // var getMimeType is unavailable because get_mime_type is void
+
+    // var getStream is unavailable because get_stream is void
+
+    // var getUri is unavailable because get_uri is void
+
+    var pad1: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad1)
+            return rv
+        }
+    }
+
+    var pad2: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad2)
+            return rv
+        }
+    }
+
+    var pad3: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad3)
+            return rv
+        }
+    }
 
 }
 
@@ -567,7 +625,7 @@ public extension StreamableContentIfaceProtocol {
 ///
 /// AtkTableCell is an interface for cells inside an `AtkTable`.
 public protocol TableCellIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTableCellIface` instance.
+        /// Untyped pointer to the underlying `AtkTableCellIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkTableCellIface` instance.
@@ -580,7 +638,7 @@ public protocol TableCellIfaceProtocol {
 ///
 /// AtkTableCell is an interface for cells inside an `AtkTable`.
 public struct TableCellIfaceRef: TableCellIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTableCellIface` instance.
+        /// Untyped pointer to the underlying `AtkTableCellIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -633,7 +691,7 @@ public extension TableCellIfaceRef {
 ///
 /// AtkTableCell is an interface for cells inside an `AtkTable`.
 open class TableCellIface: TableCellIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkTableCellIface` instance.
+        /// Untyped pointer to the underlying `AtkTableCellIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -662,7 +720,7 @@ open class TableCellIface: TableCellIfaceProtocol {
         // no reference counting for AtkTableCellIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkTableCellIface`.
+    /// Do-nothing destructor for `AtkTableCellIface`.
     deinit {
         // no reference counting for AtkTableCellIface, cannot unref(cast(_ptr))
     }
@@ -730,14 +788,32 @@ open class TableCellIface: TableCellIfaceProtocol {
 
 }
 
-// MARK: - no TableCellIface properties
+// MARK: no TableCellIface properties
 
-// MARK: - no signals
+// MARK: no TableCellIface signals
 
 
+// MARK: TableCellIface Record: TableCellIfaceProtocol extension (methods and fields)
 public extension TableCellIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTableCellIface` instance.
     var _ptr: UnsafeMutablePointer<AtkTableCellIface> { return ptr.assumingMemoryBound(to: AtkTableCellIface.self) }
+
+
+    // var parent is unavailable because parent is private
+
+    // var getColumnSpan is unavailable because get_column_span is void
+
+    // var getColumnHeaderCells is unavailable because get_column_header_cells is void
+
+    // var getPosition is unavailable because get_position is void
+
+    // var getRowSpan is unavailable because get_row_span is void
+
+    // var getRowHeaderCells is unavailable because get_row_header_cells is void
+
+    // var getRowColumnSpan is unavailable because get_row_column_span is void
+
+    // var getTable is unavailable because get_table is void
 
 }
 

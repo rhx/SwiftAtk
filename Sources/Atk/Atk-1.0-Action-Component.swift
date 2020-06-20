@@ -28,7 +28,7 @@ import GLibObject
 /// exposing redundant actions if possible.  By convention we have been
 /// using "mouse centric" terminology for `AtkAction` names.
 public protocol ActionProtocol {
-    /// Untyped pointer to the underlying `AtkAction` instance.
+        /// Untyped pointer to the underlying `AtkAction` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkAction` instance.
@@ -57,7 +57,7 @@ public protocol ActionProtocol {
 /// exposing redundant actions if possible.  By convention we have been
 /// using "mouse centric" terminology for `AtkAction` names.
 public struct ActionRef: ActionProtocol {
-    /// Untyped pointer to the underlying `AtkAction` instance.
+        /// Untyped pointer to the underlying `AtkAction` instance.
     /// For type-safe access, use the generated, typed pointer `action_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -126,7 +126,7 @@ public extension ActionRef {
 /// exposing redundant actions if possible.  By convention we have been
 /// using "mouse centric" terminology for `AtkAction` names.
 open class Action: ActionProtocol {
-    /// Untyped pointer to the underlying `AtkAction` instance.
+        /// Untyped pointer to the underlying `AtkAction` instance.
     /// For type-safe access, use the generated, typed pointer `action_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -155,7 +155,7 @@ open class Action: ActionProtocol {
         // no reference counting for AtkAction, cannot ref(cast(action_ptr))
     }
 
-    /// Do-nothing destructor for`AtkAction`.
+    /// Do-nothing destructor for `AtkAction`.
     deinit {
         // no reference counting for AtkAction, cannot unref(cast(action_ptr))
     }
@@ -223,11 +223,12 @@ open class Action: ActionProtocol {
 
 }
 
-// MARK: - no Action properties
+// MARK: no Action properties
 
-// MARK: - no signals
+// MARK: no Action signals
 
 
+// MARK: Action Interface: ActionProtocol extension (methods and fields)
 public extension ActionProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkAction` instance.
     var action_ptr: UnsafeMutablePointer<AtkAction> { return ptr.assumingMemoryBound(to: AtkAction.self) }
@@ -240,8 +241,8 @@ public extension ActionProtocol {
 
     /// Returns a description of the specified action of the object.
     func getDescription(i: CInt) -> String! {
-        let rv = atk_action_get_description(cast(action_ptr), gint(i))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_action_get_description(cast(action_ptr), gint(i)))
+        return cast(rv)
     }
 
     /// Gets the keybinding which can be used to activate this action, if one
@@ -267,22 +268,22 @@ public extension ActionProtocol {
     /// for the German locale. If, hypothetically, this menu item lacked a mnemonic,
     /// it would be represented by ";;Ctrl+N" and ";;Strg+N" respectively.
     func getKeybinding(i: CInt) -> String! {
-        let rv = atk_action_get_keybinding(cast(action_ptr), gint(i))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_action_get_keybinding(cast(action_ptr), gint(i)))
+        return cast(rv)
     }
 
     /// Returns the localized name of the specified action of the object.
     func getLocalizedName(i: CInt) -> String! {
-        let rv = atk_action_get_localized_name(cast(action_ptr), gint(i))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_action_get_localized_name(cast(action_ptr), gint(i)))
+        return cast(rv)
     }
 
     /// Gets the number of accessible actions available on the object.
     /// If there are more than one, the first one is considered the
     /// "default" action of the object.
-    func getNActions() -> CInt {
-        let rv = atk_action_get_n_actions(cast(action_ptr))
-        return CInt(rv)
+    func getNActions() -> Int {
+        let rv: Int = cast(atk_action_get_n_actions(cast(action_ptr)))
+        return Int(rv)
     }
 
     /// Returns a non-localized string naming the specified action of the
@@ -300,8 +301,8 @@ public extension ActionProtocol {
     /// i.e. the result of some actions via `atk_action_do_action()` may be
     /// NIL.
     func getName(i: CInt) -> String! {
-        let rv = atk_action_get_name(cast(action_ptr), gint(i))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_action_get_name(cast(action_ptr), gint(i)))
+        return cast(rv)
     }
 
     /// Sets a description of the specified action of the object.
@@ -312,15 +313,17 @@ public extension ActionProtocol {
     /// Gets the number of accessible actions available on the object.
     /// If there are more than one, the first one is considered the
     /// "default" action of the object.
-    var nActions: CInt {
+    var nActions: Int {
         /// Gets the number of accessible actions available on the object.
         /// If there are more than one, the first one is considered the
         /// "default" action of the object.
         get {
-            let rv = atk_action_get_n_actions(cast(action_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_action_get_n_actions(cast(action_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 
@@ -343,7 +346,7 @@ public extension ActionProtocol {
 /// transparent background, in which case text glyph bounding box
 /// information is provided by `AtkText`.
 public protocol ComponentProtocol {
-    /// Untyped pointer to the underlying `AtkComponent` instance.
+        /// Untyped pointer to the underlying `AtkComponent` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkComponent` instance.
@@ -365,7 +368,7 @@ public protocol ComponentProtocol {
 /// transparent background, in which case text glyph bounding box
 /// information is provided by `AtkText`.
 public struct ComponentRef: ComponentProtocol {
-    /// Untyped pointer to the underlying `AtkComponent` instance.
+        /// Untyped pointer to the underlying `AtkComponent` instance.
     /// For type-safe access, use the generated, typed pointer `component_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -427,7 +430,7 @@ public extension ComponentRef {
 /// transparent background, in which case text glyph bounding box
 /// information is provided by `AtkText`.
 open class Component: ComponentProtocol {
-    /// Untyped pointer to the underlying `AtkComponent` instance.
+        /// Untyped pointer to the underlying `AtkComponent` instance.
     /// For type-safe access, use the generated, typed pointer `component_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -456,7 +459,7 @@ open class Component: ComponentProtocol {
         // no reference counting for AtkComponent, cannot ref(cast(component_ptr))
     }
 
-    /// Do-nothing destructor for`AtkComponent`.
+    /// Do-nothing destructor for `AtkComponent`.
     deinit {
         // no reference counting for AtkComponent, cannot unref(cast(component_ptr))
     }
@@ -524,7 +527,7 @@ open class Component: ComponentProtocol {
 
 }
 
-// MARK: - no Component properties
+// MARK: no Component properties
 
 public enum ComponentSignalName: String, SignalNameProtocol {
     /// The 'bounds-changed" signal is emitted when the bposition or
@@ -539,8 +542,8 @@ public extension ComponentProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: ComponentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: ComponentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(component_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -561,6 +564,7 @@ public extension ComponentProtocol {
     }
 }
 
+// MARK: Component Interface: ComponentProtocol extension (methods and fields)
 public extension ComponentProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkComponent` instance.
     var component_ptr: UnsafeMutablePointer<AtkComponent> { return ptr.assumingMemoryBound(to: AtkComponent.self) }
@@ -572,9 +576,9 @@ public extension ComponentProtocol {
     /// **add_focus_handler is deprecated:**
     /// If you need to track when an object gains or
     /// lose the focus, use the #AtkObject::state-change "focused" notification instead.
-    @available(*, deprecated) func addFocus(handler: @escaping FocusHandler) -> CUnsignedInt {
-        let rv = atk_component_add_focus_handler(cast(component_ptr), handler)
-        return CUnsignedInt(rv)
+    @available(*, deprecated) func addFocus(handler: @escaping FocusHandler) -> Int {
+        let rv: Int = cast(atk_component_add_focus_handler(cast(component_ptr), handler))
+        return Int(rv)
     }
 
     /// Checks whether the specified point is within the extent of the `component`.
@@ -590,12 +594,15 @@ public extension ComponentProtocol {
     /// Returns the alpha value (i.e. the opacity) for this
     /// `component`, on a scale from 0 (fully transparent) to 1.0
     /// (fully opaque).
-    func getAlpha() -> gdouble {
-        let rv = atk_component_get_alpha(cast(component_ptr))
-        return rv
+    func getAlpha() -> Double {
+        let rv: Double = cast(atk_component_get_alpha(cast(component_ptr)))
+        return cast(rv)
     }
 
     /// Gets the rectangle which gives the extent of the `component`.
+    /// 
+    /// If the extent can not be obtained (e.g. a non-embedded plug or missing
+    /// support), all of x, y, width, height are set to -1.
     func getExtents(x: UnsafeMutablePointer<CInt>, y: UnsafeMutablePointer<CInt>, width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>, coordType coord_type: CoordType) {
         atk_component_get_extents(cast(component_ptr), cast(x), cast(y), cast(width), cast(height), coord_type)
     
@@ -604,18 +611,21 @@ public extension ComponentProtocol {
     /// Gets the layer of the component.
     func getLayer() -> AtkLayer {
         let rv = atk_component_get_layer(cast(component_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the zorder of the component. The value G_MININT will be returned
     /// if the layer of the component is not ATK_LAYER_MDI or ATK_LAYER_WINDOW.
-    func getMdiZorder() -> CInt {
-        let rv = atk_component_get_mdi_zorder(cast(component_ptr))
-        return CInt(rv)
+    func getMdiZorder() -> Int {
+        let rv: Int = cast(atk_component_get_mdi_zorder(cast(component_ptr)))
+        return Int(rv)
     }
 
     /// Gets the position of `component` in the form of
     /// a point specifying `component`'s top-left corner.
+    /// 
+    /// If the position can not be obtained (e.g. a non-embedded plug or missing
+    /// support), x and y are set to -1.
     ///
     /// **get_position is deprecated:**
     /// Since 2.12. Use atk_component_get_extents() instead.
@@ -625,6 +635,9 @@ public extension ComponentProtocol {
     }
 
     /// Gets the size of the `component` in terms of width and height.
+    /// 
+    /// If the size can not be obtained (e.g. a non-embedded plug or missing
+    /// support), width and height are set to -1.
     ///
     /// **get_size is deprecated:**
     /// Since 2.12. Use atk_component_get_extents() instead.
@@ -642,7 +655,7 @@ public extension ComponentProtocol {
     /// Gets a reference to the accessible child, if one exists, at the
     /// coordinate point specified by `x` and `y`.
     func refAccessibleAtPoint(x: CInt, y: CInt, coordType coord_type: CoordType) -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_component_ref_accessible_at_point(cast(component_ptr), gint(x), gint(y), coord_type)
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_component_ref_accessible_at_point(cast(component_ptr), gint(x), gint(y), coord_type))
         return cast(rv)
     }
 
@@ -668,8 +681,8 @@ public extension ComponentProtocol {
         return Bool(rv != 0)
     }
 
-    /// Makes an object visible on the screen at a given position by scrolling all
-    /// necessary parents.
+    /// Move the top-left of `component` to a given position of the screen by
+    /// scrolling all necessary parents.
     func scrollToPoint(coords: CoordType, x: CInt, y: CInt) -> Bool {
         let rv = atk_component_scroll_to_point(cast(component_ptr), coords, gint(x), gint(y))
         return Bool(rv != 0)
@@ -698,13 +711,13 @@ public extension ComponentProtocol {
     /// Returns the alpha value (i.e. the opacity) for this
     /// `component`, on a scale from 0 (fully transparent) to 1.0
     /// (fully opaque).
-    var alpha: gdouble {
+    var alpha: Double {
         /// Returns the alpha value (i.e. the opacity) for this
         /// `component`, on a scale from 0 (fully transparent) to 1.0
         /// (fully opaque).
         get {
-            let rv = atk_component_get_alpha(cast(component_ptr))
-            return rv
+            let rv: Double = cast(atk_component_get_alpha(cast(component_ptr)))
+            return cast(rv)
         }
     }
 
@@ -713,20 +726,22 @@ public extension ComponentProtocol {
         /// Gets the layer of the component.
         get {
             let rv = atk_component_get_layer(cast(component_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
     /// Gets the zorder of the component. The value G_MININT will be returned
     /// if the layer of the component is not ATK_LAYER_MDI or ATK_LAYER_WINDOW.
-    var mdiZorder: CInt {
+    var mdiZorder: Int {
         /// Gets the zorder of the component. The value G_MININT will be returned
         /// if the layer of the component is not ATK_LAYER_MDI or ATK_LAYER_WINDOW.
         get {
-            let rv = atk_component_get_mdi_zorder(cast(component_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_component_get_mdi_zorder(cast(component_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 

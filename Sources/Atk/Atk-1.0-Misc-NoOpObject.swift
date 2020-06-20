@@ -13,7 +13,7 @@ import GLibObject
 /// A set of utility functions for thread locking. This interface and
 /// all his related methods are deprecated since 2.12.
 public protocol MiscProtocol: ObjectProtocol {
-    /// Untyped pointer to the underlying `AtkMisc` instance.
+        /// Untyped pointer to the underlying `AtkMisc` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkMisc` instance.
@@ -27,7 +27,7 @@ public protocol MiscProtocol: ObjectProtocol {
 /// A set of utility functions for thread locking. This interface and
 /// all his related methods are deprecated since 2.12.
 public struct MiscRef: MiscProtocol {
-    /// Untyped pointer to the underlying `AtkMisc` instance.
+        /// Untyped pointer to the underlying `AtkMisc` instance.
     /// For type-safe access, use the generated, typed pointer `misc_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -77,7 +77,7 @@ public extension MiscRef {
     /// **get_instance is deprecated:**
     /// Since 2.12.
     @available(*, deprecated) static func getInstance() -> MiscRef! {
-        let rv = atk_misc_get_instance()
+        let rv: UnsafePointer<AtkMisc>! = cast(atk_misc_get_instance())
         return rv.map { MiscRef(cast($0)) }
     }
 }
@@ -89,7 +89,7 @@ public extension MiscRef {
 /// A set of utility functions for thread locking. This interface and
 /// all his related methods are deprecated since 2.12.
 open class Misc: Object, MiscProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Misc` instance.
     /// - Parameter op: pointer to the underlying object
@@ -173,13 +173,13 @@ open class Misc: Object, MiscProtocol {
     /// **get_instance is deprecated:**
     /// Since 2.12.
     @available(*, deprecated) public static func getInstance() -> Misc! {
-        let rv = atk_misc_get_instance()
+        let rv: UnsafePointer<AtkMisc>! = cast(atk_misc_get_instance())
         return rv.map { Misc(cast($0)) }
     }
 
 }
 
-// MARK: - no Misc properties
+// MARK: no Misc properties
 
 public enum MiscSignalName: String, SignalNameProtocol {
     /// The notify signal is emitted on an object when one of its properties has
@@ -216,8 +216,8 @@ public extension MiscProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: MiscSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: MiscSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(misc_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -238,6 +238,7 @@ public extension MiscProtocol {
     }
 }
 
+// MARK: Misc Class: MiscProtocol extension (methods and fields)
 public extension MiscProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkMisc` instance.
     var misc_ptr: UnsafeMutablePointer<AtkMisc> { return ptr.assumingMemoryBound(to: AtkMisc.self) }
@@ -270,6 +271,14 @@ public extension MiscProtocol {
         atk_misc_threads_leave(cast(misc_ptr))
     
     }
+
+    var parent: GObject {
+        get {
+            let rv: GObject = cast(misc_ptr.pointee.parent)
+            return rv
+        }
+    }
+
 }
 
 
@@ -286,7 +295,7 @@ public extension MiscProtocol {
 /// accessible object is requested for an object type for which no
 /// factory type is specified.
 public protocol NoOpObjectProtocol: ObjectProtocol, ActionProtocol, ComponentProtocol, DocumentProtocol, EditableTextProtocol, HypertextProtocol, ImageProtocol, SelectionProtocol, TableProtocol, TableCellProtocol, TextProtocol, ValueProtocol, WindowProtocol {
-    /// Untyped pointer to the underlying `AtkNoOpObject` instance.
+        /// Untyped pointer to the underlying `AtkNoOpObject` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkNoOpObject` instance.
@@ -302,7 +311,7 @@ public protocol NoOpObjectProtocol: ObjectProtocol, ActionProtocol, ComponentPro
 /// accessible object is requested for an object type for which no
 /// factory type is specified.
 public struct NoOpObjectRef: NoOpObjectProtocol {
-    /// Untyped pointer to the underlying `AtkNoOpObject` instance.
+        /// Untyped pointer to the underlying `AtkNoOpObject` instance.
     /// For type-safe access, use the generated, typed pointer `no_op_object_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -350,7 +359,7 @@ public extension NoOpObjectRef {
         /// Provides a default (non-functioning stub) `AtkObject`.
     /// Application maintainers should not use this method.
     init( obj: ObjectProtocol) {
-        let rv = atk_no_op_object_new(cast(obj.ptr))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_no_op_object_new(cast(obj.ptr)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -364,7 +373,7 @@ public extension NoOpObjectRef {
 /// accessible object is requested for an object type for which no
 /// factory type is specified.
 open class NoOpObject: Object, NoOpObjectProtocol {
-    /// Designated initialiser from the underlying `C` data type.
+        /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `NoOpObject` instance.
     /// - Parameter op: pointer to the underlying object
@@ -445,7 +454,7 @@ open class NoOpObject: Object, NoOpObjectProtocol {
     /// Provides a default (non-functioning stub) `AtkObject`.
     /// Application maintainers should not use this method.
     public init( obj: ObjectProtocol) {
-        let rv = atk_no_op_object_new(cast(obj.ptr))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_no_op_object_new(cast(obj.ptr)))
         super.init(cast(rv))
     }
 
@@ -509,8 +518,8 @@ public extension NoOpObjectProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: NoOpObjectPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default_, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
-        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default_, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
+    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: NoOpObjectPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+        func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
             let to   = unsafeBitCast(transform_to,   to: BindingTransformFunc.self)
@@ -533,6 +542,23 @@ public extension NoOpObjectProtocol {
             return holder.transform_to(GLibObject.ValueRef(raw: $1), GLibObject.ValueRef(raw: $2)) ? 1 : 0
         }
         return rv
+    }
+
+    /// Get the value of a NoOpObject property
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func get(property: NoOpObjectPropertyName) -> GLibObject.Value {
+        let v = GLibObject.Value()
+        g_object_get_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
+        return v
+    }
+
+    /// Set the value of a NoOpObject property.
+    /// *Note* that this will only have an effect on properties that are writable and not construct-only!
+    /// - Parameter property: the property to get the value for
+    /// - Returns: the value of the named property
+    func set(property: NoOpObjectPropertyName, value v: GLibObject.Value) {
+        g_object_set_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
     }
 }
 
@@ -651,8 +677,8 @@ public extension NoOpObjectProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: NoOpObjectSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: NoOpObjectSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(no_op_object_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -673,9 +699,18 @@ public extension NoOpObjectProtocol {
     }
 }
 
+// MARK: NoOpObject Class: NoOpObjectProtocol extension (methods and fields)
 public extension NoOpObjectProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkNoOpObject` instance.
     var no_op_object_ptr: UnsafeMutablePointer<AtkNoOpObject> { return ptr.assumingMemoryBound(to: AtkNoOpObject.self) }
+
+
+    var parent: AtkObject {
+        get {
+            let rv: AtkObject = cast(no_op_object_ptr.pointee.parent)
+            return rv
+        }
+    }
 
 }
 

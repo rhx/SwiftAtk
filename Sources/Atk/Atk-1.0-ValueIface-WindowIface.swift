@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol ValueIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkValueIface` instance.
+        /// Untyped pointer to the underlying `AtkValueIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkValueIface` instance.
@@ -25,7 +25,7 @@ public protocol ValueIfaceProtocol {
 ///
 
 public struct ValueIfaceRef: ValueIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkValueIface` instance.
+        /// Untyped pointer to the underlying `AtkValueIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension ValueIfaceRef {
 ///
 
 open class ValueIface: ValueIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkValueIface` instance.
+        /// Untyped pointer to the underlying `AtkValueIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class ValueIface: ValueIfaceProtocol {
         // no reference counting for AtkValueIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkValueIface`.
+    /// Do-nothing destructor for `AtkValueIface`.
     deinit {
         // no reference counting for AtkValueIface, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,43 @@ open class ValueIface: ValueIfaceProtocol {
 
 }
 
-// MARK: - no ValueIface properties
+// MARK: no ValueIface properties
 
-// MARK: - no signals
+// MARK: no ValueIface signals
 
 
+// MARK: ValueIface Record: ValueIfaceProtocol extension (methods and fields)
 public extension ValueIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkValueIface` instance.
     var _ptr: UnsafeMutablePointer<AtkValueIface> { return ptr.assumingMemoryBound(to: AtkValueIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var getCurrentValue is unavailable because get_current_value is void
+
+    // var getMaximumValue is unavailable because get_maximum_value is void
+
+    // var getMinimumValue is unavailable because get_minimum_value is void
+
+    // var setCurrentValue is unavailable because set_current_value is void
+
+    // var getMinimumIncrement is unavailable because get_minimum_increment is void
+
+    // var getValueAndText is unavailable because get_value_and_text is void
+
+    // var getRange is unavailable because get_range is void
+
+    // var getIncrement is unavailable because get_increment is void
+
+    // var getSubRanges is unavailable because get_sub_ranges is void
+
+    // var setValue is unavailable because set_value is void
 
 }
 
@@ -197,7 +226,7 @@ public extension ValueIfaceProtocol {
 ///
 
 public protocol WindowIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkWindowIface` instance.
+        /// Untyped pointer to the underlying `AtkWindowIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkWindowIface` instance.
@@ -210,7 +239,7 @@ public protocol WindowIfaceProtocol {
 ///
 
 public struct WindowIfaceRef: WindowIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkWindowIface` instance.
+        /// Untyped pointer to the underlying `AtkWindowIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +292,7 @@ public extension WindowIfaceRef {
 ///
 
 open class WindowIface: WindowIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkWindowIface` instance.
+        /// Untyped pointer to the underlying `AtkWindowIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +321,7 @@ open class WindowIface: WindowIfaceProtocol {
         // no reference counting for AtkWindowIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkWindowIface`.
+    /// Do-nothing destructor for `AtkWindowIface`.
     deinit {
         // no reference counting for AtkWindowIface, cannot unref(cast(_ptr))
     }
@@ -360,14 +389,23 @@ open class WindowIface: WindowIfaceProtocol {
 
 }
 
-// MARK: - no WindowIface properties
+// MARK: no WindowIface properties
 
-// MARK: - no signals
+// MARK: no WindowIface signals
 
 
+// MARK: WindowIface Record: WindowIfaceProtocol extension (methods and fields)
 public extension WindowIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkWindowIface` instance.
     var _ptr: UnsafeMutablePointer<AtkWindowIface> { return ptr.assumingMemoryBound(to: AtkWindowIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
 
 }
 

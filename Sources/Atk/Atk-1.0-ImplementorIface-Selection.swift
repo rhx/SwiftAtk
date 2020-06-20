@@ -14,7 +14,7 @@ import GLibObject
 /// AtkObject peers may be obtained via calls to
 /// iface->(ref_accessible)(implementor);
 public protocol ImplementorIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkImplementorIface` instance.
+        /// Untyped pointer to the underlying `AtkImplementorIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkImplementorIface` instance.
@@ -29,7 +29,7 @@ public protocol ImplementorIfaceProtocol {
 /// AtkObject peers may be obtained via calls to
 /// iface->(ref_accessible)(implementor);
 public struct ImplementorIfaceRef: ImplementorIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkImplementorIface` instance.
+        /// Untyped pointer to the underlying `AtkImplementorIface` instance.
     /// For type-safe access, use the generated, typed pointer `implementor_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -84,7 +84,7 @@ public extension ImplementorIfaceRef {
 /// AtkObject peers may be obtained via calls to
 /// iface->(ref_accessible)(implementor);
 open class ImplementorIface: ImplementorIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkImplementorIface` instance.
+        /// Untyped pointer to the underlying `AtkImplementorIface` instance.
     /// For type-safe access, use the generated, typed pointer `implementor_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -113,7 +113,7 @@ open class ImplementorIface: ImplementorIfaceProtocol {
         // no reference counting for AtkImplementorIface, cannot ref(cast(implementor_ptr))
     }
 
-    /// Do-nothing destructor for`AtkImplementorIface`.
+    /// Do-nothing destructor for `AtkImplementorIface`.
     deinit {
         // no reference counting for AtkImplementorIface, cannot unref(cast(implementor_ptr))
     }
@@ -181,14 +181,17 @@ open class ImplementorIface: ImplementorIfaceProtocol {
 
 }
 
-// MARK: - no ImplementorIface properties
+// MARK: no ImplementorIface properties
 
-// MARK: - no signals
+// MARK: no ImplementorIface signals
 
 
+// MARK: ImplementorIface Interface: ImplementorIfaceProtocol extension (methods and fields)
 public extension ImplementorIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkImplementorIface` instance.
     var implementor_ptr: UnsafeMutablePointer<AtkImplementorIface> { return ptr.assumingMemoryBound(to: AtkImplementorIface.self) }
+
+
 
 }
 
@@ -212,7 +215,7 @@ public extension ImplementorIfaceProtocol {
 /// are accomplished a other ATK interfaces - `AtkSelection` is limited
 /// to the selection/deselection of children.
 public protocol SelectionProtocol {
-    /// Untyped pointer to the underlying `AtkSelection` instance.
+        /// Untyped pointer to the underlying `AtkSelection` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkSelection` instance.
@@ -234,7 +237,7 @@ public protocol SelectionProtocol {
 /// are accomplished a other ATK interfaces - `AtkSelection` is limited
 /// to the selection/deselection of children.
 public struct SelectionRef: SelectionProtocol {
-    /// Untyped pointer to the underlying `AtkSelection` instance.
+        /// Untyped pointer to the underlying `AtkSelection` instance.
     /// For type-safe access, use the generated, typed pointer `selection_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -296,7 +299,7 @@ public extension SelectionRef {
 /// are accomplished a other ATK interfaces - `AtkSelection` is limited
 /// to the selection/deselection of children.
 open class Selection: SelectionProtocol {
-    /// Untyped pointer to the underlying `AtkSelection` instance.
+        /// Untyped pointer to the underlying `AtkSelection` instance.
     /// For type-safe access, use the generated, typed pointer `selection_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -325,7 +328,7 @@ open class Selection: SelectionProtocol {
         // no reference counting for AtkSelection, cannot ref(cast(selection_ptr))
     }
 
-    /// Do-nothing destructor for`AtkSelection`.
+    /// Do-nothing destructor for `AtkSelection`.
     deinit {
         // no reference counting for AtkSelection, cannot unref(cast(selection_ptr))
     }
@@ -393,7 +396,7 @@ open class Selection: SelectionProtocol {
 
 }
 
-// MARK: - no Selection properties
+// MARK: no Selection properties
 
 public enum SelectionSignalName: String, SignalNameProtocol {
     /// The "selection-changed" signal is emitted by an object which
@@ -408,8 +411,8 @@ public extension SelectionProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: SelectionSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: SelectionSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(selection_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -430,6 +433,7 @@ public extension SelectionProtocol {
     }
 }
 
+// MARK: Selection Interface: SelectionProtocol extension (methods and fields)
 public extension SelectionProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkSelection` instance.
     var selection_ptr: UnsafeMutablePointer<AtkSelection> { return ptr.assumingMemoryBound(to: AtkSelection.self) }
@@ -453,9 +457,9 @@ public extension SelectionProtocol {
     /// indication of whether AtkSelectionIface is implemented, they should
     /// use type checking/interface checking macros or the
     /// `atk_get_accessible_value()` convenience method.
-    func getSelectionCount() -> CInt {
-        let rv = atk_selection_get_selection_count(cast(selection_ptr))
-        return CInt(rv)
+    func getSelectionCount() -> Int {
+        let rv: Int = cast(atk_selection_get_selection_count(cast(selection_ptr)))
+        return Int(rv)
     }
 
     /// Determines if the current child of this object is selected
@@ -475,7 +479,7 @@ public extension SelectionProtocol {
     /// use type checking/interface checking macros or the
     /// `atk_get_accessible_value()` convenience method.
     func refSelection(i: CInt) -> UnsafeMutablePointer<AtkObject>! {
-        let rv = atk_selection_ref_selection(cast(selection_ptr), gint(i))
+        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_selection_ref_selection(cast(selection_ptr), gint(i)))
         return cast(rv)
     }
 
@@ -496,17 +500,19 @@ public extension SelectionProtocol {
     /// indication of whether AtkSelectionIface is implemented, they should
     /// use type checking/interface checking macros or the
     /// `atk_get_accessible_value()` convenience method.
-    var selectionCount: CInt {
+    var selectionCount: Int {
         /// Gets the number of accessible children currently selected.
         /// Note: callers should not rely on `nil` or on a zero value for
         /// indication of whether AtkSelectionIface is implemented, they should
         /// use type checking/interface checking macros or the
         /// `atk_get_accessible_value()` convenience method.
         get {
-            let rv = atk_selection_get_selection_count(cast(selection_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_selection_get_selection_count(cast(selection_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 

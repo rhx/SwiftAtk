@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol DocumentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkDocumentIface` instance.
+        /// Untyped pointer to the underlying `AtkDocumentIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkDocumentIface` instance.
@@ -25,7 +25,7 @@ public protocol DocumentIfaceProtocol {
 ///
 
 public struct DocumentIfaceRef: DocumentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkDocumentIface` instance.
+        /// Untyped pointer to the underlying `AtkDocumentIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension DocumentIfaceRef {
 ///
 
 open class DocumentIface: DocumentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkDocumentIface` instance.
+        /// Untyped pointer to the underlying `AtkDocumentIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class DocumentIface: DocumentIfaceProtocol {
         // no reference counting for AtkDocumentIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkDocumentIface`.
+    /// Do-nothing destructor for `AtkDocumentIface`.
     deinit {
         // no reference counting for AtkDocumentIface, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,39 @@ open class DocumentIface: DocumentIfaceProtocol {
 
 }
 
-// MARK: - no DocumentIface properties
+// MARK: no DocumentIface properties
 
-// MARK: - no signals
+// MARK: no DocumentIface signals
 
 
+// MARK: DocumentIface Record: DocumentIfaceProtocol extension (methods and fields)
 public extension DocumentIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkDocumentIface` instance.
     var _ptr: UnsafeMutablePointer<AtkDocumentIface> { return ptr.assumingMemoryBound(to: AtkDocumentIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var getDocumentType is unavailable because get_document_type is void
+
+    // var getDocument is unavailable because get_document is void
+
+    // var getDocumentLocale is unavailable because get_document_locale is void
+
+    // var getDocumentAttributes is unavailable because get_document_attributes is void
+
+    // var getDocumentAttributeValue is unavailable because get_document_attribute_value is void
+
+    // var setDocumentAttribute is unavailable because set_document_attribute is void
+
+    // var getCurrentPageNumber is unavailable because get_current_page_number is void
+
+    // var getPageCount is unavailable because get_page_count is void
 
 }
 
@@ -197,7 +222,7 @@ public extension DocumentIfaceProtocol {
 ///
 
 public protocol EditableTextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkEditableTextIface` instance.
+        /// Untyped pointer to the underlying `AtkEditableTextIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkEditableTextIface` instance.
@@ -210,7 +235,7 @@ public protocol EditableTextIfaceProtocol {
 ///
 
 public struct EditableTextIfaceRef: EditableTextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkEditableTextIface` instance.
+        /// Untyped pointer to the underlying `AtkEditableTextIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +288,7 @@ public extension EditableTextIfaceRef {
 ///
 
 open class EditableTextIface: EditableTextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkEditableTextIface` instance.
+        /// Untyped pointer to the underlying `AtkEditableTextIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +317,7 @@ open class EditableTextIface: EditableTextIfaceProtocol {
         // no reference counting for AtkEditableTextIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkEditableTextIface`.
+    /// Do-nothing destructor for `AtkEditableTextIface`.
     deinit {
         // no reference counting for AtkEditableTextIface, cannot unref(cast(_ptr))
     }
@@ -360,14 +385,37 @@ open class EditableTextIface: EditableTextIfaceProtocol {
 
 }
 
-// MARK: - no EditableTextIface properties
+// MARK: no EditableTextIface properties
 
-// MARK: - no signals
+// MARK: no EditableTextIface signals
 
 
+// MARK: EditableTextIface Record: EditableTextIfaceProtocol extension (methods and fields)
 public extension EditableTextIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkEditableTextIface` instance.
     var _ptr: UnsafeMutablePointer<AtkEditableTextIface> { return ptr.assumingMemoryBound(to: AtkEditableTextIface.self) }
+
+
+    var parentInterface: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent_interface)
+            return rv
+        }
+    }
+
+    // var setRunAttributes is unavailable because set_run_attributes is void
+
+    // var setTextContents is unavailable because set_text_contents is void
+
+    // var insertText is unavailable because insert_text is void
+
+    // var copyText is unavailable because copy_text is void
+
+    // var cutText is unavailable because cut_text is void
+
+    // var deleteText is unavailable because delete_text is void
+
+    // var pasteText is unavailable because paste_text is void
 
 }
 

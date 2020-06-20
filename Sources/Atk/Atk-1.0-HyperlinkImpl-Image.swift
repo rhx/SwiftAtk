@@ -39,7 +39,7 @@ import GLibObject
 /// interface.  Thus, in order to interact with AtkObjects via
 /// AtkHyperlink semantics, a new interface was required.
 public protocol HyperlinkImplProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkHyperlinkImpl` instance.
@@ -79,7 +79,7 @@ public protocol HyperlinkImplProtocol {
 /// interface.  Thus, in order to interact with AtkObjects via
 /// AtkHyperlink semantics, a new interface was required.
 public struct HyperlinkImplRef: HyperlinkImplProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
     /// For type-safe access, use the generated, typed pointer `hyperlink_impl_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -159,7 +159,7 @@ public extension HyperlinkImplRef {
 /// interface.  Thus, in order to interact with AtkObjects via
 /// AtkHyperlink semantics, a new interface was required.
 open class HyperlinkImpl: HyperlinkImplProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
     /// For type-safe access, use the generated, typed pointer `hyperlink_impl_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -188,7 +188,7 @@ open class HyperlinkImpl: HyperlinkImplProtocol {
         // no reference counting for AtkHyperlinkImpl, cannot ref(cast(hyperlink_impl_ptr))
     }
 
-    /// Do-nothing destructor for`AtkHyperlinkImpl`.
+    /// Do-nothing destructor for `AtkHyperlinkImpl`.
     deinit {
         // no reference counting for AtkHyperlinkImpl, cannot unref(cast(hyperlink_impl_ptr))
     }
@@ -256,28 +256,31 @@ open class HyperlinkImpl: HyperlinkImplProtocol {
 
 }
 
-// MARK: - no HyperlinkImpl properties
+// MARK: no HyperlinkImpl properties
 
-// MARK: - no signals
+// MARK: no HyperlinkImpl signals
 
 
+// MARK: HyperlinkImpl Interface: HyperlinkImplProtocol extension (methods and fields)
 public extension HyperlinkImplProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkHyperlinkImpl` instance.
     var hyperlink_impl_ptr: UnsafeMutablePointer<AtkHyperlinkImpl> { return ptr.assumingMemoryBound(to: AtkHyperlinkImpl.self) }
 
     /// Gets the hyperlink associated with this object.
     func getHyperlink() -> UnsafeMutablePointer<AtkHyperlink>! {
-        let rv = atk_hyperlink_impl_get_hyperlink(cast(hyperlink_impl_ptr))
+        let rv: UnsafeMutablePointer<AtkHyperlink>! = cast(atk_hyperlink_impl_get_hyperlink(cast(hyperlink_impl_ptr)))
         return cast(rv)
     }
     /// Gets the hyperlink associated with this object.
     var hyperlink: UnsafeMutablePointer<AtkHyperlink>! {
         /// Gets the hyperlink associated with this object.
         get {
-            let rv = atk_hyperlink_impl_get_hyperlink(cast(hyperlink_impl_ptr))
+            let rv: UnsafeMutablePointer<AtkHyperlink>! = cast(atk_hyperlink_impl_get_hyperlink(cast(hyperlink_impl_ptr)))
             return cast(rv)
         }
     }
+
+
 }
 
 
@@ -298,7 +301,7 @@ public extension HyperlinkImplProtocol {
 /// Hypertext instances have textual content; they may implement Image
 /// as well, and Hyperlinks need not have non-zero text offsets.
 public protocol HypertextProtocol {
-    /// Untyped pointer to the underlying `AtkHypertext` instance.
+        /// Untyped pointer to the underlying `AtkHypertext` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkHypertext` instance.
@@ -318,7 +321,7 @@ public protocol HypertextProtocol {
 /// Hypertext instances have textual content; they may implement Image
 /// as well, and Hyperlinks need not have non-zero text offsets.
 public struct HypertextRef: HypertextProtocol {
-    /// Untyped pointer to the underlying `AtkHypertext` instance.
+        /// Untyped pointer to the underlying `AtkHypertext` instance.
     /// For type-safe access, use the generated, typed pointer `hypertext_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -378,7 +381,7 @@ public extension HypertextRef {
 /// Hypertext instances have textual content; they may implement Image
 /// as well, and Hyperlinks need not have non-zero text offsets.
 open class Hypertext: HypertextProtocol {
-    /// Untyped pointer to the underlying `AtkHypertext` instance.
+        /// Untyped pointer to the underlying `AtkHypertext` instance.
     /// For type-safe access, use the generated, typed pointer `hypertext_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -407,7 +410,7 @@ open class Hypertext: HypertextProtocol {
         // no reference counting for AtkHypertext, cannot ref(cast(hypertext_ptr))
     }
 
-    /// Do-nothing destructor for`AtkHypertext`.
+    /// Do-nothing destructor for `AtkHypertext`.
     deinit {
         // no reference counting for AtkHypertext, cannot unref(cast(hypertext_ptr))
     }
@@ -475,7 +478,7 @@ open class Hypertext: HypertextProtocol {
 
 }
 
-// MARK: - no Hypertext properties
+// MARK: no Hypertext properties
 
 public enum HypertextSignalName: String, SignalNameProtocol {
     /// The "link-selected" signal is emitted by an AtkHyperText
@@ -491,8 +494,8 @@ public extension HypertextProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: HypertextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: HypertextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(hypertext_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -513,6 +516,7 @@ public extension HypertextProtocol {
     }
 }
 
+// MARK: Hypertext Interface: HypertextProtocol extension (methods and fields)
 public extension HypertextProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkHypertext` instance.
     var hypertext_ptr: UnsafeMutablePointer<AtkHypertext> { return ptr.assumingMemoryBound(to: AtkHypertext.self) }
@@ -520,30 +524,32 @@ public extension HypertextProtocol {
     /// Gets the link in this hypertext document at index
     /// `link_index`
     func getLink(linkIndex link_index: CInt) -> UnsafeMutablePointer<AtkHyperlink>! {
-        let rv = atk_hypertext_get_link(cast(hypertext_ptr), gint(link_index))
+        let rv: UnsafeMutablePointer<AtkHyperlink>! = cast(atk_hypertext_get_link(cast(hypertext_ptr), gint(link_index)))
         return cast(rv)
     }
 
     /// Gets the index into the array of hyperlinks that is associated with
     /// the character specified by `char_index`.
-    func getLinkIndex(charIndex char_index: CInt) -> CInt {
-        let rv = atk_hypertext_get_link_index(cast(hypertext_ptr), gint(char_index))
-        return CInt(rv)
+    func getLinkIndex(charIndex char_index: CInt) -> Int {
+        let rv: Int = cast(atk_hypertext_get_link_index(cast(hypertext_ptr), gint(char_index)))
+        return Int(rv)
     }
 
     /// Gets the number of links within this hypertext document.
-    func getNLinks() -> CInt {
-        let rv = atk_hypertext_get_n_links(cast(hypertext_ptr))
-        return CInt(rv)
+    func getNLinks() -> Int {
+        let rv: Int = cast(atk_hypertext_get_n_links(cast(hypertext_ptr)))
+        return Int(rv)
     }
     /// Gets the number of links within this hypertext document.
-    var nLinks: CInt {
+    var nLinks: Int {
         /// Gets the number of links within this hypertext document.
         get {
-            let rv = atk_hypertext_get_n_links(cast(hypertext_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_hypertext_get_n_links(cast(hypertext_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 
@@ -569,7 +575,7 @@ public extension HypertextProtocol {
 /// presentation of the most significant information present in the
 /// image.
 public protocol ImageProtocol {
-    /// Untyped pointer to the underlying `AtkImage` instance.
+        /// Untyped pointer to the underlying `AtkImage` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkImage` instance.
@@ -594,7 +600,7 @@ public protocol ImageProtocol {
 /// presentation of the most significant information present in the
 /// image.
 public struct ImageRef: ImageProtocol {
-    /// Untyped pointer to the underlying `AtkImage` instance.
+        /// Untyped pointer to the underlying `AtkImage` instance.
     /// For type-safe access, use the generated, typed pointer `image_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -659,7 +665,7 @@ public extension ImageRef {
 /// presentation of the most significant information present in the
 /// image.
 open class Image: ImageProtocol {
-    /// Untyped pointer to the underlying `AtkImage` instance.
+        /// Untyped pointer to the underlying `AtkImage` instance.
     /// For type-safe access, use the generated, typed pointer `image_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -688,7 +694,7 @@ open class Image: ImageProtocol {
         // no reference counting for AtkImage, cannot ref(cast(image_ptr))
     }
 
-    /// Do-nothing destructor for`AtkImage`.
+    /// Do-nothing destructor for `AtkImage`.
     deinit {
         // no reference counting for AtkImage, cannot unref(cast(image_ptr))
     }
@@ -756,29 +762,33 @@ open class Image: ImageProtocol {
 
 }
 
-// MARK: - no Image properties
+// MARK: no Image properties
 
-// MARK: - no signals
+// MARK: no Image signals
 
 
+// MARK: Image Interface: ImageProtocol extension (methods and fields)
 public extension ImageProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkImage` instance.
     var image_ptr: UnsafeMutablePointer<AtkImage> { return ptr.assumingMemoryBound(to: AtkImage.self) }
 
     /// Get a textual description of this image.
     func getImageDescription() -> String! {
-        let rv = atk_image_get_image_description(cast(image_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_image_get_image_description(cast(image_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the locale identifier associated to the `AtkImage`.
     func getImageLocale() -> String! {
-        let rv = atk_image_get_image_locale(cast(image_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_image_get_image_locale(cast(image_ptr)))
+        return cast(rv)
     }
 
     /// Gets the position of the image in the form of a point specifying the
     /// images top-left corner.
+    /// 
+    /// If the position can not be obtained (e.g. missing support), x and y are set
+    /// to -1.
     func getImagePosition(x: UnsafeMutablePointer<CInt>, y: UnsafeMutablePointer<CInt>, coordType coord_type: CoordType) {
         atk_image_get_image_position(cast(image_ptr), cast(x), cast(y), coord_type)
     
@@ -787,6 +797,9 @@ public extension ImageProtocol {
     /// Get the width and height in pixels for the specified image.
     /// The values of `width` and `height` are returned as -1 if the
     /// values cannot be obtained (for instance, if the object is not onscreen).
+    /// 
+    /// If the size can not be obtained (e.g. missing support), x and y are set
+    /// to -1.
     func getImageSize(width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>) {
         atk_image_get_image_size(cast(image_ptr), cast(width), cast(height))
     
@@ -801,12 +814,12 @@ public extension ImageProtocol {
     var imageDescription: String! {
         /// Get a textual description of this image.
         get {
-            let rv = atk_image_get_image_description(cast(image_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_image_get_image_description(cast(image_ptr)))
+            return cast(rv)
         }
         /// Sets the textual description for this image.
         nonmutating set {
-            let _ = atk_image_set_image_description(cast(image_ptr), newValue)
+            _ = atk_image_set_image_description(cast(image_ptr), cast(newValue))
         }
     }
 
@@ -814,10 +827,12 @@ public extension ImageProtocol {
     var imageLocale: String! {
         /// Retrieves the locale identifier associated to the `AtkImage`.
         get {
-            let rv = atk_image_get_image_locale(cast(image_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_image_get_image_locale(cast(image_ptr)))
+            return cast(rv)
         }
     }
+
+
 }
 
 

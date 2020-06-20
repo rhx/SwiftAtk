@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol ObjectFactoryClassProtocol {
-    /// Untyped pointer to the underlying `AtkObjectFactoryClass` instance.
+        /// Untyped pointer to the underlying `AtkObjectFactoryClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkObjectFactoryClass` instance.
@@ -25,7 +25,7 @@ public protocol ObjectFactoryClassProtocol {
 ///
 
 public struct ObjectFactoryClassRef: ObjectFactoryClassProtocol {
-    /// Untyped pointer to the underlying `AtkObjectFactoryClass` instance.
+        /// Untyped pointer to the underlying `AtkObjectFactoryClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension ObjectFactoryClassRef {
 ///
 
 open class ObjectFactoryClass: ObjectFactoryClassProtocol {
-    /// Untyped pointer to the underlying `AtkObjectFactoryClass` instance.
+        /// Untyped pointer to the underlying `AtkObjectFactoryClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class ObjectFactoryClass: ObjectFactoryClassProtocol {
         // no reference counting for AtkObjectFactoryClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkObjectFactoryClass`.
+    /// Do-nothing destructor for `AtkObjectFactoryClass`.
     deinit {
         // no reference counting for AtkObjectFactoryClass, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,43 @@ open class ObjectFactoryClass: ObjectFactoryClassProtocol {
 
 }
 
-// MARK: - no ObjectFactoryClass properties
+// MARK: no ObjectFactoryClass properties
 
-// MARK: - no signals
+// MARK: no ObjectFactoryClass signals
 
 
+// MARK: ObjectFactoryClass Record: ObjectFactoryClassProtocol extension (methods and fields)
 public extension ObjectFactoryClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkObjectFactoryClass` instance.
     var _ptr: UnsafeMutablePointer<AtkObjectFactoryClass> { return ptr.assumingMemoryBound(to: AtkObjectFactoryClass.self) }
+
+
+    var parentClass: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    // var createAccessible is unavailable because create_accessible is void
+
+    // var invalidate is unavailable because invalidate is void
+
+    // var getAccessibleType is unavailable because get_accessible_type is void
+
+    var pad1: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad1)
+            return rv
+        }
+    }
+
+    var pad2: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad2)
+            return rv
+        }
+    }
 
 }
 
@@ -197,7 +226,7 @@ public extension ObjectFactoryClassProtocol {
 ///
 
 public protocol PlugClassProtocol {
-    /// Untyped pointer to the underlying `AtkPlugClass` instance.
+        /// Untyped pointer to the underlying `AtkPlugClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkPlugClass` instance.
@@ -210,7 +239,7 @@ public protocol PlugClassProtocol {
 ///
 
 public struct PlugClassRef: PlugClassProtocol {
-    /// Untyped pointer to the underlying `AtkPlugClass` instance.
+        /// Untyped pointer to the underlying `AtkPlugClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +292,7 @@ public extension PlugClassRef {
 ///
 
 open class PlugClass: PlugClassProtocol {
-    /// Untyped pointer to the underlying `AtkPlugClass` instance.
+        /// Untyped pointer to the underlying `AtkPlugClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +321,7 @@ open class PlugClass: PlugClassProtocol {
         // no reference counting for AtkPlugClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkPlugClass`.
+    /// Do-nothing destructor for `AtkPlugClass`.
     deinit {
         // no reference counting for AtkPlugClass, cannot unref(cast(_ptr))
     }
@@ -360,14 +389,25 @@ open class PlugClass: PlugClassProtocol {
 
 }
 
-// MARK: - no PlugClass properties
+// MARK: no PlugClass properties
 
-// MARK: - no signals
+// MARK: no PlugClass signals
 
 
+// MARK: PlugClass Record: PlugClassProtocol extension (methods and fields)
 public extension PlugClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkPlugClass` instance.
     var _ptr: UnsafeMutablePointer<AtkPlugClass> { return ptr.assumingMemoryBound(to: AtkPlugClass.self) }
+
+
+    var parentClass: AtkObjectClass {
+        get {
+            let rv: AtkObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    // var getObjectId is unavailable because get_object_id is void
 
 }
 

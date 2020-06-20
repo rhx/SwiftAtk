@@ -13,7 +13,7 @@ import GLibObject
 /// A data structure for holding a rectangle. Those coordinates are
 /// relative to the component top-level parent.
 public protocol RectangleProtocol {
-    /// Untyped pointer to the underlying `AtkRectangle` instance.
+        /// Untyped pointer to the underlying `AtkRectangle` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkRectangle` instance.
@@ -27,7 +27,7 @@ public protocol RectangleProtocol {
 /// A data structure for holding a rectangle. Those coordinates are
 /// relative to the component top-level parent.
 public struct RectangleRef: RectangleProtocol {
-    /// Untyped pointer to the underlying `AtkRectangle` instance.
+        /// Untyped pointer to the underlying `AtkRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `rectangle_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -81,7 +81,7 @@ public extension RectangleRef {
 /// A data structure for holding a rectangle. Those coordinates are
 /// relative to the component top-level parent.
 open class Rectangle: RectangleProtocol {
-    /// Untyped pointer to the underlying `AtkRectangle` instance.
+        /// Untyped pointer to the underlying `AtkRectangle` instance.
     /// For type-safe access, use the generated, typed pointer `rectangle_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -110,7 +110,7 @@ open class Rectangle: RectangleProtocol {
         // no reference counting for AtkRectangle, cannot ref(cast(rectangle_ptr))
     }
 
-    /// Do-nothing destructor for`AtkRectangle`.
+    /// Do-nothing destructor for `AtkRectangle`.
     deinit {
         // no reference counting for AtkRectangle, cannot unref(cast(rectangle_ptr))
     }
@@ -178,14 +178,68 @@ open class Rectangle: RectangleProtocol {
 
 }
 
-// MARK: - no Rectangle properties
+// MARK: no Rectangle properties
 
-// MARK: - no signals
+// MARK: no Rectangle signals
 
 
+// MARK: Rectangle Record: RectangleProtocol extension (methods and fields)
 public extension RectangleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRectangle` instance.
     var rectangle_ptr: UnsafeMutablePointer<AtkRectangle> { return ptr.assumingMemoryBound(to: AtkRectangle.self) }
+
+
+    /// X coordinate of the left side of the rectangle.
+    var x: Int {
+        /// X coordinate of the left side of the rectangle.
+        get {
+            let rv: Int = cast(rectangle_ptr.pointee.x)
+            return rv
+        }
+        /// X coordinate of the left side of the rectangle.
+         set {
+            rectangle_ptr.pointee.x = gint(newValue)
+        }
+    }
+
+    /// Y coordinate of the top side of the rectangle.
+    var y: Int {
+        /// Y coordinate of the top side of the rectangle.
+        get {
+            let rv: Int = cast(rectangle_ptr.pointee.y)
+            return rv
+        }
+        /// Y coordinate of the top side of the rectangle.
+         set {
+            rectangle_ptr.pointee.y = gint(newValue)
+        }
+    }
+
+    /// width of the rectangle.
+    var width: Int {
+        /// width of the rectangle.
+        get {
+            let rv: Int = cast(rectangle_ptr.pointee.width)
+            return rv
+        }
+        /// width of the rectangle.
+         set {
+            rectangle_ptr.pointee.width = gint(newValue)
+        }
+    }
+
+    /// height of the rectangle.
+    var height: Int {
+        /// height of the rectangle.
+        get {
+            let rv: Int = cast(rectangle_ptr.pointee.height)
+            return rv
+        }
+        /// height of the rectangle.
+         set {
+            rectangle_ptr.pointee.height = gint(newValue)
+        }
+    }
 
 }
 
@@ -200,7 +254,7 @@ public extension RectangleProtocol {
 ///
 
 public protocol RegistryClassProtocol {
-    /// Untyped pointer to the underlying `AtkRegistryClass` instance.
+        /// Untyped pointer to the underlying `AtkRegistryClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkRegistryClass` instance.
@@ -213,7 +267,7 @@ public protocol RegistryClassProtocol {
 ///
 
 public struct RegistryClassRef: RegistryClassProtocol {
-    /// Untyped pointer to the underlying `AtkRegistryClass` instance.
+        /// Untyped pointer to the underlying `AtkRegistryClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -266,7 +320,7 @@ public extension RegistryClassRef {
 ///
 
 open class RegistryClass: RegistryClassProtocol {
-    /// Untyped pointer to the underlying `AtkRegistryClass` instance.
+        /// Untyped pointer to the underlying `AtkRegistryClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -295,7 +349,7 @@ open class RegistryClass: RegistryClassProtocol {
         // no reference counting for AtkRegistryClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkRegistryClass`.
+    /// Do-nothing destructor for `AtkRegistryClass`.
     deinit {
         // no reference counting for AtkRegistryClass, cannot unref(cast(_ptr))
     }
@@ -363,14 +417,23 @@ open class RegistryClass: RegistryClassProtocol {
 
 }
 
-// MARK: - no RegistryClass properties
+// MARK: no RegistryClass properties
 
-// MARK: - no signals
+// MARK: no RegistryClass signals
 
 
+// MARK: RegistryClass Record: RegistryClassProtocol extension (methods and fields)
 public extension RegistryClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRegistryClass` instance.
     var _ptr: UnsafeMutablePointer<AtkRegistryClass> { return ptr.assumingMemoryBound(to: AtkRegistryClass.self) }
+
+
+    var parentClass: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
 
 }
 
@@ -385,7 +448,7 @@ public extension RegistryClassProtocol {
 ///
 
 public protocol RelationClassProtocol {
-    /// Untyped pointer to the underlying `AtkRelationClass` instance.
+        /// Untyped pointer to the underlying `AtkRelationClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkRelationClass` instance.
@@ -398,7 +461,7 @@ public protocol RelationClassProtocol {
 ///
 
 public struct RelationClassRef: RelationClassProtocol {
-    /// Untyped pointer to the underlying `AtkRelationClass` instance.
+        /// Untyped pointer to the underlying `AtkRelationClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -451,7 +514,7 @@ public extension RelationClassRef {
 ///
 
 open class RelationClass: RelationClassProtocol {
-    /// Untyped pointer to the underlying `AtkRelationClass` instance.
+        /// Untyped pointer to the underlying `AtkRelationClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -480,7 +543,7 @@ open class RelationClass: RelationClassProtocol {
         // no reference counting for AtkRelationClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkRelationClass`.
+    /// Do-nothing destructor for `AtkRelationClass`.
     deinit {
         // no reference counting for AtkRelationClass, cannot unref(cast(_ptr))
     }
@@ -548,14 +611,23 @@ open class RelationClass: RelationClassProtocol {
 
 }
 
-// MARK: - no RelationClass properties
+// MARK: no RelationClass properties
 
-// MARK: - no signals
+// MARK: no RelationClass signals
 
 
+// MARK: RelationClass Record: RelationClassProtocol extension (methods and fields)
 public extension RelationClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRelationClass` instance.
     var _ptr: UnsafeMutablePointer<AtkRelationClass> { return ptr.assumingMemoryBound(to: AtkRelationClass.self) }
+
+
+    var parent: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
 
 }
 
@@ -570,7 +642,7 @@ public extension RelationClassProtocol {
 ///
 
 public protocol RelationSetClassProtocol {
-    /// Untyped pointer to the underlying `AtkRelationSetClass` instance.
+        /// Untyped pointer to the underlying `AtkRelationSetClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkRelationSetClass` instance.
@@ -583,7 +655,7 @@ public protocol RelationSetClassProtocol {
 ///
 
 public struct RelationSetClassRef: RelationSetClassProtocol {
-    /// Untyped pointer to the underlying `AtkRelationSetClass` instance.
+        /// Untyped pointer to the underlying `AtkRelationSetClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -636,7 +708,7 @@ public extension RelationSetClassRef {
 ///
 
 open class RelationSetClass: RelationSetClassProtocol {
-    /// Untyped pointer to the underlying `AtkRelationSetClass` instance.
+        /// Untyped pointer to the underlying `AtkRelationSetClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -665,7 +737,7 @@ open class RelationSetClass: RelationSetClassProtocol {
         // no reference counting for AtkRelationSetClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkRelationSetClass`.
+    /// Do-nothing destructor for `AtkRelationSetClass`.
     deinit {
         // no reference counting for AtkRelationSetClass, cannot unref(cast(_ptr))
     }
@@ -733,14 +805,37 @@ open class RelationSetClass: RelationSetClassProtocol {
 
 }
 
-// MARK: - no RelationSetClass properties
+// MARK: no RelationSetClass properties
 
-// MARK: - no signals
+// MARK: no RelationSetClass signals
 
 
+// MARK: RelationSetClass Record: RelationSetClassProtocol extension (methods and fields)
 public extension RelationSetClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRelationSetClass` instance.
     var _ptr: UnsafeMutablePointer<AtkRelationSetClass> { return ptr.assumingMemoryBound(to: AtkRelationSetClass.self) }
+
+
+    var parent: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    var pad1: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad1)
+            return rv
+        }
+    }
+
+    var pad2: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad2)
+            return rv
+        }
+    }
 
 }
 
@@ -755,7 +850,7 @@ public extension RelationSetClassProtocol {
 ///
 
 public protocol SelectionIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkSelectionIface` instance.
+        /// Untyped pointer to the underlying `AtkSelectionIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkSelectionIface` instance.
@@ -768,7 +863,7 @@ public protocol SelectionIfaceProtocol {
 ///
 
 public struct SelectionIfaceRef: SelectionIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkSelectionIface` instance.
+        /// Untyped pointer to the underlying `AtkSelectionIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -821,7 +916,7 @@ public extension SelectionIfaceRef {
 ///
 
 open class SelectionIface: SelectionIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkSelectionIface` instance.
+        /// Untyped pointer to the underlying `AtkSelectionIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -850,7 +945,7 @@ open class SelectionIface: SelectionIfaceProtocol {
         // no reference counting for AtkSelectionIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkSelectionIface`.
+    /// Do-nothing destructor for `AtkSelectionIface`.
     deinit {
         // no reference counting for AtkSelectionIface, cannot unref(cast(_ptr))
     }
@@ -918,14 +1013,39 @@ open class SelectionIface: SelectionIfaceProtocol {
 
 }
 
-// MARK: - no SelectionIface properties
+// MARK: no SelectionIface properties
 
-// MARK: - no signals
+// MARK: no SelectionIface signals
 
 
+// MARK: SelectionIface Record: SelectionIfaceProtocol extension (methods and fields)
 public extension SelectionIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkSelectionIface` instance.
     var _ptr: UnsafeMutablePointer<AtkSelectionIface> { return ptr.assumingMemoryBound(to: AtkSelectionIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var addSelection is unavailable because add_selection is void
+
+    // var clearSelection is unavailable because clear_selection is void
+
+    // var refSelection is unavailable because ref_selection is void
+
+    // var getSelectionCount is unavailable because get_selection_count is void
+
+    // var isChildSelected is unavailable because is_child_selected is void
+
+    // var removeSelection is unavailable because remove_selection is void
+
+    // var selectAllSelection is unavailable because select_all_selection is void
+
+    // var selectionChanged is unavailable because selection_changed is void
 
 }
 

@@ -18,7 +18,7 @@ import GLibObject
 /// cases where one document contains "embedded content" which can
 /// reasonably be considered a document in its own right.
 public protocol DocumentProtocol {
-    /// Untyped pointer to the underlying `AtkDocument` instance.
+        /// Untyped pointer to the underlying `AtkDocument` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkDocument` instance.
@@ -37,7 +37,7 @@ public protocol DocumentProtocol {
 /// cases where one document contains "embedded content" which can
 /// reasonably be considered a document in its own right.
 public struct DocumentRef: DocumentProtocol {
-    /// Untyped pointer to the underlying `AtkDocument` instance.
+        /// Untyped pointer to the underlying `AtkDocument` instance.
     /// For type-safe access, use the generated, typed pointer `document_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -96,7 +96,7 @@ public extension DocumentRef {
 /// cases where one document contains "embedded content" which can
 /// reasonably be considered a document in its own right.
 open class Document: DocumentProtocol {
-    /// Untyped pointer to the underlying `AtkDocument` instance.
+        /// Untyped pointer to the underlying `AtkDocument` instance.
     /// For type-safe access, use the generated, typed pointer `document_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -125,7 +125,7 @@ open class Document: DocumentProtocol {
         // no reference counting for AtkDocument, cannot ref(cast(document_ptr))
     }
 
-    /// Do-nothing destructor for`AtkDocument`.
+    /// Do-nothing destructor for `AtkDocument`.
     deinit {
         // no reference counting for AtkDocument, cannot unref(cast(document_ptr))
     }
@@ -193,7 +193,7 @@ open class Document: DocumentProtocol {
 
 }
 
-// MARK: - no Document properties
+// MARK: no Document properties
 
 public enum DocumentSignalName: String, SignalNameProtocol {
     /// The 'load-complete' signal is emitted when a pending load of
@@ -232,8 +232,8 @@ public extension DocumentProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: DocumentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> CUnsignedLong {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> CUnsignedLong {
+    @discardableResult func connect(signal kind: DocumentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
             let rv = GLibObject.ObjectRef(cast(document_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
@@ -254,27 +254,28 @@ public extension DocumentProtocol {
     }
 }
 
+// MARK: Document Interface: DocumentProtocol extension (methods and fields)
 public extension DocumentProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkDocument` instance.
     var document_ptr: UnsafeMutablePointer<AtkDocument> { return ptr.assumingMemoryBound(to: AtkDocument.self) }
 
     /// Retrieves the value of the given `attribute_name` inside `document`.
     func getAttributeValue(attributeName attribute_name: UnsafePointer<gchar>) -> String! {
-        let rv = atk_document_get_attribute_value(cast(document_ptr), attribute_name)
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_document_get_attribute_value(cast(document_ptr), attribute_name))
+        return cast(rv)
     }
 
     /// Gets an AtkAttributeSet which describes document-wide
     ///          attributes as name-value pairs.
     func getAttributes() -> UnsafeMutablePointer<AtkAttributeSet>! {
-        let rv = atk_document_get_attributes(cast(document_ptr))
+        let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_document_get_attributes(cast(document_ptr)))
         return cast(rv)
     }
 
     /// Retrieves the current page number inside `document`.
-    func getCurrentPageNumber() -> CInt {
-        let rv = atk_document_get_current_page_number(cast(document_ptr))
-        return CInt(rv)
+    func getCurrentPageNumber() -> Int {
+        let rv: Int = cast(atk_document_get_current_page_number(cast(document_ptr)))
+        return Int(rv)
     }
 
     /// Gets a `gpointer` that points to an instance of the DOM.  It is
@@ -286,7 +287,7 @@ public extension DocumentProtocol {
     /// the document. Use it directly, or one of its children, as an
     /// instance of the DOM.
     @available(*, deprecated) func getDocument() -> UnsafeMutableRawPointer! {
-        let rv = atk_document_get_document(cast(document_ptr))
+        let rv: UnsafeMutableRawPointer! = cast(atk_document_get_document(cast(document_ptr)))
         return cast(rv)
     }
 
@@ -296,8 +297,8 @@ public extension DocumentProtocol {
     /// Since 2.12. Please use atk_document_get_attributes() to
     /// ask for the document type if it applies.
     @available(*, deprecated) func getDocumentType() -> String! {
-        let rv = atk_document_get_document_type(cast(document_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_document_get_document_type(cast(document_ptr)))
+        return cast(rv)
     }
 
     /// Gets a UTF-8 string indicating the POSIX-style LC_MESSAGES locale
@@ -309,14 +310,14 @@ public extension DocumentProtocol {
     /// **get_locale is deprecated:**
     /// Please use atk_object_get_object_locale() instead.
     @available(*, deprecated) func getLocale() -> String! {
-        let rv = atk_document_get_locale(cast(document_ptr))
-        return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+        let rv: String! = cast(atk_document_get_locale(cast(document_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the total number of pages inside `document`.
-    func getPageCount() -> CInt {
-        let rv = atk_document_get_page_count(cast(document_ptr))
-        return CInt(rv)
+    func getPageCount() -> Int {
+        let rv: Int = cast(atk_document_get_page_count(cast(document_ptr)))
+        return Int(rv)
     }
 
     /// Sets the value for the given `attribute_name` inside `document`.
@@ -330,17 +331,17 @@ public extension DocumentProtocol {
         /// Gets an AtkAttributeSet which describes document-wide
         ///          attributes as name-value pairs.
         get {
-            let rv = atk_document_get_attributes(cast(document_ptr))
+            let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_document_get_attributes(cast(document_ptr)))
             return cast(rv)
         }
     }
 
     /// Retrieves the current page number inside `document`.
-    var currentPageNumber: CInt {
+    var currentPageNumber: Int {
         /// Retrieves the current page number inside `document`.
         get {
-            let rv = atk_document_get_current_page_number(cast(document_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_document_get_current_page_number(cast(document_ptr)))
+            return Int(rv)
         }
     }
 
@@ -362,7 +363,7 @@ public extension DocumentProtocol {
         /// the document. Use it directly, or one of its children, as an
         /// instance of the DOM.
         @available(*, deprecated) get {
-            let rv = atk_document_get_document(cast(document_ptr))
+            let rv: UnsafeMutableRawPointer! = cast(atk_document_get_document(cast(document_ptr)))
             return cast(rv)
         }
     }
@@ -379,8 +380,8 @@ public extension DocumentProtocol {
         /// Since 2.12. Please use atk_document_get_attributes() to
         /// ask for the document type if it applies.
         @available(*, deprecated) get {
-            let rv = atk_document_get_document_type(cast(document_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_document_get_document_type(cast(document_ptr)))
+            return cast(rv)
         }
     }
 
@@ -402,19 +403,21 @@ public extension DocumentProtocol {
         /// **get_locale is deprecated:**
         /// Please use atk_object_get_object_locale() instead.
         @available(*, deprecated) get {
-            let rv = atk_document_get_locale(cast(document_ptr))
-            return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+            let rv: String! = cast(atk_document_get_locale(cast(document_ptr)))
+            return cast(rv)
         }
     }
 
     /// Retrieves the total number of pages inside `document`.
-    var pageCount: CInt {
+    var pageCount: Int {
         /// Retrieves the total number of pages inside `document`.
         get {
-            let rv = atk_document_get_page_count(cast(document_ptr))
-            return CInt(rv)
+            let rv: Int = cast(atk_document_get_page_count(cast(document_ptr)))
+            return Int(rv)
         }
     }
+
+
 }
 
 
@@ -436,7 +439,7 @@ public extension DocumentProtocol {
 /// 
 /// See also: `AtkText`
 public protocol EditableTextProtocol {
-    /// Untyped pointer to the underlying `AtkEditableText` instance.
+        /// Untyped pointer to the underlying `AtkEditableText` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkEditableText` instance.
@@ -457,7 +460,7 @@ public protocol EditableTextProtocol {
 /// 
 /// See also: `AtkText`
 public struct EditableTextRef: EditableTextProtocol {
-    /// Untyped pointer to the underlying `AtkEditableText` instance.
+        /// Untyped pointer to the underlying `AtkEditableText` instance.
     /// For type-safe access, use the generated, typed pointer `editable_text_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -518,7 +521,7 @@ public extension EditableTextRef {
 /// 
 /// See also: `AtkText`
 open class EditableText: EditableTextProtocol {
-    /// Untyped pointer to the underlying `AtkEditableText` instance.
+        /// Untyped pointer to the underlying `AtkEditableText` instance.
     /// For type-safe access, use the generated, typed pointer `editable_text_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -547,7 +550,7 @@ open class EditableText: EditableTextProtocol {
         // no reference counting for AtkEditableText, cannot ref(cast(editable_text_ptr))
     }
 
-    /// Do-nothing destructor for`AtkEditableText`.
+    /// Do-nothing destructor for `AtkEditableText`.
     deinit {
         // no reference counting for AtkEditableText, cannot unref(cast(editable_text_ptr))
     }
@@ -615,11 +618,12 @@ open class EditableText: EditableTextProtocol {
 
 }
 
-// MARK: - no EditableText properties
+// MARK: no EditableText properties
 
-// MARK: - no signals
+// MARK: no EditableText signals
 
 
+// MARK: EditableText Interface: EditableTextProtocol extension (methods and fields)
 public extension EditableTextProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkEditableText` instance.
     var editable_text_ptr: UnsafeMutablePointer<AtkEditableText> { return ptr.assumingMemoryBound(to: AtkEditableText.self) }
@@ -670,6 +674,8 @@ public extension EditableTextProtocol {
         atk_editable_text_set_text_contents(cast(editable_text_ptr), string)
     
     }
+
+
 }
 
 

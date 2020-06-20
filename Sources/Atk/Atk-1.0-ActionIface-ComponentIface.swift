@@ -16,7 +16,7 @@ import GLibObject
 /// are as well as tell the object to perform them. Any object that can
 /// be manipulated should support this interface.
 public protocol ActionIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkActionIface` instance.
+        /// Untyped pointer to the underlying `AtkActionIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkActionIface` instance.
@@ -33,7 +33,7 @@ public protocol ActionIfaceProtocol {
 /// are as well as tell the object to perform them. Any object that can
 /// be manipulated should support this interface.
 public struct ActionIfaceRef: ActionIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkActionIface` instance.
+        /// Untyped pointer to the underlying `AtkActionIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -90,7 +90,7 @@ public extension ActionIfaceRef {
 /// are as well as tell the object to perform them. Any object that can
 /// be manipulated should support this interface.
 open class ActionIface: ActionIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkActionIface` instance.
+        /// Untyped pointer to the underlying `AtkActionIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -119,7 +119,7 @@ open class ActionIface: ActionIfaceProtocol {
         // no reference counting for AtkActionIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkActionIface`.
+    /// Do-nothing destructor for `AtkActionIface`.
     deinit {
         // no reference counting for AtkActionIface, cannot unref(cast(_ptr))
     }
@@ -187,14 +187,32 @@ open class ActionIface: ActionIfaceProtocol {
 
 }
 
-// MARK: - no ActionIface properties
+// MARK: no ActionIface properties
 
-// MARK: - no signals
+// MARK: no ActionIface signals
 
 
+// MARK: ActionIface Record: ActionIfaceProtocol extension (methods and fields)
 public extension ActionIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkActionIface` instance.
     var _ptr: UnsafeMutablePointer<AtkActionIface> { return ptr.assumingMemoryBound(to: AtkActionIface.self) }
+
+
+    // var parent is unavailable because parent is private
+
+    // var doAction is unavailable because do_action is void
+
+    // var getNActions is unavailable because get_n_actions is void
+
+    // var getDescription is unavailable because get_description is void
+
+    // var getName is unavailable because get_name is void
+
+    // var getKeybinding is unavailable because get_keybinding is void
+
+    // var setDescription is unavailable because set_description is void
+
+    // var getLocalizedName is unavailable because get_localized_name is void
 
 }
 
@@ -219,7 +237,7 @@ public extension ActionIfaceProtocol {
 /// 
 /// A string name/value pair representing a generic attribute.
 public protocol AttributeProtocol {
-    /// Untyped pointer to the underlying `AtkAttribute` instance.
+        /// Untyped pointer to the underlying `AtkAttribute` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkAttribute` instance.
@@ -242,7 +260,7 @@ public protocol AttributeProtocol {
 /// 
 /// A string name/value pair representing a generic attribute.
 public struct AttributeRef: AttributeProtocol {
-    /// Untyped pointer to the underlying `AtkAttribute` instance.
+        /// Untyped pointer to the underlying `AtkAttribute` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -305,7 +323,7 @@ public extension AttributeRef {
 /// 
 /// A string name/value pair representing a generic attribute.
 open class Attribute: AttributeProtocol {
-    /// Untyped pointer to the underlying `AtkAttribute` instance.
+        /// Untyped pointer to the underlying `AtkAttribute` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -334,7 +352,7 @@ open class Attribute: AttributeProtocol {
         // no reference counting for AtkAttribute, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkAttribute`.
+    /// Do-nothing destructor for `AtkAttribute`.
     deinit {
         // no reference counting for AtkAttribute, cannot unref(cast(_ptr))
     }
@@ -402,14 +420,42 @@ open class Attribute: AttributeProtocol {
 
 }
 
-// MARK: - no Attribute properties
+// MARK: no Attribute properties
 
-// MARK: - no signals
+// MARK: no Attribute signals
 
 
+// MARK: Attribute Record: AttributeProtocol extension (methods and fields)
 public extension AttributeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkAttribute` instance.
     var _ptr: UnsafeMutablePointer<AtkAttribute> { return ptr.assumingMemoryBound(to: AtkAttribute.self) }
+
+
+    /// The attribute name.
+    var name: UnsafePointer<CChar> {
+        /// The attribute name.
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.name)
+            return rv
+        }
+        /// The attribute name.
+         set {
+            _ptr.pointee.name = cast(newValue)
+        }
+    }
+
+    /// the value of the attribute, represented as a string.
+    var value: UnsafePointer<CChar> {
+        /// the value of the attribute, represented as a string.
+        get {
+            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.value)
+            return rv
+        }
+        /// the value of the attribute, represented as a string.
+         set {
+            _ptr.pointee.value = cast(newValue)
+        }
+    }
 
 }
 
@@ -427,7 +473,7 @@ public extension AttributeProtocol {
 /// for an assistive technology to determine and set the graphical
 /// representation of an object.
 public protocol ComponentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkComponentIface` instance.
+        /// Untyped pointer to the underlying `AtkComponentIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkComponentIface` instance.
@@ -443,7 +489,7 @@ public protocol ComponentIfaceProtocol {
 /// for an assistive technology to determine and set the graphical
 /// representation of an object.
 public struct ComponentIfaceRef: ComponentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkComponentIface` instance.
+        /// Untyped pointer to the underlying `AtkComponentIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -499,7 +545,7 @@ public extension ComponentIfaceRef {
 /// for an assistive technology to determine and set the graphical
 /// representation of an object.
 open class ComponentIface: ComponentIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkComponentIface` instance.
+        /// Untyped pointer to the underlying `AtkComponentIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -528,7 +574,7 @@ open class ComponentIface: ComponentIfaceProtocol {
         // no reference counting for AtkComponentIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkComponentIface`.
+    /// Do-nothing destructor for `AtkComponentIface`.
     deinit {
         // no reference counting for AtkComponentIface, cannot unref(cast(_ptr))
     }
@@ -596,14 +642,52 @@ open class ComponentIface: ComponentIfaceProtocol {
 
 }
 
-// MARK: - no ComponentIface properties
+// MARK: no ComponentIface properties
 
-// MARK: - no signals
+// MARK: no ComponentIface signals
 
 
+// MARK: ComponentIface Record: ComponentIfaceProtocol extension (methods and fields)
 public extension ComponentIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkComponentIface` instance.
     var _ptr: UnsafeMutablePointer<AtkComponentIface> { return ptr.assumingMemoryBound(to: AtkComponentIface.self) }
+
+
+    // var parent is unavailable because parent is private
+
+    // var addFocusHandler is unavailable because add_focus_handler is void
+
+    // var contains is unavailable because contains is void
+
+    // var refAccessibleAtPoint is unavailable because ref_accessible_at_point is void
+
+    // var getExtents is unavailable because get_extents is void
+
+    // var getPosition is unavailable because get_position is void
+
+    // var getSize is unavailable because get_size is void
+
+    // var grabFocus is unavailable because grab_focus is void
+
+    // var removeFocusHandler is unavailable because remove_focus_handler is void
+
+    // var setExtents is unavailable because set_extents is void
+
+    // var setPosition is unavailable because set_position is void
+
+    // var setSize is unavailable because set_size is void
+
+    // var getLayer is unavailable because get_layer is void
+
+    // var getMdiZorder is unavailable because get_mdi_zorder is void
+
+    // var boundsChanged is unavailable because bounds_changed is void
+
+    // var getAlpha is unavailable because get_alpha is void
+
+    // var scrollTo is unavailable because scroll_to is void
+
+    // var scrollToPoint is unavailable because scroll_to_point is void
 
 }
 

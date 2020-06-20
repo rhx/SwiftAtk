@@ -10,9 +10,9 @@ import GLibObject
 /// Focus tracking has been dropped as a feature
 /// to be implemented by ATK itself. If you need focus tracking on your
 /// implementation, subscribe to the #AtkObject::state-change "focused" signal.
-@available(*, deprecated) public func add(focusTracker focus_tracker: @escaping EventListener) -> CUnsignedInt {
-    let rv = atk_add_focus_tracker(focus_tracker)
-    return CUnsignedInt(rv)
+@available(*, deprecated) public func add(focusTracker focus_tracker: @escaping EventListener) -> Int {
+    let rv: Int = cast(atk_add_focus_tracker(focus_tracker))
+    return Int(rv)
 }
 
 
@@ -51,9 +51,9 @@ import GLibObject
 /// instance of `AtkNoOpObject`. This class implements all ATK
 /// interfaces, so creating the instance will register all ATK types as
 /// a collateral effect.
-public func addGlobalEvent(listener: @escaping GLibObject.SignalEmissionHook, eventType event_type: UnsafePointer<gchar>) -> CUnsignedInt {
-    let rv = atk_add_global_event_listener(listener, event_type)
-    return CUnsignedInt(rv)
+public func addGlobalEvent(listener: @escaping GLibObject.SignalEmissionHook, eventType event_type: UnsafePointer<gchar>) -> Int {
+    let rv: Int = cast(atk_add_global_event_listener(listener, event_type))
+    return Int(rv)
 }
 
 
@@ -62,9 +62,9 @@ public func addGlobalEvent(listener: @escaping GLibObject.SignalEmissionHook, ev
 /// Adds the specified function to the list of functions to be called
 ///        when a key event occurs.  The `data` element will be passed to the
 ///        `AtkKeySnoopFunc` (`listener`) as the `func_data` param, on notification.
-public func addKeyEvent(listener: @escaping KeySnoopFunc, data: UnsafeMutableRawPointer) -> CUnsignedInt {
-    let rv = atk_add_key_event_listener(listener, cast(data))
-    return CUnsignedInt(rv)
+public func addKeyEvent(listener: @escaping KeySnoopFunc, data: UnsafeMutableRawPointer) -> Int {
+    let rv: Int = cast(atk_add_key_event_listener(listener, cast(data)))
+    return Int(rv)
 }
 
 
@@ -115,9 +115,9 @@ public func attributeSetFree(attribSet attrib_set: UnsafeMutablePointer<AtkAttri
 
 /// Returns the binary age as passed to libtool when building the ATK
 /// library the process is running against.
-public func getBinaryAge() -> CUnsignedInt {
-    let rv = atk_get_binary_age()
-    return CUnsignedInt(rv)
+public func getBinaryAge() -> Int {
+    let rv: Int = cast(atk_get_binary_age())
+    return Int(rv)
 }
 
 
@@ -131,7 +131,7 @@ public func getBinaryAge() -> CUnsignedInt {
 /// to associate an `AtkObjectFactory` subclass with the GType of objects
 /// for whom accessibility information will be provided.
 public func getDefaultRegistry() -> UnsafeMutablePointer<AtkRegistry>! {
-    let rv = atk_get_default_registry()
+    let rv: UnsafeMutablePointer<AtkRegistry>! = cast(atk_get_default_registry())
     return cast(rv)
 }
 
@@ -140,7 +140,7 @@ public func getDefaultRegistry() -> UnsafeMutablePointer<AtkRegistry>! {
 
 /// Gets the currently focused object.
 public func getFocusObject() -> UnsafeMutablePointer<AtkObject>! {
-    let rv = atk_get_focus_object()
+    let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_get_focus_object())
     return cast(rv)
 }
 
@@ -149,9 +149,9 @@ public func getFocusObject() -> UnsafeMutablePointer<AtkObject>! {
 
 /// Returns the interface age as passed to libtool when building the
 /// ATK library the process is running against.
-public func getInterfaceAge() -> CUnsignedInt {
-    let rv = atk_get_interface_age()
-    return CUnsignedInt(rv)
+public func getInterfaceAge() -> Int {
+    let rv: Int = cast(atk_get_interface_age())
+    return Int(rv)
 }
 
 
@@ -164,9 +164,9 @@ public func getInterfaceAge() -> CUnsignedInt {
 /// your code is running against. In contrast, the `ATK_MAJOR_VERSION`
 /// macro represents the major version of the ATK headers you have
 /// included when compiling your code.
-public func getMajorVersion() -> CUnsignedInt {
-    let rv = atk_get_major_version()
-    return CUnsignedInt(rv)
+public func getMajorVersion() -> Int {
+    let rv: Int = cast(atk_get_major_version())
+    return Int(rv)
 }
 
 
@@ -179,9 +179,9 @@ public func getMajorVersion() -> CUnsignedInt {
 /// your code is are running against. In contrast, the
 /// `ATK_MICRO_VERSION` macro represents the micro version of the ATK
 /// headers you have included when compiling your code.
-public func getMicroVersion() -> CUnsignedInt {
-    let rv = atk_get_micro_version()
-    return CUnsignedInt(rv)
+public func getMicroVersion() -> Int {
+    let rv: Int = cast(atk_get_micro_version())
+    return Int(rv)
 }
 
 
@@ -194,9 +194,9 @@ public func getMicroVersion() -> CUnsignedInt {
 /// your code is are running against. In contrast, the
 /// `ATK_MINOR_VERSION` macro represents the minor version of the ATK
 /// headers you have included when compiling your code.
-public func getMinorVersion() -> CUnsignedInt {
-    let rv = atk_get_minor_version()
-    return CUnsignedInt(rv)
+public func getMinorVersion() -> Int {
+    let rv: Int = cast(atk_get_minor_version())
+    return Int(rv)
 }
 
 
@@ -204,7 +204,7 @@ public func getMinorVersion() -> CUnsignedInt {
 
 /// Gets the root accessible container for the current application.
 public func getRoot() -> UnsafeMutablePointer<AtkObject>! {
-    let rv = atk_get_root()
+    let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_get_root())
     return cast(rv)
 }
 
@@ -213,8 +213,8 @@ public func getRoot() -> UnsafeMutablePointer<AtkObject>! {
 
 /// Gets name string for the GUI toolkit implementing ATK for this application.
 public func getToolkitName() -> String! {
-    let rv = atk_get_toolkit_name()
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_get_toolkit_name())
+    return cast(rv)
 }
 
 
@@ -222,8 +222,8 @@ public func getToolkitName() -> String! {
 
 /// Gets version string for the GUI toolkit implementing ATK for this application.
 public func getToolkitVersion() -> String! {
-    let rv = atk_get_toolkit_version()
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_get_toolkit_version())
+    return cast(rv)
 }
 
 
@@ -231,8 +231,8 @@ public func getToolkitVersion() -> String! {
 
 /// Gets the current version for ATK.
 public func getVersion() -> String! {
-    let rv = atk_get_version()
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_get_version())
+    return cast(rv)
 }
 
 
@@ -241,7 +241,7 @@ public func getVersion() -> String! {
 /// Get the `AtkRelationType` type corresponding to a relation name.
 public func relationTypeFor(name: UnsafePointer<gchar>) -> AtkRelationType {
     let rv = atk_relation_type_for_name(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -249,8 +249,8 @@ public func relationTypeFor(name: UnsafePointer<gchar>) -> AtkRelationType {
 
 /// Gets the description string describing the `AtkRelationType` `type`.
 public func relationTypeGetName(type: RelationType) -> String! {
-    let rv = atk_relation_type_get_name(type)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_relation_type_get_name(type))
+    return cast(rv)
 }
 
 
@@ -259,7 +259,7 @@ public func relationTypeGetName(type: RelationType) -> String! {
 /// Associate `name` with a new `AtkRelationType`
 public func relationTypeRegister(name: UnsafePointer<gchar>) -> AtkRelationType {
     let rv = atk_relation_type_register(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -315,7 +315,7 @@ public func removeKeyEventListener(listenerId listener_id: CUnsignedInt) {
 /// Get the `AtkRole` type corresponding to a rolew name.
 public func roleFor(name: UnsafePointer<gchar>) -> AtkRole {
     let rv = atk_role_for_name(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -323,8 +323,8 @@ public func roleFor(name: UnsafePointer<gchar>) -> AtkRole {
 
 /// Gets the localized description string describing the `AtkRole` `role`.
 public func roleGetLocalizedName(role: Role) -> String! {
-    let rv = atk_role_get_localized_name(role)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_role_get_localized_name(role))
+    return cast(rv)
 }
 
 
@@ -332,8 +332,8 @@ public func roleGetLocalizedName(role: Role) -> String! {
 
 /// Gets the description string describing the `AtkRole` `role`.
 public func roleGetName(role: Role) -> String! {
-    let rv = atk_role_get_name(role)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_role_get_name(role))
+    return cast(rv)
 }
 
 
@@ -348,7 +348,7 @@ public func roleGetName(role: Role) -> String! {
 /// submit a bug in order to add a new role to the specification.
 @available(*, deprecated) public func roleRegister(name: UnsafePointer<gchar>) -> AtkRole {
     let rv = atk_role_register(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -357,7 +357,7 @@ public func roleGetName(role: Role) -> String! {
 /// Gets the `AtkStateType` corresponding to the description string `name`.
 public func stateTypeFor(name: UnsafePointer<gchar>) -> AtkStateType {
     let rv = atk_state_type_for_name(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -365,8 +365,8 @@ public func stateTypeFor(name: UnsafePointer<gchar>) -> AtkStateType {
 
 /// Gets the description string describing the `AtkStateType` `type`.
 public func stateTypeGetName(type: StateType) -> String! {
-    let rv = atk_state_type_get_name(type)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_state_type_get_name(type))
+    return cast(rv)
 }
 
 
@@ -375,7 +375,7 @@ public func stateTypeGetName(type: StateType) -> String! {
 /// Register a new object state.
 public func stateTypeRegister(name: UnsafePointer<gchar>) -> AtkStateType {
     let rv = atk_state_type_register(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -384,7 +384,7 @@ public func stateTypeRegister(name: UnsafePointer<gchar>) -> AtkStateType {
 /// Get the `AtkTextAttribute` type corresponding to a text attribute name.
 public func textAttributeFor(name: UnsafePointer<gchar>) -> AtkTextAttribute {
     let rv = atk_text_attribute_for_name(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -392,8 +392,8 @@ public func textAttributeFor(name: UnsafePointer<gchar>) -> AtkTextAttribute {
 
 /// Gets the name corresponding to the `AtkTextAttribute`
 public func textAttributeGetName(attr: TextAttribute) -> String! {
-    let rv = atk_text_attribute_get_name(attr)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_text_attribute_get_name(attr))
+    return cast(rv)
 }
 
 
@@ -401,8 +401,8 @@ public func textAttributeGetName(attr: TextAttribute) -> String! {
 
 /// Gets the value for the index of the `AtkTextAttribute`
 public func textAttributeGetValue(attr: TextAttribute, index_: CInt) -> String! {
-    let rv = atk_text_attribute_get_value(attr, gint(index_))
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_text_attribute_get_value(attr, gint(index_)))
+    return cast(rv)
 }
 
 
@@ -411,7 +411,7 @@ public func textAttributeGetValue(attr: TextAttribute, index_: CInt) -> String! 
 /// Associate `name` with a new `AtkTextAttribute`
 public func textAttributeRegister(name: UnsafePointer<gchar>) -> AtkTextAttribute {
     let rv = atk_text_attribute_register(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -430,8 +430,8 @@ public func textFree(ranges: UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRa
 
 /// Gets the localized description string describing the `AtkValueType` `value_type`.
 public func valueTypeGetLocalizedName(valueType value_type: ValueType) -> String! {
-    let rv = atk_value_type_get_localized_name(value_type)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_value_type_get_localized_name(value_type))
+    return cast(rv)
 }
 
 
@@ -439,8 +439,8 @@ public func valueTypeGetLocalizedName(valueType value_type: ValueType) -> String
 
 /// Gets the description string describing the `AtkValueType` `value_type`.
 public func valueTypeGetName(valueType value_type: ValueType) -> String! {
-    let rv = atk_value_type_get_name(value_type)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(atk_value_type_get_name(value_type))
+    return cast(rv)
 }
 
 

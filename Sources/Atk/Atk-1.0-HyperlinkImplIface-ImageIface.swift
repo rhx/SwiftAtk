@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol HyperlinkImplIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkImplIface` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkImplIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkHyperlinkImplIface` instance.
@@ -25,7 +25,7 @@ public protocol HyperlinkImplIfaceProtocol {
 ///
 
 public struct HyperlinkImplIfaceRef: HyperlinkImplIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkImplIface` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkImplIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension HyperlinkImplIfaceRef {
 ///
 
 open class HyperlinkImplIface: HyperlinkImplIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkImplIface` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkImplIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class HyperlinkImplIface: HyperlinkImplIfaceProtocol {
         // no reference counting for AtkHyperlinkImplIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkHyperlinkImplIface`.
+    /// Do-nothing destructor for `AtkHyperlinkImplIface`.
     deinit {
         // no reference counting for AtkHyperlinkImplIface, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,25 @@ open class HyperlinkImplIface: HyperlinkImplIfaceProtocol {
 
 }
 
-// MARK: - no HyperlinkImplIface properties
+// MARK: no HyperlinkImplIface properties
 
-// MARK: - no signals
+// MARK: no HyperlinkImplIface signals
 
 
+// MARK: HyperlinkImplIface Record: HyperlinkImplIfaceProtocol extension (methods and fields)
 public extension HyperlinkImplIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkHyperlinkImplIface` instance.
     var _ptr: UnsafeMutablePointer<AtkHyperlinkImplIface> { return ptr.assumingMemoryBound(to: AtkHyperlinkImplIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var getHyperlink is unavailable because get_hyperlink is void
 
 }
 
@@ -197,7 +208,7 @@ public extension HyperlinkImplIfaceProtocol {
 ///
 
 public protocol HypertextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkHypertextIface` instance.
+        /// Untyped pointer to the underlying `AtkHypertextIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkHypertextIface` instance.
@@ -210,7 +221,7 @@ public protocol HypertextIfaceProtocol {
 ///
 
 public struct HypertextIfaceRef: HypertextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkHypertextIface` instance.
+        /// Untyped pointer to the underlying `AtkHypertextIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +274,7 @@ public extension HypertextIfaceRef {
 ///
 
 open class HypertextIface: HypertextIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkHypertextIface` instance.
+        /// Untyped pointer to the underlying `AtkHypertextIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +303,7 @@ open class HypertextIface: HypertextIfaceProtocol {
         // no reference counting for AtkHypertextIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkHypertextIface`.
+    /// Do-nothing destructor for `AtkHypertextIface`.
     deinit {
         // no reference counting for AtkHypertextIface, cannot unref(cast(_ptr))
     }
@@ -360,14 +371,31 @@ open class HypertextIface: HypertextIfaceProtocol {
 
 }
 
-// MARK: - no HypertextIface properties
+// MARK: no HypertextIface properties
 
-// MARK: - no signals
+// MARK: no HypertextIface signals
 
 
+// MARK: HypertextIface Record: HypertextIfaceProtocol extension (methods and fields)
 public extension HypertextIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkHypertextIface` instance.
     var _ptr: UnsafeMutablePointer<AtkHypertextIface> { return ptr.assumingMemoryBound(to: AtkHypertextIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var getLink is unavailable because get_link is void
+
+    // var getNLinks is unavailable because get_n_links is void
+
+    // var getLinkIndex is unavailable because get_link_index is void
+
+    // var linkSelected is unavailable because link_selected is void
 
 }
 
@@ -382,7 +410,7 @@ public extension HypertextIfaceProtocol {
 ///
 
 public protocol ImageIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkImageIface` instance.
+        /// Untyped pointer to the underlying `AtkImageIface` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkImageIface` instance.
@@ -395,7 +423,7 @@ public protocol ImageIfaceProtocol {
 ///
 
 public struct ImageIfaceRef: ImageIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkImageIface` instance.
+        /// Untyped pointer to the underlying `AtkImageIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -448,7 +476,7 @@ public extension ImageIfaceRef {
 ///
 
 open class ImageIface: ImageIfaceProtocol {
-    /// Untyped pointer to the underlying `AtkImageIface` instance.
+        /// Untyped pointer to the underlying `AtkImageIface` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -477,7 +505,7 @@ open class ImageIface: ImageIfaceProtocol {
         // no reference counting for AtkImageIface, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkImageIface`.
+    /// Do-nothing destructor for `AtkImageIface`.
     deinit {
         // no reference counting for AtkImageIface, cannot unref(cast(_ptr))
     }
@@ -545,14 +573,33 @@ open class ImageIface: ImageIfaceProtocol {
 
 }
 
-// MARK: - no ImageIface properties
+// MARK: no ImageIface properties
 
-// MARK: - no signals
+// MARK: no ImageIface signals
 
 
+// MARK: ImageIface Record: ImageIfaceProtocol extension (methods and fields)
 public extension ImageIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkImageIface` instance.
     var _ptr: UnsafeMutablePointer<AtkImageIface> { return ptr.assumingMemoryBound(to: AtkImageIface.self) }
+
+
+    var parent: GTypeInterface {
+        get {
+            let rv: GTypeInterface = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var getImagePosition is unavailable because get_image_position is void
+
+    // var getImageDescription is unavailable because get_image_description is void
+
+    // var getImageSize is unavailable because get_image_size is void
+
+    // var setImageDescription is unavailable because set_image_description is void
+
+    // var getImageLocale is unavailable because get_image_locale is void
 
 }
 

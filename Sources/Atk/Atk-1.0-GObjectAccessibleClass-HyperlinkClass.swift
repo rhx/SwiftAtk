@@ -12,7 +12,7 @@ import GLibObject
 ///
 
 public protocol GObjectAccessibleClassProtocol {
-    /// Untyped pointer to the underlying `AtkGObjectAccessibleClass` instance.
+        /// Untyped pointer to the underlying `AtkGObjectAccessibleClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkGObjectAccessibleClass` instance.
@@ -25,7 +25,7 @@ public protocol GObjectAccessibleClassProtocol {
 ///
 
 public struct GObjectAccessibleClassRef: GObjectAccessibleClassProtocol {
-    /// Untyped pointer to the underlying `AtkGObjectAccessibleClass` instance.
+        /// Untyped pointer to the underlying `AtkGObjectAccessibleClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -78,7 +78,7 @@ public extension GObjectAccessibleClassRef {
 ///
 
 open class GObjectAccessibleClass: GObjectAccessibleClassProtocol {
-    /// Untyped pointer to the underlying `AtkGObjectAccessibleClass` instance.
+        /// Untyped pointer to the underlying `AtkGObjectAccessibleClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -107,7 +107,7 @@ open class GObjectAccessibleClass: GObjectAccessibleClassProtocol {
         // no reference counting for AtkGObjectAccessibleClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkGObjectAccessibleClass`.
+    /// Do-nothing destructor for `AtkGObjectAccessibleClass`.
     deinit {
         // no reference counting for AtkGObjectAccessibleClass, cannot unref(cast(_ptr))
     }
@@ -175,14 +175,37 @@ open class GObjectAccessibleClass: GObjectAccessibleClassProtocol {
 
 }
 
-// MARK: - no GObjectAccessibleClass properties
+// MARK: no GObjectAccessibleClass properties
 
-// MARK: - no signals
+// MARK: no GObjectAccessibleClass signals
 
 
+// MARK: GObjectAccessibleClass Record: GObjectAccessibleClassProtocol extension (methods and fields)
 public extension GObjectAccessibleClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkGObjectAccessibleClass` instance.
     var _ptr: UnsafeMutablePointer<AtkGObjectAccessibleClass> { return ptr.assumingMemoryBound(to: AtkGObjectAccessibleClass.self) }
+
+
+    var parentClass: AtkObjectClass {
+        get {
+            let rv: AtkObjectClass = cast(_ptr.pointee.parent_class)
+            return rv
+        }
+    }
+
+    var pad1: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad1)
+            return rv
+        }
+    }
+
+    var pad2: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad2)
+            return rv
+        }
+    }
 
 }
 
@@ -197,7 +220,7 @@ public extension GObjectAccessibleClassProtocol {
 ///
 
 public protocol HyperlinkClassProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkClass` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkClass` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `AtkHyperlinkClass` instance.
@@ -210,7 +233,7 @@ public protocol HyperlinkClassProtocol {
 ///
 
 public struct HyperlinkClassRef: HyperlinkClassProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkClass` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -263,7 +286,7 @@ public extension HyperlinkClassRef {
 ///
 
 open class HyperlinkClass: HyperlinkClassProtocol {
-    /// Untyped pointer to the underlying `AtkHyperlinkClass` instance.
+        /// Untyped pointer to the underlying `AtkHyperlinkClass` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -292,7 +315,7 @@ open class HyperlinkClass: HyperlinkClassProtocol {
         // no reference counting for AtkHyperlinkClass, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`AtkHyperlinkClass`.
+    /// Do-nothing destructor for `AtkHyperlinkClass`.
     deinit {
         // no reference counting for AtkHyperlinkClass, cannot unref(cast(_ptr))
     }
@@ -360,14 +383,48 @@ open class HyperlinkClass: HyperlinkClassProtocol {
 
 }
 
-// MARK: - no HyperlinkClass properties
+// MARK: no HyperlinkClass properties
 
-// MARK: - no signals
+// MARK: no HyperlinkClass signals
 
 
+// MARK: HyperlinkClass Record: HyperlinkClassProtocol extension (methods and fields)
 public extension HyperlinkClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkHyperlinkClass` instance.
     var _ptr: UnsafeMutablePointer<AtkHyperlinkClass> { return ptr.assumingMemoryBound(to: AtkHyperlinkClass.self) }
+
+
+    var parent: GObjectClass {
+        get {
+            let rv: GObjectClass = cast(_ptr.pointee.parent)
+            return rv
+        }
+    }
+
+    // var getUri is unavailable because get_uri is void
+
+    // var getObject is unavailable because get_object is void
+
+    // var getEndIndex is unavailable because get_end_index is void
+
+    // var getStartIndex is unavailable because get_start_index is void
+
+    // var isValid is unavailable because is_valid is void
+
+    // var getNAnchors is unavailable because get_n_anchors is void
+
+    // var linkState is unavailable because link_state is void
+
+    // var isSelectedLink is unavailable because is_selected_link is void
+
+    // var linkActivated is unavailable because link_activated is void
+
+    var pad1: AtkFunction {
+        get {
+            let rv: AtkFunction = cast(_ptr.pointee.pad1)
+            return rv
+        }
+    }
 
 }
 
