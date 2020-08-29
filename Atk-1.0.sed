@@ -16,3 +16,8 @@ s/: \([A-Za-z.]*Function[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*Mapping[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*Listener[,)]\)/: @escaping \1/g
 s/: \([A-Za-z.]*ListenerInit[,)]\)/: @escaping \1/g
+s/getCurrent<ValueT: ValueProtocol>/getCurrent<ValueT: GLibObject.ValueProtocol>/
+s/setCurrent<ValueT: ValueProtocol>/setCurrent<ValueT: GLibObject.ValueProtocol>/
+s/getMaximum<ValueT: ValueProtocol>/getMaximum<ValueT: GLibObject.ValueProtocol>/
+s/getMinimumIncrement<ValueT: ValueProtocol>/getMinimumIncrement<ValueT: GLibObject.ValueProtocol>/
+s/getMinimum<ValueT: ValueProtocol>/getMinimum<ValueT: GLibObject.ValueProtocol>/
