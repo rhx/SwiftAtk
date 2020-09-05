@@ -17,10 +17,11 @@ import GLibObject
 /// See also `AtkTable`.
 public protocol TableCellProtocol: ObjectProtocol {
         /// Untyped pointer to the underlying `AtkTableCell` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkTableCell` instance.
-    var table_cell_ptr: UnsafeMutablePointer<AtkTableCell> { get }
+    var table_cell_ptr: UnsafeMutablePointer<AtkTableCell>! { get }
+
 }
 
 /// The `TableCellRef` type acts as a lightweight Swift reference to an underlying `AtkTableCell` instance.
@@ -35,46 +36,76 @@ public protocol TableCellProtocol: ObjectProtocol {
 public struct TableCellRef: TableCellProtocol {
         /// Untyped pointer to the underlying `AtkTableCell` instance.
     /// For type-safe access, use the generated, typed pointer `table_cell_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension TableCellRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkTableCell>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkTableCell>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkTableCell>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkTableCell>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkTableCell>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `TableCellProtocol`
-    init<T: TableCellProtocol>(_ other: T) {
+    @inlinable init<T: TableCellProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -94,77 +125,123 @@ open class TableCell: Object, TableCellProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `TableCell` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkTableCell>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkTableCell>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `TableCell` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkTableCell>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `TableCell` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `TableCell` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `TableCell` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkTableCell>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `TableCell` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkTableCell>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `AtkTableCell`.
     /// i.e., ownership is transferred to the `TableCell` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkTableCell>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkTableCell>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `TableCellProtocol`
     /// Will retain `AtkTableCell`.
     /// - Parameter other: an instance of a related type that implements `TableCellProtocol`
-    public init<T: TableCellProtocol>(tableCell other: T) {
-        super.init(retaining: cast(other.table_cell_ptr))
+    @inlinable public init<T: TableCellProtocol>(tableCell other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -229,18 +306,18 @@ public extension TableCellProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: TableCellPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: TableCellPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
             let to   = unsafeBitCast(transform_to,   to: BindingTransformFunc.self)
-            let rv = GLibObject.ObjectRef(cast(table_cell_ptr)).bindPropertyFull(sourceProperty: source, target: t, targetProperty: target_property, flags: f, transformTo: to, transformFrom: from, userData: holder) {
+            let rv = GLibObject.ObjectRef(raw: ptr).bindPropertyFull(sourceProperty: source, target: t, targetProperty: target_property, flags: f, transformTo: to, transformFrom: from, userData: holder) {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
                 }
             }
-            return rv.map { BindingRef(cast($0)) }
+            return rv.map { BindingRef($0) }
         }
 
         let rv = _bind(source_property.name, to: target, target_property.name, flags: f, holder: BindingClosureHolder(transform_from, transform_to), transformFrom: {
@@ -258,7 +335,7 @@ public extension TableCellProtocol {
     /// Get the value of a TableCell property
     /// - Parameter property: the property to get the value for
     /// - Returns: the value of the named property
-    func get(property: TableCellPropertyName) -> GLibObject.Value {
+    @inlinable func get(property: TableCellPropertyName) -> GLibObject.Value {
         let v = GLibObject.Value()
         g_object_get_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
         return v
@@ -268,7 +345,7 @@ public extension TableCellProtocol {
     /// *Note* that this will only have an effect on properties that are writable and not construct-only!
     /// - Parameter property: the property to get the value for
     /// - Returns: the value of the named property
-    func set(property: TableCellPropertyName, value v: GLibObject.Value) {
+    @inlinable func set(property: TableCellPropertyName, value v: GLibObject.Value) {
         g_object_set_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
     }
 }
@@ -388,11 +465,11 @@ public extension TableCellProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: TableCellSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: TableCellSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(table_cell_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -413,24 +490,24 @@ public extension TableCellProtocol {
 // MARK: TableCell Interface: TableCellProtocol extension (methods and fields)
 public extension TableCellProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTableCell` instance.
-    var table_cell_ptr: UnsafeMutablePointer<AtkTableCell> { return ptr.assumingMemoryBound(to: AtkTableCell.self) }
+    @inlinable var table_cell_ptr: UnsafeMutablePointer<AtkTableCell>! { return ptr?.assumingMemoryBound(to: AtkTableCell.self) }
 
     /// Returns the column headers as an array of cell accessibles.
-    func getColumnHeaderCells() -> UnsafeMutablePointer<GPtrArray>! {
-        let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_table_cell_get_column_header_cells(cast(table_cell_ptr)))
-        return cast(rv)
+    @inlinable func getColumnHeaderCells() -> PtrArrayRef! {
+        let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_table_cell_get_column_header_cells(table_cell_ptr)))
+        return rv
     }
 
     /// Returns the number of columns occupied by this cell accessible.
-    func getColumnSpan() -> Int {
-        let rv: Int = cast(atk_table_cell_get_column_span(cast(table_cell_ptr)))
-        return Int(rv)
+    @inlinable func getColumnSpan() -> Int {
+        let rv = Int(atk_table_cell_get_column_span(table_cell_ptr))
+        return rv
     }
 
     /// Retrieves the tabular position of this cell.
-    func getPosition(row: UnsafeMutablePointer<CInt>, column: UnsafeMutablePointer<CInt>) -> Bool {
-        let rv = atk_table_cell_get_position(cast(table_cell_ptr), cast(row), cast(column))
-        return Bool(rv != 0)
+    @inlinable func getPosition(row: UnsafeMutablePointer<gint>!, column: UnsafeMutablePointer<gint>!) -> Bool {
+        let rv = ((atk_table_cell_get_position(table_cell_ptr, row, column)) != 0)
+        return rv
     }
 
     /// Gets the row and column indexes and span of this cell accessible.
@@ -438,70 +515,70 @@ public extension TableCellProtocol {
     /// Note: If the object does not implement this function, then, by default, atk
     /// will implement this function by calling get_row_span and get_column_span
     /// on the object.
-    func getRowColumnSpan(row: UnsafeMutablePointer<CInt>, column: UnsafeMutablePointer<CInt>, rowSpan row_span: UnsafeMutablePointer<CInt>, columnSpan column_span: UnsafeMutablePointer<CInt>) -> Bool {
-        let rv = atk_table_cell_get_row_column_span(cast(table_cell_ptr), cast(row), cast(column), cast(row_span), cast(column_span))
-        return Bool(rv != 0)
+    @inlinable func getRowColumnSpan(row: UnsafeMutablePointer<gint>!, column: UnsafeMutablePointer<gint>!, rowSpan row_span: UnsafeMutablePointer<gint>!, columnSpan column_span: UnsafeMutablePointer<gint>!) -> Bool {
+        let rv = ((atk_table_cell_get_row_column_span(table_cell_ptr, row, column, row_span, column_span)) != 0)
+        return rv
     }
 
     /// Returns the row headers as an array of cell accessibles.
-    func getRowHeaderCells() -> UnsafeMutablePointer<GPtrArray>! {
-        let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_table_cell_get_row_header_cells(cast(table_cell_ptr)))
-        return cast(rv)
+    @inlinable func getRowHeaderCells() -> PtrArrayRef! {
+        let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_table_cell_get_row_header_cells(table_cell_ptr)))
+        return rv
     }
 
     /// Returns the number of rows occupied by this cell accessible.
-    func getRowSpan() -> Int {
-        let rv: Int = cast(atk_table_cell_get_row_span(cast(table_cell_ptr)))
-        return Int(rv)
+    @inlinable func getRowSpan() -> Int {
+        let rv = Int(atk_table_cell_get_row_span(table_cell_ptr))
+        return rv
     }
 
     /// Returns a reference to the accessible of the containing table.
-    func getTable() -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_cell_get_table(cast(table_cell_ptr)))
-        return cast(rv)
+    @inlinable func getTable() -> ObjectRef! {
+        guard let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_cell_get_table(table_cell_ptr))) else { return nil }
+        return rv
     }
     /// Returns the column headers as an array of cell accessibles.
-    var columnHeaderCells: UnsafeMutablePointer<GPtrArray>! {
+    @inlinable var columnHeaderCells: PtrArrayRef! {
         /// Returns the column headers as an array of cell accessibles.
         get {
-            let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_table_cell_get_column_header_cells(cast(table_cell_ptr)))
-            return cast(rv)
+            let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_table_cell_get_column_header_cells(table_cell_ptr)))
+            return rv
         }
     }
 
     /// Returns the number of columns occupied by this cell accessible.
-    var columnSpan: Int {
+    @inlinable var columnSpan: Int {
         /// Returns the number of columns occupied by this cell accessible.
         get {
-            let rv: Int = cast(atk_table_cell_get_column_span(cast(table_cell_ptr)))
-            return Int(rv)
+            let rv = Int(atk_table_cell_get_column_span(table_cell_ptr))
+            return rv
         }
     }
 
     /// Returns the row headers as an array of cell accessibles.
-    var rowHeaderCells: UnsafeMutablePointer<GPtrArray>! {
+    @inlinable var rowHeaderCells: PtrArrayRef! {
         /// Returns the row headers as an array of cell accessibles.
         get {
-            let rv: UnsafeMutablePointer<GPtrArray>! = cast(atk_table_cell_get_row_header_cells(cast(table_cell_ptr)))
-            return cast(rv)
+            let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_table_cell_get_row_header_cells(table_cell_ptr)))
+            return rv
         }
     }
 
     /// Returns the number of rows occupied by this cell accessible.
-    var rowSpan: Int {
+    @inlinable var rowSpan: Int {
         /// Returns the number of rows occupied by this cell accessible.
         get {
-            let rv: Int = cast(atk_table_cell_get_row_span(cast(table_cell_ptr)))
-            return Int(rv)
+            let rv = Int(atk_table_cell_get_row_span(table_cell_ptr))
+            return rv
         }
     }
 
     /// Returns a reference to the accessible of the containing table.
-    var table: UnsafeMutablePointer<AtkObject>! {
+    @inlinable var table: ObjectRef! {
         /// Returns a reference to the accessible of the containing table.
         get {
-            let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_cell_get_table(cast(table_cell_ptr)))
-            return cast(rv)
+            guard let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_cell_get_table(table_cell_ptr))) else { return nil }
+            return rv
         }
     }
 
@@ -538,10 +615,11 @@ public extension TableCellProtocol {
 /// complex for languages which use ligatures.
 public protocol TextProtocol {
         /// Untyped pointer to the underlying `AtkText` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkText` instance.
-    var text_ptr: UnsafeMutablePointer<AtkText> { get }
+    var text_ptr: UnsafeMutablePointer<AtkText>! { get }
+
 }
 
 /// The `TextRef` type acts as a lightweight Swift reference to an underlying `AtkText` instance.
@@ -570,46 +648,76 @@ public protocol TextProtocol {
 public struct TextRef: TextProtocol {
         /// Untyped pointer to the underlying `AtkText` instance.
     /// For type-safe access, use the generated, typed pointer `text_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension TextRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkText>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkText>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkText>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkText>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkText>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `TextProtocol`
-    init<T: TextProtocol>(_ other: T) {
+    @inlinable init<T: TextProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -641,95 +749,141 @@ public extension TextRef {
 open class Text: TextProtocol {
         /// Untyped pointer to the underlying `AtkText` instance.
     /// For type-safe access, use the generated, typed pointer `text_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Text` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkText>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkText>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Text` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkText>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Text` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Text` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Text` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkText>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Text` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkText>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkText` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Text` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkText>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkText>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkText, cannot ref(cast(text_ptr))
+        // no reference counting for AtkText, cannot ref(text_ptr)
     }
 
     /// Reference intialiser for a related type that implements `TextProtocol`
     /// `AtkText` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `TextProtocol`
-    public init<T: TextProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.text_ptr)
-        // no reference counting for AtkText, cannot ref(cast(text_ptr))
+    @inlinable public init<T: TextProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkText, cannot ref(text_ptr)
     }
 
     /// Do-nothing destructor for `AtkText`.
     deinit {
-        // no reference counting for AtkText, cannot unref(cast(text_ptr))
+        // no reference counting for AtkText, cannot unref(text_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkText, cannot ref(cast(text_ptr))
+        // no reference counting for AtkText, cannot ref(text_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkText, cannot ref(cast(text_ptr))
+        // no reference counting for AtkText, cannot ref(text_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkText, cannot ref(cast(text_ptr))
+        // no reference counting for AtkText, cannot ref(text_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkText, cannot ref(cast(text_ptr))
+        // no reference counting for AtkText, cannot ref(text_ptr)
     }
 
 
@@ -779,11 +933,11 @@ public extension TextProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: TextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: TextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(text_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -804,36 +958,36 @@ public extension TextProtocol {
 // MARK: Text Interface: TextProtocol extension (methods and fields)
 public extension TextProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkText` instance.
-    var text_ptr: UnsafeMutablePointer<AtkText> { return ptr.assumingMemoryBound(to: AtkText.self) }
+    @inlinable var text_ptr: UnsafeMutablePointer<AtkText>! { return ptr?.assumingMemoryBound(to: AtkText.self) }
 
     /// Adds a selection bounded by the specified offsets.
-    func addSelection(startOffset start_offset: CInt, endOffset end_offset: CInt) -> Bool {
-        let rv = atk_text_add_selection(cast(text_ptr), gint(start_offset), gint(end_offset))
-        return Bool(rv != 0)
+    @inlinable func addSelection(startOffset start_offset: Int, endOffset end_offset: Int) -> Bool {
+        let rv = ((atk_text_add_selection(text_ptr, gint(start_offset), gint(end_offset))) != 0)
+        return rv
     }
 
     /// Get the ranges of text in the specified bounding box.
-    func getBoundedRanges(rect: TextRectangleProtocol, coordType coord_type: CoordType, xClipType x_clip_type: TextClipType, yClipType y_clip_type: TextClipType) -> UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>>! {
-        let rv: UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>>! = cast(atk_text_get_bounded_ranges(cast(text_ptr), cast(rect.ptr), coord_type, x_clip_type, y_clip_type))
-        return cast(rv)
+    @inlinable func getBoundedRanges<TextRectangleT: TextRectangleProtocol>(rect: TextRectangleT, coordType coord_type: AtkCoordType, xClipType x_clip_type: AtkTextClipType, yClipType y_clip_type: AtkTextClipType) -> UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>?>! {
+        let rv = atk_text_get_bounded_ranges(text_ptr, rect._ptr, coord_type, x_clip_type, y_clip_type)
+        return rv
     }
 
     /// Gets the offset of the position of the caret (cursor).
-    func getCaretOffset() -> Int {
-        let rv: Int = cast(atk_text_get_caret_offset(cast(text_ptr)))
-        return Int(rv)
+    @inlinable func getCaretOffset() -> Int {
+        let rv = Int(atk_text_get_caret_offset(text_ptr))
+        return rv
     }
 
     /// Gets the specified text.
-    func getCharacterAt(offset: CInt) -> gunichar {
-        let rv = atk_text_get_character_at_offset(cast(text_ptr), gint(offset))
-        return cast(rv)
+    @inlinable func getCharacterAt(offset: Int) -> gunichar {
+        let rv = atk_text_get_character_at_offset(text_ptr, gint(offset))
+        return rv
     }
 
     /// Gets the character count.
-    func getCharacterCount() -> Int {
-        let rv: Int = cast(atk_text_get_character_count(cast(text_ptr)))
-        return Int(rv)
+    @inlinable func getCharacterCount() -> Int {
+        let rv = Int(atk_text_get_character_count(text_ptr))
+        return rv
     }
 
     /// If the extent can not be obtained (e.g. missing support), all of x, y, width,
@@ -841,8 +995,8 @@ public extension TextProtocol {
     /// 
     /// Get the bounding box containing the glyph representing the character at
     ///     a particular text offset.
-    func getCharacterExtents(offset: CInt, x: UnsafeMutablePointer<CInt>, y: UnsafeMutablePointer<CInt>, width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>, coords: CoordType) {
-        atk_text_get_character_extents(cast(text_ptr), gint(offset), cast(x), cast(y), cast(width), cast(height), coords)
+    @inlinable func getCharacterExtents(offset: Int, x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil, coords: AtkCoordType) {
+        atk_text_get_character_extents(text_ptr, gint(offset), x, y, width, height, coords)
     
     }
 
@@ -850,31 +1004,31 @@ public extension TextProtocol {
     /// attributes for the text. See the enum AtkTextAttribute for types of text
     /// attributes that can be returned. Note that other attributes may also be
     /// returned.
-    func getDefaultAttributes() -> UnsafeMutablePointer<AtkAttributeSet>! {
-        let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_text_get_default_attributes(cast(text_ptr)))
-        return cast(rv)
+    @inlinable func getDefaultAttributes() -> UnsafeMutablePointer<AtkAttributeSet>! {
+        let rv = atk_text_get_default_attributes(text_ptr)
+        return rv
     }
 
     /// Gets the number of selected regions.
-    func getNSelections() -> Int {
-        let rv: Int = cast(atk_text_get_n_selections(cast(text_ptr)))
-        return Int(rv)
+    @inlinable func getNSelections() -> Int {
+        let rv = Int(atk_text_get_n_selections(text_ptr))
+        return rv
     }
 
     /// Gets the offset of the character located at coordinates `x` and `y`. `x` and `y`
     /// are interpreted as being relative to the screen or this widget's window
     /// depending on `coords`.
-    func getOffsetAtPoint(x: CInt, y: CInt, coords: CoordType) -> Int {
-        let rv: Int = cast(atk_text_get_offset_at_point(cast(text_ptr), gint(x), gint(y), coords))
-        return Int(rv)
+    @inlinable func getOffsetAtPoint(x: Int, y: Int, coords: AtkCoordType) -> Int {
+        let rv = Int(atk_text_get_offset_at_point(text_ptr, gint(x), gint(y), coords))
+        return rv
     }
 
     /// Get the bounding box for text within the specified range.
     /// 
     /// If the extents can not be obtained (e.g. or missing support), the rectangle
     /// fields are set to -1.
-    func getRangeExtents(startOffset start_offset: CInt, endOffset end_offset: CInt, coordType coord_type: CoordType, rect: TextRectangleProtocol) {
-        atk_text_get_range_extents(cast(text_ptr), gint(start_offset), gint(end_offset), coord_type, cast(rect.ptr))
+    @inlinable func getRangeExtents<TextRectangleT: TextRectangleProtocol>(startOffset start_offset: Int, endOffset end_offset: Int, coordType coord_type: AtkCoordType, rect: TextRectangleT) {
+        atk_text_get_range_extents(text_ptr, gint(start_offset), gint(end_offset), coord_type, rect._ptr)
     
     }
 
@@ -885,15 +1039,15 @@ public extension TextProtocol {
     /// after the range.  See the enum AtkTextAttribute for types of text
     /// attributes that can be returned. Note that other attributes may also be
     /// returned.
-    func getRunAttributes(offset: CInt, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> UnsafeMutablePointer<AtkAttributeSet>! {
-        let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_text_get_run_attributes(cast(text_ptr), gint(offset), cast(start_offset), cast(end_offset)))
-        return cast(rv)
+    @inlinable func getRunAttributes(offset: Int, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> UnsafeMutablePointer<AtkAttributeSet>! {
+        let rv = atk_text_get_run_attributes(text_ptr, gint(offset), start_offset, end_offset)
+        return rv
     }
 
     /// Gets the text from the specified selection.
-    func getSelection(selectionNum selection_num: CInt, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv: String! = cast(atk_text_get_selection(cast(text_ptr), gint(selection_num), cast(start_offset), cast(end_offset)))
-        return cast(rv)
+    @inlinable func getSelection(selectionNum selection_num: Int, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_selection(text_ptr, gint(selection_num), start_offset, end_offset).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets a portion of the text exposed through an `AtkText` according to a given `offset`
@@ -926,24 +1080,24 @@ public extension TextProtocol {
     /// If `granularity` is ATK_TEXT_GRANULARITY_PARAGRAPH the returned string
     /// is from the start of the paragraph at or before the offset to the start
     /// of the following paragraph after the offset.
-    func getStringAt(offset: CInt, granularity: TextGranularity, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv: String! = cast(atk_text_get_string_at_offset(cast(text_ptr), gint(offset), granularity, cast(start_offset), cast(end_offset)))
-        return cast(rv)
+    @inlinable func getStringAt(offset: Int, granularity: AtkTextGranularity, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_string_at_offset(text_ptr, gint(offset), granularity, start_offset, end_offset).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the specified text.
-    func getText(startOffset start_offset: CInt, endOffset end_offset: CInt) -> String! {
-        let rv: String! = cast(atk_text_get_text(cast(text_ptr), gint(start_offset), gint(end_offset)))
-        return cast(rv)
+    @inlinable func getText(startOffset start_offset: Int, endOffset end_offset: Int) -> String! {
+        let rv = atk_text_get_text(text_ptr, gint(start_offset), gint(end_offset)).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the specified text.
     ///
     /// **get_text_after_offset is deprecated:**
     /// Please use atk_text_get_string_at_offset() instead.
-    @available(*, deprecated) func getTextAfter(offset: CInt, boundaryType boundary_type: TextBoundary, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv: String! = cast(atk_text_get_text_after_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset)))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func getTextAfter(offset: Int, boundaryType boundary_type: AtkTextBoundary, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_text_after_offset(text_ptr, gint(offset), boundary_type, start_offset, end_offset).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the specified text.
@@ -974,37 +1128,37 @@ public extension TextProtocol {
     /// **get_text_at_offset is deprecated:**
     /// This method is deprecated since ATK version
     /// 2.9.4. Please use atk_text_get_string_at_offset() instead.
-    @available(*, deprecated) func getTextAt(offset: CInt, boundaryType boundary_type: TextBoundary, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv: String! = cast(atk_text_get_text_at_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset)))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func getTextAt(offset: Int, boundaryType boundary_type: AtkTextBoundary, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_text_at_offset(text_ptr, gint(offset), boundary_type, start_offset, end_offset).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the specified text.
     ///
     /// **get_text_before_offset is deprecated:**
     /// Please use atk_text_get_string_at_offset() instead.
-    @available(*, deprecated) func getTextBefore(offset: CInt, boundaryType boundary_type: TextBoundary, startOffset start_offset: UnsafeMutablePointer<CInt>, endOffset end_offset: UnsafeMutablePointer<CInt>) -> String! {
-        let rv: String! = cast(atk_text_get_text_before_offset(cast(text_ptr), gint(offset), boundary_type, cast(start_offset), cast(end_offset)))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func getTextBefore(offset: Int, boundaryType boundary_type: AtkTextBoundary, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_text_before_offset(text_ptr, gint(offset), boundary_type, start_offset, end_offset).map({ String(cString: $0) })
+        return rv
     }
 
     /// Removes the specified selection.
-    func removeSelection(selectionNum selection_num: CInt) -> Bool {
-        let rv = atk_text_remove_selection(cast(text_ptr), gint(selection_num))
-        return Bool(rv != 0)
+    @inlinable func removeSelection(selectionNum selection_num: Int) -> Bool {
+        let rv = ((atk_text_remove_selection(text_ptr, gint(selection_num))) != 0)
+        return rv
     }
 
     /// Makes a substring of `text` visible on the screen by scrolling all necessary parents.
-    func scrollSubstringTo(startOffset start_offset: CInt, endOffset end_offset: CInt, type: ScrollType) -> Bool {
-        let rv = atk_text_scroll_substring_to(cast(text_ptr), gint(start_offset), gint(end_offset), type)
-        return Bool(rv != 0)
+    @inlinable func scrollSubstringTo(startOffset start_offset: Int, endOffset end_offset: Int, type: AtkScrollType) -> Bool {
+        let rv = ((atk_text_scroll_substring_to(text_ptr, gint(start_offset), gint(end_offset), type)) != 0)
+        return rv
     }
 
     /// Move the top-left of a substring of `text` to a given position of the screen
     /// by scrolling all necessary parents.
-    func scrollSubstringToPoint(startOffset start_offset: CInt, endOffset end_offset: CInt, coords: CoordType, x: CInt, y: CInt) -> Bool {
-        let rv = atk_text_scroll_substring_to_point(cast(text_ptr), gint(start_offset), gint(end_offset), coords, gint(x), gint(y))
-        return Bool(rv != 0)
+    @inlinable func scrollSubstringToPoint(startOffset start_offset: Int, endOffset end_offset: Int, coords: AtkCoordType, x: Int, y: Int) -> Bool {
+        let rv = ((atk_text_scroll_substring_to_point(text_ptr, gint(start_offset), gint(end_offset), coords, gint(x), gint(y))) != 0)
+        return rv
     }
 
     /// Sets the caret (cursor) position to the specified `offset`.
@@ -1024,22 +1178,22 @@ public extension TextProtocol {
     /// method should not trigger one either. If the application does not have a caret
     /// motion or focus navigation operation, this method should try to scroll the new
     /// caret position into view while minimizing unnecessary scroll motion.
-    func setCaret(offset: CInt) -> Bool {
-        let rv = atk_text_set_caret_offset(cast(text_ptr), gint(offset))
-        return Bool(rv != 0)
+    @inlinable func setCaret(offset: Int) -> Bool {
+        let rv = ((atk_text_set_caret_offset(text_ptr, gint(offset))) != 0)
+        return rv
     }
 
     /// Changes the start and end offset of the specified selection.
-    func setSelection(selectionNum selection_num: CInt, startOffset start_offset: CInt, endOffset end_offset: CInt) -> Bool {
-        let rv = atk_text_set_selection(cast(text_ptr), gint(selection_num), gint(start_offset), gint(end_offset))
-        return Bool(rv != 0)
+    @inlinable func setSelection(selectionNum selection_num: Int, startOffset start_offset: Int, endOffset end_offset: Int) -> Bool {
+        let rv = ((atk_text_set_selection(text_ptr, gint(selection_num), gint(start_offset), gint(end_offset))) != 0)
+        return rv
     }
     /// Gets the offset of the position of the caret (cursor).
-    var caretOffset: Int {
+    @inlinable var caretOffset: Int {
         /// Gets the offset of the position of the caret (cursor).
         get {
-            let rv: Int = cast(atk_text_get_caret_offset(cast(text_ptr)))
-            return Int(rv)
+            let rv = Int(atk_text_get_caret_offset(text_ptr))
+            return rv
         }
         /// Sets the caret (cursor) position to the specified `offset`.
         /// 
@@ -1059,16 +1213,16 @@ public extension TextProtocol {
         /// motion or focus navigation operation, this method should try to scroll the new
         /// caret position into view while minimizing unnecessary scroll motion.
         nonmutating set {
-            _ = atk_text_set_caret_offset(cast(text_ptr), gint(newValue))
+            _ = atk_text_set_caret_offset(text_ptr, gint(newValue))
         }
     }
 
     /// Gets the character count.
-    var characterCount: Int {
+    @inlinable var characterCount: Int {
         /// Gets the character count.
         get {
-            let rv: Int = cast(atk_text_get_character_count(cast(text_ptr)))
-            return Int(rv)
+            let rv = Int(atk_text_get_character_count(text_ptr))
+            return rv
         }
     }
 
@@ -1076,23 +1230,23 @@ public extension TextProtocol {
     /// attributes for the text. See the enum AtkTextAttribute for types of text
     /// attributes that can be returned. Note that other attributes may also be
     /// returned.
-    var defaultAttributes: UnsafeMutablePointer<AtkAttributeSet>! {
+    @inlinable var defaultAttributes: UnsafeMutablePointer<AtkAttributeSet>! {
         /// Creates an `AtkAttributeSet` which consists of the default values of
         /// attributes for the text. See the enum AtkTextAttribute for types of text
         /// attributes that can be returned. Note that other attributes may also be
         /// returned.
         get {
-            let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_text_get_default_attributes(cast(text_ptr)))
-            return cast(rv)
+            let rv = atk_text_get_default_attributes(text_ptr)
+            return rv
         }
     }
 
     /// Gets the number of selected regions.
-    var nSelections: Int {
+    @inlinable var nSelections: Int {
         /// Gets the number of selected regions.
         get {
-            let rv: Int = cast(atk_text_get_n_selections(cast(text_ptr)))
-            return Int(rv)
+            let rv = Int(atk_text_get_n_selections(text_ptr))
+            return rv
         }
     }
 
@@ -1250,10 +1404,11 @@ public extension TextProtocol {
 /// </refsect1>
 public protocol ValueProtocol {
         /// Untyped pointer to the underlying `AtkValue` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkValue` instance.
-    var value_ptr: UnsafeMutablePointer<AtkValue> { get }
+    var value_ptr: UnsafeMutablePointer<AtkValue>! { get }
+
 }
 
 /// The `ValueRef` type acts as a lightweight Swift reference to an underlying `AtkValue` instance.
@@ -1403,46 +1558,76 @@ public protocol ValueProtocol {
 public struct ValueRef: ValueProtocol {
         /// Untyped pointer to the underlying `AtkValue` instance.
     /// For type-safe access, use the generated, typed pointer `value_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension ValueRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkValue>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkValue>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkValue>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkValue>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkValue>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `ValueProtocol`
-    init<T: ValueProtocol>(_ other: T) {
+    @inlinable init<T: ValueProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -1595,95 +1780,141 @@ public extension ValueRef {
 open class Value: ValueProtocol {
         /// Untyped pointer to the underlying `AtkValue` instance.
     /// For type-safe access, use the generated, typed pointer `value_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Value` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkValue>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkValue>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Value` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkValue>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Value` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Value` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Value` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkValue>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Value` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkValue>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkValue` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Value` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkValue>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkValue>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkValue, cannot ref(cast(value_ptr))
+        // no reference counting for AtkValue, cannot ref(value_ptr)
     }
 
     /// Reference intialiser for a related type that implements `ValueProtocol`
     /// `AtkValue` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `ValueProtocol`
-    public init<T: ValueProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.value_ptr)
-        // no reference counting for AtkValue, cannot ref(cast(value_ptr))
+    @inlinable public init<T: ValueProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkValue, cannot ref(value_ptr)
     }
 
     /// Do-nothing destructor for `AtkValue`.
     deinit {
-        // no reference counting for AtkValue, cannot unref(cast(value_ptr))
+        // no reference counting for AtkValue, cannot unref(value_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkValue, cannot ref(cast(value_ptr))
+        // no reference counting for AtkValue, cannot ref(value_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkValue, cannot ref(cast(value_ptr))
+        // no reference counting for AtkValue, cannot ref(value_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkValue, cannot ref(cast(value_ptr))
+        // no reference counting for AtkValue, cannot ref(value_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkValue, cannot ref(cast(value_ptr))
+        // no reference counting for AtkValue, cannot ref(value_ptr)
     }
 
 
@@ -1715,11 +1946,11 @@ public extension ValueProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: ValueSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: ValueSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(value_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -1740,15 +1971,15 @@ public extension ValueProtocol {
 // MARK: Value Interface: ValueProtocol extension (methods and fields)
 public extension ValueProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkValue` instance.
-    var value_ptr: UnsafeMutablePointer<AtkValue> { return ptr.assumingMemoryBound(to: AtkValue.self) }
+    @inlinable var value_ptr: UnsafeMutablePointer<AtkValue>! { return ptr?.assumingMemoryBound(to: AtkValue.self) }
 
     /// Gets the value of this object.
     ///
     /// **get_current_value is deprecated:**
     /// Since 2.12. Use atk_value_get_value_and_text()
     /// instead.
-    @available(*, deprecated) func getCurrent(value: ValueProtocol) {
-        atk_value_get_current_value(cast(value_ptr), cast(value.ptr))
+    @available(*, deprecated) @inlinable func getCurrent<ValueT: GLibObject.ValueProtocol>(value: ValueT) {
+        atk_value_get_current_value(value_ptr, value.value_ptr)
     
     }
 
@@ -1756,17 +1987,17 @@ public extension ValueProtocol {
     /// changed.  If zero, the minimum increment is undefined, which may
     /// mean that it is limited only by the floating point precision of the
     /// platform.
-    func getIncrement() -> Double {
-        let rv: Double = cast(atk_value_get_increment(cast(value_ptr)))
-        return cast(rv)
+    @inlinable func getIncrement() -> Double {
+        let rv = Double(atk_value_get_increment(value_ptr))
+        return rv
     }
 
     /// Gets the maximum value of this object.
     ///
     /// **get_maximum_value is deprecated:**
     /// Since 2.12. Use atk_value_get_range() instead.
-    @available(*, deprecated) func getMaximum(value: ValueProtocol) {
-        atk_value_get_maximum_value(cast(value_ptr), cast(value.ptr))
+    @available(*, deprecated) @inlinable func getMaximum<ValueT: GLibObject.ValueProtocol>(value: ValueT) {
+        atk_value_get_maximum_value(value_ptr, value.value_ptr)
     
     }
 
@@ -1776,8 +2007,8 @@ public extension ValueProtocol {
     ///
     /// **get_minimum_increment is deprecated:**
     /// Since 2.12. Use atk_value_get_increment() instead.
-    @available(*, deprecated) func getMinimumIncrement(value: ValueProtocol) {
-        atk_value_get_minimum_increment(cast(value_ptr), cast(value.ptr))
+    @available(*, deprecated) @inlinable func getMinimumIncrement<ValueT: GLibObject.ValueProtocol>(value: ValueT) {
+        atk_value_get_minimum_increment(value_ptr, value.value_ptr)
     
     }
 
@@ -1785,29 +2016,29 @@ public extension ValueProtocol {
     ///
     /// **get_minimum_value is deprecated:**
     /// Since 2.12. Use atk_value_get_range() instead.
-    @available(*, deprecated) func getMinimum(value: ValueProtocol) {
-        atk_value_get_minimum_value(cast(value_ptr), cast(value.ptr))
+    @available(*, deprecated) @inlinable func getMinimum<ValueT: GLibObject.ValueProtocol>(value: ValueT) {
+        atk_value_get_minimum_value(value_ptr, value.value_ptr)
     
     }
 
     /// Gets the range of this object.
-    func getRange() -> UnsafeMutablePointer<AtkRange>! {
-        let rv: UnsafeMutablePointer<AtkRange>! = cast(atk_value_get_range(cast(value_ptr)))
-        return cast(rv)
+    @inlinable func getRange() -> RangeRef! {
+        let rv = RangeRef(gconstpointer: gconstpointer(atk_value_get_range(value_ptr)))
+        return rv
     }
 
     /// Gets the list of subranges defined for this object. See `AtkValue`
     /// introduction for examples of subranges and when to expose them.
-    func getSubRanges() -> UnsafeMutablePointer<GSList>! {
-        let rv: UnsafeMutablePointer<GSList>! = cast(atk_value_get_sub_ranges(cast(value_ptr)))
-        return cast(rv)
+    @inlinable func getSubRanges() -> SListRef! {
+        let rv = SListRef(gconstpointer: gconstpointer(atk_value_get_sub_ranges(value_ptr)))
+        return rv
     }
 
     /// Gets the current value and the human readable text alternative of
     /// `obj`. `text` is a newly created string, that must be freed by the
     /// caller. Can be NULL if no descriptor is available.
-    func getValueAndText(value: UnsafeMutablePointer<gdouble>, text: UnsafeMutablePointer<UnsafeMutablePointer<gchar>>) {
-        atk_value_get_value_and_text(cast(value_ptr), cast(value), cast(text))
+    @inlinable func getValueAndText(value: UnsafeMutablePointer<gdouble>!, text: UnsafeMutablePointer<UnsafeMutablePointer<gchar>?>! = nil) {
+        atk_value_get_value_and_text(value_ptr, value, text)
     
     }
 
@@ -1815,9 +2046,9 @@ public extension ValueProtocol {
     ///
     /// **set_current_value is deprecated:**
     /// Since 2.12. Use atk_value_set_value() instead.
-    @available(*, deprecated) func setCurrent(value: ValueProtocol) -> Bool {
-        let rv = atk_value_set_current_value(cast(value_ptr), cast(value.ptr))
-        return Bool(rv != 0)
+    @available(*, deprecated) @inlinable func setCurrent<ValueT: GLibObject.ValueProtocol>(value: ValueT) -> Bool {
+        let rv = ((atk_value_set_current_value(value_ptr, value.value_ptr)) != 0)
+        return rv
     }
 
     /// Sets the value of this object.
@@ -1834,42 +2065,42 @@ public extension ValueProtocol {
     /// decide it, and returned TRUE in any case. For that reason it is not
     /// required anymore to return if the value was properly assigned or
     /// not.
-    func setValue(newValue new_value: gdouble) {
-        atk_value_set_value(cast(value_ptr), new_value)
+    @inlinable func setValue(newValue new_value: gdouble) {
+        atk_value_set_value(value_ptr, new_value)
     
     }
     /// Gets the minimum increment by which the value of this object may be
     /// changed.  If zero, the minimum increment is undefined, which may
     /// mean that it is limited only by the floating point precision of the
     /// platform.
-    var increment: Double {
+    @inlinable var increment: Double {
         /// Gets the minimum increment by which the value of this object may be
         /// changed.  If zero, the minimum increment is undefined, which may
         /// mean that it is limited only by the floating point precision of the
         /// platform.
         get {
-            let rv: Double = cast(atk_value_get_increment(cast(value_ptr)))
-            return cast(rv)
+            let rv = Double(atk_value_get_increment(value_ptr))
+            return rv
         }
     }
 
     /// Gets the range of this object.
-    var range: UnsafeMutablePointer<AtkRange>! {
+    @inlinable var range: RangeRef! {
         /// Gets the range of this object.
         get {
-            let rv: UnsafeMutablePointer<AtkRange>! = cast(atk_value_get_range(cast(value_ptr)))
-            return cast(rv)
+            let rv = RangeRef(gconstpointer: gconstpointer(atk_value_get_range(value_ptr)))
+            return rv
         }
     }
 
     /// Gets the list of subranges defined for this object. See `AtkValue`
     /// introduction for examples of subranges and when to expose them.
-    var subRanges: UnsafeMutablePointer<GSList>! {
+    @inlinable var subRanges: SListRef! {
         /// Gets the list of subranges defined for this object. See `AtkValue`
         /// introduction for examples of subranges and when to expose them.
         get {
-            let rv: UnsafeMutablePointer<GSList>! = cast(atk_value_get_sub_ranges(cast(value_ptr)))
-            return cast(rv)
+            let rv = SListRef(gconstpointer: gconstpointer(atk_value_get_sub_ranges(value_ptr)))
+            return rv
         }
     }
 

@@ -40,10 +40,11 @@ import GLibObject
 /// AtkHyperlink semantics, a new interface was required.
 public protocol HyperlinkImplProtocol {
         /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkHyperlinkImpl` instance.
-    var hyperlink_impl_ptr: UnsafeMutablePointer<AtkHyperlinkImpl> { get }
+    var hyperlink_impl_ptr: UnsafeMutablePointer<AtkHyperlinkImpl>! { get }
+
 }
 
 /// The `HyperlinkImplRef` type acts as a lightweight Swift reference to an underlying `AtkHyperlinkImpl` instance.
@@ -81,46 +82,76 @@ public protocol HyperlinkImplProtocol {
 public struct HyperlinkImplRef: HyperlinkImplProtocol {
         /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
     /// For type-safe access, use the generated, typed pointer `hyperlink_impl_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension HyperlinkImplRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkHyperlinkImpl>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkHyperlinkImpl>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkHyperlinkImpl>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkHyperlinkImpl>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkHyperlinkImpl>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `HyperlinkImplProtocol`
-    init<T: HyperlinkImplProtocol>(_ other: T) {
+    @inlinable init<T: HyperlinkImplProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -161,95 +192,141 @@ public extension HyperlinkImplRef {
 open class HyperlinkImpl: HyperlinkImplProtocol {
         /// Untyped pointer to the underlying `AtkHyperlinkImpl` instance.
     /// For type-safe access, use the generated, typed pointer `hyperlink_impl_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `HyperlinkImpl` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkHyperlinkImpl>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkHyperlinkImpl>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `HyperlinkImpl` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkHyperlinkImpl>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `HyperlinkImpl` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `HyperlinkImpl` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `HyperlinkImpl` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkHyperlinkImpl>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `HyperlinkImpl` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkHyperlinkImpl>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkHyperlinkImpl` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `HyperlinkImpl` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkHyperlinkImpl>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkHyperlinkImpl>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkHyperlinkImpl, cannot ref(cast(hyperlink_impl_ptr))
+        // no reference counting for AtkHyperlinkImpl, cannot ref(hyperlink_impl_ptr)
     }
 
     /// Reference intialiser for a related type that implements `HyperlinkImplProtocol`
     /// `AtkHyperlinkImpl` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `HyperlinkImplProtocol`
-    public init<T: HyperlinkImplProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.hyperlink_impl_ptr)
-        // no reference counting for AtkHyperlinkImpl, cannot ref(cast(hyperlink_impl_ptr))
+    @inlinable public init<T: HyperlinkImplProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkHyperlinkImpl, cannot ref(hyperlink_impl_ptr)
     }
 
     /// Do-nothing destructor for `AtkHyperlinkImpl`.
     deinit {
-        // no reference counting for AtkHyperlinkImpl, cannot unref(cast(hyperlink_impl_ptr))
+        // no reference counting for AtkHyperlinkImpl, cannot unref(hyperlink_impl_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkHyperlinkImpl, cannot ref(cast(hyperlink_impl_ptr))
+        // no reference counting for AtkHyperlinkImpl, cannot ref(hyperlink_impl_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkHyperlinkImpl, cannot ref(cast(hyperlink_impl_ptr))
+        // no reference counting for AtkHyperlinkImpl, cannot ref(hyperlink_impl_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkHyperlinkImpl, cannot ref(cast(hyperlink_impl_ptr))
+        // no reference counting for AtkHyperlinkImpl, cannot ref(hyperlink_impl_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkHyperlinkImpl, cannot ref(cast(hyperlink_impl_ptr))
+        // no reference counting for AtkHyperlinkImpl, cannot ref(hyperlink_impl_ptr)
     }
 
 
@@ -264,19 +341,19 @@ open class HyperlinkImpl: HyperlinkImplProtocol {
 // MARK: HyperlinkImpl Interface: HyperlinkImplProtocol extension (methods and fields)
 public extension HyperlinkImplProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkHyperlinkImpl` instance.
-    var hyperlink_impl_ptr: UnsafeMutablePointer<AtkHyperlinkImpl> { return ptr.assumingMemoryBound(to: AtkHyperlinkImpl.self) }
+    @inlinable var hyperlink_impl_ptr: UnsafeMutablePointer<AtkHyperlinkImpl>! { return ptr?.assumingMemoryBound(to: AtkHyperlinkImpl.self) }
 
     /// Gets the hyperlink associated with this object.
-    func getHyperlink() -> UnsafeMutablePointer<AtkHyperlink>! {
-        let rv: UnsafeMutablePointer<AtkHyperlink>! = cast(atk_hyperlink_impl_get_hyperlink(cast(hyperlink_impl_ptr)))
-        return cast(rv)
+    @inlinable func getHyperlink() -> HyperlinkRef! {
+        let rv = HyperlinkRef(gconstpointer: gconstpointer(atk_hyperlink_impl_get_hyperlink(hyperlink_impl_ptr)))
+        return rv
     }
     /// Gets the hyperlink associated with this object.
-    var hyperlink: UnsafeMutablePointer<AtkHyperlink>! {
+    @inlinable var hyperlink: HyperlinkRef! {
         /// Gets the hyperlink associated with this object.
         get {
-            let rv: UnsafeMutablePointer<AtkHyperlink>! = cast(atk_hyperlink_impl_get_hyperlink(cast(hyperlink_impl_ptr)))
-            return cast(rv)
+            let rv = HyperlinkRef(gconstpointer: gconstpointer(atk_hyperlink_impl_get_hyperlink(hyperlink_impl_ptr)))
+            return rv
         }
     }
 
@@ -302,10 +379,11 @@ public extension HyperlinkImplProtocol {
 /// as well, and Hyperlinks need not have non-zero text offsets.
 public protocol HypertextProtocol {
         /// Untyped pointer to the underlying `AtkHypertext` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkHypertext` instance.
-    var hypertext_ptr: UnsafeMutablePointer<AtkHypertext> { get }
+    var hypertext_ptr: UnsafeMutablePointer<AtkHypertext>! { get }
+
 }
 
 /// The `HypertextRef` type acts as a lightweight Swift reference to an underlying `AtkHypertext` instance.
@@ -323,46 +401,76 @@ public protocol HypertextProtocol {
 public struct HypertextRef: HypertextProtocol {
         /// Untyped pointer to the underlying `AtkHypertext` instance.
     /// For type-safe access, use the generated, typed pointer `hypertext_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension HypertextRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkHypertext>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkHypertext>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkHypertext>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkHypertext>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkHypertext>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `HypertextProtocol`
-    init<T: HypertextProtocol>(_ other: T) {
+    @inlinable init<T: HypertextProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -383,95 +491,141 @@ public extension HypertextRef {
 open class Hypertext: HypertextProtocol {
         /// Untyped pointer to the underlying `AtkHypertext` instance.
     /// For type-safe access, use the generated, typed pointer `hypertext_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Hypertext` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkHypertext>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkHypertext>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Hypertext` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkHypertext>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Hypertext` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Hypertext` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Hypertext` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkHypertext>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Hypertext` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkHypertext>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkHypertext` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Hypertext` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkHypertext>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkHypertext>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkHypertext, cannot ref(cast(hypertext_ptr))
+        // no reference counting for AtkHypertext, cannot ref(hypertext_ptr)
     }
 
     /// Reference intialiser for a related type that implements `HypertextProtocol`
     /// `AtkHypertext` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `HypertextProtocol`
-    public init<T: HypertextProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.hypertext_ptr)
-        // no reference counting for AtkHypertext, cannot ref(cast(hypertext_ptr))
+    @inlinable public init<T: HypertextProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkHypertext, cannot ref(hypertext_ptr)
     }
 
     /// Do-nothing destructor for `AtkHypertext`.
     deinit {
-        // no reference counting for AtkHypertext, cannot unref(cast(hypertext_ptr))
+        // no reference counting for AtkHypertext, cannot unref(hypertext_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkHypertext, cannot ref(cast(hypertext_ptr))
+        // no reference counting for AtkHypertext, cannot ref(hypertext_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkHypertext, cannot ref(cast(hypertext_ptr))
+        // no reference counting for AtkHypertext, cannot ref(hypertext_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkHypertext, cannot ref(cast(hypertext_ptr))
+        // no reference counting for AtkHypertext, cannot ref(hypertext_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkHypertext, cannot ref(cast(hypertext_ptr))
+        // no reference counting for AtkHypertext, cannot ref(hypertext_ptr)
     }
 
 
@@ -494,11 +648,11 @@ public extension HypertextProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: HypertextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: HypertextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(hypertext_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -519,33 +673,33 @@ public extension HypertextProtocol {
 // MARK: Hypertext Interface: HypertextProtocol extension (methods and fields)
 public extension HypertextProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkHypertext` instance.
-    var hypertext_ptr: UnsafeMutablePointer<AtkHypertext> { return ptr.assumingMemoryBound(to: AtkHypertext.self) }
+    @inlinable var hypertext_ptr: UnsafeMutablePointer<AtkHypertext>! { return ptr?.assumingMemoryBound(to: AtkHypertext.self) }
 
     /// Gets the link in this hypertext document at index
     /// `link_index`
-    func getLink(linkIndex link_index: CInt) -> UnsafeMutablePointer<AtkHyperlink>! {
-        let rv: UnsafeMutablePointer<AtkHyperlink>! = cast(atk_hypertext_get_link(cast(hypertext_ptr), gint(link_index)))
-        return cast(rv)
+    @inlinable func getLink(linkIndex link_index: Int) -> HyperlinkRef! {
+        let rv = HyperlinkRef(gconstpointer: gconstpointer(atk_hypertext_get_link(hypertext_ptr, gint(link_index))))
+        return rv
     }
 
     /// Gets the index into the array of hyperlinks that is associated with
     /// the character specified by `char_index`.
-    func getLinkIndex(charIndex char_index: CInt) -> Int {
-        let rv: Int = cast(atk_hypertext_get_link_index(cast(hypertext_ptr), gint(char_index)))
-        return Int(rv)
+    @inlinable func getLinkIndex(charIndex char_index: Int) -> Int {
+        let rv = Int(atk_hypertext_get_link_index(hypertext_ptr, gint(char_index)))
+        return rv
     }
 
     /// Gets the number of links within this hypertext document.
-    func getNLinks() -> Int {
-        let rv: Int = cast(atk_hypertext_get_n_links(cast(hypertext_ptr)))
-        return Int(rv)
+    @inlinable func getNLinks() -> Int {
+        let rv = Int(atk_hypertext_get_n_links(hypertext_ptr))
+        return rv
     }
     /// Gets the number of links within this hypertext document.
-    var nLinks: Int {
+    @inlinable var nLinks: Int {
         /// Gets the number of links within this hypertext document.
         get {
-            let rv: Int = cast(atk_hypertext_get_n_links(cast(hypertext_ptr)))
-            return Int(rv)
+            let rv = Int(atk_hypertext_get_n_links(hypertext_ptr))
+            return rv
         }
     }
 
@@ -576,10 +730,11 @@ public extension HypertextProtocol {
 /// image.
 public protocol ImageProtocol {
         /// Untyped pointer to the underlying `AtkImage` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkImage` instance.
-    var image_ptr: UnsafeMutablePointer<AtkImage> { get }
+    var image_ptr: UnsafeMutablePointer<AtkImage>! { get }
+
 }
 
 /// The `ImageRef` type acts as a lightweight Swift reference to an underlying `AtkImage` instance.
@@ -602,46 +757,76 @@ public protocol ImageProtocol {
 public struct ImageRef: ImageProtocol {
         /// Untyped pointer to the underlying `AtkImage` instance.
     /// For type-safe access, use the generated, typed pointer `image_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension ImageRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkImage>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkImage>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkImage>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkImage>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkImage>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `ImageProtocol`
-    init<T: ImageProtocol>(_ other: T) {
+    @inlinable init<T: ImageProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -667,95 +852,141 @@ public extension ImageRef {
 open class Image: ImageProtocol {
         /// Untyped pointer to the underlying `AtkImage` instance.
     /// For type-safe access, use the generated, typed pointer `image_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Image` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkImage>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkImage>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Image` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkImage>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Image` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Image` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Image` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkImage>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Image` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkImage>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkImage` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Image` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkImage>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkImage>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkImage, cannot ref(cast(image_ptr))
+        // no reference counting for AtkImage, cannot ref(image_ptr)
     }
 
     /// Reference intialiser for a related type that implements `ImageProtocol`
     /// `AtkImage` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `ImageProtocol`
-    public init<T: ImageProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.image_ptr)
-        // no reference counting for AtkImage, cannot ref(cast(image_ptr))
+    @inlinable public init<T: ImageProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkImage, cannot ref(image_ptr)
     }
 
     /// Do-nothing destructor for `AtkImage`.
     deinit {
-        // no reference counting for AtkImage, cannot unref(cast(image_ptr))
+        // no reference counting for AtkImage, cannot unref(image_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkImage, cannot ref(cast(image_ptr))
+        // no reference counting for AtkImage, cannot ref(image_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkImage, cannot ref(cast(image_ptr))
+        // no reference counting for AtkImage, cannot ref(image_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkImage, cannot ref(cast(image_ptr))
+        // no reference counting for AtkImage, cannot ref(image_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkImage, cannot ref(cast(image_ptr))
+        // no reference counting for AtkImage, cannot ref(image_ptr)
     }
 
 
@@ -770,18 +1001,18 @@ open class Image: ImageProtocol {
 // MARK: Image Interface: ImageProtocol extension (methods and fields)
 public extension ImageProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkImage` instance.
-    var image_ptr: UnsafeMutablePointer<AtkImage> { return ptr.assumingMemoryBound(to: AtkImage.self) }
+    @inlinable var image_ptr: UnsafeMutablePointer<AtkImage>! { return ptr?.assumingMemoryBound(to: AtkImage.self) }
 
     /// Get a textual description of this image.
-    func getImageDescription() -> String! {
-        let rv: String! = cast(atk_image_get_image_description(cast(image_ptr)))
-        return cast(rv)
+    @inlinable func getImageDescription() -> String! {
+        let rv = atk_image_get_image_description(image_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Retrieves the locale identifier associated to the `AtkImage`.
-    func getImageLocale() -> String! {
-        let rv: String! = cast(atk_image_get_image_locale(cast(image_ptr)))
-        return cast(rv)
+    @inlinable func getImageLocale() -> String! {
+        let rv = atk_image_get_image_locale(image_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the position of the image in the form of a point specifying the
@@ -789,8 +1020,8 @@ public extension ImageProtocol {
     /// 
     /// If the position can not be obtained (e.g. missing support), x and y are set
     /// to -1.
-    func getImagePosition(x: UnsafeMutablePointer<CInt>, y: UnsafeMutablePointer<CInt>, coordType coord_type: CoordType) {
-        atk_image_get_image_position(cast(image_ptr), cast(x), cast(y), coord_type)
+    @inlinable func getImagePosition(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, coordType coord_type: AtkCoordType) {
+        atk_image_get_image_position(image_ptr, x, y, coord_type)
     
     }
 
@@ -800,35 +1031,35 @@ public extension ImageProtocol {
     /// 
     /// If the size can not be obtained (e.g. missing support), x and y are set
     /// to -1.
-    func getImageSize(width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>) {
-        atk_image_get_image_size(cast(image_ptr), cast(width), cast(height))
+    @inlinable func getImageSize(width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil) {
+        atk_image_get_image_size(image_ptr, width, height)
     
     }
 
     /// Sets the textual description for this image.
-    func setImage(description: UnsafePointer<gchar>) -> Bool {
-        let rv = atk_image_set_image_description(cast(image_ptr), description)
-        return Bool(rv != 0)
+    @inlinable func setImage(description: UnsafePointer<gchar>!) -> Bool {
+        let rv = ((atk_image_set_image_description(image_ptr, description)) != 0)
+        return rv
     }
     /// Get a textual description of this image.
-    var imageDescription: String! {
+    @inlinable var imageDescription: String! {
         /// Get a textual description of this image.
         get {
-            let rv: String! = cast(atk_image_get_image_description(cast(image_ptr)))
-            return cast(rv)
+            let rv = atk_image_get_image_description(image_ptr).map({ String(cString: $0) })
+            return rv
         }
         /// Sets the textual description for this image.
         nonmutating set {
-            _ = atk_image_set_image_description(cast(image_ptr), cast(newValue))
+            _ = atk_image_set_image_description(image_ptr, newValue)
         }
     }
 
     /// Retrieves the locale identifier associated to the `AtkImage`.
-    var imageLocale: String! {
+    @inlinable var imageLocale: String! {
         /// Retrieves the locale identifier associated to the `AtkImage`.
         get {
-            let rv: String! = cast(atk_image_get_image_locale(cast(image_ptr)))
-            return cast(rv)
+            let rv = atk_image_get_image_locale(image_ptr).map({ String(cString: $0) })
+            return rv
         }
     }
 

@@ -17,10 +17,11 @@ import GLibObject
 /// particular GType.
 public protocol ObjectFactoryProtocol: ObjectProtocol {
         /// Untyped pointer to the underlying `AtkObjectFactory` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkObjectFactory` instance.
-    var object_factory_ptr: UnsafeMutablePointer<AtkObjectFactory> { get }
+    var object_factory_ptr: UnsafeMutablePointer<AtkObjectFactory>! { get }
+
 }
 
 /// The `ObjectFactoryRef` type acts as a lightweight Swift reference to an underlying `AtkObjectFactory` instance.
@@ -35,46 +36,76 @@ public protocol ObjectFactoryProtocol: ObjectProtocol {
 public struct ObjectFactoryRef: ObjectFactoryProtocol {
         /// Untyped pointer to the underlying `AtkObjectFactory` instance.
     /// For type-safe access, use the generated, typed pointer `object_factory_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension ObjectFactoryRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkObjectFactory>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkObjectFactory>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkObjectFactory>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkObjectFactory>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkObjectFactory>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `ObjectFactoryProtocol`
-    init<T: ObjectFactoryProtocol>(_ other: T) {
+    @inlinable init<T: ObjectFactoryProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -94,77 +125,123 @@ open class ObjectFactory: Object, ObjectFactoryProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `ObjectFactory` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkObjectFactory>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkObjectFactory>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ObjectFactory` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkObjectFactory>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ObjectFactory` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ObjectFactory` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ObjectFactory` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkObjectFactory>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `ObjectFactory` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkObjectFactory>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `AtkObjectFactory`.
     /// i.e., ownership is transferred to the `ObjectFactory` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkObjectFactory>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkObjectFactory>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `ObjectFactoryProtocol`
     /// Will retain `AtkObjectFactory`.
     /// - Parameter other: an instance of a related type that implements `ObjectFactoryProtocol`
-    public init<T: ObjectFactoryProtocol>(objectFactory other: T) {
-        super.init(retaining: cast(other.object_factory_ptr))
+    @inlinable public init<T: ObjectFactoryProtocol>(objectFactory other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
@@ -209,11 +286,11 @@ public extension ObjectFactoryProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: ObjectFactorySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: ObjectFactorySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(object_factory_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -234,19 +311,19 @@ public extension ObjectFactoryProtocol {
 // MARK: ObjectFactory Class: ObjectFactoryProtocol extension (methods and fields)
 public extension ObjectFactoryProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkObjectFactory` instance.
-    var object_factory_ptr: UnsafeMutablePointer<AtkObjectFactory> { return ptr.assumingMemoryBound(to: AtkObjectFactory.self) }
+    @inlinable var object_factory_ptr: UnsafeMutablePointer<AtkObjectFactory>! { return ptr?.assumingMemoryBound(to: AtkObjectFactory.self) }
 
     /// Provides an `AtkObject` that implements an accessibility interface
     /// on behalf of `obj`
-    func createAccessible(obj: ObjectProtocol) -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_object_factory_create_accessible(cast(object_factory_ptr), cast(obj.ptr)))
-        return cast(rv)
+    @inlinable func createAccessible<ObjectT: ObjectProtocol>(obj: ObjectT) -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_object_factory_create_accessible(object_factory_ptr, obj.object_ptr)))
+        return rv
     }
 
     /// Gets the GType of the accessible which is created by the factory.
-    func getAccessibleType() -> GType {
-        let rv = atk_object_factory_get_accessible_type(cast(object_factory_ptr))
-        return cast(rv)
+    @inlinable func getAccessibleType() -> GType {
+        let rv = atk_object_factory_get_accessible_type(object_factory_ptr)
+        return rv
     }
 
     /// Inform `factory` that it is no longer being used to create
@@ -254,22 +331,22 @@ public extension ObjectFactoryProtocol {
     /// `AtkObjects` which it has created that they need to be re-instantiated.
     /// Note: primarily used for runtime replacement of `AtkObjectFactorys`
     /// in object registries.
-    func invalidate() {
-        atk_object_factory_invalidate(cast(object_factory_ptr))
+    @inlinable func invalidate() {
+        atk_object_factory_invalidate(object_factory_ptr)
     
     }
     /// Gets the GType of the accessible which is created by the factory.
-    var accessibleType: GType {
+    @inlinable var accessibleType: GType {
         /// Gets the GType of the accessible which is created by the factory.
         get {
-            let rv = atk_object_factory_get_accessible_type(cast(object_factory_ptr))
-            return cast(rv)
+            let rv = atk_object_factory_get_accessible_type(object_factory_ptr)
+            return rv
         }
     }
 
-    var parent: GObject {
+    @inlinable var parent: GObject {
         get {
-            let rv: GObject = cast(object_factory_ptr.pointee.parent)
+            let rv = object_factory_ptr.pointee.parent
             return rv
         }
     }
@@ -288,10 +365,11 @@ public extension ObjectFactoryProtocol {
 /// See `AtkSocket`
 public protocol PlugProtocol: ObjectProtocol, ComponentProtocol {
         /// Untyped pointer to the underlying `AtkPlug` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkPlug` instance.
-    var plug_ptr: UnsafeMutablePointer<AtkPlug> { get }
+    var plug_ptr: UnsafeMutablePointer<AtkPlug>! { get }
+
 }
 
 /// The `PlugRef` type acts as a lightweight Swift reference to an underlying `AtkPlug` instance.
@@ -302,53 +380,83 @@ public protocol PlugProtocol: ObjectProtocol, ComponentProtocol {
 public struct PlugRef: PlugProtocol {
         /// Untyped pointer to the underlying `AtkPlug` instance.
     /// For type-safe access, use the generated, typed pointer `plug_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension PlugRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkPlug>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkPlug>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkPlug>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkPlug>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkPlug>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `PlugProtocol`
-    init<T: PlugProtocol>(_ other: T) {
+    @inlinable init<T: PlugProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
         /// Creates a new `AtkPlug` instance.
-    init() {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_plug_new())
-        ptr = UnsafeMutableRawPointer(cast(rv))
+    @inlinable init() {
+        let rv = atk_plug_new()
+        ptr = UnsafeMutableRawPointer(rv)
     }
 }
 
@@ -362,84 +470,130 @@ open class Plug: Object, PlugProtocol {
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Plug` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkPlug>) {
-        super.init(cast(op))
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkPlug>) {
+        super.init(cPointer: op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Plug` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkPlug>) {
+        super.init(raw: UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op)))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Plug` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable override public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Plug` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable override public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        super.init(raw: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Plug` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkPlug>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        super.init(cPointer: p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Plug` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkPlug>?) {
+        guard let p = op else { return nil }
+        super.init(cPointer: p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// Will retain `AtkPlug`.
     /// i.e., ownership is transferred to the `Plug` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkPlug>) {
-        super.init(retaining: cast(op))
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkPlug>) {
+        super.init(retainingCPointer: op)
     }
 
     /// Reference intialiser for a related type that implements `PlugProtocol`
     /// Will retain `AtkPlug`.
     /// - Parameter other: an instance of a related type that implements `PlugProtocol`
-    public init<T: PlugProtocol>(plug other: T) {
-        super.init(retaining: cast(other.plug_ptr))
+    @inlinable public init<T: PlugProtocol>(plug other: T) {
+        super.init(retainingRaw: other.ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         super.init(cPointer: p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable override public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         super.init(retainingCPointer: cPointer)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    override public init(raw p: UnsafeRawPointer) {
+    @inlinable override public init(raw p: UnsafeRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
-    override public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(opaquePointer p: OpaquePointer) {
+    @inlinable override public init(opaquePointer p: OpaquePointer) {
         super.init(opaquePointer: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    override public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable override public init(retainingOpaquePointer p: OpaquePointer) {
         super.init(retainingOpaquePointer: p)
     }
 
     /// Creates a new `AtkPlug` instance.
-    public init() {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_plug_new())
-        super.init(cast(rv))
+    @inlinable public init() {
+        let rv = atk_plug_new()
+        super.init(gpointer: (rv))
     }
 
 
@@ -502,18 +656,18 @@ public extension PlugProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: PlugPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: PlugPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
             let to   = unsafeBitCast(transform_to,   to: BindingTransformFunc.self)
-            let rv = GLibObject.ObjectRef(cast(plug_ptr)).bindPropertyFull(sourceProperty: source, target: t, targetProperty: target_property, flags: f, transformTo: to, transformFrom: from, userData: holder) {
+            let rv = GLibObject.ObjectRef(raw: ptr).bindPropertyFull(sourceProperty: source, target: t, targetProperty: target_property, flags: f, transformTo: to, transformFrom: from, userData: holder) {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
                 }
             }
-            return rv.map { BindingRef(cast($0)) }
+            return rv.map { BindingRef($0) }
         }
 
         let rv = _bind(source_property.name, to: target, target_property.name, flags: f, holder: BindingClosureHolder(transform_from, transform_to), transformFrom: {
@@ -531,7 +685,7 @@ public extension PlugProtocol {
     /// Get the value of a Plug property
     /// - Parameter property: the property to get the value for
     /// - Returns: the value of the named property
-    func get(property: PlugPropertyName) -> GLibObject.Value {
+    @inlinable func get(property: PlugPropertyName) -> GLibObject.Value {
         let v = GLibObject.Value()
         g_object_get_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
         return v
@@ -541,7 +695,7 @@ public extension PlugProtocol {
     /// *Note* that this will only have an effect on properties that are writable and not construct-only!
     /// - Parameter property: the property to get the value for
     /// - Returns: the value of the named property
-    func set(property: PlugPropertyName, value v: GLibObject.Value) {
+    @inlinable func set(property: PlugPropertyName, value v: GLibObject.Value) {
         g_object_set_property(ptr.assumingMemoryBound(to: GObject.self), property.rawValue, v.value_ptr)
     }
 }
@@ -661,11 +815,11 @@ public extension PlugProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: PlugSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: PlugSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(plug_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -686,7 +840,7 @@ public extension PlugProtocol {
 // MARK: Plug Class: PlugProtocol extension (methods and fields)
 public extension PlugProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkPlug` instance.
-    var plug_ptr: UnsafeMutablePointer<AtkPlug> { return ptr.assumingMemoryBound(to: AtkPlug.self) }
+    @inlinable var plug_ptr: UnsafeMutablePointer<AtkPlug>! { return ptr?.assumingMemoryBound(to: AtkPlug.self) }
 
     /// Gets the unique ID of an `AtkPlug` object, which can be used to
     /// embed inside of an `AtkSocket` using `atk_socket_embed()`.
@@ -696,9 +850,9 @@ public extension PlugProtocol {
     /// `AtkPlug` object should call this function (after atk-bridge is
     /// loaded) and pass the value to the process implementing the
     /// `AtkSocket`, so it could embed the plug.
-    func getId() -> String! {
-        let rv: String! = cast(atk_plug_get_id(cast(plug_ptr)))
-        return cast(rv)
+    @inlinable func getId() -> String! {
+        let rv = atk_plug_get_id(plug_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Sets `child` as accessible child of `plug` and `plug` as accessible parent of
@@ -710,8 +864,8 @@ public extension PlugProtocol {
     /// from AtkPlug. In such a case, one can create, in addition to the standard
     /// accessible object for the toplevel widget, an AtkPlug object, and make the
     /// former the child of the latter by calling `atk_plug_set_child()`.
-    func set(child: ObjectProtocol) {
-        atk_plug_set_child(cast(plug_ptr), cast(child.ptr))
+    @inlinable func set<ObjectT: ObjectProtocol>(child: ObjectT) {
+        atk_plug_set_child(plug_ptr, child.object_ptr)
     
     }
     /// Gets the unique ID of an `AtkPlug` object, which can be used to
@@ -722,7 +876,7 @@ public extension PlugProtocol {
     /// `AtkPlug` object should call this function (after atk-bridge is
     /// loaded) and pass the value to the process implementing the
     /// `AtkSocket`, so it could embed the plug.
-    var id: String! {
+    @inlinable var id: String! {
         /// Gets the unique ID of an `AtkPlug` object, which can be used to
         /// embed inside of an `AtkSocket` using `atk_socket_embed()`.
         /// 
@@ -732,14 +886,14 @@ public extension PlugProtocol {
         /// loaded) and pass the value to the process implementing the
         /// `AtkSocket`, so it could embed the plug.
         get {
-            let rv: String! = cast(atk_plug_get_id(cast(plug_ptr)))
-            return cast(rv)
+            let rv = atk_plug_get_id(plug_ptr).map({ String(cString: $0) })
+            return rv
         }
     }
 
-    var parent: AtkObject {
+    @inlinable var parent: AtkObject {
         get {
-            let rv: AtkObject = cast(plug_ptr.pointee.parent)
+            let rv = plug_ptr.pointee.parent
             return rv
         }
     }

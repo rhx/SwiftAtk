@@ -10,9 +10,9 @@ import GLibObject
 /// Focus tracking has been dropped as a feature
 /// to be implemented by ATK itself. If you need focus tracking on your
 /// implementation, subscribe to the #AtkObject::state-change "focused" signal.
-@available(*, deprecated) public func add(focusTracker focus_tracker: @escaping EventListener) -> Int {
-    let rv: Int = cast(atk_add_focus_tracker(focus_tracker))
-    return Int(rv)
+@available(*, deprecated) @inlinable public func add(focusTracker focus_tracker: @escaping AtkEventListener) -> Int {
+    let rv = Int(atk_add_focus_tracker(focus_tracker))
+    return rv
 }
 
 
@@ -51,9 +51,9 @@ import GLibObject
 /// instance of `AtkNoOpObject`. This class implements all ATK
 /// interfaces, so creating the instance will register all ATK types as
 /// a collateral effect.
-public func addGlobalEvent(listener: @escaping GLibObject.SignalEmissionHook, eventType event_type: UnsafePointer<gchar>) -> Int {
-    let rv: Int = cast(atk_add_global_event_listener(listener, event_type))
-    return Int(rv)
+@inlinable public func addGlobalEvent(listener: @escaping GSignalEmissionHook, eventType event_type: UnsafePointer<gchar>!) -> Int {
+    let rv = Int(atk_add_global_event_listener(listener, event_type))
+    return rv
 }
 
 
@@ -62,9 +62,9 @@ public func addGlobalEvent(listener: @escaping GLibObject.SignalEmissionHook, ev
 /// Adds the specified function to the list of functions to be called
 ///        when a key event occurs.  The `data` element will be passed to the
 ///        `AtkKeySnoopFunc` (`listener`) as the `func_data` param, on notification.
-public func addKeyEvent(listener: @escaping KeySnoopFunc, data: UnsafeMutableRawPointer) -> Int {
-    let rv: Int = cast(atk_add_key_event_listener(listener, cast(data)))
-    return Int(rv)
+@inlinable public func addKeyEvent(listener: AtkKeySnoopFunc?, data: gpointer! = nil) -> Int {
+    let rv = Int(atk_add_key_event_listener(listener, data))
+    return rv
 }
 
 
@@ -72,8 +72,8 @@ public func addKeyEvent(listener: @escaping KeySnoopFunc, data: UnsafeMutableRaw
 
 /// Frees the memory used by an `AtkAttributeSet`, including all its
 /// `AtkAttributes`.
-public func attributeSetFree(attribSet attrib_set: UnsafeMutablePointer<AtkAttributeSet>) {
-    atk_attribute_set_free(cast(attrib_set))
+@inlinable public func attributeSetFree(attribSet attrib_set: UnsafeMutablePointer<AtkAttributeSet>!) {
+    atk_attribute_set_free(attrib_set)
 
 }
 
@@ -88,8 +88,8 @@ public func attributeSetFree(attribSet attrib_set: UnsafeMutablePointer<AtkAttri
 /// **focus_tracker_init is deprecated:**
 /// Focus tracking has been dropped as a feature
 /// to be implemented by ATK itself.
-@available(*, deprecated) public func focusTrackerInit(init_: @escaping EventListenerInit) {
-    atk_focus_tracker_init(init_)
+@available(*, deprecated) @inlinable public func focusTrackerInit(`init`: @escaping AtkEventListenerInit) {
+    atk_focus_tracker_init(`init`)
 
 }
 
@@ -105,8 +105,8 @@ public func attributeSetFree(attribSet attrib_set: UnsafeMutablePointer<AtkAttri
 /// deprecated in favor of a #AtkObject::state-change signal, in order
 /// to notify a focus change on your implementation, you can use
 /// atk_object_notify_state_change() instead.
-@available(*, deprecated) public func focusTrackerNotify(object: ObjectProtocol) {
-    atk_focus_tracker_notify(cast(object.ptr))
+@available(*, deprecated) @inlinable public func focusTrackerNotify<ObjectT: ObjectProtocol>(object: ObjectT) {
+    atk_focus_tracker_notify(object.object_ptr)
 
 }
 
@@ -115,9 +115,9 @@ public func attributeSetFree(attribSet attrib_set: UnsafeMutablePointer<AtkAttri
 
 /// Returns the binary age as passed to libtool when building the ATK
 /// library the process is running against.
-public func getBinaryAge() -> Int {
-    let rv: Int = cast(atk_get_binary_age())
-    return Int(rv)
+@inlinable public func getBinaryAge() -> Int {
+    let rv = Int(atk_get_binary_age())
+    return rv
 }
 
 
@@ -130,18 +130,18 @@ public func getBinaryAge() -> Int {
 /// a call to this function, maintainers may call `atk_registry_set_factory_type()`
 /// to associate an `AtkObjectFactory` subclass with the GType of objects
 /// for whom accessibility information will be provided.
-public func getDefaultRegistry() -> UnsafeMutablePointer<AtkRegistry>! {
-    let rv: UnsafeMutablePointer<AtkRegistry>! = cast(atk_get_default_registry())
-    return cast(rv)
+@inlinable public func getDefaultRegistry() -> RegistryRef! {
+    guard let rv = RegistryRef(gconstpointer: gconstpointer(atk_get_default_registry())) else { return nil }
+    return rv
 }
 
 
 
 
 /// Gets the currently focused object.
-public func getFocusObject() -> UnsafeMutablePointer<AtkObject>! {
-    let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_get_focus_object())
-    return cast(rv)
+@inlinable public func getFocusObject() -> ObjectRef! {
+    guard let rv = ObjectRef(gconstpointer: gconstpointer(atk_get_focus_object())) else { return nil }
+    return rv
 }
 
 
@@ -149,9 +149,9 @@ public func getFocusObject() -> UnsafeMutablePointer<AtkObject>! {
 
 /// Returns the interface age as passed to libtool when building the
 /// ATK library the process is running against.
-public func getInterfaceAge() -> Int {
-    let rv: Int = cast(atk_get_interface_age())
-    return Int(rv)
+@inlinable public func getInterfaceAge() -> Int {
+    let rv = Int(atk_get_interface_age())
+    return rv
 }
 
 
@@ -164,9 +164,9 @@ public func getInterfaceAge() -> Int {
 /// your code is running against. In contrast, the `ATK_MAJOR_VERSION`
 /// macro represents the major version of the ATK headers you have
 /// included when compiling your code.
-public func getMajorVersion() -> Int {
-    let rv: Int = cast(atk_get_major_version())
-    return Int(rv)
+@inlinable public func getMajorVersion() -> Int {
+    let rv = Int(atk_get_major_version())
+    return rv
 }
 
 
@@ -179,9 +179,9 @@ public func getMajorVersion() -> Int {
 /// your code is are running against. In contrast, the
 /// `ATK_MICRO_VERSION` macro represents the micro version of the ATK
 /// headers you have included when compiling your code.
-public func getMicroVersion() -> Int {
-    let rv: Int = cast(atk_get_micro_version())
-    return Int(rv)
+@inlinable public func getMicroVersion() -> Int {
+    let rv = Int(atk_get_micro_version())
+    return rv
 }
 
 
@@ -194,72 +194,72 @@ public func getMicroVersion() -> Int {
 /// your code is are running against. In contrast, the
 /// `ATK_MINOR_VERSION` macro represents the minor version of the ATK
 /// headers you have included when compiling your code.
-public func getMinorVersion() -> Int {
-    let rv: Int = cast(atk_get_minor_version())
-    return Int(rv)
+@inlinable public func getMinorVersion() -> Int {
+    let rv = Int(atk_get_minor_version())
+    return rv
 }
 
 
 
 
 /// Gets the root accessible container for the current application.
-public func getRoot() -> UnsafeMutablePointer<AtkObject>! {
-    let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_get_root())
-    return cast(rv)
+@inlinable public func getRoot() -> ObjectRef! {
+    guard let rv = ObjectRef(gconstpointer: gconstpointer(atk_get_root())) else { return nil }
+    return rv
 }
 
 
 
 
 /// Gets name string for the GUI toolkit implementing ATK for this application.
-public func getToolkitName() -> String! {
-    let rv: String! = cast(atk_get_toolkit_name())
-    return cast(rv)
+@inlinable public func getToolkitName() -> String! {
+    guard let rv = atk_get_toolkit_name().map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Gets version string for the GUI toolkit implementing ATK for this application.
-public func getToolkitVersion() -> String! {
-    let rv: String! = cast(atk_get_toolkit_version())
-    return cast(rv)
+@inlinable public func getToolkitVersion() -> String! {
+    guard let rv = atk_get_toolkit_version().map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Gets the current version for ATK.
-public func getVersion() -> String! {
-    let rv: String! = cast(atk_get_version())
-    return cast(rv)
+@inlinable public func getVersion() -> String! {
+    guard let rv = atk_get_version().map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Get the `AtkRelationType` type corresponding to a relation name.
-public func relationTypeFor(name: UnsafePointer<gchar>) -> AtkRelationType {
+@inlinable public func relationTypeFor(name: UnsafePointer<gchar>!) -> AtkRelationType {
     let rv = atk_relation_type_for_name(name)
-    return cast(rv)
+    return rv
 }
 
 
 
 
 /// Gets the description string describing the `AtkRelationType` `type`.
-public func relationTypeGetName(type: RelationType) -> String! {
-    let rv: String! = cast(atk_relation_type_get_name(type))
-    return cast(rv)
+@inlinable public func relationTypeGetName(type: AtkRelationType) -> String! {
+    guard let rv = atk_relation_type_get_name(type).map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Associate `name` with a new `AtkRelationType`
-public func relationTypeRegister(name: UnsafePointer<gchar>) -> AtkRelationType {
+@inlinable public func relationTypeRegister(name: UnsafePointer<gchar>!) -> AtkRelationType {
     let rv = atk_relation_type_register(name)
-    return cast(rv)
+    return rv
 }
 
 
@@ -273,7 +273,7 @@ public func relationTypeRegister(name: UnsafePointer<gchar>) -> AtkRelationType 
 ///   to be implemented by ATK itself. If you need focus tracking on your
 ///   implementation, subscribe to the #AtkObject::state-change "focused"
 ///   signal.
-@available(*, deprecated) public func removeFocusTracker(trackerId tracker_id: CUnsignedInt) {
+@available(*, deprecated) @inlinable public func removeFocusTracker(trackerId tracker_id: Int) {
     atk_remove_focus_tracker(guint(tracker_id))
 
 }
@@ -292,7 +292,7 @@ public func relationTypeRegister(name: UnsafePointer<gchar>) -> AtkRelationType 
 /// ATK implementors but by ATK consumers.
 /// 
 /// Removes the specified event listener
-public func removeGlobalEventListener(listenerId listener_id: CUnsignedInt) {
+@inlinable public func removeGlobalEventListener(listenerId listener_id: Int) {
     atk_remove_global_event_listener(guint(listener_id))
 
 }
@@ -304,7 +304,7 @@ public func removeGlobalEventListener(listenerId listener_id: CUnsignedInt) {
 /// when you registered that event listener.
 /// 
 /// Removes the specified event listener.
-public func removeKeyEventListener(listenerId listener_id: CUnsignedInt) {
+@inlinable public func removeKeyEventListener(listenerId listener_id: Int) {
     atk_remove_key_event_listener(guint(listener_id))
 
 }
@@ -313,27 +313,27 @@ public func removeKeyEventListener(listenerId listener_id: CUnsignedInt) {
 
 
 /// Get the `AtkRole` type corresponding to a rolew name.
-public func roleFor(name: UnsafePointer<gchar>) -> AtkRole {
+@inlinable public func roleFor(name: UnsafePointer<gchar>!) -> AtkRole {
     let rv = atk_role_for_name(name)
-    return cast(rv)
+    return rv
 }
 
 
 
 
 /// Gets the localized description string describing the `AtkRole` `role`.
-public func roleGetLocalizedName(role: Role) -> String! {
-    let rv: String! = cast(atk_role_get_localized_name(role))
-    return cast(rv)
+@inlinable public func roleGetLocalizedName(role: AtkRole) -> String! {
+    guard let rv = atk_role_get_localized_name(role).map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Gets the description string describing the `AtkRole` `role`.
-public func roleGetName(role: Role) -> String! {
-    let rv: String! = cast(atk_role_get_name(role))
-    return cast(rv)
+@inlinable public func roleGetName(role: AtkRole) -> String! {
+    guard let rv = atk_role_get_name(role).map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
@@ -346,72 +346,72 @@ public func roleGetName(role: Role) -> String! {
 /// Since 2.12. If your application/toolkit doesn't find a
 /// suitable role for a specific object defined at #AtkRole, please
 /// submit a bug in order to add a new role to the specification.
-@available(*, deprecated) public func roleRegister(name: UnsafePointer<gchar>) -> AtkRole {
+@available(*, deprecated) @inlinable public func roleRegister(name: UnsafePointer<gchar>!) -> AtkRole {
     let rv = atk_role_register(name)
-    return cast(rv)
+    return rv
 }
 
 
 
 
 /// Gets the `AtkStateType` corresponding to the description string `name`.
-public func stateTypeFor(name: UnsafePointer<gchar>) -> AtkStateType {
+@inlinable public func stateTypeFor(name: UnsafePointer<gchar>!) -> AtkStateType {
     let rv = atk_state_type_for_name(name)
-    return cast(rv)
+    return rv
 }
 
 
 
 
 /// Gets the description string describing the `AtkStateType` `type`.
-public func stateTypeGetName(type: StateType) -> String! {
-    let rv: String! = cast(atk_state_type_get_name(type))
-    return cast(rv)
+@inlinable public func stateTypeGetName(type: AtkStateType) -> String! {
+    guard let rv = atk_state_type_get_name(type).map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Register a new object state.
-public func stateTypeRegister(name: UnsafePointer<gchar>) -> AtkStateType {
+@inlinable public func stateTypeRegister(name: UnsafePointer<gchar>!) -> AtkStateType {
     let rv = atk_state_type_register(name)
-    return cast(rv)
+    return rv
 }
 
 
 
 
 /// Get the `AtkTextAttribute` type corresponding to a text attribute name.
-public func textAttributeFor(name: UnsafePointer<gchar>) -> AtkTextAttribute {
+@inlinable public func textAttributeFor(name: UnsafePointer<gchar>!) -> AtkTextAttribute {
     let rv = atk_text_attribute_for_name(name)
-    return cast(rv)
+    return rv
 }
 
 
 
 
 /// Gets the name corresponding to the `AtkTextAttribute`
-public func textAttributeGetName(attr: TextAttribute) -> String! {
-    let rv: String! = cast(atk_text_attribute_get_name(attr))
-    return cast(rv)
+@inlinable public func textAttributeGetName(attr: AtkTextAttribute) -> String! {
+    guard let rv = atk_text_attribute_get_name(attr).map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Gets the value for the index of the `AtkTextAttribute`
-public func textAttributeGetValue(attr: TextAttribute, index_: CInt) -> String! {
-    let rv: String! = cast(atk_text_attribute_get_value(attr, gint(index_)))
-    return cast(rv)
+@inlinable public func textAttributeGetValue(attr: AtkTextAttribute, index_: Int) -> String! {
+    guard let rv = atk_text_attribute_get_value(attr, gint(index_)).map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Associate `name` with a new `AtkTextAttribute`
-public func textAttributeRegister(name: UnsafePointer<gchar>) -> AtkTextAttribute {
+@inlinable public func textAttributeRegister(name: UnsafePointer<gchar>!) -> AtkTextAttribute {
     let rv = atk_text_attribute_register(name)
-    return cast(rv)
+    return rv
 }
 
 
@@ -420,8 +420,8 @@ public func textAttributeRegister(name: UnsafePointer<gchar>) -> AtkTextAttribut
 /// Frees the memory associated with an array of AtkTextRange. It is assumed
 /// that the array was returned by the function atk_text_get_bounded_ranges
 /// and is NULL terminated.
-public func textFree(ranges: UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>>) {
-    atk_text_free_ranges(cast(ranges))
+@inlinable public func textFree(ranges: UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>?>!) {
+    atk_text_free_ranges(ranges)
 
 }
 
@@ -429,18 +429,18 @@ public func textFree(ranges: UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRa
 
 
 /// Gets the localized description string describing the `AtkValueType` `value_type`.
-public func valueTypeGetLocalizedName(valueType value_type: ValueType) -> String! {
-    let rv: String! = cast(atk_value_type_get_localized_name(value_type))
-    return cast(rv)
+@inlinable public func valueTypeGetLocalizedName(valueType value_type: AtkValueType) -> String! {
+    guard let rv = atk_value_type_get_localized_name(value_type).map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 
 
 
 /// Gets the description string describing the `AtkValueType` `value_type`.
-public func valueTypeGetName(valueType value_type: ValueType) -> String! {
-    let rv: String! = cast(atk_value_type_get_name(value_type))
-    return cast(rv)
+@inlinable public func valueTypeGetName(valueType value_type: AtkValueType) -> String! {
+    guard let rv = atk_value_type_get_name(value_type).map({ String(cString: $0) }) else { return nil }
+    return rv
 }
 
 

@@ -28,10 +28,11 @@ import GLibObject
 /// but may in some cases give access to the underlying model data.
 public protocol StreamableContentProtocol {
         /// Untyped pointer to the underlying `AtkStreamableContent` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkStreamableContent` instance.
-    var streamable_content_ptr: UnsafeMutablePointer<AtkStreamableContent> { get }
+    var streamable_content_ptr: UnsafeMutablePointer<AtkStreamableContent>! { get }
+
 }
 
 /// The `StreamableContentRef` type acts as a lightweight Swift reference to an underlying `AtkStreamableContent` instance.
@@ -57,46 +58,76 @@ public protocol StreamableContentProtocol {
 public struct StreamableContentRef: StreamableContentProtocol {
         /// Untyped pointer to the underlying `AtkStreamableContent` instance.
     /// For type-safe access, use the generated, typed pointer `streamable_content_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension StreamableContentRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkStreamableContent>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkStreamableContent>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkStreamableContent>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkStreamableContent>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkStreamableContent>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `StreamableContentProtocol`
-    init<T: StreamableContentProtocol>(_ other: T) {
+    @inlinable init<T: StreamableContentProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -125,95 +156,141 @@ public extension StreamableContentRef {
 open class StreamableContent: StreamableContentProtocol {
         /// Untyped pointer to the underlying `AtkStreamableContent` instance.
     /// For type-safe access, use the generated, typed pointer `streamable_content_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `StreamableContent` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkStreamableContent>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkStreamableContent>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `StreamableContent` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkStreamableContent>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `StreamableContent` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `StreamableContent` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `StreamableContent` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkStreamableContent>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `StreamableContent` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkStreamableContent>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkStreamableContent` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `StreamableContent` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkStreamableContent>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkStreamableContent>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkStreamableContent, cannot ref(cast(streamable_content_ptr))
+        // no reference counting for AtkStreamableContent, cannot ref(streamable_content_ptr)
     }
 
     /// Reference intialiser for a related type that implements `StreamableContentProtocol`
     /// `AtkStreamableContent` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `StreamableContentProtocol`
-    public init<T: StreamableContentProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.streamable_content_ptr)
-        // no reference counting for AtkStreamableContent, cannot ref(cast(streamable_content_ptr))
+    @inlinable public init<T: StreamableContentProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkStreamableContent, cannot ref(streamable_content_ptr)
     }
 
     /// Do-nothing destructor for `AtkStreamableContent`.
     deinit {
-        // no reference counting for AtkStreamableContent, cannot unref(cast(streamable_content_ptr))
+        // no reference counting for AtkStreamableContent, cannot unref(streamable_content_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkStreamableContent, cannot ref(cast(streamable_content_ptr))
+        // no reference counting for AtkStreamableContent, cannot ref(streamable_content_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkStreamableContent, cannot ref(cast(streamable_content_ptr))
+        // no reference counting for AtkStreamableContent, cannot ref(streamable_content_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkStreamableContent, cannot ref(cast(streamable_content_ptr))
+        // no reference counting for AtkStreamableContent, cannot ref(streamable_content_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkStreamableContent, cannot ref(cast(streamable_content_ptr))
+        // no reference counting for AtkStreamableContent, cannot ref(streamable_content_ptr)
     }
 
 
@@ -228,25 +305,25 @@ open class StreamableContent: StreamableContentProtocol {
 // MARK: StreamableContent Interface: StreamableContentProtocol extension (methods and fields)
 public extension StreamableContentProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkStreamableContent` instance.
-    var streamable_content_ptr: UnsafeMutablePointer<AtkStreamableContent> { return ptr.assumingMemoryBound(to: AtkStreamableContent.self) }
+    @inlinable var streamable_content_ptr: UnsafeMutablePointer<AtkStreamableContent>! { return ptr?.assumingMemoryBound(to: AtkStreamableContent.self) }
 
     /// Gets the character string of the specified mime type. The first mime
     /// type is at position 0, the second at position 1, and so on.
-    func getMimeType(i: CInt) -> String! {
-        let rv: String! = cast(atk_streamable_content_get_mime_type(cast(streamable_content_ptr), gint(i)))
-        return cast(rv)
+    @inlinable func getMimeType(i: Int) -> String! {
+        let rv = atk_streamable_content_get_mime_type(streamable_content_ptr, gint(i)).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the number of mime types supported by this object.
-    func getNMimeTypes() -> Int {
-        let rv: Int = cast(atk_streamable_content_get_n_mime_types(cast(streamable_content_ptr)))
-        return Int(rv)
+    @inlinable func getNMimeTypes() -> Int {
+        let rv = Int(atk_streamable_content_get_n_mime_types(streamable_content_ptr))
+        return rv
     }
 
     /// Gets the content in the specified mime type.
-    func getStream(mimeType mime_type: UnsafePointer<gchar>) -> UnsafeMutablePointer<GIOChannel>! {
-        let rv: UnsafeMutablePointer<GIOChannel>! = cast(atk_streamable_content_get_stream(cast(streamable_content_ptr), mime_type))
-        return cast(rv)
+    @inlinable func getStream(mimeType mime_type: UnsafePointer<gchar>!) -> IOChannelRef! {
+        let rv = IOChannelRef(gconstpointer: gconstpointer(atk_streamable_content_get_stream(streamable_content_ptr, mime_type)))
+        return rv
     }
 
     /// Get a string representing a URI in IETF standard format
@@ -257,16 +334,16 @@ public extension StreamableContentProtocol {
     /// 
     /// Note that it is possible for get_uri to return NULL but for
     /// get_stream to work nonetheless, since not all GIOChannels connect to URIs.
-    func getUri(mimeType mime_type: UnsafePointer<gchar>) -> String! {
-        let rv: String! = cast(atk_streamable_content_get_uri(cast(streamable_content_ptr), mime_type))
-        return cast(rv)
+    @inlinable func getUri(mimeType mime_type: UnsafePointer<gchar>!) -> String! {
+        let rv = atk_streamable_content_get_uri(streamable_content_ptr, mime_type).map({ String(cString: $0) })
+        return rv
     }
     /// Gets the number of mime types supported by this object.
-    var nMimeTypes: Int {
+    @inlinable var nMimeTypes: Int {
         /// Gets the number of mime types supported by this object.
         get {
-            let rv: Int = cast(atk_streamable_content_get_n_mime_types(cast(streamable_content_ptr)))
-            return Int(rv)
+            let rv = Int(atk_streamable_content_get_n_mime_types(streamable_content_ptr))
+            return rv
         }
     }
 
@@ -312,10 +389,11 @@ public extension StreamableContentProtocol {
 /// index-based methods are deprecated.
 public protocol TableProtocol {
         /// Untyped pointer to the underlying `AtkTable` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkTable` instance.
-    var table_ptr: UnsafeMutablePointer<AtkTable> { get }
+    var table_ptr: UnsafeMutablePointer<AtkTable>! { get }
+
 }
 
 /// The `TableRef` type acts as a lightweight Swift reference to an underlying `AtkTable` instance.
@@ -353,46 +431,76 @@ public protocol TableProtocol {
 public struct TableRef: TableProtocol {
         /// Untyped pointer to the underlying `AtkTable` instance.
     /// For type-safe access, use the generated, typed pointer `table_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension TableRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkTable>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkTable>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkTable>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkTable>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkTable>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `TableProtocol`
-    init<T: TableProtocol>(_ other: T) {
+    @inlinable init<T: TableProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -433,95 +541,141 @@ public extension TableRef {
 open class Table: TableProtocol {
         /// Untyped pointer to the underlying `AtkTable` instance.
     /// For type-safe access, use the generated, typed pointer `table_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Table` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkTable>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkTable>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Table` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkTable>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Table` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Table` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Table` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkTable>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Table` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkTable>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkTable` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Table` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkTable>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkTable>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkTable, cannot ref(cast(table_ptr))
+        // no reference counting for AtkTable, cannot ref(table_ptr)
     }
 
     /// Reference intialiser for a related type that implements `TableProtocol`
     /// `AtkTable` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `TableProtocol`
-    public init<T: TableProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.table_ptr)
-        // no reference counting for AtkTable, cannot ref(cast(table_ptr))
+    @inlinable public init<T: TableProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkTable, cannot ref(table_ptr)
     }
 
     /// Do-nothing destructor for `AtkTable`.
     deinit {
-        // no reference counting for AtkTable, cannot unref(cast(table_ptr))
+        // no reference counting for AtkTable, cannot unref(table_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkTable, cannot ref(cast(table_ptr))
+        // no reference counting for AtkTable, cannot ref(table_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkTable, cannot ref(cast(table_ptr))
+        // no reference counting for AtkTable, cannot ref(table_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkTable, cannot ref(cast(table_ptr))
+        // no reference counting for AtkTable, cannot ref(table_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkTable, cannot ref(cast(table_ptr))
+        // no reference counting for AtkTable, cannot ref(table_ptr)
     }
 
 
@@ -564,11 +718,11 @@ public extension TableProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: TableSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: TableSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(table_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -589,52 +743,52 @@ public extension TableProtocol {
 // MARK: Table Interface: TableProtocol extension (methods and fields)
 public extension TableProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTable` instance.
-    var table_ptr: UnsafeMutablePointer<AtkTable> { return ptr.assumingMemoryBound(to: AtkTable.self) }
+    @inlinable var table_ptr: UnsafeMutablePointer<AtkTable>! { return ptr?.assumingMemoryBound(to: AtkTable.self) }
 
     /// Adds the specified `column` to the selection.
-    func addColumnSelection(column: CInt) -> Bool {
-        let rv = atk_table_add_column_selection(cast(table_ptr), gint(column))
-        return Bool(rv != 0)
+    @inlinable func addColumnSelection(column: Int) -> Bool {
+        let rv = ((atk_table_add_column_selection(table_ptr, gint(column))) != 0)
+        return rv
     }
 
     /// Adds the specified `row` to the selection.
-    func addRowSelection(row: CInt) -> Bool {
-        let rv = atk_table_add_row_selection(cast(table_ptr), gint(row))
-        return Bool(rv != 0)
+    @inlinable func addRowSelection(row: Int) -> Bool {
+        let rv = ((atk_table_add_row_selection(table_ptr, gint(row))) != 0)
+        return rv
     }
 
     /// Gets the caption for the `table`.
-    func getCaption() -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_caption(cast(table_ptr)))
-        return cast(rv)
+    @inlinable func getCaption() -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_get_caption(table_ptr)))
+        return rv
     }
 
     /// Gets a `gint` representing the column at the specified `index_`.
     ///
     /// **get_column_at_index is deprecated:**
     /// Since 2.12.
-    @available(*, deprecated) func getColumnAtIndex(index_: CInt) -> Int {
-        let rv: Int = cast(atk_table_get_column_at_index(cast(table_ptr), gint(index_)))
-        return Int(rv)
+    @available(*, deprecated) @inlinable func getColumnAtIndex(index_: Int) -> Int {
+        let rv = Int(atk_table_get_column_at_index(table_ptr, gint(index_)))
+        return rv
     }
 
     /// Gets the description text of the specified `column` in the table
-    func getColumnDescription(column: CInt) -> String! {
-        let rv: String! = cast(atk_table_get_column_description(cast(table_ptr), gint(column)))
-        return cast(rv)
+    @inlinable func getColumnDescription(column: Int) -> String! {
+        let rv = atk_table_get_column_description(table_ptr, gint(column)).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the number of columns occupied by the accessible object
     /// at the specified `row` and `column` in the `table`.
-    func getColumnExtentAt(row: CInt, column: CInt) -> Int {
-        let rv: Int = cast(atk_table_get_column_extent_at(cast(table_ptr), gint(row), gint(column)))
-        return Int(rv)
+    @inlinable func getColumnExtentAt(row: Int, column: Int) -> Int {
+        let rv = Int(atk_table_get_column_extent_at(table_ptr, gint(row), gint(column)))
+        return rv
     }
 
     /// Gets the column header of a specified column in an accessible table.
-    func getColumnHeader(column: CInt) -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_column_header(cast(table_ptr), gint(column)))
-        return cast(rv)
+    @inlinable func getColumnHeader(column: Int) -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_get_column_header(table_ptr, gint(column))))
+        return rv
     }
 
     /// Gets a `gint` representing the index at the specified `row` and
@@ -643,187 +797,187 @@ public extension TableProtocol {
     /// **get_index_at is deprecated:**
     /// Since 2.12. Use atk_table_ref_at() in order to get the
     /// accessible that represents the cell at (@row, @column)
-    @available(*, deprecated) func getIndexAt(row: CInt, column: CInt) -> Int {
-        let rv: Int = cast(atk_table_get_index_at(cast(table_ptr), gint(row), gint(column)))
-        return Int(rv)
+    @available(*, deprecated) @inlinable func getIndexAt(row: Int, column: Int) -> Int {
+        let rv = Int(atk_table_get_index_at(table_ptr, gint(row), gint(column)))
+        return rv
     }
 
     /// Gets the number of columns in the table.
-    func getNColumns() -> Int {
-        let rv: Int = cast(atk_table_get_n_columns(cast(table_ptr)))
-        return Int(rv)
+    @inlinable func getNColumns() -> Int {
+        let rv = Int(atk_table_get_n_columns(table_ptr))
+        return rv
     }
 
     /// Gets the number of rows in the table.
-    func getNRows() -> Int {
-        let rv: Int = cast(atk_table_get_n_rows(cast(table_ptr)))
-        return Int(rv)
+    @inlinable func getNRows() -> Int {
+        let rv = Int(atk_table_get_n_rows(table_ptr))
+        return rv
     }
 
     /// Gets a `gint` representing the row at the specified `index_`.
     ///
     /// **get_row_at_index is deprecated:**
     /// since 2.12.
-    @available(*, deprecated) func getRowAtIndex(index_: CInt) -> Int {
-        let rv: Int = cast(atk_table_get_row_at_index(cast(table_ptr), gint(index_)))
-        return Int(rv)
+    @available(*, deprecated) @inlinable func getRowAtIndex(index_: Int) -> Int {
+        let rv = Int(atk_table_get_row_at_index(table_ptr, gint(index_)))
+        return rv
     }
 
     /// Gets the description text of the specified row in the table
-    func getRowDescription(row: CInt) -> String! {
-        let rv: String! = cast(atk_table_get_row_description(cast(table_ptr), gint(row)))
-        return cast(rv)
+    @inlinable func getRowDescription(row: Int) -> String! {
+        let rv = atk_table_get_row_description(table_ptr, gint(row)).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the number of rows occupied by the accessible object
     /// at a specified `row` and `column` in the `table`.
-    func getRowExtentAt(row: CInt, column: CInt) -> Int {
-        let rv: Int = cast(atk_table_get_row_extent_at(cast(table_ptr), gint(row), gint(column)))
-        return Int(rv)
+    @inlinable func getRowExtentAt(row: Int, column: Int) -> Int {
+        let rv = Int(atk_table_get_row_extent_at(table_ptr, gint(row), gint(column)))
+        return rv
     }
 
     /// Gets the row header of a specified row in an accessible table.
-    func getRowHeader(row: CInt) -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_row_header(cast(table_ptr), gint(row)))
-        return cast(rv)
+    @inlinable func getRowHeader(row: Int) -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_get_row_header(table_ptr, gint(row))))
+        return rv
     }
 
     /// Gets the selected columns of the table by initializing **selected with
     /// the selected column numbers. This array should be freed by the caller.
-    func getSelectedColumns(selected: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>) -> Int {
-        let rv: Int = cast(atk_table_get_selected_columns(cast(table_ptr), cast(selected)))
-        return Int(rv)
+    @inlinable func getSelectedColumns(selected: UnsafeMutablePointer<UnsafeMutablePointer<gint>?>!) -> Int {
+        let rv = Int(atk_table_get_selected_columns(table_ptr, selected))
+        return rv
     }
 
     /// Gets the selected rows of the table by initializing **selected with
     /// the selected row numbers. This array should be freed by the caller.
-    func getSelectedRows(selected: UnsafeMutablePointer<UnsafeMutablePointer<CInt>>) -> Int {
-        let rv: Int = cast(atk_table_get_selected_rows(cast(table_ptr), cast(selected)))
-        return Int(rv)
+    @inlinable func getSelectedRows(selected: UnsafeMutablePointer<UnsafeMutablePointer<gint>?>!) -> Int {
+        let rv = Int(atk_table_get_selected_rows(table_ptr, selected))
+        return rv
     }
 
     /// Gets the summary description of the table.
-    func getSummary() -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_summary(cast(table_ptr)))
-        return cast(rv)
+    @inlinable func getSummary() -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_get_summary(table_ptr)))
+        return rv
     }
 
     /// Gets a boolean value indicating whether the specified `column`
     /// is selected
-    func isColumnSelected(column: CInt) -> Bool {
-        let rv = atk_table_is_column_selected(cast(table_ptr), gint(column))
-        return Bool(rv != 0)
+    @inlinable func isColumnSelected(column: Int) -> Bool {
+        let rv = ((atk_table_is_column_selected(table_ptr, gint(column))) != 0)
+        return rv
     }
 
     /// Gets a boolean value indicating whether the specified `row`
     /// is selected
-    func isRowSelected(row: CInt) -> Bool {
-        let rv = atk_table_is_row_selected(cast(table_ptr), gint(row))
-        return Bool(rv != 0)
+    @inlinable func isRowSelected(row: Int) -> Bool {
+        let rv = ((atk_table_is_row_selected(table_ptr, gint(row))) != 0)
+        return rv
     }
 
     /// Gets a boolean value indicating whether the accessible object
     /// at the specified `row` and `column` is selected
-    func isSelected(row: CInt, column: CInt) -> Bool {
-        let rv = atk_table_is_selected(cast(table_ptr), gint(row), gint(column))
-        return Bool(rv != 0)
+    @inlinable func isSelected(row: Int, column: Int) -> Bool {
+        let rv = ((atk_table_is_selected(table_ptr, gint(row), gint(column))) != 0)
+        return rv
     }
 
     /// Get a reference to the table cell at `row`, `column`. This cell
     /// should implement the interface `AtkTableCell`
-    func refAt(row: CInt, column: CInt) -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_ref_at(cast(table_ptr), gint(row), gint(column)))
-        return cast(rv)
+    @inlinable func refAt(row: Int, column: Int) -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_ref_at(table_ptr, gint(row), gint(column))))
+        return rv
     }
 
     /// Adds the specified `column` to the selection.
-    func removeColumnSelection(column: CInt) -> Bool {
-        let rv = atk_table_remove_column_selection(cast(table_ptr), gint(column))
-        return Bool(rv != 0)
+    @inlinable func removeColumnSelection(column: Int) -> Bool {
+        let rv = ((atk_table_remove_column_selection(table_ptr, gint(column))) != 0)
+        return rv
     }
 
     /// Removes the specified `row` from the selection.
-    func removeRowSelection(row: CInt) -> Bool {
-        let rv = atk_table_remove_row_selection(cast(table_ptr), gint(row))
-        return Bool(rv != 0)
+    @inlinable func removeRowSelection(row: Int) -> Bool {
+        let rv = ((atk_table_remove_row_selection(table_ptr, gint(row))) != 0)
+        return rv
     }
 
     /// Sets the caption for the table.
-    func set(caption: ObjectProtocol) {
-        atk_table_set_caption(cast(table_ptr), cast(caption.ptr))
+    @inlinable func set<ObjectT: ObjectProtocol>(caption: ObjectT) {
+        atk_table_set_caption(table_ptr, caption.object_ptr)
     
     }
 
     /// Sets the description text for the specified `column` of the `table`.
-    func setColumnDescription(column: CInt, description: UnsafePointer<gchar>) {
-        atk_table_set_column_description(cast(table_ptr), gint(column), description)
+    @inlinable func setColumnDescription(column: Int, description: UnsafePointer<gchar>!) {
+        atk_table_set_column_description(table_ptr, gint(column), description)
     
     }
 
     /// Sets the specified column header to `header`.
-    func setColumnHeader(column: CInt, header: ObjectProtocol) {
-        atk_table_set_column_header(cast(table_ptr), gint(column), cast(header.ptr))
+    @inlinable func setColumnHeader<ObjectT: ObjectProtocol>(column: Int, header: ObjectT) {
+        atk_table_set_column_header(table_ptr, gint(column), header.object_ptr)
     
     }
 
     /// Sets the description text for the specified `row` of `table`.
-    func setRowDescription(row: CInt, description: UnsafePointer<gchar>) {
-        atk_table_set_row_description(cast(table_ptr), gint(row), description)
+    @inlinable func setRowDescription(row: Int, description: UnsafePointer<gchar>!) {
+        atk_table_set_row_description(table_ptr, gint(row), description)
     
     }
 
     /// Sets the specified row header to `header`.
-    func setRowHeader(row: CInt, header: ObjectProtocol) {
-        atk_table_set_row_header(cast(table_ptr), gint(row), cast(header.ptr))
+    @inlinable func setRowHeader<ObjectT: ObjectProtocol>(row: Int, header: ObjectT) {
+        atk_table_set_row_header(table_ptr, gint(row), header.object_ptr)
     
     }
 
     /// Sets the summary description of the table.
-    func setSummary(accessible: ObjectProtocol) {
-        atk_table_set_summary(cast(table_ptr), cast(accessible.ptr))
+    @inlinable func setSummary<ObjectT: ObjectProtocol>(accessible: ObjectT) {
+        atk_table_set_summary(table_ptr, accessible.object_ptr)
     
     }
     /// Gets the caption for the `table`.
-    var caption: UnsafeMutablePointer<AtkObject>! {
+    @inlinable var caption: ObjectRef! {
         /// Gets the caption for the `table`.
         get {
-            let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_caption(cast(table_ptr)))
-            return cast(rv)
+            let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_get_caption(table_ptr)))
+            return rv
         }
         /// Sets the caption for the table.
         nonmutating set {
-            atk_table_set_caption(cast(table_ptr), cast(newValue))
+            atk_table_set_caption(table_ptr, UnsafeMutablePointer<AtkObject>(newValue?.object_ptr))
         }
     }
 
     /// Gets the number of columns in the table.
-    var nColumns: Int {
+    @inlinable var nColumns: Int {
         /// Gets the number of columns in the table.
         get {
-            let rv: Int = cast(atk_table_get_n_columns(cast(table_ptr)))
-            return Int(rv)
+            let rv = Int(atk_table_get_n_columns(table_ptr))
+            return rv
         }
     }
 
     /// Gets the number of rows in the table.
-    var nRows: Int {
+    @inlinable var nRows: Int {
         /// Gets the number of rows in the table.
         get {
-            let rv: Int = cast(atk_table_get_n_rows(cast(table_ptr)))
-            return Int(rv)
+            let rv = Int(atk_table_get_n_rows(table_ptr))
+            return rv
         }
     }
 
     /// Gets the summary description of the table.
-    var summary: UnsafeMutablePointer<AtkObject>! {
+    @inlinable var summary: ObjectRef! {
         /// Gets the summary description of the table.
         get {
-            let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_table_get_summary(cast(table_ptr)))
-            return cast(rv)
+            let rv = ObjectRef(gconstpointer: gconstpointer(atk_table_get_summary(table_ptr)))
+            return rv
         }
         /// Sets the summary description of the table.
         nonmutating set {
-            atk_table_set_summary(cast(table_ptr), cast(newValue))
+            atk_table_set_summary(table_ptr, UnsafeMutablePointer<AtkObject>(newValue?.object_ptr))
         }
     }
 

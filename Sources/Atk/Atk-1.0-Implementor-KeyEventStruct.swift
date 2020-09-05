@@ -13,10 +13,11 @@ import GLibObject
 
 public protocol ImplementorProtocol {
         /// Untyped pointer to the underlying `AtkImplementor` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkImplementor` instance.
-    var _ptr: UnsafeMutablePointer<AtkImplementor> { get }
+    var _ptr: UnsafeMutablePointer<AtkImplementor>! { get }
+
 }
 
 /// The `ImplementorRef` type acts as a lightweight Swift reference to an underlying `AtkImplementor` instance.
@@ -27,46 +28,76 @@ public protocol ImplementorProtocol {
 public struct ImplementorRef: ImplementorProtocol {
         /// Untyped pointer to the underlying `AtkImplementor` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension ImplementorRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkImplementor>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkImplementor>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkImplementor>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkImplementor>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkImplementor>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `ImplementorProtocol`
-    init<T: ImplementorProtocol>(_ other: T) {
+    @inlinable init<T: ImplementorProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -80,95 +111,141 @@ public extension ImplementorRef {
 open class Implementor: ImplementorProtocol {
         /// Untyped pointer to the underlying `AtkImplementor` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Implementor` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkImplementor>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkImplementor>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Implementor` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkImplementor>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Implementor` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Implementor` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Implementor` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkImplementor>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Implementor` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkImplementor>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkImplementor` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Implementor` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkImplementor>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkImplementor>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkImplementor, cannot ref(cast(_ptr))
+        // no reference counting for AtkImplementor, cannot ref(_ptr)
     }
 
     /// Reference intialiser for a related type that implements `ImplementorProtocol`
     /// `AtkImplementor` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `ImplementorProtocol`
-    public init<T: ImplementorProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other._ptr)
-        // no reference counting for AtkImplementor, cannot ref(cast(_ptr))
+    @inlinable public init<T: ImplementorProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkImplementor, cannot ref(_ptr)
     }
 
     /// Do-nothing destructor for `AtkImplementor`.
     deinit {
-        // no reference counting for AtkImplementor, cannot unref(cast(_ptr))
+        // no reference counting for AtkImplementor, cannot unref(_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkImplementor, cannot ref(cast(_ptr))
+        // no reference counting for AtkImplementor, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkImplementor, cannot ref(cast(_ptr))
+        // no reference counting for AtkImplementor, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkImplementor, cannot ref(cast(_ptr))
+        // no reference counting for AtkImplementor, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkImplementor, cannot ref(cast(_ptr))
+        // no reference counting for AtkImplementor, cannot ref(_ptr)
     }
 
 
@@ -183,13 +260,13 @@ open class Implementor: ImplementorProtocol {
 // MARK: Implementor Record: ImplementorProtocol extension (methods and fields)
 public extension ImplementorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkImplementor` instance.
-    var _ptr: UnsafeMutablePointer<AtkImplementor> { return ptr.assumingMemoryBound(to: AtkImplementor.self) }
+    @inlinable var _ptr: UnsafeMutablePointer<AtkImplementor>! { return ptr?.assumingMemoryBound(to: AtkImplementor.self) }
 
     /// Gets a reference to an object's `AtkObject` implementation, if
     /// the object implements `AtkObjectIface`
-    func refAccessible() -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_implementor_ref_accessible(cast(_ptr)))
-        return cast(rv)
+    @inlinable func refAccessible() -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_implementor_ref_accessible(_ptr)))
+        return rv
     }
 
 
@@ -207,10 +284,11 @@ public extension ImplementorProtocol {
 /// Encapsulates information about a key event.
 public protocol KeyEventStructProtocol {
         /// Untyped pointer to the underlying `AtkKeyEventStruct` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkKeyEventStruct` instance.
-    var _ptr: UnsafeMutablePointer<AtkKeyEventStruct> { get }
+    var _ptr: UnsafeMutablePointer<AtkKeyEventStruct>! { get }
+
 }
 
 /// The `KeyEventStructRef` type acts as a lightweight Swift reference to an underlying `AtkKeyEventStruct` instance.
@@ -221,46 +299,76 @@ public protocol KeyEventStructProtocol {
 public struct KeyEventStructRef: KeyEventStructProtocol {
         /// Untyped pointer to the underlying `AtkKeyEventStruct` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension KeyEventStructRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkKeyEventStruct>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkKeyEventStruct>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkKeyEventStruct>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkKeyEventStruct>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkKeyEventStruct>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `KeyEventStructProtocol`
-    init<T: KeyEventStructProtocol>(_ other: T) {
+    @inlinable init<T: KeyEventStructProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -274,95 +382,141 @@ public extension KeyEventStructRef {
 open class KeyEventStruct: KeyEventStructProtocol {
         /// Untyped pointer to the underlying `AtkKeyEventStruct` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `KeyEventStruct` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkKeyEventStruct>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkKeyEventStruct>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `KeyEventStruct` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkKeyEventStruct>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `KeyEventStruct` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `KeyEventStruct` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `KeyEventStruct` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkKeyEventStruct>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `KeyEventStruct` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkKeyEventStruct>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkKeyEventStruct` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `KeyEventStruct` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkKeyEventStruct>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkKeyEventStruct>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkKeyEventStruct, cannot ref(cast(_ptr))
+        // no reference counting for AtkKeyEventStruct, cannot ref(_ptr)
     }
 
     /// Reference intialiser for a related type that implements `KeyEventStructProtocol`
     /// `AtkKeyEventStruct` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `KeyEventStructProtocol`
-    public init<T: KeyEventStructProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other._ptr)
-        // no reference counting for AtkKeyEventStruct, cannot ref(cast(_ptr))
+    @inlinable public init<T: KeyEventStructProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkKeyEventStruct, cannot ref(_ptr)
     }
 
     /// Do-nothing destructor for `AtkKeyEventStruct`.
     deinit {
-        // no reference counting for AtkKeyEventStruct, cannot unref(cast(_ptr))
+        // no reference counting for AtkKeyEventStruct, cannot unref(_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkKeyEventStruct, cannot ref(cast(_ptr))
+        // no reference counting for AtkKeyEventStruct, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkKeyEventStruct, cannot ref(cast(_ptr))
+        // no reference counting for AtkKeyEventStruct, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkKeyEventStruct, cannot ref(cast(_ptr))
+        // no reference counting for AtkKeyEventStruct, cannot ref(_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkKeyEventStruct, cannot ref(cast(_ptr))
+        // no reference counting for AtkKeyEventStruct, cannot ref(_ptr)
     }
 
 
@@ -377,19 +531,19 @@ open class KeyEventStruct: KeyEventStructProtocol {
 // MARK: KeyEventStruct Record: KeyEventStructProtocol extension (methods and fields)
 public extension KeyEventStructProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkKeyEventStruct` instance.
-    var _ptr: UnsafeMutablePointer<AtkKeyEventStruct> { return ptr.assumingMemoryBound(to: AtkKeyEventStruct.self) }
+    @inlinable var _ptr: UnsafeMutablePointer<AtkKeyEventStruct>! { return ptr?.assumingMemoryBound(to: AtkKeyEventStruct.self) }
 
 
     /// An AtkKeyEventType, generally one of ATK_KEY_EVENT_PRESS or ATK_KEY_EVENT_RELEASE
-    var type: Int {
+    @inlinable var type: gint {
         /// An AtkKeyEventType, generally one of ATK_KEY_EVENT_PRESS or ATK_KEY_EVENT_RELEASE
         get {
-            let rv: Int = cast(_ptr.pointee.type)
+            let rv = _ptr.pointee.type
             return rv
         }
         /// An AtkKeyEventType, generally one of ATK_KEY_EVENT_PRESS or ATK_KEY_EVENT_RELEASE
          set {
-            _ptr.pointee.type = gint(newValue)
+            _ptr.pointee.type = newValue
         }
     }
 
@@ -397,13 +551,13 @@ public extension KeyEventStructProtocol {
     /// The meaning of the bits is currently defined to match the bitmask used by GDK in
     /// GdkEventType.state, see
     /// http://developer.gnome.org/doc/API/2.0/gdk/gdk-Event-Structures.html`GdkEventKey`
-    var state: Int {
+    @inlinable var state: guint {
         /// A bitmask representing the state of the modifier keys immediately after the event takes place.
         /// The meaning of the bits is currently defined to match the bitmask used by GDK in
         /// GdkEventType.state, see
         /// http://developer.gnome.org/doc/API/2.0/gdk/gdk-Event-Structures.html`GdkEventKey`
         get {
-            let rv: Int = cast(_ptr.pointee.state)
+            let rv = _ptr.pointee.state
             return rv
         }
         /// A bitmask representing the state of the modifier keys immediately after the event takes place.
@@ -411,36 +565,36 @@ public extension KeyEventStructProtocol {
         /// GdkEventType.state, see
         /// http://developer.gnome.org/doc/API/2.0/gdk/gdk-Event-Structures.html`GdkEventKey`
          set {
-            _ptr.pointee.state = guint(newValue)
+            _ptr.pointee.state = newValue
         }
     }
 
     /// A guint representing a keysym value corresponding to those used by GDK and X11: see
     /// /usr/X11/include/keysymdef.h.
-    var keyval: Int {
+    @inlinable var keyval: guint {
         /// A guint representing a keysym value corresponding to those used by GDK and X11: see
         /// /usr/X11/include/keysymdef.h.
         get {
-            let rv: Int = cast(_ptr.pointee.keyval)
+            let rv = _ptr.pointee.keyval
             return rv
         }
         /// A guint representing a keysym value corresponding to those used by GDK and X11: see
         /// /usr/X11/include/keysymdef.h.
          set {
-            _ptr.pointee.keyval = guint(newValue)
+            _ptr.pointee.keyval = newValue
         }
     }
 
     /// The length of member `string`.
-    var length: Int {
+    @inlinable var length: gint {
         /// The length of member `string`.
         get {
-            let rv: Int = cast(_ptr.pointee.length)
+            let rv = _ptr.pointee.length
             return rv
         }
         /// The length of member `string`.
          set {
-            _ptr.pointee.length = gint(newValue)
+            _ptr.pointee.length = newValue
         }
     }
 
@@ -448,13 +602,13 @@ public extension KeyEventStructProtocol {
     /// result from this keypress, if the key is a control or graphic character, or a symbolic name for this keypress.
     /// Alphanumeric and printable keys will have the symbolic key name in this string member, for instance "A". "0",
     /// "semicolon", "aacute".  Keypad keys have the prefix "KP".
-    var string: UnsafePointer<CChar> {
+    @inlinable var string: UnsafeMutablePointer<gchar>! {
         /// A string containing one of the following: either a string approximating the text that would
         /// result from this keypress, if the key is a control or graphic character, or a symbolic name for this keypress.
         /// Alphanumeric and printable keys will have the symbolic key name in this string member, for instance "A". "0",
         /// "semicolon", "aacute".  Keypad keys have the prefix "KP".
         get {
-            let rv: UnsafePointer<CChar> = cast(_ptr.pointee.string)
+            let rv = _ptr.pointee.string
             return rv
         }
         /// A string containing one of the following: either a string approximating the text that would
@@ -462,39 +616,39 @@ public extension KeyEventStructProtocol {
         /// Alphanumeric and printable keys will have the symbolic key name in this string member, for instance "A". "0",
         /// "semicolon", "aacute".  Keypad keys have the prefix "KP".
          set {
-            _ptr.pointee.string = cast(newValue)
+            _ptr.pointee.string = newValue
         }
     }
 
     /// The raw hardware code that generated the key event.  This field is raraly useful.
-    var keycode: UInt16 {
+    @inlinable var keycode: guint16 {
         /// The raw hardware code that generated the key event.  This field is raraly useful.
         get {
-            let rv: UInt16 = cast(_ptr.pointee.keycode)
+            let rv = _ptr.pointee.keycode
             return rv
         }
         /// The raw hardware code that generated the key event.  This field is raraly useful.
          set {
-            _ptr.pointee.keycode = guint16(newValue)
+            _ptr.pointee.keycode = newValue
         }
     }
 
     /// A timestamp in milliseconds indicating when the event occurred.
     /// These timestamps are relative to a starting point which should be considered arbitrary,
     /// and only used to compare the dispatch times of events to one another.
-    var timestamp: UInt32 {
+    @inlinable var timestamp: guint32 {
         /// A timestamp in milliseconds indicating when the event occurred.
         /// These timestamps are relative to a starting point which should be considered arbitrary,
         /// and only used to compare the dispatch times of events to one another.
         get {
-            let rv: UInt32 = cast(_ptr.pointee.timestamp)
+            let rv = _ptr.pointee.timestamp
             return rv
         }
         /// A timestamp in milliseconds indicating when the event occurred.
         /// These timestamps are relative to a starting point which should be considered arbitrary,
         /// and only used to compare the dispatch times of events to one another.
          set {
-            _ptr.pointee.timestamp = guint32(newValue)
+            _ptr.pointee.timestamp = newValue
         }
     }
 

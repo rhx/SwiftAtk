@@ -19,10 +19,11 @@ import GLibObject
 /// reasonably be considered a document in its own right.
 public protocol DocumentProtocol {
         /// Untyped pointer to the underlying `AtkDocument` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkDocument` instance.
-    var document_ptr: UnsafeMutablePointer<AtkDocument> { get }
+    var document_ptr: UnsafeMutablePointer<AtkDocument>! { get }
+
 }
 
 /// The `DocumentRef` type acts as a lightweight Swift reference to an underlying `AtkDocument` instance.
@@ -39,46 +40,76 @@ public protocol DocumentProtocol {
 public struct DocumentRef: DocumentProtocol {
         /// Untyped pointer to the underlying `AtkDocument` instance.
     /// For type-safe access, use the generated, typed pointer `document_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension DocumentRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkDocument>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkDocument>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkDocument>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkDocument>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkDocument>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `DocumentProtocol`
-    init<T: DocumentProtocol>(_ other: T) {
+    @inlinable init<T: DocumentProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -98,95 +129,141 @@ public extension DocumentRef {
 open class Document: DocumentProtocol {
         /// Untyped pointer to the underlying `AtkDocument` instance.
     /// For type-safe access, use the generated, typed pointer `document_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Document` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkDocument>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkDocument>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Document` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkDocument>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Document` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Document` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Document` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkDocument>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Document` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkDocument>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkDocument` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Document` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkDocument>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkDocument>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkDocument, cannot ref(cast(document_ptr))
+        // no reference counting for AtkDocument, cannot ref(document_ptr)
     }
 
     /// Reference intialiser for a related type that implements `DocumentProtocol`
     /// `AtkDocument` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `DocumentProtocol`
-    public init<T: DocumentProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.document_ptr)
-        // no reference counting for AtkDocument, cannot ref(cast(document_ptr))
+    @inlinable public init<T: DocumentProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkDocument, cannot ref(document_ptr)
     }
 
     /// Do-nothing destructor for `AtkDocument`.
     deinit {
-        // no reference counting for AtkDocument, cannot unref(cast(document_ptr))
+        // no reference counting for AtkDocument, cannot unref(document_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkDocument, cannot ref(cast(document_ptr))
+        // no reference counting for AtkDocument, cannot ref(document_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkDocument, cannot ref(cast(document_ptr))
+        // no reference counting for AtkDocument, cannot ref(document_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkDocument, cannot ref(cast(document_ptr))
+        // no reference counting for AtkDocument, cannot ref(document_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkDocument, cannot ref(cast(document_ptr))
+        // no reference counting for AtkDocument, cannot ref(document_ptr)
     }
 
 
@@ -232,11 +309,11 @@ public extension DocumentProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: DocumentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: DocumentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(document_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -257,25 +334,25 @@ public extension DocumentProtocol {
 // MARK: Document Interface: DocumentProtocol extension (methods and fields)
 public extension DocumentProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkDocument` instance.
-    var document_ptr: UnsafeMutablePointer<AtkDocument> { return ptr.assumingMemoryBound(to: AtkDocument.self) }
+    @inlinable var document_ptr: UnsafeMutablePointer<AtkDocument>! { return ptr?.assumingMemoryBound(to: AtkDocument.self) }
 
     /// Retrieves the value of the given `attribute_name` inside `document`.
-    func getAttributeValue(attributeName attribute_name: UnsafePointer<gchar>) -> String! {
-        let rv: String! = cast(atk_document_get_attribute_value(cast(document_ptr), attribute_name))
-        return cast(rv)
+    @inlinable func getAttributeValue(attributeName attribute_name: UnsafePointer<gchar>!) -> String! {
+        let rv = atk_document_get_attribute_value(document_ptr, attribute_name).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets an AtkAttributeSet which describes document-wide
     ///          attributes as name-value pairs.
-    func getAttributes() -> UnsafeMutablePointer<AtkAttributeSet>! {
-        let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_document_get_attributes(cast(document_ptr)))
-        return cast(rv)
+    @inlinable func getAttributes() -> UnsafeMutablePointer<AtkAttributeSet>! {
+        let rv = atk_document_get_attributes(document_ptr)
+        return rv
     }
 
     /// Retrieves the current page number inside `document`.
-    func getCurrentPageNumber() -> Int {
-        let rv: Int = cast(atk_document_get_current_page_number(cast(document_ptr)))
-        return Int(rv)
+    @inlinable func getCurrentPageNumber() -> Int {
+        let rv = Int(atk_document_get_current_page_number(document_ptr))
+        return rv
     }
 
     /// Gets a `gpointer` that points to an instance of the DOM.  It is
@@ -286,9 +363,9 @@ public extension DocumentProtocol {
     /// Since 2.12. @document is already a representation of
     /// the document. Use it directly, or one of its children, as an
     /// instance of the DOM.
-    @available(*, deprecated) func getDocument() -> UnsafeMutableRawPointer! {
-        let rv: UnsafeMutableRawPointer! = cast(atk_document_get_document(cast(document_ptr)))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func getDocument() -> gpointer! {
+        let rv = atk_document_get_document(document_ptr)
+        return rv
     }
 
     /// Gets a string indicating the document type.
@@ -296,9 +373,9 @@ public extension DocumentProtocol {
     /// **get_document_type is deprecated:**
     /// Since 2.12. Please use atk_document_get_attributes() to
     /// ask for the document type if it applies.
-    @available(*, deprecated) func getDocumentType() -> String! {
-        let rv: String! = cast(atk_document_get_document_type(cast(document_ptr)))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func getDocumentType() -> String! {
+        let rv = atk_document_get_document_type(document_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets a UTF-8 string indicating the POSIX-style LC_MESSAGES locale
@@ -309,39 +386,39 @@ public extension DocumentProtocol {
     ///
     /// **get_locale is deprecated:**
     /// Please use atk_object_get_object_locale() instead.
-    @available(*, deprecated) func getLocale() -> String! {
-        let rv: String! = cast(atk_document_get_locale(cast(document_ptr)))
-        return cast(rv)
+    @available(*, deprecated) @inlinable func getLocale() -> String! {
+        let rv = atk_document_get_locale(document_ptr).map({ String(cString: $0) })
+        return rv
     }
 
     /// Retrieves the total number of pages inside `document`.
-    func getPageCount() -> Int {
-        let rv: Int = cast(atk_document_get_page_count(cast(document_ptr)))
-        return Int(rv)
+    @inlinable func getPageCount() -> Int {
+        let rv = Int(atk_document_get_page_count(document_ptr))
+        return rv
     }
 
     /// Sets the value for the given `attribute_name` inside `document`.
-    func setAttributeValue(attributeName attribute_name: UnsafePointer<gchar>, attributeValue attribute_value: UnsafePointer<gchar>) -> Bool {
-        let rv = atk_document_set_attribute_value(cast(document_ptr), attribute_name, attribute_value)
-        return Bool(rv != 0)
+    @inlinable func setAttributeValue(attributeName attribute_name: UnsafePointer<gchar>!, attributeValue attribute_value: UnsafePointer<gchar>!) -> Bool {
+        let rv = ((atk_document_set_attribute_value(document_ptr, attribute_name, attribute_value)) != 0)
+        return rv
     }
     /// Gets an AtkAttributeSet which describes document-wide
     ///          attributes as name-value pairs.
-    var attributes: UnsafeMutablePointer<AtkAttributeSet>! {
+    @inlinable var attributes: UnsafeMutablePointer<AtkAttributeSet>! {
         /// Gets an AtkAttributeSet which describes document-wide
         ///          attributes as name-value pairs.
         get {
-            let rv: UnsafeMutablePointer<AtkAttributeSet>! = cast(atk_document_get_attributes(cast(document_ptr)))
-            return cast(rv)
+            let rv = atk_document_get_attributes(document_ptr)
+            return rv
         }
     }
 
     /// Retrieves the current page number inside `document`.
-    var currentPageNumber: Int {
+    @inlinable var currentPageNumber: Int {
         /// Retrieves the current page number inside `document`.
         get {
-            let rv: Int = cast(atk_document_get_current_page_number(cast(document_ptr)))
-            return Int(rv)
+            let rv = Int(atk_document_get_current_page_number(document_ptr))
+            return rv
         }
     }
 
@@ -353,7 +430,7 @@ public extension DocumentProtocol {
     /// Since 2.12. @document is already a representation of
     /// the document. Use it directly, or one of its children, as an
     /// instance of the DOM.
-    var document: UnsafeMutableRawPointer! {
+    @inlinable var document: gpointer! {
         /// Gets a `gpointer` that points to an instance of the DOM.  It is
         /// up to the caller to check atk_document_get_type to determine
         /// how to cast this pointer.
@@ -363,8 +440,8 @@ public extension DocumentProtocol {
         /// the document. Use it directly, or one of its children, as an
         /// instance of the DOM.
         @available(*, deprecated) get {
-            let rv: UnsafeMutableRawPointer! = cast(atk_document_get_document(cast(document_ptr)))
-            return cast(rv)
+            let rv = atk_document_get_document(document_ptr)
+            return rv
         }
     }
 
@@ -373,15 +450,15 @@ public extension DocumentProtocol {
     /// **get_document_type is deprecated:**
     /// Since 2.12. Please use atk_document_get_attributes() to
     /// ask for the document type if it applies.
-    var documentType: String! {
+    @inlinable var documentType: String! {
         /// Gets a string indicating the document type.
         ///
         /// **get_document_type is deprecated:**
         /// Since 2.12. Please use atk_document_get_attributes() to
         /// ask for the document type if it applies.
         @available(*, deprecated) get {
-            let rv: String! = cast(atk_document_get_document_type(cast(document_ptr)))
-            return cast(rv)
+            let rv = atk_document_get_document_type(document_ptr).map({ String(cString: $0) })
+            return rv
         }
     }
 
@@ -393,7 +470,7 @@ public extension DocumentProtocol {
     ///
     /// **get_locale is deprecated:**
     /// Please use atk_object_get_object_locale() instead.
-    var locale: String! {
+    @inlinable var locale: String! {
         /// Gets a UTF-8 string indicating the POSIX-style LC_MESSAGES locale
         ///          of the content of this document instance.  Individual
         ///          text substrings or images within this document may have
@@ -403,17 +480,17 @@ public extension DocumentProtocol {
         /// **get_locale is deprecated:**
         /// Please use atk_object_get_object_locale() instead.
         @available(*, deprecated) get {
-            let rv: String! = cast(atk_document_get_locale(cast(document_ptr)))
-            return cast(rv)
+            let rv = atk_document_get_locale(document_ptr).map({ String(cString: $0) })
+            return rv
         }
     }
 
     /// Retrieves the total number of pages inside `document`.
-    var pageCount: Int {
+    @inlinable var pageCount: Int {
         /// Retrieves the total number of pages inside `document`.
         get {
-            let rv: Int = cast(atk_document_get_page_count(cast(document_ptr)))
-            return Int(rv)
+            let rv = Int(atk_document_get_page_count(document_ptr))
+            return rv
         }
     }
 
@@ -440,10 +517,11 @@ public extension DocumentProtocol {
 /// See also: `AtkText`
 public protocol EditableTextProtocol {
         /// Untyped pointer to the underlying `AtkEditableText` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkEditableText` instance.
-    var editable_text_ptr: UnsafeMutablePointer<AtkEditableText> { get }
+    var editable_text_ptr: UnsafeMutablePointer<AtkEditableText>! { get }
+
 }
 
 /// The `EditableTextRef` type acts as a lightweight Swift reference to an underlying `AtkEditableText` instance.
@@ -462,46 +540,76 @@ public protocol EditableTextProtocol {
 public struct EditableTextRef: EditableTextProtocol {
         /// Untyped pointer to the underlying `AtkEditableText` instance.
     /// For type-safe access, use the generated, typed pointer `editable_text_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension EditableTextRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkEditableText>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkEditableText>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkEditableText>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkEditableText>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkEditableText>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `EditableTextProtocol`
-    init<T: EditableTextProtocol>(_ other: T) {
+    @inlinable init<T: EditableTextProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -523,95 +631,141 @@ public extension EditableTextRef {
 open class EditableText: EditableTextProtocol {
         /// Untyped pointer to the underlying `AtkEditableText` instance.
     /// For type-safe access, use the generated, typed pointer `editable_text_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `EditableText` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkEditableText>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkEditableText>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EditableText` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkEditableText>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EditableText` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EditableText` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EditableText` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkEditableText>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `EditableText` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkEditableText>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkEditableText` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `EditableText` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkEditableText>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkEditableText>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkEditableText, cannot ref(cast(editable_text_ptr))
+        // no reference counting for AtkEditableText, cannot ref(editable_text_ptr)
     }
 
     /// Reference intialiser for a related type that implements `EditableTextProtocol`
     /// `AtkEditableText` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `EditableTextProtocol`
-    public init<T: EditableTextProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.editable_text_ptr)
-        // no reference counting for AtkEditableText, cannot ref(cast(editable_text_ptr))
+    @inlinable public init<T: EditableTextProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkEditableText, cannot ref(editable_text_ptr)
     }
 
     /// Do-nothing destructor for `AtkEditableText`.
     deinit {
-        // no reference counting for AtkEditableText, cannot unref(cast(editable_text_ptr))
+        // no reference counting for AtkEditableText, cannot unref(editable_text_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkEditableText, cannot ref(cast(editable_text_ptr))
+        // no reference counting for AtkEditableText, cannot ref(editable_text_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkEditableText, cannot ref(cast(editable_text_ptr))
+        // no reference counting for AtkEditableText, cannot ref(editable_text_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkEditableText, cannot ref(cast(editable_text_ptr))
+        // no reference counting for AtkEditableText, cannot ref(editable_text_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkEditableText, cannot ref(cast(editable_text_ptr))
+        // no reference counting for AtkEditableText, cannot ref(editable_text_ptr)
     }
 
 
@@ -626,37 +780,37 @@ open class EditableText: EditableTextProtocol {
 // MARK: EditableText Interface: EditableTextProtocol extension (methods and fields)
 public extension EditableTextProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkEditableText` instance.
-    var editable_text_ptr: UnsafeMutablePointer<AtkEditableText> { return ptr.assumingMemoryBound(to: AtkEditableText.self) }
+    @inlinable var editable_text_ptr: UnsafeMutablePointer<AtkEditableText>! { return ptr?.assumingMemoryBound(to: AtkEditableText.self) }
 
     /// Copy text from `start_pos` up to, but not including `end_pos`
     /// to the clipboard.
-    func copyText(startPos start_pos: CInt, endPos end_pos: CInt) {
-        atk_editable_text_copy_text(cast(editable_text_ptr), gint(start_pos), gint(end_pos))
+    @inlinable func copyText(startPos start_pos: Int, endPos end_pos: Int) {
+        atk_editable_text_copy_text(editable_text_ptr, gint(start_pos), gint(end_pos))
     
     }
 
     /// Copy text from `start_pos` up to, but not including `end_pos`
     /// to the clipboard and then delete from the widget.
-    func cutText(startPos start_pos: CInt, endPos end_pos: CInt) {
-        atk_editable_text_cut_text(cast(editable_text_ptr), gint(start_pos), gint(end_pos))
+    @inlinable func cutText(startPos start_pos: Int, endPos end_pos: Int) {
+        atk_editable_text_cut_text(editable_text_ptr, gint(start_pos), gint(end_pos))
     
     }
 
     /// Delete text `start_pos` up to, but not including `end_pos`.
-    func deleteText(startPos start_pos: CInt, endPos end_pos: CInt) {
-        atk_editable_text_delete_text(cast(editable_text_ptr), gint(start_pos), gint(end_pos))
+    @inlinable func deleteText(startPos start_pos: Int, endPos end_pos: Int) {
+        atk_editable_text_delete_text(editable_text_ptr, gint(start_pos), gint(end_pos))
     
     }
 
     /// Insert text at a given position.
-    func insertText(string: UnsafePointer<gchar>, length: CInt, position: UnsafeMutablePointer<CInt>) {
-        atk_editable_text_insert_text(cast(editable_text_ptr), string, gint(length), cast(position))
+    @inlinable func insertText(string: UnsafePointer<gchar>!, length: Int, position: UnsafeMutablePointer<gint>!) {
+        atk_editable_text_insert_text(editable_text_ptr, string, gint(length), position)
     
     }
 
     /// Paste text from clipboard to specified `position`.
-    func pasteText(position: CInt) {
-        atk_editable_text_paste_text(cast(editable_text_ptr), gint(position))
+    @inlinable func pasteText(position: Int) {
+        atk_editable_text_paste_text(editable_text_ptr, gint(position))
     
     }
 
@@ -664,14 +818,14 @@ public extension EditableTextProtocol {
     /// macros (such as `ATK_ATTRIBUTE_LEFT_MARGIN`) for examples of attributes
     /// that can be set. Note that other attributes that do not have corresponding
     /// ATK_ATTRIBUTE macros may also be set for certain text widgets.
-    func setRunAttributes(attribSet attrib_set: UnsafeMutablePointer<AtkAttributeSet>, startOffset start_offset: CInt, endOffset end_offset: CInt) -> Bool {
-        let rv = atk_editable_text_set_run_attributes(cast(editable_text_ptr), cast(attrib_set), gint(start_offset), gint(end_offset))
-        return Bool(rv != 0)
+    @inlinable func setRunAttributes(attribSet attrib_set: UnsafeMutablePointer<AtkAttributeSet>!, startOffset start_offset: Int, endOffset end_offset: Int) -> Bool {
+        let rv = ((atk_editable_text_set_run_attributes(editable_text_ptr, attrib_set, gint(start_offset), gint(end_offset))) != 0)
+        return rv
     }
 
     /// Set text contents of `text`.
-    func setTextContents(string: UnsafePointer<gchar>) {
-        atk_editable_text_set_text_contents(cast(editable_text_ptr), string)
+    @inlinable func setTextContents(string: UnsafePointer<gchar>!) {
+        atk_editable_text_set_text_contents(editable_text_ptr, string)
     
     }
 

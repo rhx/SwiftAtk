@@ -29,10 +29,11 @@ import GLibObject
 /// using "mouse centric" terminology for `AtkAction` names.
 public protocol ActionProtocol {
         /// Untyped pointer to the underlying `AtkAction` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkAction` instance.
-    var action_ptr: UnsafeMutablePointer<AtkAction> { get }
+    var action_ptr: UnsafeMutablePointer<AtkAction>! { get }
+
 }
 
 /// The `ActionRef` type acts as a lightweight Swift reference to an underlying `AtkAction` instance.
@@ -59,46 +60,76 @@ public protocol ActionProtocol {
 public struct ActionRef: ActionProtocol {
         /// Untyped pointer to the underlying `AtkAction` instance.
     /// For type-safe access, use the generated, typed pointer `action_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension ActionRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkAction>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkAction>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkAction>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkAction>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkAction>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `ActionProtocol`
-    init<T: ActionProtocol>(_ other: T) {
+    @inlinable init<T: ActionProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -128,95 +159,141 @@ public extension ActionRef {
 open class Action: ActionProtocol {
         /// Untyped pointer to the underlying `AtkAction` instance.
     /// For type-safe access, use the generated, typed pointer `action_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Action` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkAction>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkAction>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Action` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkAction>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Action` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Action` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Action` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkAction>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Action` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkAction>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkAction` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Action` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkAction>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkAction>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkAction, cannot ref(cast(action_ptr))
+        // no reference counting for AtkAction, cannot ref(action_ptr)
     }
 
     /// Reference intialiser for a related type that implements `ActionProtocol`
     /// `AtkAction` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `ActionProtocol`
-    public init<T: ActionProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.action_ptr)
-        // no reference counting for AtkAction, cannot ref(cast(action_ptr))
+    @inlinable public init<T: ActionProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkAction, cannot ref(action_ptr)
     }
 
     /// Do-nothing destructor for `AtkAction`.
     deinit {
-        // no reference counting for AtkAction, cannot unref(cast(action_ptr))
+        // no reference counting for AtkAction, cannot unref(action_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkAction, cannot ref(cast(action_ptr))
+        // no reference counting for AtkAction, cannot ref(action_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkAction, cannot ref(cast(action_ptr))
+        // no reference counting for AtkAction, cannot ref(action_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkAction, cannot ref(cast(action_ptr))
+        // no reference counting for AtkAction, cannot ref(action_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkAction, cannot ref(cast(action_ptr))
+        // no reference counting for AtkAction, cannot ref(action_ptr)
     }
 
 
@@ -231,18 +308,18 @@ open class Action: ActionProtocol {
 // MARK: Action Interface: ActionProtocol extension (methods and fields)
 public extension ActionProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkAction` instance.
-    var action_ptr: UnsafeMutablePointer<AtkAction> { return ptr.assumingMemoryBound(to: AtkAction.self) }
+    @inlinable var action_ptr: UnsafeMutablePointer<AtkAction>! { return ptr?.assumingMemoryBound(to: AtkAction.self) }
 
     /// Perform the specified action on the object.
-    func doAction(i: CInt) -> Bool {
-        let rv = atk_action_do_action(cast(action_ptr), gint(i))
-        return Bool(rv != 0)
+    @inlinable func doAction(i: Int) -> Bool {
+        let rv = ((atk_action_do_action(action_ptr, gint(i))) != 0)
+        return rv
     }
 
     /// Returns a description of the specified action of the object.
-    func getDescription(i: CInt) -> String! {
-        let rv: String! = cast(atk_action_get_description(cast(action_ptr), gint(i)))
-        return cast(rv)
+    @inlinable func getDescription(i: Int) -> String! {
+        let rv = atk_action_get_description(action_ptr, gint(i)).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the keybinding which can be used to activate this action, if one
@@ -267,23 +344,23 @@ public extension ActionProtocol {
     /// would be: "N;Alt+F:N;Ctrl+N" for the English locale and "N;Alt+D:N;Strg+N"
     /// for the German locale. If, hypothetically, this menu item lacked a mnemonic,
     /// it would be represented by ";;Ctrl+N" and ";;Strg+N" respectively.
-    func getKeybinding(i: CInt) -> String! {
-        let rv: String! = cast(atk_action_get_keybinding(cast(action_ptr), gint(i)))
-        return cast(rv)
+    @inlinable func getKeybinding(i: Int) -> String! {
+        let rv = atk_action_get_keybinding(action_ptr, gint(i)).map({ String(cString: $0) })
+        return rv
     }
 
     /// Returns the localized name of the specified action of the object.
-    func getLocalizedName(i: CInt) -> String! {
-        let rv: String! = cast(atk_action_get_localized_name(cast(action_ptr), gint(i)))
-        return cast(rv)
+    @inlinable func getLocalizedName(i: Int) -> String! {
+        let rv = atk_action_get_localized_name(action_ptr, gint(i)).map({ String(cString: $0) })
+        return rv
     }
 
     /// Gets the number of accessible actions available on the object.
     /// If there are more than one, the first one is considered the
     /// "default" action of the object.
-    func getNActions() -> Int {
-        let rv: Int = cast(atk_action_get_n_actions(cast(action_ptr)))
-        return Int(rv)
+    @inlinable func getNActions() -> Int {
+        let rv = Int(atk_action_get_n_actions(action_ptr))
+        return rv
     }
 
     /// Returns a non-localized string naming the specified action of the
@@ -300,26 +377,26 @@ public extension ActionProtocol {
     /// reported action is actually 'bound' to a nontrivial user event;
     /// i.e. the result of some actions via `atk_action_do_action()` may be
     /// NIL.
-    func getName(i: CInt) -> String! {
-        let rv: String! = cast(atk_action_get_name(cast(action_ptr), gint(i)))
-        return cast(rv)
+    @inlinable func getName(i: Int) -> String! {
+        let rv = atk_action_get_name(action_ptr, gint(i)).map({ String(cString: $0) })
+        return rv
     }
 
     /// Sets a description of the specified action of the object.
-    func setDescription(i: CInt, desc: UnsafePointer<gchar>) -> Bool {
-        let rv = atk_action_set_description(cast(action_ptr), gint(i), desc)
-        return Bool(rv != 0)
+    @inlinable func setDescription(i: Int, desc: UnsafePointer<gchar>!) -> Bool {
+        let rv = ((atk_action_set_description(action_ptr, gint(i), desc)) != 0)
+        return rv
     }
     /// Gets the number of accessible actions available on the object.
     /// If there are more than one, the first one is considered the
     /// "default" action of the object.
-    var nActions: Int {
+    @inlinable var nActions: Int {
         /// Gets the number of accessible actions available on the object.
         /// If there are more than one, the first one is considered the
         /// "default" action of the object.
         get {
-            let rv: Int = cast(atk_action_get_n_actions(cast(action_ptr)))
-            return Int(rv)
+            let rv = Int(atk_action_get_n_actions(action_ptr))
+            return rv
         }
     }
 
@@ -347,10 +424,11 @@ public extension ActionProtocol {
 /// information is provided by `AtkText`.
 public protocol ComponentProtocol {
         /// Untyped pointer to the underlying `AtkComponent` instance.
-    var ptr: UnsafeMutableRawPointer { get }
+    var ptr: UnsafeMutableRawPointer! { get }
 
     /// Typed pointer to the underlying `AtkComponent` instance.
-    var component_ptr: UnsafeMutablePointer<AtkComponent> { get }
+    var component_ptr: UnsafeMutablePointer<AtkComponent>! { get }
+
 }
 
 /// The `ComponentRef` type acts as a lightweight Swift reference to an underlying `AtkComponent` instance.
@@ -370,46 +448,76 @@ public protocol ComponentProtocol {
 public struct ComponentRef: ComponentProtocol {
         /// Untyped pointer to the underlying `AtkComponent` instance.
     /// For type-safe access, use the generated, typed pointer `component_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 }
 
 public extension ComponentRef {
     /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<AtkComponent>) {
-        ptr = UnsafeMutableRawPointer(p)    }
+    @inlinable init(_ p: UnsafeMutablePointer<AtkComponent>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<AtkComponent>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<AtkComponent>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<AtkComponent>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
 
     /// Reference intialiser for a related type that implements `ComponentProtocol`
-    init<T: ComponentProtocol>(_ other: T) {
+    @inlinable init<T: ComponentProtocol>(_ other: T) {
         ptr = other.ptr
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
         ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
-    init(raw: UnsafeRawPointer) {
+    @inlinable init(raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
+    @inlinable init(raw: UnsafeMutableRawPointer) {
         ptr = raw
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
-    init(opaquePointer: OpaquePointer) {
+    @inlinable init(opaquePointer: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(opaquePointer)
     }
 
@@ -432,95 +540,141 @@ public extension ComponentRef {
 open class Component: ComponentProtocol {
         /// Untyped pointer to the underlying `AtkComponent` instance.
     /// For type-safe access, use the generated, typed pointer `component_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
+    public let ptr: UnsafeMutableRawPointer!
 
     /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Component` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(_ op: UnsafeMutablePointer<AtkComponent>) {
+    @inlinable public init(_ op: UnsafeMutablePointer<AtkComponent>) {
         ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Component` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<AtkComponent>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Component` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Component` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Component` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<AtkComponent>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Component` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<AtkComponent>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Designated initialiser from the underlying `C` data type.
     /// `AtkComponent` does not allow reference counting, so despite the name no actual retaining will occur.
     /// i.e., ownership is transferred to the `Component` instance.
     /// - Parameter op: pointer to the underlying object
-    public init(retaining op: UnsafeMutablePointer<AtkComponent>) {
+    @inlinable public init(retaining op: UnsafeMutablePointer<AtkComponent>) {
         ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkComponent, cannot ref(cast(component_ptr))
+        // no reference counting for AtkComponent, cannot ref(component_ptr)
     }
 
     /// Reference intialiser for a related type that implements `ComponentProtocol`
     /// `AtkComponent` does not allow reference counting.
     /// - Parameter other: an instance of a related type that implements `ComponentProtocol`
-    public init<T: ComponentProtocol>(_ other: T) {
-        ptr = UnsafeMutableRawPointer(other.component_ptr)
-        // no reference counting for AtkComponent, cannot ref(cast(component_ptr))
+    @inlinable public init<T: ComponentProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for AtkComponent, cannot ref(component_ptr)
     }
 
     /// Do-nothing destructor for `AtkComponent`.
     deinit {
-        // no reference counting for AtkComponent, cannot unref(cast(component_ptr))
+        // no reference counting for AtkComponent, cannot unref(component_ptr)
     }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe typed, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
     /// - Parameter cPointer: pointer to the underlying object
-    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
         ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkComponent, cannot ref(cast(component_ptr))
+        // no reference counting for AtkComponent, cannot ref(component_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
     /// - Parameter p: raw pointer to the underlying object
-    public init(raw p: UnsafeRawPointer) {
+    @inlinable public init(raw p: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
-    public init(retainingRaw raw: UnsafeRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkComponent, cannot ref(cast(component_ptr))
+        // no reference counting for AtkComponent, cannot ref(component_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
         ptr = raw
-        // no reference counting for AtkComponent, cannot ref(cast(component_ptr))
+        // no reference counting for AtkComponent, cannot ref(component_ptr)
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(opaquePointer p: OpaquePointer) {
+    @inlinable public init(opaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
     /// - Parameter p: opaque pointer to the underlying object
-    public init(retainingOpaquePointer p: OpaquePointer) {
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
         ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkComponent, cannot ref(cast(component_ptr))
+        // no reference counting for AtkComponent, cannot ref(component_ptr)
     }
 
 
@@ -542,11 +696,11 @@ public extension ComponentProtocol {
     /// - Parameter flags: signal connection flags
     /// - Parameter handler: signal handler to use
     /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @discardableResult func connect(signal kind: ComponentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
+    @inlinable @discardableResult func connect(signal kind: ComponentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
         func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
             let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(cast(component_ptr)).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
+            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
                 if let swift = UnsafeRawPointer($0) {
                     let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
                     holder.release()
@@ -567,7 +721,7 @@ public extension ComponentProtocol {
 // MARK: Component Interface: ComponentProtocol extension (methods and fields)
 public extension ComponentProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkComponent` instance.
-    var component_ptr: UnsafeMutablePointer<AtkComponent> { return ptr.assumingMemoryBound(to: AtkComponent.self) }
+    @inlinable var component_ptr: UnsafeMutablePointer<AtkComponent>! { return ptr?.assumingMemoryBound(to: AtkComponent.self) }
 
     /// Add the specified handler to the set of functions to be called
     /// when this object receives focus events (in or out). If the handler is
@@ -576,9 +730,9 @@ public extension ComponentProtocol {
     /// **add_focus_handler is deprecated:**
     /// If you need to track when an object gains or
     /// lose the focus, use the #AtkObject::state-change "focused" notification instead.
-    @available(*, deprecated) func addFocus(handler: @escaping FocusHandler) -> Int {
-        let rv: Int = cast(atk_component_add_focus_handler(cast(component_ptr), handler))
-        return Int(rv)
+    @available(*, deprecated) @inlinable func addFocus(handler: AtkFocusHandler?) -> Int {
+        let rv = Int(atk_component_add_focus_handler(component_ptr, handler))
+        return rv
     }
 
     /// Checks whether the specified point is within the extent of the `component`.
@@ -586,39 +740,39 @@ public extension ComponentProtocol {
     /// Toolkit implementor note: ATK provides a default implementation for
     /// this virtual method. In general there are little reason to
     /// re-implement it.
-    func contains(x: CInt, y: CInt, coordType coord_type: CoordType) -> Bool {
-        let rv = atk_component_contains(cast(component_ptr), gint(x), gint(y), coord_type)
-        return Bool(rv != 0)
+    @inlinable func contains(x: Int, y: Int, coordType coord_type: AtkCoordType) -> Bool {
+        let rv = ((atk_component_contains(component_ptr, gint(x), gint(y), coord_type)) != 0)
+        return rv
     }
 
     /// Returns the alpha value (i.e. the opacity) for this
     /// `component`, on a scale from 0 (fully transparent) to 1.0
     /// (fully opaque).
-    func getAlpha() -> Double {
-        let rv: Double = cast(atk_component_get_alpha(cast(component_ptr)))
-        return cast(rv)
+    @inlinable func getAlpha() -> Double {
+        let rv = Double(atk_component_get_alpha(component_ptr))
+        return rv
     }
 
     /// Gets the rectangle which gives the extent of the `component`.
     /// 
     /// If the extent can not be obtained (e.g. a non-embedded plug or missing
     /// support), all of x, y, width, height are set to -1.
-    func getExtents(x: UnsafeMutablePointer<CInt>, y: UnsafeMutablePointer<CInt>, width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>, coordType coord_type: CoordType) {
-        atk_component_get_extents(cast(component_ptr), cast(x), cast(y), cast(width), cast(height), coord_type)
+    @inlinable func getExtents(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil, coordType coord_type: AtkCoordType) {
+        atk_component_get_extents(component_ptr, x, y, width, height, coord_type)
     
     }
 
     /// Gets the layer of the component.
-    func getLayer() -> AtkLayer {
-        let rv = atk_component_get_layer(cast(component_ptr))
-        return cast(rv)
+    @inlinable func getLayer() -> AtkLayer {
+        let rv = atk_component_get_layer(component_ptr)
+        return rv
     }
 
     /// Gets the zorder of the component. The value G_MININT will be returned
     /// if the layer of the component is not ATK_LAYER_MDI or ATK_LAYER_WINDOW.
-    func getMdiZorder() -> Int {
-        let rv: Int = cast(atk_component_get_mdi_zorder(cast(component_ptr)))
-        return Int(rv)
+    @inlinable func getMdiZorder() -> Int {
+        let rv = Int(atk_component_get_mdi_zorder(component_ptr))
+        return rv
     }
 
     /// Gets the position of `component` in the form of
@@ -629,8 +783,8 @@ public extension ComponentProtocol {
     ///
     /// **get_position is deprecated:**
     /// Since 2.12. Use atk_component_get_extents() instead.
-    @available(*, deprecated) func getPosition(x: UnsafeMutablePointer<CInt>, y: UnsafeMutablePointer<CInt>, coordType coord_type: CoordType) {
-        atk_component_get_position(cast(component_ptr), cast(x), cast(y), coord_type)
+    @available(*, deprecated) @inlinable func getPosition(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, coordType coord_type: AtkCoordType) {
+        atk_component_get_position(component_ptr, x, y, coord_type)
     
     }
 
@@ -641,22 +795,22 @@ public extension ComponentProtocol {
     ///
     /// **get_size is deprecated:**
     /// Since 2.12. Use atk_component_get_extents() instead.
-    @available(*, deprecated) func getSize(width: UnsafeMutablePointer<CInt>, height: UnsafeMutablePointer<CInt>) {
-        atk_component_get_size(cast(component_ptr), cast(width), cast(height))
+    @available(*, deprecated) @inlinable func getSize(width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil) {
+        atk_component_get_size(component_ptr, width, height)
     
     }
 
     /// Grabs focus for this `component`.
-    func grabFocus() -> Bool {
-        let rv = atk_component_grab_focus(cast(component_ptr))
-        return Bool(rv != 0)
+    @inlinable func grabFocus() -> Bool {
+        let rv = ((atk_component_grab_focus(component_ptr)) != 0)
+        return rv
     }
 
     /// Gets a reference to the accessible child, if one exists, at the
     /// coordinate point specified by `x` and `y`.
-    func refAccessibleAtPoint(x: CInt, y: CInt, coordType coord_type: CoordType) -> UnsafeMutablePointer<AtkObject>! {
-        let rv: UnsafeMutablePointer<AtkObject>! = cast(atk_component_ref_accessible_at_point(cast(component_ptr), gint(x), gint(y), coord_type))
-        return cast(rv)
+    @inlinable func refAccessibleAtPoint(x: Int, y: Int, coordType coord_type: AtkCoordType) -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_component_ref_accessible_at_point(component_ptr, gint(x), gint(y), coord_type)))
+        return rv
     }
 
     /// Remove the handler specified by `handler_id` from the list of
@@ -666,8 +820,8 @@ public extension ComponentProtocol {
     /// **remove_focus_handler is deprecated:**
     /// If you need to track when an object gains or
     /// lose the focus, use the #AtkObject::state-change "focused" notification instead.
-    @available(*, deprecated) func removeFocusHandler(handlerId handler_id: CUnsignedInt) {
-        atk_component_remove_focus_handler(cast(component_ptr), guint(handler_id))
+    @available(*, deprecated) @inlinable func removeFocusHandler(handlerId handler_id: Int) {
+        atk_component_remove_focus_handler(component_ptr, guint(handler_id))
     
     }
 
@@ -676,68 +830,68 @@ public extension ComponentProtocol {
     /// Contrary to atk_component_set_position, this does not actually move
     /// `component` in its parent, this only makes the parents scroll so that the
     /// object shows up on the screen, given its current position within the parents.
-    func scrollTo(type: ScrollType) -> Bool {
-        let rv = atk_component_scroll_to(cast(component_ptr), type)
-        return Bool(rv != 0)
+    @inlinable func scrollTo(type: AtkScrollType) -> Bool {
+        let rv = ((atk_component_scroll_to(component_ptr, type)) != 0)
+        return rv
     }
 
     /// Move the top-left of `component` to a given position of the screen by
     /// scrolling all necessary parents.
-    func scrollToPoint(coords: CoordType, x: CInt, y: CInt) -> Bool {
-        let rv = atk_component_scroll_to_point(cast(component_ptr), coords, gint(x), gint(y))
-        return Bool(rv != 0)
+    @inlinable func scrollToPoint(coords: AtkCoordType, x: Int, y: Int) -> Bool {
+        let rv = ((atk_component_scroll_to_point(component_ptr, coords, gint(x), gint(y))) != 0)
+        return rv
     }
 
     /// Sets the extents of `component`.
-    func setExtents(x: CInt, y: CInt, width: CInt, height: CInt, coordType coord_type: CoordType) -> Bool {
-        let rv = atk_component_set_extents(cast(component_ptr), gint(x), gint(y), gint(width), gint(height), coord_type)
-        return Bool(rv != 0)
+    @inlinable func setExtents(x: Int, y: Int, width: Int, height: Int, coordType coord_type: AtkCoordType) -> Bool {
+        let rv = ((atk_component_set_extents(component_ptr, gint(x), gint(y), gint(width), gint(height), coord_type)) != 0)
+        return rv
     }
 
     /// Sets the position of `component`.
     /// 
     /// Contrary to atk_component_scroll_to, this does not trigger any scrolling,
     /// this just moves `component` in its parent.
-    func setPosition(x: CInt, y: CInt, coordType coord_type: CoordType) -> Bool {
-        let rv = atk_component_set_position(cast(component_ptr), gint(x), gint(y), coord_type)
-        return Bool(rv != 0)
+    @inlinable func setPosition(x: Int, y: Int, coordType coord_type: AtkCoordType) -> Bool {
+        let rv = ((atk_component_set_position(component_ptr, gint(x), gint(y), coord_type)) != 0)
+        return rv
     }
 
     /// Set the size of the `component` in terms of width and height.
-    func setSize(width: CInt, height: CInt) -> Bool {
-        let rv = atk_component_set_size(cast(component_ptr), gint(width), gint(height))
-        return Bool(rv != 0)
+    @inlinable func setSize(width: Int, height: Int) -> Bool {
+        let rv = ((atk_component_set_size(component_ptr, gint(width), gint(height))) != 0)
+        return rv
     }
     /// Returns the alpha value (i.e. the opacity) for this
     /// `component`, on a scale from 0 (fully transparent) to 1.0
     /// (fully opaque).
-    var alpha: Double {
+    @inlinable var alpha: Double {
         /// Returns the alpha value (i.e. the opacity) for this
         /// `component`, on a scale from 0 (fully transparent) to 1.0
         /// (fully opaque).
         get {
-            let rv: Double = cast(atk_component_get_alpha(cast(component_ptr)))
-            return cast(rv)
+            let rv = Double(atk_component_get_alpha(component_ptr))
+            return rv
         }
     }
 
     /// Gets the layer of the component.
-    var layer: AtkLayer {
+    @inlinable var layer: AtkLayer {
         /// Gets the layer of the component.
         get {
-            let rv = atk_component_get_layer(cast(component_ptr))
-            return cast(rv)
+            let rv = atk_component_get_layer(component_ptr)
+            return rv
         }
     }
 
     /// Gets the zorder of the component. The value G_MININT will be returned
     /// if the layer of the component is not ATK_LAYER_MDI or ATK_LAYER_WINDOW.
-    var mdiZorder: Int {
+    @inlinable var mdiZorder: Int {
         /// Gets the zorder of the component. The value G_MININT will be returned
         /// if the layer of the component is not ATK_LAYER_MDI or ATK_LAYER_WINDOW.
         get {
-            let rv: Int = cast(atk_component_get_mdi_zorder(cast(component_ptr)))
-            return Int(rv)
+            let rv = Int(atk_component_get_mdi_zorder(component_ptr))
+            return rv
         }
     }
 
