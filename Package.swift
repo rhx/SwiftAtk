@@ -1,14 +1,12 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.2
 
 import PackageDescription
 
 let package = Package(
     name: "Atk",
-    products: [
-        .library(name: "Atk", targets: ["Atk"]),
-    ],
+    products: [ .library(name: "Atk", targets: ["Atk"]) ],
     dependencies: [
-        .package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master"))
+        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("master"))
     ],
     targets: [
 	.systemLibrary(name: "CAtk", pkgConfig: "atk glib-2.0 gio-unix-2.0",
