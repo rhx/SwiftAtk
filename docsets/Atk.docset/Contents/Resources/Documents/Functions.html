@@ -1049,7 +1049,7 @@ implementation, subscribe to the #AtkObject::state-change &ldquo;focused&rdquo; 
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">focusTracker</span> <span class="nv">focus_tracker</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">AtkEventListener</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">focusTracker</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">AtkEventListener</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -1112,7 +1112,7 @@ a collateral effect.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">addGlobalEvent</span><span class="p">(</span><span class="nv">listener</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GSignalEmissionHook</span><span class="p">,</span> <span class="n">eventType</span> <span class="nv">event_type</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">addGlobalEvent</span><span class="p">(</span><span class="nv">listener</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">GSignalEmissionHook</span><span class="p">,</span> <span class="nv">eventType</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="n">gchar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -1177,7 +1177,7 @@ a collateral effect.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attributeSetFree</span><span class="p">(</span><span class="n">attribSet</span> <span class="nv">attrib_set</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">AtkAttributeSet</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">attributeSetFree</span><span class="p">(</span><span class="nv">attribSet</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">AtkAttributeSet</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1755,7 +1755,7 @@ Focus tracking has been dropped as a feature
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeFocusTracker</span><span class="p">(</span><span class="n">trackerId</span> <span class="nv">tracker_id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeFocusTracker</span><span class="p">(</span><span class="nv">trackerId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1796,7 +1796,7 @@ ATK implementors but by ATK consumers.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeGlobalEventListener</span><span class="p">(</span><span class="n">listenerId</span> <span class="nv">listener_id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeGlobalEventListener</span><span class="p">(</span><span class="nv">listenerId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1830,7 +1830,7 @@ when you registered that event listener.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeKeyEventListener</span><span class="p">(</span><span class="n">listenerId</span> <span class="nv">listener_id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeKeyEventListener</span><span class="p">(</span><span class="nv">listenerId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2242,7 +2242,7 @@ and is NULL terminated.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">valueTypeGetLocalizedName</span><span class="p">(</span><span class="n">valueType</span> <span class="nv">value_type</span><span class="p">:</span> <span class="kt">AtkValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">valueTypeGetLocalizedName</span><span class="p">(</span><span class="nv">valueType</span><span class="p">:</span> <span class="kt">AtkValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -2273,7 +2273,7 @@ and is NULL terminated.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">valueTypeGetName</span><span class="p">(</span><span class="n">valueType</span> <span class="nv">value_type</span><span class="p">:</span> <span class="kt">AtkValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">valueTypeGetName</span><span class="p">(</span><span class="nv">valueType</span><span class="p">:</span> <span class="kt">AtkValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -2291,7 +2291,7 @@ and is NULL terminated.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
