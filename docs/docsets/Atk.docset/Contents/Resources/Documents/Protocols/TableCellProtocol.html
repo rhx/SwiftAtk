@@ -1120,9 +1120,9 @@ elements, so &ldquo;cells&rdquo; should implement.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3Atk17TableCellProtocolPAAE4bind8property2to_5flags13transformFrom0I2To10GLibObject10BindingRefVSgAA0bC12PropertyNameO_qd_0_qd__AJ0N5FlagsVSbAJ05ValueO0V_AStcSbAS_AStctAJ0pqD0Rd__AA0mD0Rd_0_r0_lF"></a>
+                    <a name="/s:3Atk17TableCellProtocolPAAE4bind8property2to_5flags13transformFrom0I2To10GLibObject10BindingRefVSgAA0bC12PropertyNameO_qd_0_qd__AJ0N5FlagsVSbAJ05ValueO0V_AStcSbAS_AStctAJ0pqD0Rd__AJ0mD0Rd_0_r0_lF"></a>
                     <a name="//apple_ref/swift/Method/bind(property:to:_:flags:transformFrom:transformTo:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3Atk17TableCellProtocolPAAE4bind8property2to_5flags13transformFrom0I2To10GLibObject10BindingRefVSgAA0bC12PropertyNameO_qd_0_qd__AJ0N5FlagsVSbAJ05ValueO0V_AStcSbAS_AStctAJ0pqD0Rd__AA0mD0Rd_0_r0_lF">bind(property:to:_:flags:transformFrom:transformTo:)</a>
+                    <a class="token" href="#/s:3Atk17TableCellProtocolPAAE4bind8property2to_5flags13transformFrom0I2To10GLibObject10BindingRefVSgAA0bC12PropertyNameO_qd_0_qd__AJ0N5FlagsVSbAJ05ValueO0V_AStcSbAS_AStctAJ0pqD0Rd__AJ0mD0Rd_0_r0_lF">bind(property:to:_:flags:transformFrom:transformTo:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1469,7 +1469,7 @@ elements, so &ldquo;cells&rdquo; should implement.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">getColumnHeaderCells</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">PtrArrayRef</span><span class="o">!</span></code></pre>
+<span class="kd">func</span> <span class="nf">getColumnHeaderCells</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">PtrArrayRef</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -1575,7 +1575,7 @@ on the object.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">getRowColumnSpan</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">column</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n"><a href="../Protocols/TableCellProtocol.html#/s:3Atk17TableCellProtocolPAAE7rowSpanSivp">rowSpan</a></span> <span class="nv">row_span</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n"><a href="../Protocols/TableCellProtocol.html#/s:3Atk17TableCellProtocolPAAE10columnSpanSivp">columnSpan</a></span> <span class="nv">column_span</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+<span class="kd">func</span> <span class="nf">getRowColumnSpan</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">column</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">rowSpan</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">columnSpan</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="n">gint</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -1609,7 +1609,7 @@ on the object.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">func</span> <span class="nf">getRowHeaderCells</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">PtrArrayRef</span><span class="o">!</span></code></pre>
+<span class="kd">func</span> <span class="nf">getRowHeaderCells</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">PtrArrayRef</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -1711,7 +1711,7 @@ on the object.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="k">var</span> <span class="nv">columnHeaderCells</span><span class="p">:</span> <span class="kt">PtrArrayRef</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+<span class="k">var</span> <span class="nv">columnHeaderCells</span><span class="p">:</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">PtrArrayRef</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1779,7 +1779,7 @@ on the object.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="k">var</span> <span class="nv">rowHeaderCells</span><span class="p">:</span> <span class="kt">PtrArrayRef</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+<span class="k">var</span> <span class="nv">rowHeaderCells</span><span class="p">:</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">PtrArrayRef</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1865,7 +1865,7 @@ on the object.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

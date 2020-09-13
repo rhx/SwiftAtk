@@ -115,7 +115,7 @@ public extension StreamableContentRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -321,8 +321,8 @@ public extension StreamableContentProtocol {
     }
 
     /// Gets the content in the specified mime type.
-    @inlinable func getStream(mimeType mime_type: UnsafePointer<gchar>!) -> IOChannelRef! {
-        let rv = IOChannelRef(gconstpointer: gconstpointer(atk_streamable_content_get_stream(streamable_content_ptr, mime_type)))
+    @inlinable func getStream(mimeType: UnsafePointer<gchar>!) -> GLib.IOChannelRef! {
+        let rv = GLib.IOChannelRef(atk_streamable_content_get_stream(streamable_content_ptr, mimeType))
         return rv
     }
 
@@ -334,8 +334,8 @@ public extension StreamableContentProtocol {
     /// 
     /// Note that it is possible for get_uri to return NULL but for
     /// get_stream to work nonetheless, since not all GIOChannels connect to URIs.
-    @inlinable func getUri(mimeType mime_type: UnsafePointer<gchar>!) -> String! {
-        let rv = atk_streamable_content_get_uri(streamable_content_ptr, mime_type).map({ String(cString: $0) })
+    @inlinable func getUri(mimeType: UnsafePointer<gchar>!) -> String! {
+        let rv = atk_streamable_content_get_uri(streamable_content_ptr, mimeType).map({ String(cString: $0) })
         return rv
     }
     /// Gets the number of mime types supported by this object.
@@ -488,7 +488,7 @@ public extension TableRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 

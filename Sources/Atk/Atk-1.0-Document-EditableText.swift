@@ -97,7 +97,7 @@ public extension DocumentRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -337,8 +337,8 @@ public extension DocumentProtocol {
     @inlinable var document_ptr: UnsafeMutablePointer<AtkDocument>! { return ptr?.assumingMemoryBound(to: AtkDocument.self) }
 
     /// Retrieves the value of the given `attribute_name` inside `document`.
-    @inlinable func getAttributeValue(attributeName attribute_name: UnsafePointer<gchar>!) -> String! {
-        let rv = atk_document_get_attribute_value(document_ptr, attribute_name).map({ String(cString: $0) })
+    @inlinable func getAttributeValue(attributeName: UnsafePointer<gchar>!) -> String! {
+        let rv = atk_document_get_attribute_value(document_ptr, attributeName).map({ String(cString: $0) })
         return rv
     }
 
@@ -398,8 +398,8 @@ public extension DocumentProtocol {
     }
 
     /// Sets the value for the given `attribute_name` inside `document`.
-    @inlinable func setAttributeValue(attributeName attribute_name: UnsafePointer<gchar>!, attributeValue attribute_value: UnsafePointer<gchar>!) -> Bool {
-        let rv = ((atk_document_set_attribute_value(document_ptr, attribute_name, attribute_value)) != 0)
+    @inlinable func setAttributeValue(attributeName: UnsafePointer<gchar>!, attributeValue: UnsafePointer<gchar>!) -> Bool {
+        let rv = ((atk_document_set_attribute_value(document_ptr, attributeName, attributeValue)) != 0)
         return rv
     }
     /// Gets an AtkAttributeSet which describes document-wide
@@ -597,7 +597,7 @@ public extension EditableTextRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -784,21 +784,21 @@ public extension EditableTextProtocol {
 
     /// Copy text from `start_pos` up to, but not including `end_pos`
     /// to the clipboard.
-    @inlinable func copyText(startPos start_pos: Int, endPos end_pos: Int) {
-        atk_editable_text_copy_text(editable_text_ptr, gint(start_pos), gint(end_pos))
+    @inlinable func copyText(startPos: Int, endPos: Int) {
+        atk_editable_text_copy_text(editable_text_ptr, gint(startPos), gint(endPos))
     
     }
 
     /// Copy text from `start_pos` up to, but not including `end_pos`
     /// to the clipboard and then delete from the widget.
-    @inlinable func cutText(startPos start_pos: Int, endPos end_pos: Int) {
-        atk_editable_text_cut_text(editable_text_ptr, gint(start_pos), gint(end_pos))
+    @inlinable func cutText(startPos: Int, endPos: Int) {
+        atk_editable_text_cut_text(editable_text_ptr, gint(startPos), gint(endPos))
     
     }
 
     /// Delete text `start_pos` up to, but not including `end_pos`.
-    @inlinable func deleteText(startPos start_pos: Int, endPos end_pos: Int) {
-        atk_editable_text_delete_text(editable_text_ptr, gint(start_pos), gint(end_pos))
+    @inlinable func deleteText(startPos: Int, endPos: Int) {
+        atk_editable_text_delete_text(editable_text_ptr, gint(startPos), gint(endPos))
     
     }
 
@@ -818,8 +818,8 @@ public extension EditableTextProtocol {
     /// macros (such as `ATK_ATTRIBUTE_LEFT_MARGIN`) for examples of attributes
     /// that can be set. Note that other attributes that do not have corresponding
     /// ATK_ATTRIBUTE macros may also be set for certain text widgets.
-    @inlinable func setRunAttributes(attribSet attrib_set: UnsafeMutablePointer<AtkAttributeSet>!, startOffset start_offset: Int, endOffset end_offset: Int) -> Bool {
-        let rv = ((atk_editable_text_set_run_attributes(editable_text_ptr, attrib_set, gint(start_offset), gint(end_offset))) != 0)
+    @inlinable func setRunAttributes(attribSet: UnsafeMutablePointer<AtkAttributeSet>!, startOffset: Int, endOffset: Int) -> Bool {
+        let rv = ((atk_editable_text_set_run_attributes(editable_text_ptr, attribSet, gint(startOffset), gint(endOffset))) != 0)
         return rv
     }
 

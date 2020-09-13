@@ -89,7 +89,7 @@ public extension PropertyValuesRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PropertyValuesProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -402,7 +402,7 @@ public extension RangeRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RangeProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -419,8 +419,8 @@ public extension RangeRef {
     }
 
         /// Creates a new `AtkRange`.
-    @inlinable init( lower_limit: Double, upperLimit upper_limit: Double, description: UnsafePointer<gchar>!) {
-        let rv = atk_range_new(gdouble(lower_limit), gdouble(upper_limit), description)
+    @inlinable init( lowerLimit: Double, upperLimit: Double, description: UnsafePointer<gchar>!) {
+        let rv = atk_range_new(gdouble(lowerLimit), gdouble(upperLimit), description)
         ptr = UnsafeMutableRawPointer(rv)
     }
 }
@@ -575,8 +575,8 @@ open class Range: RangeProtocol {
     }
 
     /// Creates a new `AtkRange`.
-    @inlinable public init( lower_limit: Double, upperLimit upper_limit: Double, description: UnsafePointer<gchar>!) {
-        let rv = atk_range_new(gdouble(lower_limit), gdouble(upper_limit), description)
+    @inlinable public init( lowerLimit: Double, upperLimit: Double, description: UnsafePointer<gchar>!) {
+        let rv = atk_range_new(gdouble(lowerLimit), gdouble(upperLimit), description)
         ptr = UnsafeMutableRawPointer(rv)
     }
 

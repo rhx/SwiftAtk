@@ -15,7 +15,7 @@ import GLibObject
 /// `atk_registry_set_factory_type()` is normally called to store in the
 /// registry the factory type to be used to create an accessible of a
 /// particular GType.
-public protocol ObjectFactoryProtocol: ObjectProtocol {
+public protocol ObjectFactoryProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `AtkObjectFactory` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -93,7 +93,7 @@ public extension ObjectFactoryRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -120,7 +120,7 @@ public extension ObjectFactoryRef {
 /// `atk_registry_set_factory_type()` is normally called to store in the
 /// registry the factory type to be used to create an accessible of a
 /// particular GType.
-open class ObjectFactory: Object, ObjectFactoryProtocol {
+open class ObjectFactory: GLibObject.Object, ObjectFactoryProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `ObjectFactory` instance.
@@ -315,7 +315,7 @@ public extension ObjectFactoryProtocol {
 
     /// Provides an `AtkObject` that implements an accessibility interface
     /// on behalf of `obj`
-    @inlinable func createAccessible<ObjectT: ObjectProtocol>(obj: ObjectT) -> ObjectRef! {
+    @inlinable func createAccessible<ObjectT: GLibObject.ObjectProtocol>(obj: ObjectT) -> ObjectRef! {
         let rv = ObjectRef(gconstpointer: gconstpointer(atk_object_factory_create_accessible(object_factory_ptr, obj.object_ptr)))
         return rv
     }
@@ -437,7 +437,7 @@ public extension PlugRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -656,7 +656,7 @@ public extension PlugProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: PlugPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: GLibObject.ObjectProtocol>(property source_property: PlugPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)

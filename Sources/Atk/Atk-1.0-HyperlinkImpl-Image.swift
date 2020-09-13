@@ -139,7 +139,7 @@ public extension HyperlinkImplRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -458,7 +458,7 @@ public extension HypertextRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -677,15 +677,15 @@ public extension HypertextProtocol {
 
     /// Gets the link in this hypertext document at index
     /// `link_index`
-    @inlinable func getLink(linkIndex link_index: Int) -> HyperlinkRef! {
-        let rv = HyperlinkRef(gconstpointer: gconstpointer(atk_hypertext_get_link(hypertext_ptr, gint(link_index))))
+    @inlinable func getLink(linkIndex: Int) -> HyperlinkRef! {
+        let rv = HyperlinkRef(gconstpointer: gconstpointer(atk_hypertext_get_link(hypertext_ptr, gint(linkIndex))))
         return rv
     }
 
     /// Gets the index into the array of hyperlinks that is associated with
     /// the character specified by `char_index`.
-    @inlinable func getLinkIndex(charIndex char_index: Int) -> Int {
-        let rv = Int(atk_hypertext_get_link_index(hypertext_ptr, gint(char_index)))
+    @inlinable func getLinkIndex(charIndex: Int) -> Int {
+        let rv = Int(atk_hypertext_get_link_index(hypertext_ptr, gint(charIndex)))
         return rv
     }
 
@@ -814,7 +814,7 @@ public extension ImageRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1020,8 +1020,8 @@ public extension ImageProtocol {
     /// 
     /// If the position can not be obtained (e.g. missing support), x and y are set
     /// to -1.
-    @inlinable func getImagePosition(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, coordType coord_type: AtkCoordType) {
-        atk_image_get_image_position(image_ptr, x, y, coord_type)
+    @inlinable func getImagePosition(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, coordType: AtkCoordType) {
+        atk_image_get_image_position(image_ptr, x, y, coordType)
     
     }
 

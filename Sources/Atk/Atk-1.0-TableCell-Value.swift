@@ -93,7 +93,7 @@ public extension TableCellRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -306,7 +306,7 @@ public extension TableCellProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: TableCellPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: GLibObject.ObjectProtocol>(property source_property: TableCellPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
@@ -493,8 +493,8 @@ public extension TableCellProtocol {
     @inlinable var table_cell_ptr: UnsafeMutablePointer<AtkTableCell>! { return ptr?.assumingMemoryBound(to: AtkTableCell.self) }
 
     /// Returns the column headers as an array of cell accessibles.
-    @inlinable func getColumnHeaderCells() -> PtrArrayRef! {
-        let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_table_cell_get_column_header_cells(table_cell_ptr)))
+    @inlinable func getColumnHeaderCells() -> GLib.PtrArrayRef! {
+        let rv = GLib.PtrArrayRef(atk_table_cell_get_column_header_cells(table_cell_ptr))
         return rv
     }
 
@@ -515,14 +515,14 @@ public extension TableCellProtocol {
     /// Note: If the object does not implement this function, then, by default, atk
     /// will implement this function by calling get_row_span and get_column_span
     /// on the object.
-    @inlinable func getRowColumnSpan(row: UnsafeMutablePointer<gint>!, column: UnsafeMutablePointer<gint>!, rowSpan row_span: UnsafeMutablePointer<gint>!, columnSpan column_span: UnsafeMutablePointer<gint>!) -> Bool {
-        let rv = ((atk_table_cell_get_row_column_span(table_cell_ptr, row, column, row_span, column_span)) != 0)
+    @inlinable func getRowColumnSpan(row: UnsafeMutablePointer<gint>!, column: UnsafeMutablePointer<gint>!, rowSpan: UnsafeMutablePointer<gint>!, columnSpan: UnsafeMutablePointer<gint>!) -> Bool {
+        let rv = ((atk_table_cell_get_row_column_span(table_cell_ptr, row, column, rowSpan, columnSpan)) != 0)
         return rv
     }
 
     /// Returns the row headers as an array of cell accessibles.
-    @inlinable func getRowHeaderCells() -> PtrArrayRef! {
-        let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_table_cell_get_row_header_cells(table_cell_ptr)))
+    @inlinable func getRowHeaderCells() -> GLib.PtrArrayRef! {
+        let rv = GLib.PtrArrayRef(atk_table_cell_get_row_header_cells(table_cell_ptr))
         return rv
     }
 
@@ -538,10 +538,10 @@ public extension TableCellProtocol {
         return rv
     }
     /// Returns the column headers as an array of cell accessibles.
-    @inlinable var columnHeaderCells: PtrArrayRef! {
+    @inlinable var columnHeaderCells: GLib.PtrArrayRef! {
         /// Returns the column headers as an array of cell accessibles.
         get {
-            let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_table_cell_get_column_header_cells(table_cell_ptr)))
+            let rv = GLib.PtrArrayRef(atk_table_cell_get_column_header_cells(table_cell_ptr))
             return rv
         }
     }
@@ -556,10 +556,10 @@ public extension TableCellProtocol {
     }
 
     /// Returns the row headers as an array of cell accessibles.
-    @inlinable var rowHeaderCells: PtrArrayRef! {
+    @inlinable var rowHeaderCells: GLib.PtrArrayRef! {
         /// Returns the row headers as an array of cell accessibles.
         get {
-            let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_table_cell_get_row_header_cells(table_cell_ptr)))
+            let rv = GLib.PtrArrayRef(atk_table_cell_get_row_header_cells(table_cell_ptr))
             return rv
         }
     }
@@ -705,7 +705,7 @@ public extension TextRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -961,14 +961,14 @@ public extension TextProtocol {
     @inlinable var text_ptr: UnsafeMutablePointer<AtkText>! { return ptr?.assumingMemoryBound(to: AtkText.self) }
 
     /// Adds a selection bounded by the specified offsets.
-    @inlinable func addSelection(startOffset start_offset: Int, endOffset end_offset: Int) -> Bool {
-        let rv = ((atk_text_add_selection(text_ptr, gint(start_offset), gint(end_offset))) != 0)
+    @inlinable func addSelection(startOffset: Int, endOffset: Int) -> Bool {
+        let rv = ((atk_text_add_selection(text_ptr, gint(startOffset), gint(endOffset))) != 0)
         return rv
     }
 
     /// Get the ranges of text in the specified bounding box.
-    @inlinable func getBoundedRanges<TextRectangleT: TextRectangleProtocol>(rect: TextRectangleT, coordType coord_type: AtkCoordType, xClipType x_clip_type: AtkTextClipType, yClipType y_clip_type: AtkTextClipType) -> UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>?>! {
-        let rv = atk_text_get_bounded_ranges(text_ptr, rect._ptr, coord_type, x_clip_type, y_clip_type)
+    @inlinable func getBoundedRanges<TextRectangleT: TextRectangleProtocol>(rect: TextRectangleT, coordType: AtkCoordType, xClipType: AtkTextClipType, yClipType: AtkTextClipType) -> UnsafeMutablePointer<UnsafeMutablePointer<AtkTextRange>?>! {
+        let rv = atk_text_get_bounded_ranges(text_ptr, rect._ptr, coordType, xClipType, yClipType)
         return rv
     }
 
@@ -1027,8 +1027,8 @@ public extension TextProtocol {
     /// 
     /// If the extents can not be obtained (e.g. or missing support), the rectangle
     /// fields are set to -1.
-    @inlinable func getRangeExtents<TextRectangleT: TextRectangleProtocol>(startOffset start_offset: Int, endOffset end_offset: Int, coordType coord_type: AtkCoordType, rect: TextRectangleT) {
-        atk_text_get_range_extents(text_ptr, gint(start_offset), gint(end_offset), coord_type, rect._ptr)
+    @inlinable func getRangeExtents<TextRectangleT: TextRectangleProtocol>(startOffset: Int, endOffset: Int, coordType: AtkCoordType, rect: TextRectangleT) {
+        atk_text_get_range_extents(text_ptr, gint(startOffset), gint(endOffset), coordType, rect._ptr)
     
     }
 
@@ -1039,14 +1039,14 @@ public extension TextProtocol {
     /// after the range.  See the enum AtkTextAttribute for types of text
     /// attributes that can be returned. Note that other attributes may also be
     /// returned.
-    @inlinable func getRunAttributes(offset: Int, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> UnsafeMutablePointer<AtkAttributeSet>! {
-        let rv = atk_text_get_run_attributes(text_ptr, gint(offset), start_offset, end_offset)
+    @inlinable func getRunAttributes(offset: Int, startOffset: UnsafeMutablePointer<gint>!, endOffset: UnsafeMutablePointer<gint>!) -> UnsafeMutablePointer<AtkAttributeSet>! {
+        let rv = atk_text_get_run_attributes(text_ptr, gint(offset), startOffset, endOffset)
         return rv
     }
 
     /// Gets the text from the specified selection.
-    @inlinable func getSelection(selectionNum selection_num: Int, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
-        let rv = atk_text_get_selection(text_ptr, gint(selection_num), start_offset, end_offset).map({ String(cString: $0) })
+    @inlinable func getSelection(selectionNum: Int, startOffset: UnsafeMutablePointer<gint>!, endOffset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_selection(text_ptr, gint(selectionNum), startOffset, endOffset).map({ String(cString: $0) })
         return rv
     }
 
@@ -1080,14 +1080,14 @@ public extension TextProtocol {
     /// If `granularity` is ATK_TEXT_GRANULARITY_PARAGRAPH the returned string
     /// is from the start of the paragraph at or before the offset to the start
     /// of the following paragraph after the offset.
-    @inlinable func getStringAt(offset: Int, granularity: AtkTextGranularity, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
-        let rv = atk_text_get_string_at_offset(text_ptr, gint(offset), granularity, start_offset, end_offset).map({ String(cString: $0) })
+    @inlinable func getStringAt(offset: Int, granularity: AtkTextGranularity, startOffset: UnsafeMutablePointer<gint>!, endOffset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_string_at_offset(text_ptr, gint(offset), granularity, startOffset, endOffset).map({ String(cString: $0) })
         return rv
     }
 
     /// Gets the specified text.
-    @inlinable func getText(startOffset start_offset: Int, endOffset end_offset: Int) -> String! {
-        let rv = atk_text_get_text(text_ptr, gint(start_offset), gint(end_offset)).map({ String(cString: $0) })
+    @inlinable func getText(startOffset: Int, endOffset: Int) -> String! {
+        let rv = atk_text_get_text(text_ptr, gint(startOffset), gint(endOffset)).map({ String(cString: $0) })
         return rv
     }
 
@@ -1095,8 +1095,8 @@ public extension TextProtocol {
     ///
     /// **get_text_after_offset is deprecated:**
     /// Please use atk_text_get_string_at_offset() instead.
-    @available(*, deprecated) @inlinable func getTextAfter(offset: Int, boundaryType boundary_type: AtkTextBoundary, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
-        let rv = atk_text_get_text_after_offset(text_ptr, gint(offset), boundary_type, start_offset, end_offset).map({ String(cString: $0) })
+    @available(*, deprecated) @inlinable func getTextAfter(offset: Int, boundaryType: AtkTextBoundary, startOffset: UnsafeMutablePointer<gint>!, endOffset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_text_after_offset(text_ptr, gint(offset), boundaryType, startOffset, endOffset).map({ String(cString: $0) })
         return rv
     }
 
@@ -1128,8 +1128,8 @@ public extension TextProtocol {
     /// **get_text_at_offset is deprecated:**
     /// This method is deprecated since ATK version
     /// 2.9.4. Please use atk_text_get_string_at_offset() instead.
-    @available(*, deprecated) @inlinable func getTextAt(offset: Int, boundaryType boundary_type: AtkTextBoundary, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
-        let rv = atk_text_get_text_at_offset(text_ptr, gint(offset), boundary_type, start_offset, end_offset).map({ String(cString: $0) })
+    @available(*, deprecated) @inlinable func getTextAt(offset: Int, boundaryType: AtkTextBoundary, startOffset: UnsafeMutablePointer<gint>!, endOffset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_text_at_offset(text_ptr, gint(offset), boundaryType, startOffset, endOffset).map({ String(cString: $0) })
         return rv
     }
 
@@ -1137,27 +1137,27 @@ public extension TextProtocol {
     ///
     /// **get_text_before_offset is deprecated:**
     /// Please use atk_text_get_string_at_offset() instead.
-    @available(*, deprecated) @inlinable func getTextBefore(offset: Int, boundaryType boundary_type: AtkTextBoundary, startOffset start_offset: UnsafeMutablePointer<gint>!, endOffset end_offset: UnsafeMutablePointer<gint>!) -> String! {
-        let rv = atk_text_get_text_before_offset(text_ptr, gint(offset), boundary_type, start_offset, end_offset).map({ String(cString: $0) })
+    @available(*, deprecated) @inlinable func getTextBefore(offset: Int, boundaryType: AtkTextBoundary, startOffset: UnsafeMutablePointer<gint>!, endOffset: UnsafeMutablePointer<gint>!) -> String! {
+        let rv = atk_text_get_text_before_offset(text_ptr, gint(offset), boundaryType, startOffset, endOffset).map({ String(cString: $0) })
         return rv
     }
 
     /// Removes the specified selection.
-    @inlinable func removeSelection(selectionNum selection_num: Int) -> Bool {
-        let rv = ((atk_text_remove_selection(text_ptr, gint(selection_num))) != 0)
+    @inlinable func removeSelection(selectionNum: Int) -> Bool {
+        let rv = ((atk_text_remove_selection(text_ptr, gint(selectionNum))) != 0)
         return rv
     }
 
     /// Makes a substring of `text` visible on the screen by scrolling all necessary parents.
-    @inlinable func scrollSubstringTo(startOffset start_offset: Int, endOffset end_offset: Int, type: AtkScrollType) -> Bool {
-        let rv = ((atk_text_scroll_substring_to(text_ptr, gint(start_offset), gint(end_offset), type)) != 0)
+    @inlinable func scrollSubstringTo(startOffset: Int, endOffset: Int, type: AtkScrollType) -> Bool {
+        let rv = ((atk_text_scroll_substring_to(text_ptr, gint(startOffset), gint(endOffset), type)) != 0)
         return rv
     }
 
     /// Move the top-left of a substring of `text` to a given position of the screen
     /// by scrolling all necessary parents.
-    @inlinable func scrollSubstringToPoint(startOffset start_offset: Int, endOffset end_offset: Int, coords: AtkCoordType, x: Int, y: Int) -> Bool {
-        let rv = ((atk_text_scroll_substring_to_point(text_ptr, gint(start_offset), gint(end_offset), coords, gint(x), gint(y))) != 0)
+    @inlinable func scrollSubstringToPoint(startOffset: Int, endOffset: Int, coords: AtkCoordType, x: Int, y: Int) -> Bool {
+        let rv = ((atk_text_scroll_substring_to_point(text_ptr, gint(startOffset), gint(endOffset), coords, gint(x), gint(y))) != 0)
         return rv
     }
 
@@ -1184,8 +1184,8 @@ public extension TextProtocol {
     }
 
     /// Changes the start and end offset of the specified selection.
-    @inlinable func setSelection(selectionNum selection_num: Int, startOffset start_offset: Int, endOffset end_offset: Int) -> Bool {
-        let rv = ((atk_text_set_selection(text_ptr, gint(selection_num), gint(start_offset), gint(end_offset))) != 0)
+    @inlinable func setSelection(selectionNum: Int, startOffset: Int, endOffset: Int) -> Bool {
+        let rv = ((atk_text_set_selection(text_ptr, gint(selectionNum), gint(startOffset), gint(endOffset))) != 0)
         return rv
     }
     /// Gets the offset of the position of the caret (cursor).
@@ -1615,7 +1615,7 @@ public extension ValueRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -2029,8 +2029,8 @@ public extension ValueProtocol {
 
     /// Gets the list of subranges defined for this object. See `AtkValue`
     /// introduction for examples of subranges and when to expose them.
-    @inlinable func getSubRanges() -> SListRef! {
-        let rv = SListRef(gconstpointer: gconstpointer(atk_value_get_sub_ranges(value_ptr)))
+    @inlinable func getSubRanges() -> GLib.SListRef! {
+        let rv = GLib.SListRef(atk_value_get_sub_ranges(value_ptr))
         return rv
     }
 
@@ -2065,8 +2065,8 @@ public extension ValueProtocol {
     /// decide it, and returned TRUE in any case. For that reason it is not
     /// required anymore to return if the value was properly assigned or
     /// not.
-    @inlinable func setValue(newValue new_value: gdouble) {
-        atk_value_set_value(value_ptr, new_value)
+    @inlinable func setValue(newValue: gdouble) {
+        atk_value_set_value(value_ptr, newValue)
     
     }
     /// Gets the minimum increment by which the value of this object may be
@@ -2095,11 +2095,11 @@ public extension ValueProtocol {
 
     /// Gets the list of subranges defined for this object. See `AtkValue`
     /// introduction for examples of subranges and when to expose them.
-    @inlinable var subRanges: SListRef! {
+    @inlinable var subRanges: GLib.SListRef! {
         /// Gets the list of subranges defined for this object. See `AtkValue`
         /// introduction for examples of subranges and when to expose them.
         get {
-            let rv = SListRef(gconstpointer: gconstpointer(atk_value_get_sub_ranges(value_ptr)))
+            let rv = GLib.SListRef(atk_value_get_sub_ranges(value_ptr))
             return rv
         }
     }

@@ -13,7 +13,7 @@ import GLibObject
 /// An AtkStateSet is a read-only representation of the full set of `AtkStates`
 /// that apply to an object at a given time. This set is not meant to be
 /// modified, but rather created when `atk_object_ref_state_set``()` is called.
-public protocol StateSetProtocol: ObjectProtocol {
+public protocol StateSetProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `AtkStateSet` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -89,7 +89,7 @@ public extension StateSetRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StateSetProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -119,7 +119,7 @@ public extension StateSetRef {
 /// An AtkStateSet is a read-only representation of the full set of `AtkStates`
 /// that apply to an object at a given time. This set is not meant to be
 /// modified, but rather created when `atk_object_ref_state_set``()` is called.
-open class StateSet: Object, StateSetProtocol {
+open class StateSet: GLibObject.Object, StateSetProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `StateSet` instance.
@@ -335,15 +335,15 @@ public extension StateSetProtocol {
     /// be used to add states to a newly-created set which will then be returned by
     /// `atk_object_ref_state_set`. It should not be used to modify the existing state
     /// of an object. See also `atk_object_notify_state_change`.
-    @inlinable func addStates(types: UnsafeMutablePointer<AtkStateType>!, nTypes n_types: Int) {
-        atk_state_set_add_states(state_set_ptr, types, gint(n_types))
+    @inlinable func addStates(types: UnsafeMutablePointer<AtkStateType>!, nTypes: Int) {
+        atk_state_set_add_states(state_set_ptr, types, gint(nTypes))
     
     }
 
     /// Constructs the intersection of the two sets, returning `nil` if the
     /// intersection is empty.
-    @inlinable func andSets<StateSetT: StateSetProtocol>(compareSet compare_set: StateSetT) -> StateSetRef! {
-        guard let rv = StateSetRef(gconstpointer: gconstpointer(atk_state_set_and_sets(state_set_ptr, compare_set.state_set_ptr))) else { return nil }
+    @inlinable func andSets<StateSetT: StateSetProtocol>(compareSet: StateSetT) -> StateSetRef! {
+        guard let rv = StateSetRef(gconstpointer: gconstpointer(atk_state_set_and_sets(state_set_ptr, compareSet.state_set_ptr))) else { return nil }
         return rv
     }
 
@@ -361,14 +361,14 @@ public extension StateSetProtocol {
 
     /// Checks whether the states for all the specified types are in the
     /// specified set.
-    @inlinable func containsStates(types: UnsafeMutablePointer<AtkStateType>!, nTypes n_types: Int) -> Bool {
-        let rv = ((atk_state_set_contains_states(state_set_ptr, types, gint(n_types))) != 0)
+    @inlinable func containsStates(types: UnsafeMutablePointer<AtkStateType>!, nTypes: Int) -> Bool {
+        let rv = ((atk_state_set_contains_states(state_set_ptr, types, gint(nTypes))) != 0)
         return rv
     }
 
     /// Constructs the union of the two sets.
-    @inlinable func orSets<StateSetT: StateSetProtocol>(compareSet compare_set: StateSetT) -> StateSetRef! {
-        guard let rv = StateSetRef(gconstpointer: gconstpointer(atk_state_set_or_sets(state_set_ptr, compare_set.state_set_ptr))) else { return nil }
+    @inlinable func orSets<StateSetT: StateSetProtocol>(compareSet: StateSetT) -> StateSetRef! {
+        guard let rv = StateSetRef(gconstpointer: gconstpointer(atk_state_set_or_sets(state_set_ptr, compareSet.state_set_ptr))) else { return nil }
         return rv
     }
 
@@ -386,8 +386,8 @@ public extension StateSetProtocol {
     /// Constructs the exclusive-or of the two sets, returning `nil` is empty.
     /// The set returned by this operation contains the states in exactly
     /// one of the two sets.
-    @inlinable func xorSets<StateSetT: StateSetProtocol>(compareSet compare_set: StateSetT) -> StateSetRef! {
-        guard let rv = StateSetRef(gconstpointer: gconstpointer(atk_state_set_xor_sets(state_set_ptr, compare_set.state_set_ptr))) else { return nil }
+    @inlinable func xorSets<StateSetT: StateSetProtocol>(compareSet: StateSetT) -> StateSetRef! {
+        guard let rv = StateSetRef(gconstpointer: gconstpointer(atk_state_set_xor_sets(state_set_ptr, compareSet.state_set_ptr))) else { return nil }
         return rv
     }
     /// Checks whether the state set is empty, i.e. has no states set.
@@ -421,7 +421,7 @@ public extension StateSetProtocol {
 /// registration of various types, and obtaining the 'root' accessible
 /// of a process and information about the current ATK implementation
 /// and toolkit version.
-public protocol UtilProtocol: ObjectProtocol {
+public protocol UtilProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `AtkUtil` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -498,7 +498,7 @@ public extension UtilRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -524,7 +524,7 @@ public extension UtilRef {
 /// registration of various types, and obtaining the 'root' accessible
 /// of a process and information about the current ATK implementation
 /// and toolkit version.
-open class Util: Object, UtilProtocol {
+open class Util: GLibObject.Object, UtilProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Util` instance.

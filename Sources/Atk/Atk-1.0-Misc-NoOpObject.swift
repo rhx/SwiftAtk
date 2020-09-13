@@ -12,7 +12,7 @@ import GLibObject
 ///
 /// A set of utility functions for thread locking. This interface and
 /// all his related methods are deprecated since 2.12.
-public protocol MiscProtocol: ObjectProtocol {
+public protocol MiscProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `AtkMisc` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -87,7 +87,7 @@ public extension MiscRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MiscProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -119,7 +119,7 @@ public extension MiscRef {
 ///
 /// A set of utility functions for thread locking. This interface and
 /// all his related methods are deprecated since 2.12.
-open class Misc: Object, MiscProtocol {
+open class Misc: GLibObject.Object, MiscProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Misc` instance.
@@ -448,7 +448,7 @@ public extension NoOpObjectRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -466,7 +466,7 @@ public extension NoOpObjectRef {
 
         /// Provides a default (non-functioning stub) `AtkObject`.
     /// Application maintainers should not use this method.
-    @inlinable init<ObjectT: ObjectProtocol>( obj: ObjectT) {
+    @inlinable init<ObjectT: GLibObject.ObjectProtocol>( obj: ObjectT) {
         let rv = atk_no_op_object_new(obj.object_ptr)
         ptr = UnsafeMutableRawPointer(rv)
     }
@@ -607,7 +607,7 @@ open class NoOpObject: Object, NoOpObjectProtocol {
 
     /// Provides a default (non-functioning stub) `AtkObject`.
     /// Application maintainers should not use this method.
-    @inlinable public init<ObjectT: ObjectProtocol>( obj: ObjectT) {
+    @inlinable public init<ObjectT: GLibObject.ObjectProtocol>( obj: ObjectT) {
         let rv = atk_no_op_object_new(obj.object_ptr)
         super.init(gpointer: (rv))
     }
@@ -672,7 +672,7 @@ public extension NoOpObjectProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: NoOpObjectPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: GLibObject.ObjectProtocol>(property source_property: NoOpObjectPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)

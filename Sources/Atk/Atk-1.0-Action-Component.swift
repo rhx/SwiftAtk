@@ -117,7 +117,7 @@ public extension ActionRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -505,7 +505,7 @@ public extension ComponentRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -740,8 +740,8 @@ public extension ComponentProtocol {
     /// Toolkit implementor note: ATK provides a default implementation for
     /// this virtual method. In general there are little reason to
     /// re-implement it.
-    @inlinable func contains(x: Int, y: Int, coordType coord_type: AtkCoordType) -> Bool {
-        let rv = ((atk_component_contains(component_ptr, gint(x), gint(y), coord_type)) != 0)
+    @inlinable func contains(x: Int, y: Int, coordType: AtkCoordType) -> Bool {
+        let rv = ((atk_component_contains(component_ptr, gint(x), gint(y), coordType)) != 0)
         return rv
     }
 
@@ -757,8 +757,8 @@ public extension ComponentProtocol {
     /// 
     /// If the extent can not be obtained (e.g. a non-embedded plug or missing
     /// support), all of x, y, width, height are set to -1.
-    @inlinable func getExtents(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil, coordType coord_type: AtkCoordType) {
-        atk_component_get_extents(component_ptr, x, y, width, height, coord_type)
+    @inlinable func getExtents(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, width: UnsafeMutablePointer<gint>! = nil, height: UnsafeMutablePointer<gint>! = nil, coordType: AtkCoordType) {
+        atk_component_get_extents(component_ptr, x, y, width, height, coordType)
     
     }
 
@@ -783,8 +783,8 @@ public extension ComponentProtocol {
     ///
     /// **get_position is deprecated:**
     /// Since 2.12. Use atk_component_get_extents() instead.
-    @available(*, deprecated) @inlinable func getPosition(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, coordType coord_type: AtkCoordType) {
-        atk_component_get_position(component_ptr, x, y, coord_type)
+    @available(*, deprecated) @inlinable func getPosition(x: UnsafeMutablePointer<gint>! = nil, y: UnsafeMutablePointer<gint>! = nil, coordType: AtkCoordType) {
+        atk_component_get_position(component_ptr, x, y, coordType)
     
     }
 
@@ -808,8 +808,8 @@ public extension ComponentProtocol {
 
     /// Gets a reference to the accessible child, if one exists, at the
     /// coordinate point specified by `x` and `y`.
-    @inlinable func refAccessibleAtPoint(x: Int, y: Int, coordType coord_type: AtkCoordType) -> ObjectRef! {
-        let rv = ObjectRef(gconstpointer: gconstpointer(atk_component_ref_accessible_at_point(component_ptr, gint(x), gint(y), coord_type)))
+    @inlinable func refAccessibleAtPoint(x: Int, y: Int, coordType: AtkCoordType) -> ObjectRef! {
+        let rv = ObjectRef(gconstpointer: gconstpointer(atk_component_ref_accessible_at_point(component_ptr, gint(x), gint(y), coordType)))
         return rv
     }
 
@@ -820,8 +820,8 @@ public extension ComponentProtocol {
     /// **remove_focus_handler is deprecated:**
     /// If you need to track when an object gains or
     /// lose the focus, use the #AtkObject::state-change "focused" notification instead.
-    @available(*, deprecated) @inlinable func removeFocusHandler(handlerId handler_id: Int) {
-        atk_component_remove_focus_handler(component_ptr, guint(handler_id))
+    @available(*, deprecated) @inlinable func removeFocusHandler(handlerId: Int) {
+        atk_component_remove_focus_handler(component_ptr, guint(handlerId))
     
     }
 
@@ -843,8 +843,8 @@ public extension ComponentProtocol {
     }
 
     /// Sets the extents of `component`.
-    @inlinable func setExtents(x: Int, y: Int, width: Int, height: Int, coordType coord_type: AtkCoordType) -> Bool {
-        let rv = ((atk_component_set_extents(component_ptr, gint(x), gint(y), gint(width), gint(height), coord_type)) != 0)
+    @inlinable func setExtents(x: Int, y: Int, width: Int, height: Int, coordType: AtkCoordType) -> Bool {
+        let rv = ((atk_component_set_extents(component_ptr, gint(x), gint(y), gint(width), gint(height), coordType)) != 0)
         return rv
     }
 
@@ -852,8 +852,8 @@ public extension ComponentProtocol {
     /// 
     /// Contrary to atk_component_scroll_to, this does not trigger any scrolling,
     /// this just moves `component` in its parent.
-    @inlinable func setPosition(x: Int, y: Int, coordType coord_type: AtkCoordType) -> Bool {
-        let rv = ((atk_component_set_position(component_ptr, gint(x), gint(y), coord_type)) != 0)
+    @inlinable func setPosition(x: Int, y: Int, coordType: AtkCoordType) -> Bool {
+        let rv = ((atk_component_set_position(component_ptr, gint(x), gint(y), coordType)) != 0)
         return rv
     }
 

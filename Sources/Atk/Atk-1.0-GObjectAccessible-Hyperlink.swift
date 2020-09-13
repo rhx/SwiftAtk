@@ -91,7 +91,7 @@ public extension GObjectAccessibleRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GObjectAccessibleProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -108,7 +108,7 @@ public extension GObjectAccessibleRef {
     }
 
         /// Gets the accessible object for the specified `obj`.
-    @inlinable static func for_<ObjectT: ObjectProtocol>(object obj: ObjectT) -> ObjectRef! {
+    @inlinable static func for_<ObjectT: GLibObject.ObjectProtocol>(object obj: ObjectT) -> ObjectRef! {
         guard let rv = ObjectRef(gconstpointer: gconstpointer(atk_gobject_accessible_for_object(obj.object_ptr))) else { return nil }
         return rv
     }
@@ -249,7 +249,7 @@ open class GObjectAccessible: Object, GObjectAccessibleProtocol {
 
 
     /// Gets the accessible object for the specified `obj`.
-    @inlinable public static func for_<ObjectT: ObjectProtocol>(object obj: ObjectT) -> Object! {
+    @inlinable public static func for_<ObjectT: GLibObject.ObjectProtocol>(object obj: ObjectT) -> Object! {
         guard let rv = Object(gconstpointer: gconstpointer(atk_gobject_accessible_for_object(obj.object_ptr))) else { return nil }
         return rv
     }
@@ -313,7 +313,7 @@ public extension GObjectAccessibleProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: GObjectAccessiblePropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: GLibObject.ObjectProtocol>(property source_property: GObjectAccessiblePropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
@@ -500,15 +500,15 @@ public extension GObjectAccessibleProtocol {
     @inlinable var gobject_accessible_ptr: UnsafeMutablePointer<AtkGObjectAccessible>! { return ptr?.assumingMemoryBound(to: AtkGObjectAccessible.self) }
 
     /// Gets the GObject for which `obj` is the accessible object.
-    @inlinable func getObject() -> ObjectRef! {
-        guard let rv = ObjectRef(gconstpointer: gconstpointer(atk_gobject_accessible_get_object(gobject_accessible_ptr))) else { return nil }
+    @inlinable func getObject() -> GLibObject.ObjectRef! {
+        let rv = GLibObject.ObjectRef(atk_gobject_accessible_get_object(gobject_accessible_ptr))
         return rv
     }
     /// Gets the GObject for which `obj` is the accessible object.
-    @inlinable var object: ObjectRef! {
+    @inlinable var object: GLibObject.ObjectRef! {
         /// Gets the GObject for which `obj` is the accessible object.
         get {
-            guard let rv = ObjectRef(gconstpointer: gconstpointer(atk_gobject_accessible_get_object(gobject_accessible_ptr))) else { return nil }
+            let rv = GLibObject.ObjectRef(atk_gobject_accessible_get_object(gobject_accessible_ptr))
             return rv
         }
     }
@@ -537,7 +537,7 @@ public extension GObjectAccessibleProtocol {
 /// may also be used to refer to inline embedded content, since it
 /// allows specification of a start and end offset within the host
 /// AtkHypertext object.
-public protocol HyperlinkProtocol: ObjectProtocol, ActionProtocol {
+public protocol HyperlinkProtocol: GLibObject.ObjectProtocol, ActionProtocol {
         /// Untyped pointer to the underlying `AtkHyperlink` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -616,7 +616,7 @@ public extension HyperlinkRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -644,7 +644,7 @@ public extension HyperlinkRef {
 /// may also be used to refer to inline embedded content, since it
 /// allows specification of a start and end offset within the host
 /// AtkHypertext object.
-open class Hyperlink: Object, HyperlinkProtocol {
+open class Hyperlink: GLibObject.Object, HyperlinkProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Hyperlink` instance.
@@ -794,7 +794,7 @@ public extension HyperlinkProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: HyperlinkPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: GLibObject.ObjectProtocol>(property source_property: HyperlinkPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)

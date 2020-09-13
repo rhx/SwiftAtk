@@ -16,7 +16,7 @@ import GLibObject
 /// implementation classes with GObject classes via the
 /// atk_registry_set_factory_type call, passing the appropriate GType
 /// for application custom widget classes.
-public protocol RegistryProtocol: ObjectProtocol {
+public protocol RegistryProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `AtkRegistry` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -95,7 +95,7 @@ public extension RegistryRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RegistryProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -123,7 +123,7 @@ public extension RegistryRef {
 /// implementation classes with GObject classes via the
 /// atk_registry_set_factory_type call, passing the appropriate GType
 /// for application custom widget classes.
-open class Registry: Object, RegistryProtocol {
+open class Registry: GLibObject.Object, RegistryProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Registry` instance.
@@ -334,8 +334,8 @@ public extension RegistryProtocol {
     /// The associated `factory_type` will thereafter be responsible for
     /// the creation of new `AtkObject` implementations for instances
     /// appropriate for `type`.
-    @inlinable func setFactory(type: GType, factoryType factory_type: GType) {
-        atk_registry_set_factory_type(registry_ptr, type, factory_type)
+    @inlinable func setFactory(type: GType, factoryType: GType) {
+        atk_registry_set_factory_type(registry_ptr, type, factoryType)
     
     }
 
@@ -375,7 +375,7 @@ public extension RegistryProtocol {
 /// more other objects. The actual relations that an object has with
 /// other objects are defined as an AtkRelationSet, which is a set of
 /// AtkRelations.
-public protocol RelationProtocol: ObjectProtocol {
+public protocol RelationProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `AtkRelation` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -452,7 +452,7 @@ public extension RelationRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RelationProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -470,8 +470,8 @@ public extension RelationRef {
 
         /// Create a new relation for the specified key and the specified list
     /// of targets.  See also `atk_object_add_relationship()`.
-    @inlinable init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>?>!, nTargets n_targets: Int, relationship: AtkRelationType) {
-        let rv = atk_relation_new(targets, gint(n_targets), relationship)
+    @inlinable init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>?>!, nTargets: Int, relationship: AtkRelationType) {
+        let rv = atk_relation_new(targets, gint(nTargets), relationship)
         ptr = UnsafeMutableRawPointer(rv)
     }
 }
@@ -484,7 +484,7 @@ public extension RelationRef {
 /// more other objects. The actual relations that an object has with
 /// other objects are defined as an AtkRelationSet, which is a set of
 /// AtkRelations.
-open class Relation: Object, RelationProtocol {
+open class Relation: GLibObject.Object, RelationProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `Relation` instance.
@@ -611,8 +611,8 @@ open class Relation: Object, RelationProtocol {
 
     /// Create a new relation for the specified key and the specified list
     /// of targets.  See also `atk_object_add_relationship()`.
-    @inlinable public init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>?>!, nTargets n_targets: Int, relationship: AtkRelationType) {
-        let rv = atk_relation_new(targets, gint(n_targets), relationship)
+    @inlinable public init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>?>!, nTargets: Int, relationship: AtkRelationType) {
+        let rv = atk_relation_new(targets, gint(nTargets), relationship)
         super.init(gpointer: (rv))
     }
 
@@ -633,7 +633,7 @@ public extension RelationProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: RelationPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: GLibObject.ObjectProtocol>(property source_property: RelationPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
@@ -754,8 +754,8 @@ public extension RelationProtocol {
     }
 
     /// Gets the target list of `relation`
-    @inlinable func getTarget() -> PtrArrayRef! {
-        let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_relation_get_target(relation_ptr)))
+    @inlinable func getTarget() -> GLib.PtrArrayRef! {
+        let rv = GLib.PtrArrayRef(atk_relation_get_target(relation_ptr))
         return rv
     }
 
@@ -773,10 +773,10 @@ public extension RelationProtocol {
         }
     }
 
-    @inlinable var target: PtrArrayRef! {
+    @inlinable var target: GLib.PtrArrayRef! {
         /// Gets the target list of `relation`
         get {
-            let rv = PtrArrayRef(gconstpointer: gconstpointer(atk_relation_get_target(relation_ptr)))
+            let rv = GLib.PtrArrayRef(atk_relation_get_target(relation_ptr))
             return rv
         }
     }
@@ -821,7 +821,7 @@ public extension RelationProtocol {
 /// components (for instance within a radio-button group), or share
 /// content which "flows" between them, among other types of possible
 /// relationships.
-public protocol RelationSetProtocol: ObjectProtocol {
+public protocol RelationSetProtocol: GLibObject.ObjectProtocol {
         /// Untyped pointer to the underlying `AtkRelationSet` instance.
     var ptr: UnsafeMutableRawPointer! { get }
 
@@ -902,7 +902,7 @@ public extension RelationSetRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RelationSetProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -937,7 +937,7 @@ public extension RelationSetRef {
 /// components (for instance within a radio-button group), or share
 /// content which "flows" between them, among other types of possible
 /// relationships.
-open class RelationSet: Object, RelationSetProtocol {
+open class RelationSet: GLibObject.Object, RelationSetProtocol {
         /// Designated initialiser from the underlying `C` data type.
     /// This creates an instance without performing an unbalanced retain
     /// i.e., ownership is transferred to the `RelationSet` instance.
@@ -1345,7 +1345,7 @@ public extension SocketRef {
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `SocketProtocol`.**
-    @inlinable init(raw: UnsafeRawPointer) {
+    @inlinable init(mutating raw: UnsafeRawPointer) {
         ptr = UnsafeMutableRawPointer(mutating: raw)
     }
 
@@ -1585,7 +1585,7 @@ public extension SocketProtocol {
     /// - Parameter transform_from: `ValueTransformer` to use for forward transformation
     /// - Parameter transform_to: `ValueTransformer` to use for backwards transformation
     /// - Returns: binding reference or `nil` in case of an error
-    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: ObjectProtocol>(property source_property: SocketPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
+    @discardableResult @inlinable func bind<Q: PropertyNameProtocol, T: GLibObject.ObjectProtocol>(property source_property: SocketPropertyName, to target: T, _ target_property: Q, flags f: BindingFlags = .default, transformFrom transform_from: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }, transformTo transform_to: @escaping GLibObject.ValueTransformer = { $0.transform(destValue: $1) }) -> BindingRef! {
         func _bind(_ source: UnsafePointer<gchar>, to t: T, _ target_property: UnsafePointer<gchar>, flags f: BindingFlags = .default, holder: BindingClosureHolder, transformFrom transform_from: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean, transformTo transform_to: @convention(c) @escaping (gpointer, gpointer, gpointer, gpointer) -> gboolean) -> BindingRef! {
             let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(holder).toOpaque())
             let from = unsafeBitCast(transform_from, to: BindingTransformFunc.self)
@@ -1781,8 +1781,8 @@ public extension SocketProtocol {
     /// by `atk_plug_get_id()`.  It is the responsibility of the application
     /// to pass the plug id on to the process implementing the `AtkSocket`
     /// as needed.
-    @inlinable func embed(plugId plug_id: UnsafePointer<gchar>!) {
-        atk_socket_embed(socket_ptr, plug_id)
+    @inlinable func embed(plugId: UnsafePointer<gchar>!) {
+        atk_socket_embed(socket_ptr, plugId)
     
     }
     /// Determines whether or not the socket has an embedded plug.

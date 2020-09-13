@@ -10,8 +10,8 @@ import GLibObject
 /// Focus tracking has been dropped as a feature
 /// to be implemented by ATK itself. If you need focus tracking on your
 /// implementation, subscribe to the #AtkObject::state-change "focused" signal.
-@available(*, deprecated) @inlinable public func add(focusTracker focus_tracker: @escaping AtkEventListener) -> Int {
-    let rv = Int(atk_add_focus_tracker(focus_tracker))
+@available(*, deprecated) @inlinable public func add(focusTracker: @escaping AtkEventListener) -> Int {
+    let rv = Int(atk_add_focus_tracker(focusTracker))
     return rv
 }
 
@@ -51,8 +51,8 @@ import GLibObject
 /// instance of `AtkNoOpObject`. This class implements all ATK
 /// interfaces, so creating the instance will register all ATK types as
 /// a collateral effect.
-@inlinable public func addGlobalEvent(listener: @escaping GSignalEmissionHook, eventType event_type: UnsafePointer<gchar>!) -> Int {
-    let rv = Int(atk_add_global_event_listener(listener, event_type))
+@inlinable public func addGlobalEvent(listener: @escaping GSignalEmissionHook, eventType: UnsafePointer<gchar>!) -> Int {
+    let rv = Int(atk_add_global_event_listener(listener, eventType))
     return rv
 }
 
@@ -72,8 +72,8 @@ import GLibObject
 
 /// Frees the memory used by an `AtkAttributeSet`, including all its
 /// `AtkAttributes`.
-@inlinable public func attributeSetFree(attribSet attrib_set: UnsafeMutablePointer<AtkAttributeSet>!) {
-    atk_attribute_set_free(attrib_set)
+@inlinable public func attributeSetFree(attribSet: UnsafeMutablePointer<AtkAttributeSet>!) {
+    atk_attribute_set_free(attribSet)
 
 }
 
@@ -273,8 +273,8 @@ import GLibObject
 ///   to be implemented by ATK itself. If you need focus tracking on your
 ///   implementation, subscribe to the #AtkObject::state-change "focused"
 ///   signal.
-@available(*, deprecated) @inlinable public func removeFocusTracker(trackerId tracker_id: Int) {
-    atk_remove_focus_tracker(guint(tracker_id))
+@available(*, deprecated) @inlinable public func removeFocusTracker(trackerId: Int) {
+    atk_remove_focus_tracker(guint(trackerId))
 
 }
 
@@ -292,8 +292,8 @@ import GLibObject
 /// ATK implementors but by ATK consumers.
 /// 
 /// Removes the specified event listener
-@inlinable public func removeGlobalEventListener(listenerId listener_id: Int) {
-    atk_remove_global_event_listener(guint(listener_id))
+@inlinable public func removeGlobalEventListener(listenerId: Int) {
+    atk_remove_global_event_listener(guint(listenerId))
 
 }
 
@@ -304,8 +304,8 @@ import GLibObject
 /// when you registered that event listener.
 /// 
 /// Removes the specified event listener.
-@inlinable public func removeKeyEventListener(listenerId listener_id: Int) {
-    atk_remove_key_event_listener(guint(listener_id))
+@inlinable public func removeKeyEventListener(listenerId: Int) {
+    atk_remove_key_event_listener(guint(listenerId))
 
 }
 
@@ -429,8 +429,8 @@ import GLibObject
 
 
 /// Gets the localized description string describing the `AtkValueType` `value_type`.
-@inlinable public func valueTypeGetLocalizedName(valueType value_type: AtkValueType) -> String! {
-    guard let rv = atk_value_type_get_localized_name(value_type).map({ String(cString: $0) }) else { return nil }
+@inlinable public func valueTypeGetLocalizedName(valueType: AtkValueType) -> String! {
+    guard let rv = atk_value_type_get_localized_name(valueType).map({ String(cString: $0) }) else { return nil }
     return rv
 }
 
@@ -438,8 +438,8 @@ import GLibObject
 
 
 /// Gets the description string describing the `AtkValueType` `value_type`.
-@inlinable public func valueTypeGetName(valueType value_type: AtkValueType) -> String! {
-    guard let rv = atk_value_type_get_name(value_type).map({ String(cString: $0) }) else { return nil }
+@inlinable public func valueTypeGetName(valueType: AtkValueType) -> String! {
+    guard let rv = atk_value_type_get_name(valueType).map({ String(cString: $0) }) else { return nil }
     return rv
 }
 
