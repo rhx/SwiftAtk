@@ -8,8 +8,6 @@ let package = Package(
     dependencies: [
         .package(name: "gir2swift", url: "https://github.com/mikolasstuchlik/gir2swift.git", .branch("master")),
         .package(name: "GLibObject", url: "https://github.com/mikolasstuchlik/SwiftGObject.git", .branch("master")),
-        //.package(name: "GIO", url: "https://github.com/mikolasstuchlik/SwiftGIO.git", .branch("master")),
-        //.package(name: "GModule", url: "https://github.com/mikolasstuchlik/SwiftGModule.git", .branch("master")),
     ],
     targets: [
 	.systemLibrary(name: "CAtk", pkgConfig: "atk",
