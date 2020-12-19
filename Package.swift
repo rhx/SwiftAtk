@@ -15,7 +15,11 @@ let package = Package(
 		.brew(["atk", "glib", "glib-networking", "gobject-introspection"]),
 		.apt(["libatk1.0-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
 	    ]),
-        .target(name: "Atk", dependencies: ["CAtk", "GLibObject"]),
+        .target(
+            name: "Atk", 
+            dependencies: ["CAtk", "GLibObject"],
+            swiftSettings: [.unsafeFlags(["-Xfrontend", "-serialize-debugging-options"], .when(configuration: .debug))]
+        ),
         .testTarget(name: "AtkTests", dependencies: ["Atk"]),
     ]
 )
