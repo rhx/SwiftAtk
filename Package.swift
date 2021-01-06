@@ -6,7 +6,7 @@ let package = Package(
     name: "Atk",
     products: [ .library(name: "Atk", targets: ["Atk"]) ],
     dependencies: [
-        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("master"))
+        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("main"))
     ],
     targets: [
 	.systemLibrary(name: "CAtk", pkgConfig: "atk glib-2.0 gio-unix-2.0",
