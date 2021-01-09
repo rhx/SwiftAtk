@@ -2,8 +2,8 @@ name: Build and test SwiftAtk
 
 # Dependencies of this package
 env:
-  MACOS_BREW: ${{ 'glib glib-networking gobject-introspection pkg-config jq' }}
-  UBUNTU_APT: ${{ 'libglib2.0-dev glib-networking gobject-introspection libgirepository1.0-dev libxml2-dev jq' }}
+  MACOS_BREW: ${{ 'atk glib glib-networking gobject-introspection pkg-config jq' }}
+  UBUNTU_APT: ${{ 'libatk1.0-dev libglib2.0-dev glib-networking gobject-introspection libgirepository1.0-dev libxml2-dev jq' }}
 
 on:
   push:
