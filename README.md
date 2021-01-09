@@ -115,8 +115,8 @@ On macOS, you can build the project using Xcode instead.  To do this, you need t
 
 After that, use the (usual) Build and Test buttons to build/test this package.
 
-
 ## Documentation
+
 You can find reference documentation inside the [docs](https://rhx.github.io/SwiftAtk/) folder.
 This was generated using the [jazzy](https://github.com/realm/jazzy) tool.
 If you want to generate your own documentation, matching your local installation,
@@ -124,11 +124,12 @@ you can use the `generate-documentation.sh` script in the repository.
 Unfortunately, at this stage [jazzy](https://github.com/realm/jazzy) only works on macOS (and crashes under Linux), so this will currently only work on a Mac.
 
 
-
 ## Troubleshooting
+
 Here are some common errors you might encounter and how to fix them.
 
 ### Old Swift toolchain or Xcode
+
 If you get an error such as
 
 	$ ./build.sh 
@@ -143,5 +144,8 @@ this probably means that your Swift toolchain is too old.  Make sure the latest 
 
 ### Known Issues
 
- * The current build system does not support directory paths with spaces (e.g. the `My Drive` directory used by Google Drive File Stream).  As a workaround, use the old build scripts, e.g. `./build.sh` instead of `run-gir2swift.sh` and `swift build` to build a package.
- * BUILD_DIR is not suported in the current build system.
+ * The current build system does not support directory paths with spaces (e.g. the `My Drive` directory used by Google Drive File Stream).
+ * BUILD_DIR is not supported in the current build system.
+ 
+As a workaround, you can use the old build scripts, e.g. `./build.sh` instead of `run-gir2swift.sh` and `swift build` to build a package.
+ 
