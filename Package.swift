@@ -6,15 +6,20 @@ let package = Package(
     name: "Atk",
     products: [ .library(name: "Atk", targets: ["Atk"]) ],
     dependencies: [
-        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("main"))
+        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("development")),
+        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("development"))
     ],
     targets: [
-	.systemLibrary(name: "CAtk", pkgConfig: "atk glib-2.0 gio-unix-2.0",
+	.systemLibrary(name: "CAtk", pkgConfig: "atk",
 	    providers: [
 		.brew(["atk", "glib", "glib-networking", "gobject-introspection"]),
 		.apt(["libatk1.0-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
 	    ]),
-        .target(name: "Atk", dependencies: ["CAtk", "GLibObject"]),
+        .target(
+            name: "Atk", 
+            dependencies: ["CAtk", "GLibObject"],
+            swiftSettings: [.unsafeFlags(["-Xfrontend", "-serialize-debugging-options"], .when(configuration: .debug))]
+        ),
         .testTarget(name: "AtkTests", dependencies: ["Atk"]),
     ]
 )
