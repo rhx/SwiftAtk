@@ -256,7 +256,7 @@ open class Implementor: ImplementorProtocol {
 
 // MARK: no Implementor signals
 
-
+// MARK: Implementor has no signals
 // MARK: Implementor Record: ImplementorProtocol extension (methods and fields)
 public extension ImplementorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkImplementor` instance.
@@ -527,7 +527,7 @@ open class KeyEventStruct: KeyEventStructProtocol {
 
 // MARK: no KeyEventStruct signals
 
-
+// MARK: KeyEventStruct has no signals
 // MARK: KeyEventStruct Record: KeyEventStructProtocol extension (methods and fields)
 public extension KeyEventStructProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkKeyEventStruct` instance.

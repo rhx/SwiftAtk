@@ -262,7 +262,7 @@ open class PropertyValues: PropertyValuesProtocol {
 
 // MARK: no PropertyValues signals
 
-
+// MARK: PropertyValues has no signals
 // MARK: PropertyValues Record: PropertyValuesProtocol extension (methods and fields)
 public extension PropertyValuesProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkPropertyValues` instance.
@@ -587,7 +587,7 @@ open class Range: RangeProtocol {
 
 // MARK: no Range signals
 
-
+// MARK: Range has no signals
 // MARK: Range Record: RangeProtocol extension (methods and fields)
 public extension RangeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRange` instance.

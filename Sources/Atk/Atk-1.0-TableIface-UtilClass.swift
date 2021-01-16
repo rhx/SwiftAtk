@@ -3,6 +3,21 @@ import CAtk
 import GLib
 import GLibObject
 
+/// Metatype/GType declaration for Table
+public extension TableIfaceRef {
+    
+    /// This getter returns the GLib type identifier registered for `Table`
+    static var metatypeReference: GType { atk_table_get_type() }
+    
+    private static var metatypePointer: UnsafeMutablePointer<AtkTableIface>? { g_type_class_peek_static(metatypeReference)?.assumingMemoryBound(to: AtkTableIface.self) }
+    
+    static var metatype: AtkTableIface? { metatypePointer?.pointee } 
+    
+    static var wrapper: TableIfaceRef? { TableIfaceRef(metatypePointer) }
+    
+    
+}
+
 // MARK: - TableIface Record
 
 /// The `TableIfaceProtocol` protocol exposes the methods and properties of an underlying `AtkTableIface` instance.
@@ -103,160 +118,6 @@ public extension TableIfaceRef {
 
     }
 
-/// The `TableIface` type acts as an owner of an underlying `AtkTableIface` instance.
-/// It provides the methods that can operate on this data type through `TableIfaceProtocol` conformance.
-/// Use `TableIface` as a strong reference or owner of a `AtkTableIface` instance.
-///
-
-open class TableIface: TableIfaceProtocol {
-        /// Untyped pointer to the underlying `AtkTableIface` instance.
-    /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TableIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<AtkTableIface>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TableIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<AtkTableIface>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TableIface` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TableIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TableIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<AtkTableIface>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TableIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<AtkTableIface>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `AtkTableIface` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `TableIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<AtkTableIface>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkTableIface, cannot ref(_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `TableIfaceProtocol`
-    /// `AtkTableIface` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `TableIfaceProtocol`
-    @inlinable public init<T: TableIfaceProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for AtkTableIface, cannot ref(_ptr)
-    }
-
-    /// Do-nothing destructor for `AtkTableIface`.
-    deinit {
-        // no reference counting for AtkTableIface, cannot unref(_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableIfaceProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableIfaceProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkTableIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableIfaceProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableIfaceProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkTableIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableIfaceProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableIfaceProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for AtkTableIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableIfaceProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableIfaceProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkTableIface, cannot ref(_ptr)
-    }
-
-
-
-}
-
-// MARK: no TableIface properties
-
-// MARK: no TableIface signals
-
-
 // MARK: TableIface Record: TableIfaceProtocol extension (methods and fields)
 public extension TableIfaceProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTableIface` instance.
@@ -345,6 +206,21 @@ public extension TableIfaceProtocol {
 }
 
 
+
+/// Metatype/GType declaration for Text
+public extension TextIfaceRef {
+    
+    /// This getter returns the GLib type identifier registered for `Text`
+    static var metatypeReference: GType { atk_text_get_type() }
+    
+    private static var metatypePointer: UnsafeMutablePointer<AtkTextIface>? { g_type_class_peek_static(metatypeReference)?.assumingMemoryBound(to: AtkTextIface.self) }
+    
+    static var metatype: AtkTextIface? { metatypePointer?.pointee } 
+    
+    static var wrapper: TextIfaceRef? { TextIfaceRef(metatypePointer) }
+    
+    
+}
 
 // MARK: - TextIface Record
 
@@ -445,160 +321,6 @@ public extension TextIfaceRef {
     }
 
     }
-
-/// The `TextIface` type acts as an owner of an underlying `AtkTextIface` instance.
-/// It provides the methods that can operate on this data type through `TextIfaceProtocol` conformance.
-/// Use `TextIface` as a strong reference or owner of a `AtkTextIface` instance.
-///
-
-open class TextIface: TextIfaceProtocol {
-        /// Untyped pointer to the underlying `AtkTextIface` instance.
-    /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TextIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<AtkTextIface>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TextIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<AtkTextIface>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TextIface` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TextIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TextIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<AtkTextIface>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `TextIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<AtkTextIface>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `AtkTextIface` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `TextIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<AtkTextIface>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkTextIface, cannot ref(_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `TextIfaceProtocol`
-    /// `AtkTextIface` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `TextIfaceProtocol`
-    @inlinable public init<T: TextIfaceProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for AtkTextIface, cannot ref(_ptr)
-    }
-
-    /// Do-nothing destructor for `AtkTextIface`.
-    deinit {
-        // no reference counting for AtkTextIface, cannot unref(_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextIfaceProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextIfaceProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkTextIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextIfaceProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextIfaceProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkTextIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextIfaceProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextIfaceProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for AtkTextIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextIfaceProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextIfaceProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkTextIface, cannot ref(_ptr)
-    }
-
-
-
-}
-
-// MARK: no TextIface properties
-
-// MARK: no TextIface signals
-
 
 // MARK: TextIface Record: TextIfaceProtocol extension (methods and fields)
 public extension TextIfaceProtocol {
@@ -922,7 +644,7 @@ open class TextRange: TextRangeProtocol {
 
 // MARK: no TextRange signals
 
-
+// MARK: TextRange has no signals
 // MARK: TextRange Record: TextRangeProtocol extension (methods and fields)
 public extension TextRangeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTextRange` instance.
@@ -1238,7 +960,7 @@ open class TextRectangle: TextRectangleProtocol {
 
 // MARK: no TextRectangle signals
 
-
+// MARK: TextRectangle has no signals
 // MARK: TextRectangle Record: TextRectangleProtocol extension (methods and fields)
 public extension TextRectangleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTextRectangle` instance.
@@ -1300,6 +1022,21 @@ public extension TextRectangleProtocol {
 }
 
 
+
+/// Metatype/GType declaration for Util
+public extension UtilClassRef {
+    
+    /// This getter returns the GLib type identifier registered for `Util`
+    static var metatypeReference: GType { atk_util_get_type() }
+    
+    private static var metatypePointer: UnsafeMutablePointer<AtkUtilClass>? { g_type_class_peek_static(metatypeReference)?.assumingMemoryBound(to: AtkUtilClass.self) }
+    
+    static var metatype: AtkUtilClass? { metatypePointer?.pointee } 
+    
+    static var wrapper: UtilClassRef? { UtilClassRef(metatypePointer) }
+    
+    
+}
 
 // MARK: - UtilClass Record
 
@@ -1400,160 +1137,6 @@ public extension UtilClassRef {
     }
 
     }
-
-/// The `UtilClass` type acts as an owner of an underlying `AtkUtilClass` instance.
-/// It provides the methods that can operate on this data type through `UtilClassProtocol` conformance.
-/// Use `UtilClass` as a strong reference or owner of a `AtkUtilClass` instance.
-///
-
-open class UtilClass: UtilClassProtocol {
-        /// Untyped pointer to the underlying `AtkUtilClass` instance.
-    /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `UtilClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<AtkUtilClass>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `UtilClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<AtkUtilClass>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `UtilClass` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `UtilClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `UtilClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<AtkUtilClass>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `UtilClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<AtkUtilClass>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `AtkUtilClass` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `UtilClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<AtkUtilClass>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkUtilClass, cannot ref(_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `UtilClassProtocol`
-    /// `AtkUtilClass` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `UtilClassProtocol`
-    @inlinable public init<T: UtilClassProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for AtkUtilClass, cannot ref(_ptr)
-    }
-
-    /// Do-nothing destructor for `AtkUtilClass`.
-    deinit {
-        // no reference counting for AtkUtilClass, cannot unref(_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilClassProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilClassProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkUtilClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilClassProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilClassProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkUtilClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilClassProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilClassProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for AtkUtilClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilClassProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilClassProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkUtilClass, cannot ref(_ptr)
-    }
-
-
-
-}
-
-// MARK: no UtilClass properties
-
-// MARK: no UtilClass signals
-
 
 // MARK: UtilClass Record: UtilClassProtocol extension (methods and fields)
 public extension UtilClassProtocol {

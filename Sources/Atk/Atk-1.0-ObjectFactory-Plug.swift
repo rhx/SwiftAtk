@@ -33,7 +33,7 @@ public protocol ObjectFactoryProtocol: GLibObject.ObjectProtocol {
 /// `atk_registry_set_factory_type()` is normally called to store in the
 /// registry the factory type to be used to create an accessible of a
 /// particular GType.
-public struct ObjectFactoryRef: ObjectFactoryProtocol {
+public struct ObjectFactoryRef: ObjectFactoryProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkObjectFactory` instance.
     /// For type-safe access, use the generated, typed pointer `object_factory_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -78,6 +78,9 @@ public extension ObjectFactoryRef {
     @inlinable init<T: ObjectFactoryProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: ObjectFactoryProtocol>(_ other: T) -> ObjectFactoryRef { ObjectFactoryRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
@@ -280,34 +283,7 @@ public enum ObjectFactorySignalName: String, SignalNameProtocol {
 
 }
 
-public extension ObjectFactoryProtocol {
-    /// Connect a `ObjectFactorySignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: ObjectFactorySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: ObjectFactory has no signals
 // MARK: ObjectFactory Class: ObjectFactoryProtocol extension (methods and fields)
 public extension ObjectFactoryProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkObjectFactory` instance.
@@ -377,7 +353,7 @@ public protocol PlugProtocol: ObjectProtocol, ComponentProtocol {
 /// Use `PlugRef` only as an `unowned` reference to an existing `AtkPlug` instance.
 ///
 /// See `AtkSocket`
-public struct PlugRef: PlugProtocol {
+public struct PlugRef: PlugProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkPlug` instance.
     /// For type-safe access, use the generated, typed pointer `plug_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -422,6 +398,9 @@ public extension PlugRef {
     @inlinable init<T: PlugProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: PlugProtocol>(_ other: T) -> PlugRef { PlugRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
@@ -594,6 +573,7 @@ open class Plug: Object, PlugProtocol {
     @inlinable public init() {
         let rv = atk_plug_new()
         super.init(gpointer: (rv))
+        if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
 
@@ -809,34 +789,7 @@ public enum PlugSignalName: String, SignalNameProtocol {
     case notifyAccessibleValue = "notify::accessible-value"
 }
 
-public extension PlugProtocol {
-    /// Connect a `PlugSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: PlugSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: Plug has no signals
 // MARK: Plug Class: PlugProtocol extension (methods and fields)
 public extension PlugProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkPlug` instance.

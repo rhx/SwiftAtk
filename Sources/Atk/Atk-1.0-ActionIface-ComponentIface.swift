@@ -3,6 +3,21 @@ import CAtk
 import GLib
 import GLibObject
 
+/// Metatype/GType declaration for Action
+public extension ActionIfaceRef {
+    
+    /// This getter returns the GLib type identifier registered for `Action`
+    static var metatypeReference: GType { atk_action_get_type() }
+    
+    private static var metatypePointer: UnsafeMutablePointer<AtkActionIface>? { g_type_class_peek_static(metatypeReference)?.assumingMemoryBound(to: AtkActionIface.self) }
+    
+    static var metatype: AtkActionIface? { metatypePointer?.pointee } 
+    
+    static var wrapper: ActionIfaceRef? { ActionIfaceRef(metatypePointer) }
+    
+    
+}
+
 // MARK: - ActionIface Record
 
 /// The `ActionIfaceProtocol` protocol exposes the methods and properties of an underlying `AtkActionIface` instance.
@@ -110,164 +125,6 @@ public extension ActionIfaceRef {
     }
 
     }
-
-/// The `ActionIface` type acts as an owner of an underlying `AtkActionIface` instance.
-/// It provides the methods that can operate on this data type through `ActionIfaceProtocol` conformance.
-/// Use `ActionIface` as a strong reference or owner of a `AtkActionIface` instance.
-///
-/// The `AtkAction` interface should be supported by any object that can
-/// perform one or more actions. The interface provides the standard
-/// mechanism for an assistive technology to determine what those actions
-/// are as well as tell the object to perform them. Any object that can
-/// be manipulated should support this interface.
-open class ActionIface: ActionIfaceProtocol {
-        /// Untyped pointer to the underlying `AtkActionIface` instance.
-    /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ActionIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<AtkActionIface>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ActionIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<AtkActionIface>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ActionIface` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ActionIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ActionIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<AtkActionIface>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ActionIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<AtkActionIface>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `AtkActionIface` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `ActionIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<AtkActionIface>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkActionIface, cannot ref(_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `ActionIfaceProtocol`
-    /// `AtkActionIface` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `ActionIfaceProtocol`
-    @inlinable public init<T: ActionIfaceProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for AtkActionIface, cannot ref(_ptr)
-    }
-
-    /// Do-nothing destructor for `AtkActionIface`.
-    deinit {
-        // no reference counting for AtkActionIface, cannot unref(_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionIfaceProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionIfaceProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkActionIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionIfaceProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionIfaceProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkActionIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionIfaceProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionIfaceProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for AtkActionIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionIfaceProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionIfaceProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkActionIface, cannot ref(_ptr)
-    }
-
-
-
-}
-
-// MARK: no ActionIface properties
-
-// MARK: no ActionIface signals
-
 
 // MARK: ActionIface Record: ActionIfaceProtocol extension (methods and fields)
 public extension ActionIfaceProtocol {
@@ -578,7 +435,7 @@ open class Attribute: AttributeProtocol {
 
 // MARK: no Attribute signals
 
-
+// MARK: Attribute has no signals
 // MARK: Attribute Record: AttributeProtocol extension (methods and fields)
 public extension AttributeProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkAttribute` instance.
@@ -614,6 +471,21 @@ public extension AttributeProtocol {
 }
 
 
+
+/// Metatype/GType declaration for Component
+public extension ComponentIfaceRef {
+    
+    /// This getter returns the GLib type identifier registered for `Component`
+    static var metatypeReference: GType { atk_component_get_type() }
+    
+    private static var metatypePointer: UnsafeMutablePointer<AtkComponentIface>? { g_type_class_peek_static(metatypeReference)?.assumingMemoryBound(to: AtkComponentIface.self) }
+    
+    static var metatype: AtkComponentIface? { metatypePointer?.pointee } 
+    
+    static var wrapper: ComponentIfaceRef? { ComponentIfaceRef(metatypePointer) }
+    
+    
+}
 
 // MARK: - ComponentIface Record
 
@@ -720,163 +592,6 @@ public extension ComponentIfaceRef {
     }
 
     }
-
-/// The `ComponentIface` type acts as an owner of an underlying `AtkComponentIface` instance.
-/// It provides the methods that can operate on this data type through `ComponentIfaceProtocol` conformance.
-/// Use `ComponentIface` as a strong reference or owner of a `AtkComponentIface` instance.
-///
-/// The AtkComponent interface should be supported by any object that is
-/// rendered on the screen. The interface provides the standard mechanism
-/// for an assistive technology to determine and set the graphical
-/// representation of an object.
-open class ComponentIface: ComponentIfaceProtocol {
-        /// Untyped pointer to the underlying `AtkComponentIface` instance.
-    /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ComponentIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<AtkComponentIface>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ComponentIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<AtkComponentIface>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ComponentIface` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ComponentIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ComponentIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<AtkComponentIface>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ComponentIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<AtkComponentIface>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `AtkComponentIface` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `ComponentIface` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<AtkComponentIface>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkComponentIface, cannot ref(_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `ComponentIfaceProtocol`
-    /// `AtkComponentIface` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `ComponentIfaceProtocol`
-    @inlinable public init<T: ComponentIfaceProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for AtkComponentIface, cannot ref(_ptr)
-    }
-
-    /// Do-nothing destructor for `AtkComponentIface`.
-    deinit {
-        // no reference counting for AtkComponentIface, cannot unref(_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentIfaceProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentIfaceProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkComponentIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentIfaceProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentIfaceProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkComponentIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentIfaceProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentIfaceProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for AtkComponentIface, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentIfaceProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentIfaceProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkComponentIface, cannot ref(_ptr)
-    }
-
-
-
-}
-
-// MARK: no ComponentIface properties
-
-// MARK: no ComponentIface signals
-
 
 // MARK: ComponentIface Record: ComponentIfaceProtocol extension (methods and fields)
 public extension ComponentIfaceProtocol {

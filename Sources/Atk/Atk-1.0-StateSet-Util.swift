@@ -29,7 +29,7 @@ public protocol StateSetProtocol: GLibObject.ObjectProtocol {
 /// An AtkStateSet is a read-only representation of the full set of `AtkStates`
 /// that apply to an object at a given time. This set is not meant to be
 /// modified, but rather created when `atk_object_ref_state_set``()` is called.
-public struct StateSetRef: StateSetProtocol {
+public struct StateSetRef: StateSetProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkStateSet` instance.
     /// For type-safe access, use the generated, typed pointer `state_set_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -74,6 +74,9 @@ public extension StateSetRef {
     @inlinable init<T: StateSetProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: StateSetProtocol>(_ other: T) -> StateSetRef { StateSetRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StateSetProtocol`.**
@@ -248,6 +251,7 @@ open class StateSet: GLibObject.Object, StateSetProtocol {
     @inlinable public init() {
         let rv = atk_state_set_new()
         super.init(gpointer: (rv))
+        if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
 
@@ -284,34 +288,7 @@ public enum StateSetSignalName: String, SignalNameProtocol {
 
 }
 
-public extension StateSetProtocol {
-    /// Connect a `StateSetSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: StateSetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: StateSet has no signals
 // MARK: StateSet Class: StateSetProtocol extension (methods and fields)
 public extension StateSetProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkStateSet` instance.
@@ -438,7 +415,7 @@ public protocol UtilProtocol: GLibObject.ObjectProtocol {
 /// registration of various types, and obtaining the 'root' accessible
 /// of a process and information about the current ATK implementation
 /// and toolkit version.
-public struct UtilRef: UtilProtocol {
+public struct UtilRef: UtilProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkUtil` instance.
     /// For type-safe access, use the generated, typed pointer `util_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -483,6 +460,9 @@ public extension UtilRef {
     @inlinable init<T: UtilProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: UtilProtocol>(_ other: T) -> UtilRef { UtilRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilProtocol`.**
@@ -684,34 +664,7 @@ public enum UtilSignalName: String, SignalNameProtocol {
 
 }
 
-public extension UtilProtocol {
-    /// Connect a `UtilSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: UtilSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: Util has no signals
 // MARK: Util Class: UtilProtocol extension (methods and fields)
 public extension UtilProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkUtil` instance.

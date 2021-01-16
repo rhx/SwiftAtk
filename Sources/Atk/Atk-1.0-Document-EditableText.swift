@@ -303,32 +303,155 @@ public enum DocumentSignalName: String, SignalNameProtocol {
 
 }
 
+// MARK: Document signals
 public extension DocumentProtocol {
-    /// Connect a `DocumentSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: DocumentSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
+    /// Connect a Swift signal handler to the given, typed `DocumentSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - handler: The Swift signal handler (function or callback) to invoke on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: DocumentSignalName, flags f: ConnectFlags = ConnectFlags(0), handler h: @escaping SignalHandler) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connect(s, flags: f, handler: h)
     }
+    
+    
+    /// Connect a C signal handler to the given, typed `DocumentSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - signalHandler: The C function to be called on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: DocumentSignalName, flags f: ConnectFlags = ConnectFlags(0), data userData: gpointer!, destroyData destructor: GClosureNotify? = nil, signalHandler h: @escaping GCallback) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connectSignal(s, flags: f, data: userData, destroyData: destructor, handler: h)
+    }
+    
+    
+    /// The 'load-complete' signal is emitted when a pending load of
+    /// a static document has completed.  This signal is to be
+    /// expected by ATK clients if and when AtkDocument implementors
+    /// expose ATK_STATE_BUSY.  If the state of an AtkObject which
+    /// implements AtkDocument does not include ATK_STATE_BUSY, it
+    /// should be safe for clients to assume that the AtkDocument's
+    /// static contents are fully loaded into the container.
+    /// (Dynamic document contents should be exposed via other
+    /// signals.)
+    /// - Note: This represents the underlying `load-complete` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `loadComplete` signal is emitted
+    @discardableResult @inlinable func onLoadComplete(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: DocumentRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<DocumentRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(DocumentRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .loadComplete,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `load-complete` signal for using the `connect(signal:)` methods
+    static var loadCompleteSignal: DocumentSignalName { .loadComplete }
+    
+    /// The 'load-stopped' signal is emitted when a pending load of
+    /// document contents is cancelled, paused, or otherwise
+    /// interrupted by the user or application logic.  It should not
+    /// however be emitted while waiting for a resource (for instance
+    /// while blocking on a file or network read) unless a
+    /// user-significant timeout has occurred.
+    /// - Note: This represents the underlying `load-stopped` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `loadStopped` signal is emitted
+    @discardableResult @inlinable func onLoadStopped(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: DocumentRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<DocumentRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(DocumentRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .loadStopped,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `load-stopped` signal for using the `connect(signal:)` methods
+    static var loadStoppedSignal: DocumentSignalName { .loadStopped }
+    
+    /// The 'page-changed' signal is emitted when the current page of
+    /// a document changes, e.g. pressing page up/down in a document
+    /// viewer.
+    /// - Note: This represents the underlying `page-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter pageNumber: the new page number. If this value is unknown or not applicable, -1 should be provided.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `pageChanged` signal is emitted
+    @discardableResult @inlinable func onPageChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: DocumentRef, _ pageNumber: Int) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder2<DocumentRef, Int, Void>
+        let cCallback: @convention(c) (gpointer, gint, gpointer) -> Void = { unownedSelf, arg1, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(DocumentRef(raw: unownedSelf), Int(arg1))
+            return output
+        }
+        return connect(
+            signal: .pageChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `page-changed` signal for using the `connect(signal:)` methods
+    static var pageChangedSignal: DocumentSignalName { .pageChanged }
+    
+    /// The 'reload' signal is emitted when the contents of a
+    /// document is refreshed from its source.  Once 'reload' has
+    /// been emitted, a matching 'load-complete' or 'load-stopped'
+    /// signal should follow, which clients may await before
+    /// interrogating ATK for the latest document content.
+    /// - Note: This represents the underlying `reload` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `reload` signal is emitted
+    @discardableResult @inlinable func onReload(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: DocumentRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<DocumentRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(DocumentRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .reload,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `reload` signal for using the `connect(signal:)` methods
+    static var reloadSignal: DocumentSignalName { .reload }
+    
+    // Document property signals were not generated due to unavailability of GObject during generation time
 }
 
 // MARK: Document Interface: DocumentProtocol extension (methods and fields)
@@ -776,7 +899,7 @@ open class EditableText: EditableTextProtocol {
 
 // MARK: no EditableText signals
 
-
+// MARK: EditableText has no signals
 // MARK: EditableText Interface: EditableTextProtocol extension (methods and fields)
 public extension EditableTextProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkEditableText` instance.

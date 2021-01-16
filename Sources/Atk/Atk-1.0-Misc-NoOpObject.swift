@@ -27,7 +27,7 @@ public protocol MiscProtocol: GLibObject.ObjectProtocol {
 ///
 /// A set of utility functions for thread locking. This interface and
 /// all his related methods are deprecated since 2.12.
-public struct MiscRef: MiscProtocol {
+public struct MiscRef: MiscProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkMisc` instance.
     /// For type-safe access, use the generated, typed pointer `misc_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -72,6 +72,9 @@ public extension MiscRef {
     @inlinable init<T: MiscProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: MiscProtocol>(_ other: T) -> MiscRef { MiscRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MiscProtocol`.**
@@ -251,6 +254,7 @@ open class Misc: GLibObject.Object, MiscProtocol {
     /// Since 2.12.
     @available(*, deprecated) @inlinable public static func getInstance() -> Misc! {
         guard let rv = Misc(gconstpointer: gconstpointer(atk_misc_get_instance())) else { return nil }
+        if typeIsA(type: rv.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = rv.refSink() } 
         return rv
     }
 
@@ -287,34 +291,7 @@ public enum MiscSignalName: String, SignalNameProtocol {
 
 }
 
-public extension MiscProtocol {
-    /// Connect a `MiscSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: MiscSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: Misc has no signals
 // MARK: Misc Class: MiscProtocol extension (methods and fields)
 public extension MiscProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkMisc` instance.
@@ -388,7 +365,7 @@ public protocol NoOpObjectProtocol: ObjectProtocol, ActionProtocol, ComponentPro
 /// ATK interfaces. It is the type of AtkObject which is created if an
 /// accessible object is requested for an object type for which no
 /// factory type is specified.
-public struct NoOpObjectRef: NoOpObjectProtocol {
+public struct NoOpObjectRef: NoOpObjectProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkNoOpObject` instance.
     /// For type-safe access, use the generated, typed pointer `no_op_object_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -433,6 +410,9 @@ public extension NoOpObjectRef {
     @inlinable init<T: NoOpObjectProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: NoOpObjectProtocol>(_ other: T) -> NoOpObjectRef { NoOpObjectRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectProtocol`.**
@@ -610,6 +590,7 @@ open class NoOpObject: Object, NoOpObjectProtocol {
     @inlinable public init<ObjectT: GLibObject.ObjectProtocol>( obj: ObjectT) {
         let rv = atk_no_op_object_new(obj.object_ptr)
         super.init(gpointer: (rv))
+        if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
 
@@ -825,34 +806,7 @@ public enum NoOpObjectSignalName: String, SignalNameProtocol {
     case notifyAccessibleValue = "notify::accessible-value"
 }
 
-public extension NoOpObjectProtocol {
-    /// Connect a `NoOpObjectSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: NoOpObjectSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: NoOpObject has no signals
 // MARK: NoOpObject Class: NoOpObjectProtocol extension (methods and fields)
 public extension NoOpObjectProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkNoOpObject` instance.

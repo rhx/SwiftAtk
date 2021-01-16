@@ -35,7 +35,7 @@ public protocol RegistryProtocol: GLibObject.ObjectProtocol {
 /// implementation classes with GObject classes via the
 /// atk_registry_set_factory_type call, passing the appropriate GType
 /// for application custom widget classes.
-public struct RegistryRef: RegistryProtocol {
+public struct RegistryRef: RegistryProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkRegistry` instance.
     /// For type-safe access, use the generated, typed pointer `registry_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -80,6 +80,9 @@ public extension RegistryRef {
     @inlinable init<T: RegistryProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: RegistryProtocol>(_ other: T) -> RegistryRef { RegistryRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RegistryProtocol`.**
@@ -283,34 +286,7 @@ public enum RegistrySignalName: String, SignalNameProtocol {
 
 }
 
-public extension RegistryProtocol {
-    /// Connect a `RegistrySignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: RegistrySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: Registry has no signals
 // MARK: Registry Class: RegistryProtocol extension (methods and fields)
 public extension RegistryProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRegistry` instance.
@@ -392,7 +368,7 @@ public protocol RelationProtocol: GLibObject.ObjectProtocol {
 /// more other objects. The actual relations that an object has with
 /// other objects are defined as an AtkRelationSet, which is a set of
 /// AtkRelations.
-public struct RelationRef: RelationProtocol {
+public struct RelationRef: RelationProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkRelation` instance.
     /// For type-safe access, use the generated, typed pointer `relation_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -437,6 +413,9 @@ public extension RelationRef {
     @inlinable init<T: RelationProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: RelationProtocol>(_ other: T) -> RelationRef { RelationRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RelationProtocol`.**
@@ -614,6 +593,7 @@ open class Relation: GLibObject.Object, RelationProtocol {
     @inlinable public init( targets: UnsafeMutablePointer<UnsafeMutablePointer<AtkObject>?>!, nTargets: Int, relationship: AtkRelationType) {
         let rv = atk_relation_new(targets, gint(nTargets), relationship)
         super.init(gpointer: (rv))
+        if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
 
@@ -707,34 +687,7 @@ public enum RelationSignalName: String, SignalNameProtocol {
     case notifyTarget = "notify::target"
 }
 
-public extension RelationProtocol {
-    /// Connect a `RelationSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: RelationSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: Relation has no signals
 // MARK: Relation Class: RelationProtocol extension (methods and fields)
 public extension RelationProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRelation` instance.
@@ -842,7 +795,7 @@ public protocol RelationSetProtocol: GLibObject.ObjectProtocol {
 /// components (for instance within a radio-button group), or share
 /// content which "flows" between them, among other types of possible
 /// relationships.
-public struct RelationSetRef: RelationSetProtocol {
+public struct RelationSetRef: RelationSetProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkRelationSet` instance.
     /// For type-safe access, use the generated, typed pointer `relation_set_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -887,6 +840,9 @@ public extension RelationSetRef {
     @inlinable init<T: RelationSetProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: RelationSetProtocol>(_ other: T) -> RelationSetRef { RelationSetRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RelationSetProtocol`.**
@@ -1066,6 +1022,7 @@ open class RelationSet: GLibObject.Object, RelationSetProtocol {
     @inlinable public init() {
         let rv = atk_relation_set_new()
         super.init(gpointer: (rv))
+        if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
 
@@ -1102,34 +1059,7 @@ public enum RelationSetSignalName: String, SignalNameProtocol {
 
 }
 
-public extension RelationSetProtocol {
-    /// Connect a `RelationSetSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: RelationSetSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: RelationSet has no signals
 // MARK: RelationSet Class: RelationSetProtocol extension (methods and fields)
 public extension RelationSetProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkRelationSet` instance.
@@ -1285,7 +1215,7 @@ public protocol SocketProtocol: ObjectProtocol, ComponentProtocol {
 /// `atk_object_get_n_accessible_children()` and
 /// `atk_object_ref_accessible_child()`. All the logic related to those
 /// functions will be implemented by the IPC layer.
-public struct SocketRef: SocketProtocol {
+public struct SocketRef: SocketProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkSocket` instance.
     /// For type-safe access, use the generated, typed pointer `socket_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -1330,6 +1260,9 @@ public extension SocketRef {
     @inlinable init<T: SocketProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: SocketProtocol>(_ other: T) -> SocketRef { SocketRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `SocketProtocol`.**
@@ -1523,6 +1456,7 @@ open class Socket: Object, SocketProtocol {
     @inlinable public init() {
         let rv = atk_socket_new()
         super.init(gpointer: (rv))
+        if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
 
@@ -1738,34 +1672,7 @@ public enum SocketSignalName: String, SignalNameProtocol {
     case notifyAccessibleValue = "notify::accessible-value"
 }
 
-public extension SocketProtocol {
-    /// Connect a `SocketSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: SocketSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: Socket has no signals
 // MARK: Socket Class: SocketProtocol extension (methods and fields)
 public extension SocketProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkSocket` instance.

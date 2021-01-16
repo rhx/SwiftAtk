@@ -3,6 +3,21 @@ import CAtk
 import GLib
 import GLibObject
 
+/// Metatype/GType declaration for NoOpObjectFactory
+public extension NoOpObjectFactoryClassRef {
+    
+    /// This getter returns the GLib type identifier registered for `NoOpObjectFactory`
+    static var metatypeReference: GType { atk_no_op_object_factory_get_type() }
+    
+    private static var metatypePointer: UnsafeMutablePointer<AtkNoOpObjectFactoryClass>? { g_type_class_peek_static(metatypeReference)?.assumingMemoryBound(to: AtkNoOpObjectFactoryClass.self) }
+    
+    static var metatype: AtkNoOpObjectFactoryClass? { metatypePointer?.pointee } 
+    
+    static var wrapper: NoOpObjectFactoryClassRef? { NoOpObjectFactoryClassRef(metatypePointer) }
+    
+    
+}
+
 // MARK: - NoOpObjectFactoryClass Record
 
 /// The `NoOpObjectFactoryClassProtocol` protocol exposes the methods and properties of an underlying `AtkNoOpObjectFactoryClass` instance.
@@ -103,160 +118,6 @@ public extension NoOpObjectFactoryClassRef {
 
     }
 
-/// The `NoOpObjectFactoryClass` type acts as an owner of an underlying `AtkNoOpObjectFactoryClass` instance.
-/// It provides the methods that can operate on this data type through `NoOpObjectFactoryClassProtocol` conformance.
-/// Use `NoOpObjectFactoryClass` as a strong reference or owner of a `AtkNoOpObjectFactoryClass` instance.
-///
-
-open class NoOpObjectFactoryClass: NoOpObjectFactoryClassProtocol {
-        /// Untyped pointer to the underlying `AtkNoOpObjectFactoryClass` instance.
-    /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `NoOpObjectFactoryClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<AtkNoOpObjectFactoryClass>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `NoOpObjectFactoryClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<AtkNoOpObjectFactoryClass>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `NoOpObjectFactoryClass` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `NoOpObjectFactoryClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `NoOpObjectFactoryClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<AtkNoOpObjectFactoryClass>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `NoOpObjectFactoryClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<AtkNoOpObjectFactoryClass>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `AtkNoOpObjectFactoryClass` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `NoOpObjectFactoryClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<AtkNoOpObjectFactoryClass>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkNoOpObjectFactoryClass, cannot ref(_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `NoOpObjectFactoryClassProtocol`
-    /// `AtkNoOpObjectFactoryClass` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `NoOpObjectFactoryClassProtocol`
-    @inlinable public init<T: NoOpObjectFactoryClassProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for AtkNoOpObjectFactoryClass, cannot ref(_ptr)
-    }
-
-    /// Do-nothing destructor for `AtkNoOpObjectFactoryClass`.
-    deinit {
-        // no reference counting for AtkNoOpObjectFactoryClass, cannot unref(_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryClassProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryClassProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkNoOpObjectFactoryClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryClassProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryClassProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkNoOpObjectFactoryClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryClassProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryClassProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for AtkNoOpObjectFactoryClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryClassProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryClassProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkNoOpObjectFactoryClass, cannot ref(_ptr)
-    }
-
-
-
-}
-
-// MARK: no NoOpObjectFactoryClass properties
-
-// MARK: no NoOpObjectFactoryClass signals
-
-
 // MARK: NoOpObjectFactoryClass Record: NoOpObjectFactoryClassProtocol extension (methods and fields)
 public extension NoOpObjectFactoryClassProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkNoOpObjectFactoryClass` instance.
@@ -273,6 +134,21 @@ public extension NoOpObjectFactoryClassProtocol {
 }
 
 
+
+/// Metatype/GType declaration for Object
+public extension ObjectClassRef {
+    
+    /// This getter returns the GLib type identifier registered for `Object`
+    static var metatypeReference: GType { atk_object_get_type() }
+    
+    private static var metatypePointer: UnsafeMutablePointer<AtkObjectClass>? { g_type_class_peek_static(metatypeReference)?.assumingMemoryBound(to: AtkObjectClass.self) }
+    
+    static var metatype: AtkObjectClass? { metatypePointer?.pointee } 
+    
+    static var wrapper: ObjectClassRef? { ObjectClassRef(metatypePointer) }
+    
+    
+}
 
 // MARK: - ObjectClass Record
 
@@ -373,160 +249,6 @@ public extension ObjectClassRef {
     }
 
     }
-
-/// The `ObjectClass` type acts as an owner of an underlying `AtkObjectClass` instance.
-/// It provides the methods that can operate on this data type through `ObjectClassProtocol` conformance.
-/// Use `ObjectClass` as a strong reference or owner of a `AtkObjectClass` instance.
-///
-
-open class ObjectClass: ObjectClassProtocol {
-        /// Untyped pointer to the underlying `AtkObjectClass` instance.
-    /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ObjectClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<AtkObjectClass>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ObjectClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<AtkObjectClass>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ObjectClass` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ObjectClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ObjectClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<AtkObjectClass>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `ObjectClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<AtkObjectClass>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `AtkObjectClass` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `ObjectClass` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<AtkObjectClass>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for AtkObjectClass, cannot ref(_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `ObjectClassProtocol`
-    /// `AtkObjectClass` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `ObjectClassProtocol`
-    @inlinable public init<T: ObjectClassProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for AtkObjectClass, cannot ref(_ptr)
-    }
-
-    /// Do-nothing destructor for `AtkObjectClass`.
-    deinit {
-        // no reference counting for AtkObjectClass, cannot unref(_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectClassProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectClassProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for AtkObjectClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectClassProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectClassProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for AtkObjectClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectClassProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectClassProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for AtkObjectClass, cannot ref(_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectClassProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectClassProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for AtkObjectClass, cannot ref(_ptr)
-    }
-
-
-
-}
-
-// MARK: no ObjectClass properties
-
-// MARK: no ObjectClass signals
-
 
 // MARK: ObjectClass Record: ObjectClassProtocol extension (methods and fields)
 public extension ObjectClassProtocol {

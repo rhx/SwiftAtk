@@ -301,7 +301,7 @@ open class StreamableContent: StreamableContentProtocol {
 
 // MARK: no StreamableContent signals
 
-
+// MARK: StreamableContent has no signals
 // MARK: StreamableContent Interface: StreamableContentProtocol extension (methods and fields)
 public extension StreamableContentProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkStreamableContent` instance.
@@ -712,32 +712,228 @@ public enum TableSignalName: String, SignalNameProtocol {
 
 }
 
+// MARK: Table signals
 public extension TableProtocol {
-    /// Connect a `TableSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: TableSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
+    /// Connect a Swift signal handler to the given, typed `TableSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - handler: The Swift signal handler (function or callback) to invoke on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: TableSignalName, flags f: ConnectFlags = ConnectFlags(0), handler h: @escaping SignalHandler) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connect(s, flags: f, handler: h)
     }
+    
+    
+    /// Connect a C signal handler to the given, typed `TableSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - signalHandler: The C function to be called on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: TableSignalName, flags f: ConnectFlags = ConnectFlags(0), data userData: gpointer!, destroyData destructor: GClosureNotify? = nil, signalHandler h: @escaping GCallback) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connectSignal(s, flags: f, data: userData, destroyData: destructor, handler: h)
+    }
+    
+    
+    /// The "column-deleted" signal is emitted by an object which
+    /// implements the AtkTable interface when a column is deleted.
+    /// - Note: This represents the underlying `column-deleted` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The index of the first column deleted.
+    /// - Parameter arg2: The number of columns deleted.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `columnDeleted` signal is emitted
+    @discardableResult @inlinable func onColumnDeleted(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TableRef, _ arg1: Int, _ arg2: Int) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder3<TableRef, Int, Int, Void>
+        let cCallback: @convention(c) (gpointer, gint, gint, gpointer) -> Void = { unownedSelf, arg1, arg2, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TableRef(raw: unownedSelf), Int(arg1), Int(arg2))
+            return output
+        }
+        return connect(
+            signal: .columnDeleted,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `column-deleted` signal for using the `connect(signal:)` methods
+    static var columnDeletedSignal: TableSignalName { .columnDeleted }
+    
+    /// The "column-inserted" signal is emitted by an object which
+    /// implements the AtkTable interface when a column is inserted.
+    /// - Note: This represents the underlying `column-inserted` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The index of the column inserted.
+    /// - Parameter arg2: The number of colums inserted.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `columnInserted` signal is emitted
+    @discardableResult @inlinable func onColumnInserted(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TableRef, _ arg1: Int, _ arg2: Int) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder3<TableRef, Int, Int, Void>
+        let cCallback: @convention(c) (gpointer, gint, gint, gpointer) -> Void = { unownedSelf, arg1, arg2, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TableRef(raw: unownedSelf), Int(arg1), Int(arg2))
+            return output
+        }
+        return connect(
+            signal: .columnInserted,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `column-inserted` signal for using the `connect(signal:)` methods
+    static var columnInsertedSignal: TableSignalName { .columnInserted }
+    
+    /// The "column-reordered" signal is emitted by an object which
+    /// implements the AtkTable interface when the columns are
+    /// reordered.
+    /// - Note: This represents the underlying `column-reordered` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `columnReordered` signal is emitted
+    @discardableResult @inlinable func onColumnReordered(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TableRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<TableRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TableRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .columnReordered,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `column-reordered` signal for using the `connect(signal:)` methods
+    static var columnReorderedSignal: TableSignalName { .columnReordered }
+    
+    /// The "model-changed" signal is emitted by an object which
+    /// implements the AtkTable interface when the model displayed by
+    /// the table changes.
+    /// - Note: This represents the underlying `model-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `modelChanged` signal is emitted
+    @discardableResult @inlinable func onModelChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TableRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<TableRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TableRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .modelChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `model-changed` signal for using the `connect(signal:)` methods
+    static var modelChangedSignal: TableSignalName { .modelChanged }
+    
+    /// The "row-deleted" signal is emitted by an object which
+    /// implements the AtkTable interface when a row is deleted.
+    /// - Note: This represents the underlying `row-deleted` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The index of the first row deleted.
+    /// - Parameter arg2: The number of rows deleted.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `rowDeleted` signal is emitted
+    @discardableResult @inlinable func onRowDeleted(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TableRef, _ arg1: Int, _ arg2: Int) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder3<TableRef, Int, Int, Void>
+        let cCallback: @convention(c) (gpointer, gint, gint, gpointer) -> Void = { unownedSelf, arg1, arg2, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TableRef(raw: unownedSelf), Int(arg1), Int(arg2))
+            return output
+        }
+        return connect(
+            signal: .rowDeleted,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `row-deleted` signal for using the `connect(signal:)` methods
+    static var rowDeletedSignal: TableSignalName { .rowDeleted }
+    
+    /// The "row-inserted" signal is emitted by an object which
+    /// implements the AtkTable interface when a row is inserted.
+    /// - Note: This represents the underlying `row-inserted` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The index of the first row inserted.
+    /// - Parameter arg2: The number of rows inserted.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `rowInserted` signal is emitted
+    @discardableResult @inlinable func onRowInserted(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TableRef, _ arg1: Int, _ arg2: Int) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder3<TableRef, Int, Int, Void>
+        let cCallback: @convention(c) (gpointer, gint, gint, gpointer) -> Void = { unownedSelf, arg1, arg2, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TableRef(raw: unownedSelf), Int(arg1), Int(arg2))
+            return output
+        }
+        return connect(
+            signal: .rowInserted,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `row-inserted` signal for using the `connect(signal:)` methods
+    static var rowInsertedSignal: TableSignalName { .rowInserted }
+    
+    /// The "row-reordered" signal is emitted by an object which
+    /// implements the AtkTable interface when the rows are
+    /// reordered.
+    /// - Note: This represents the underlying `row-reordered` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `rowReordered` signal is emitted
+    @discardableResult @inlinable func onRowReordered(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TableRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<TableRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TableRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .rowReordered,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `row-reordered` signal for using the `connect(signal:)` methods
+    static var rowReorderedSignal: TableSignalName { .rowReordered }
+    
+    // Table property signals were not generated due to unavailability of GObject during generation time
 }
 
 // MARK: Table Interface: TableProtocol extension (methods and fields)

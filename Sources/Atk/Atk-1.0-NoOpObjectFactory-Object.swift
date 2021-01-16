@@ -29,7 +29,7 @@ public protocol NoOpObjectFactoryProtocol: ObjectFactoryProtocol {
 /// The AtkObjectFactory which creates an AtkNoOpObject. An instance of
 /// this is created by an AtkRegistry if no factory type has not been
 /// specified to create an accessible object of a particular type.
-public struct NoOpObjectFactoryRef: NoOpObjectFactoryProtocol {
+public struct NoOpObjectFactoryRef: NoOpObjectFactoryProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkNoOpObjectFactory` instance.
     /// For type-safe access, use the generated, typed pointer `no_op_object_factory_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -74,6 +74,9 @@ public extension NoOpObjectFactoryRef {
     @inlinable init<T: NoOpObjectFactoryProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: NoOpObjectFactoryProtocol>(_ other: T) -> NoOpObjectFactoryRef { NoOpObjectFactoryRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectFactoryProtocol`.**
@@ -250,6 +253,7 @@ open class NoOpObjectFactory: ObjectFactory, NoOpObjectFactoryProtocol {
     @inlinable public init() {
         let rv = atk_no_op_object_factory_new()
         super.init(gpointer: (rv))
+        if typeIsA(type: self.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = self.refSink() } 
     }
 
 
@@ -286,34 +290,7 @@ public enum NoOpObjectFactorySignalName: String, SignalNameProtocol {
 
 }
 
-public extension NoOpObjectFactoryProtocol {
-    /// Connect a `NoOpObjectFactorySignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: NoOpObjectFactorySignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: NoOpObjectFactory has no signals
 // MARK: NoOpObjectFactory Class: NoOpObjectFactoryProtocol extension (methods and fields)
 public extension NoOpObjectFactoryProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkNoOpObjectFactory` instance.
@@ -391,7 +368,7 @@ public protocol ObjectProtocol: GLibObject.ObjectProtocol {
 /// 
 /// See also: `AtkObjectFactory`, `AtkRegistry`.  (GTK+ users see also
 /// `GtkAccessible`).
-public struct ObjectRef: ObjectProtocol {
+public struct ObjectRef: ObjectProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkObject` instance.
     /// For type-safe access, use the generated, typed pointer `object_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -436,6 +413,9 @@ public extension ObjectRef {
     @inlinable init<T: ObjectProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: ObjectProtocol>(_ other: T) -> ObjectRef { ObjectRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectProtocol`.**
@@ -832,32 +812,213 @@ public enum ObjectSignalName: String, SignalNameProtocol {
     case notifyAccessibleValue = "notify::accessible-value"
 }
 
+// MARK: Object signals
 public extension ObjectProtocol {
-    /// Connect a `ObjectSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: ObjectSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
+    /// Connect a Swift signal handler to the given, typed `ObjectSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - handler: The Swift signal handler (function or callback) to invoke on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: ObjectSignalName, flags f: ConnectFlags = ConnectFlags(0), handler h: @escaping SignalHandler) -> Int {
+        connect(s, flags: f, handler: h)
     }
+    
+    
+    /// Connect a C signal handler to the given, typed `ObjectSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - signalHandler: The C function to be called on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: ObjectSignalName, flags f: ConnectFlags = ConnectFlags(0), data userData: gpointer!, destroyData destructor: GClosureNotify? = nil, signalHandler h: @escaping GCallback) -> Int {
+        connectSignal(s, flags: f, data: userData, destroyData: destructor, handler: h)
+    }
+    
+    
+    /// The "active-descendant-changed" signal is emitted by an object
+    /// which has the state ATK_STATE_MANAGES_DESCENDANTS when the focus
+    /// object in the object changes. For instance, a table will emit the
+    /// signal when the cell in the table which has focus changes.
+    /// - Note: This represents the underlying `active-descendant-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: the newly focused object.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `activeDescendantChanged` signal is emitted
+    @discardableResult @inlinable func onActiveDescendantChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: ObjectRef, _ arg1: ObjectRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder2<ObjectRef, ObjectRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer, gpointer) -> Void = { unownedSelf, arg1, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(ObjectRef(raw: unownedSelf), ObjectRef(raw: arg1))
+            return output
+        }
+        return connect(
+            signal: .activeDescendantChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `active-descendant-changed` signal for using the `connect(signal:)` methods
+    static var activeDescendantChangedSignal: ObjectSignalName { .activeDescendantChanged }
+    
+    /// The signal "children-changed" is emitted when a child is added or
+    /// removed form an object. It supports two details: "add" and
+    /// "remove"
+    /// - Note: This represents the underlying `children-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The index of the added or removed child. The value can be -1. This is used if the value is not known by the implementor when the child is added/removed or irrelevant.
+    /// - Parameter arg2: A gpointer to the child AtkObject which was added or removed. If the child was removed, it is possible that it is not available for the implementor. In that case this pointer can be NULL.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `childrenChanged` signal is emitted
+    @discardableResult @inlinable func onChildrenChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: ObjectRef, _ arg1: UInt, _ arg2: ObjectRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder3<ObjectRef, UInt, ObjectRef, Void>
+        let cCallback: @convention(c) (gpointer, guint, gpointer, gpointer) -> Void = { unownedSelf, arg1, arg2, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(ObjectRef(raw: unownedSelf), UInt(arg1), ObjectRef(raw: arg2))
+            return output
+        }
+        return connect(
+            signal: .childrenChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `children-changed` signal for using the `connect(signal:)` methods
+    static var childrenChangedSignal: ObjectSignalName { .childrenChanged }
+    
+    /// The signal "focus-event" is emitted when an object gained or lost
+    /// focus.
+    /// - Note: This represents the underlying `focus-event` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: a boolean value which indicates whether the object gained or lost focus.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `focusEvent` signal is emitted
+    @discardableResult @inlinable func onFocusEvent(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: ObjectRef, _ arg1: Bool) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder2<ObjectRef, Bool, Void>
+        let cCallback: @convention(c) (gpointer, gboolean, gpointer) -> Void = { unownedSelf, arg1, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(ObjectRef(raw: unownedSelf), ((arg1) != 0))
+            return output
+        }
+        return connect(
+            signal: .focusEvent,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `focus-event` signal for using the `connect(signal:)` methods
+    static var focusEventSignal: ObjectSignalName { .focusEvent }
+    
+    /// The signal "property-change" is emitted when an object's property
+    /// value changes. `arg1` contains an `AtkPropertyValues` with the name
+    /// and the new value of the property whose value has changed. Note
+    /// that, as with GObject notify, getting this signal does not
+    /// guarantee that the value of the property has actually changed; it
+    /// may also be emitted when the setter of the property is called to
+    /// reinstate the previous value.
+    /// 
+    /// Toolkit implementor note: ATK implementors should use
+    /// `g_object_notify()` to emit property-changed
+    /// notifications. `AtkObject::property`-changed is needed by the
+    /// implementation of `atk_add_global_event_listener()` because GObject
+    /// notify doesn't support emission hooks.
+    /// - Note: This represents the underlying `property-change` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: an `AtkPropertyValues` containing the new value of the property which changed.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `propertyChange` signal is emitted
+    @discardableResult @inlinable func onPropertyChange(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: ObjectRef, _ arg1: PropertyValuesRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder2<ObjectRef, PropertyValuesRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer, gpointer) -> Void = { unownedSelf, arg1, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(ObjectRef(raw: unownedSelf), PropertyValuesRef(raw: arg1))
+            return output
+        }
+        return connect(
+            signal: .propertyChange,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `property-change` signal for using the `connect(signal:)` methods
+    static var propertyChangeSignal: ObjectSignalName { .propertyChange }
+    
+    /// The "state-change" signal is emitted when an object's state
+    /// changes.  The detail value identifies the state type which has
+    /// changed.
+    /// - Note: This represents the underlying `state-change` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The name of the state which has changed
+    /// - Parameter arg2: A boolean which indicates whether the state has been set or unset.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `stateChange` signal is emitted
+    @discardableResult @inlinable func onStateChange(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: ObjectRef, _ arg1: String, _ arg2: Bool) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder3<ObjectRef, String, Bool, Void>
+        let cCallback: @convention(c) (gpointer, UnsafeMutablePointer<gchar>?, gboolean, gpointer) -> Void = { unownedSelf, arg1, arg2, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(ObjectRef(raw: unownedSelf), arg1.map({ String(cString: $0) })!, ((arg2) != 0))
+            return output
+        }
+        return connect(
+            signal: .stateChange,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `state-change` signal for using the `connect(signal:)` methods
+    static var stateChangeSignal: ObjectSignalName { .stateChange }
+    
+    /// The "visible-data-changed" signal is emitted when the visual
+    /// appearance of the object changed.
+    /// - Note: This represents the underlying `visible-data-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `visibleDataChanged` signal is emitted
+    @discardableResult @inlinable func onVisibleDataChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: ObjectRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<ObjectRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(ObjectRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .visibleDataChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `visible-data-changed` signal for using the `connect(signal:)` methods
+    static var visibleDataChangedSignal: ObjectSignalName { .visibleDataChanged }
+    
+    // Object property signals were not generated due to unavailability of GObject during generation time
 }
 
 // MARK: Object Class: ObjectProtocol extension (methods and fields)

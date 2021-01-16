@@ -31,7 +31,7 @@ public protocol GObjectAccessibleProtocol: ObjectProtocol {
 /// basis for implementing accessible objects for GObjects which are
 /// not derived from GtkWidget. One example of its use is in providing
 /// an accessible object for GnomeCanvasItem in the GAIL library.
-public struct GObjectAccessibleRef: GObjectAccessibleProtocol {
+public struct GObjectAccessibleRef: GObjectAccessibleProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkGObjectAccessible` instance.
     /// For type-safe access, use the generated, typed pointer `gobject_accessible_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -76,6 +76,9 @@ public extension GObjectAccessibleRef {
     @inlinable init<T: GObjectAccessibleProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: GObjectAccessibleProtocol>(_ other: T) -> GObjectAccessibleRef { GObjectAccessibleRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GObjectAccessibleProtocol`.**
@@ -251,6 +254,7 @@ open class GObjectAccessible: Object, GObjectAccessibleProtocol {
     /// Gets the accessible object for the specified `obj`.
     @inlinable public static func for_<ObjectT: GLibObject.ObjectProtocol>(object obj: ObjectT) -> Object! {
         guard let rv = Object(gconstpointer: gconstpointer(atk_gobject_accessible_for_object(obj.object_ptr))) else { return nil }
+        if typeIsA(type: rv.type, isAType: InitiallyUnownedClassRef.metatypeReference) { _ = rv.refSink() } 
         return rv
     }
 
@@ -466,34 +470,7 @@ public enum GObjectAccessibleSignalName: String, SignalNameProtocol {
     case notifyAccessibleValue = "notify::accessible-value"
 }
 
-public extension GObjectAccessibleProtocol {
-    /// Connect a `GObjectAccessibleSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: GObjectAccessibleSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: GObjectAccessible has no signals
 // MARK: GObjectAccessible Class: GObjectAccessibleProtocol extension (methods and fields)
 public extension GObjectAccessibleProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkGObjectAccessible` instance.
@@ -556,7 +533,7 @@ public protocol HyperlinkProtocol: GLibObject.ObjectProtocol, ActionProtocol {
 /// may also be used to refer to inline embedded content, since it
 /// allows specification of a start and end offset within the host
 /// AtkHypertext object.
-public struct HyperlinkRef: HyperlinkProtocol {
+public struct HyperlinkRef: HyperlinkProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkHyperlink` instance.
     /// For type-safe access, use the generated, typed pointer `hyperlink_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -601,6 +578,9 @@ public extension HyperlinkRef {
     @inlinable init<T: HyperlinkProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: HyperlinkProtocol>(_ other: T) -> HyperlinkRef { HyperlinkRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkProtocol`.**
@@ -877,32 +857,60 @@ public enum HyperlinkSignalName: String, SignalNameProtocol {
     case notifyStartIndex = "notify::start-index"
 }
 
+// MARK: Hyperlink signals
 public extension HyperlinkProtocol {
-    /// Connect a `HyperlinkSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: HyperlinkSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
+    /// Connect a Swift signal handler to the given, typed `HyperlinkSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - handler: The Swift signal handler (function or callback) to invoke on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: HyperlinkSignalName, flags f: ConnectFlags = ConnectFlags(0), handler h: @escaping SignalHandler) -> Int {
+        connect(s, flags: f, handler: h)
     }
+    
+    
+    /// Connect a C signal handler to the given, typed `HyperlinkSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - signalHandler: The C function to be called on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: HyperlinkSignalName, flags f: ConnectFlags = ConnectFlags(0), data userData: gpointer!, destroyData destructor: GClosureNotify? = nil, signalHandler h: @escaping GCallback) -> Int {
+        connectSignal(s, flags: f, data: userData, destroyData: destructor, handler: h)
+    }
+    
+    
+    /// The signal link-activated is emitted when a link is activated.
+    /// - Note: This represents the underlying `link-activated` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `linkActivated` signal is emitted
+    @discardableResult @inlinable func onLinkActivated(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: HyperlinkRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<HyperlinkRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(HyperlinkRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .linkActivated,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `link-activated` signal for using the `connect(signal:)` methods
+    static var linkActivatedSignal: HyperlinkSignalName { .linkActivated }
+    
+    // Hyperlink property signals were not generated due to unavailability of GObject during generation time
 }
 
 // MARK: Hyperlink Class: HyperlinkProtocol extension (methods and fields)

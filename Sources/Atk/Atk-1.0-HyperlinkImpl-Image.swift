@@ -337,7 +337,7 @@ open class HyperlinkImpl: HyperlinkImplProtocol {
 
 // MARK: no HyperlinkImpl signals
 
-
+// MARK: HyperlinkImpl has no signals
 // MARK: HyperlinkImpl Interface: HyperlinkImplProtocol extension (methods and fields)
 public extension HyperlinkImplProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkHyperlinkImpl` instance.
@@ -642,32 +642,63 @@ public enum HypertextSignalName: String, SignalNameProtocol {
 
 }
 
+// MARK: Hypertext signals
 public extension HypertextProtocol {
-    /// Connect a `HypertextSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: HypertextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
+    /// Connect a Swift signal handler to the given, typed `HypertextSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - handler: The Swift signal handler (function or callback) to invoke on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: HypertextSignalName, flags f: ConnectFlags = ConnectFlags(0), handler h: @escaping SignalHandler) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connect(s, flags: f, handler: h)
     }
+    
+    
+    /// Connect a C signal handler to the given, typed `HypertextSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - signalHandler: The C function to be called on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: HypertextSignalName, flags f: ConnectFlags = ConnectFlags(0), data userData: gpointer!, destroyData destructor: GClosureNotify? = nil, signalHandler h: @escaping GCallback) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connectSignal(s, flags: f, data: userData, destroyData: destructor, handler: h)
+    }
+    
+    
+    /// The "link-selected" signal is emitted by an AtkHyperText
+    /// object when one of the hyperlinks associated with the object
+    /// is selected.
+    /// - Note: This represents the underlying `link-selected` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: the index of the hyperlink which is selected
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `linkSelected` signal is emitted
+    @discardableResult @inlinable func onLinkSelected(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: HypertextRef, _ arg1: Int) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder2<HypertextRef, Int, Void>
+        let cCallback: @convention(c) (gpointer, gint, gpointer) -> Void = { unownedSelf, arg1, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(HypertextRef(raw: unownedSelf), Int(arg1))
+            return output
+        }
+        return connect(
+            signal: .linkSelected,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `link-selected` signal for using the `connect(signal:)` methods
+    static var linkSelectedSignal: HypertextSignalName { .linkSelected }
+    
+    // Hypertext property signals were not generated due to unavailability of GObject during generation time
 }
 
 // MARK: Hypertext Interface: HypertextProtocol extension (methods and fields)
@@ -997,7 +1028,7 @@ open class Image: ImageProtocol {
 
 // MARK: no Image signals
 
-
+// MARK: Image has no signals
 // MARK: Image Interface: ImageProtocol extension (methods and fields)
 public extension ImageProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkImage` instance.

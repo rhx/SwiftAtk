@@ -33,7 +33,7 @@ public protocol TableCellProtocol: ObjectProtocol {
 /// elements, so "cells" should implement.
 /// 
 /// See also `AtkTable`.
-public struct TableCellRef: TableCellProtocol {
+public struct TableCellRef: TableCellProtocol, GWeakCapturing {
         /// Untyped pointer to the underlying `AtkTableCell` instance.
     /// For type-safe access, use the generated, typed pointer `table_cell_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer!
@@ -78,6 +78,9 @@ public extension TableCellRef {
     @inlinable init<T: TableCellProtocol>(_ other: T) {
         ptr = other.ptr
     }
+
+    /// This factory is syntactic sugar for setting weak pointers wrapped in `GWeak<T>`
+    @inlinable static func unowned<T: TableCellProtocol>(_ other: T) -> TableCellRef { TableCellRef(other) }
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
@@ -459,34 +462,7 @@ public enum TableCellSignalName: String, SignalNameProtocol {
     case notifyAccessibleValue = "notify::accessible-value"
 }
 
-public extension TableCellProtocol {
-    /// Connect a `TableCellSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: TableCellSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
-    }
-}
-
+// MARK: TableCell has no signals
 // MARK: TableCell Interface: TableCellProtocol extension (methods and fields)
 public extension TableCellProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `AtkTableCell` instance.
@@ -927,32 +903,209 @@ public enum TextSignalName: String, SignalNameProtocol {
 
 }
 
+// MARK: Text signals
 public extension TextProtocol {
-    /// Connect a `TextSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: TextSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
+    /// Connect a Swift signal handler to the given, typed `TextSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - handler: The Swift signal handler (function or callback) to invoke on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: TextSignalName, flags f: ConnectFlags = ConnectFlags(0), handler h: @escaping SignalHandler) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connect(s, flags: f, handler: h)
     }
+    
+    
+    /// Connect a C signal handler to the given, typed `TextSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - signalHandler: The C function to be called on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: TextSignalName, flags f: ConnectFlags = ConnectFlags(0), data userData: gpointer!, destroyData destructor: GClosureNotify? = nil, signalHandler h: @escaping GCallback) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connectSignal(s, flags: f, data: userData, destroyData: destructor, handler: h)
+    }
+    
+    
+    /// The "text-attributes-changed" signal is emitted when the text
+    /// attributes of the text of an object which implements AtkText
+    /// changes.
+    /// - Note: This represents the underlying `text-attributes-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `textAttributesChanged` signal is emitted
+    @discardableResult @inlinable func onTextAttributesChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TextRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<TextRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TextRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .textAttributesChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `text-attributes-changed` signal for using the `connect(signal:)` methods
+    static var textAttributesChangedSignal: TextSignalName { .textAttributesChanged }
+    
+    /// The "text-caret-moved" signal is emitted when the caret
+    /// position of the text of an object which implements AtkText
+    /// changes.
+    /// - Note: This represents the underlying `text-caret-moved` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The new position of the text caret.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `textCaretMoved` signal is emitted
+    @discardableResult @inlinable func onTextCaretMoved(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TextRef, _ arg1: Int) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder2<TextRef, Int, Void>
+        let cCallback: @convention(c) (gpointer, gint, gpointer) -> Void = { unownedSelf, arg1, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TextRef(raw: unownedSelf), Int(arg1))
+            return output
+        }
+        return connect(
+            signal: .textCaretMoved,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `text-caret-moved` signal for using the `connect(signal:)` methods
+    static var textCaretMovedSignal: TextSignalName { .textCaretMoved }
+    
+    /// The "text-changed" signal is emitted when the text of the
+    /// object which implements the AtkText interface changes, This
+    /// signal will have a detail which is either "insert" or
+    /// "delete" which identifies whether the text change was an
+    /// insertion or a deletion.
+    /// - Note: This represents the underlying `text-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The position (character offset) of the insertion or deletion.
+    /// - Parameter arg2: The length (in characters) of text inserted or deleted.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `textChanged` signal is emitted
+    @discardableResult @inlinable func onTextChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TextRef, _ arg1: Int, _ arg2: Int) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder3<TextRef, Int, Int, Void>
+        let cCallback: @convention(c) (gpointer, gint, gint, gpointer) -> Void = { unownedSelf, arg1, arg2, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TextRef(raw: unownedSelf), Int(arg1), Int(arg2))
+            return output
+        }
+        return connect(
+            signal: .textChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `text-changed` signal for using the `connect(signal:)` methods
+    static var textChangedSignal: TextSignalName { .textChanged }
+    
+    /// The "text-insert" signal is emitted when a new text is
+    /// inserted. If the signal was not triggered by the user
+    /// (e.g. typing or pasting text), the "system" detail should be
+    /// included.
+    /// - Note: This represents the underlying `text-insert` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The position (character offset) of the insertion.
+    /// - Parameter arg2: The length (in characters) of text inserted.
+    /// - Parameter arg3: The new text inserted
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `textInsert` signal is emitted
+    @discardableResult @inlinable func onTextInsert(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TextRef, _ arg1: Int, _ arg2: Int, _ arg3: String) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder4<TextRef, Int, Int, String, Void>
+        let cCallback: @convention(c) (gpointer, gint, gint, UnsafeMutablePointer<gchar>?, gpointer) -> Void = { unownedSelf, arg1, arg2, arg3, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TextRef(raw: unownedSelf), Int(arg1), Int(arg2), arg3.map({ String(cString: $0) })!)
+            return output
+        }
+        return connect(
+            signal: .textInsert,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `text-insert` signal for using the `connect(signal:)` methods
+    static var textInsertSignal: TextSignalName { .textInsert }
+    
+    /// The "text-remove" signal is emitted when a new text is
+    /// removed. If the signal was not triggered by the user
+    /// (e.g. typing or pasting text), the "system" detail should be
+    /// included.
+    /// - Note: This represents the underlying `text-remove` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter arg1: The position (character offset) of the removal.
+    /// - Parameter arg2: The length (in characters) of text removed.
+    /// - Parameter arg3: The old text removed
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `textRemove` signal is emitted
+    @discardableResult @inlinable func onTextRemove(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TextRef, _ arg1: Int, _ arg2: Int, _ arg3: String) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder4<TextRef, Int, Int, String, Void>
+        let cCallback: @convention(c) (gpointer, gint, gint, UnsafeMutablePointer<gchar>?, gpointer) -> Void = { unownedSelf, arg1, arg2, arg3, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TextRef(raw: unownedSelf), Int(arg1), Int(arg2), arg3.map({ String(cString: $0) })!)
+            return output
+        }
+        return connect(
+            signal: .textRemove,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `text-remove` signal for using the `connect(signal:)` methods
+    static var textRemoveSignal: TextSignalName { .textRemove }
+    
+    /// The "text-selection-changed" signal is emitted when the
+    /// selected text of an object which implements AtkText changes.
+    /// - Note: This represents the underlying `text-selection-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `textSelectionChanged` signal is emitted
+    @discardableResult @inlinable func onTextSelectionChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: TextRef) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder<TextRef, Void>
+        let cCallback: @convention(c) (gpointer, gpointer) -> Void = { unownedSelf, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(TextRef(raw: unownedSelf))
+            return output
+        }
+        return connect(
+            signal: .textSelectionChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `text-selection-changed` signal for using the `connect(signal:)` methods
+    static var textSelectionChangedSignal: TextSignalName { .textSelectionChanged }
+    
+    // Text property signals were not generated due to unavailability of GObject during generation time
 }
 
 // MARK: Text Interface: TextProtocol extension (methods and fields)
@@ -1940,32 +2093,73 @@ public enum ValueSignalName: String, SignalNameProtocol {
 
 }
 
+// MARK: Value signals
 public extension ValueProtocol {
-    /// Connect a `ValueSignalName` signal to a given signal handler.
-    /// - Parameter signal: the signal to connect
-    /// - Parameter flags: signal connection flags
-    /// - Parameter handler: signal handler to use
-    /// - Returns: positive handler ID, or a value less than or equal to `0` in case of an error
-    @inlinable @discardableResult func connect(signal kind: ValueSignalName, flags f: ConnectFlags = ConnectFlags(0), to handler: @escaping GLibObject.SignalHandler) -> Int {
-        func _connect(signal name: UnsafePointer<gchar>, flags: ConnectFlags, data: GLibObject.SignalHandlerClosureHolder, handler: @convention(c) @escaping (gpointer, gpointer) -> Void) -> Int {
-            let holder = UnsafeMutableRawPointer(Unmanaged.passRetained(data).toOpaque())
-            let callback = unsafeBitCast(handler, to: GLibObject.Callback.self)
-            let rv = GLibObject.ObjectRef(raw: ptr).signalConnectData(detailedSignal: name, cHandler: callback, data: holder, destroyData: {
-                if let swift = UnsafeRawPointer($0) {
-                    let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(swift)
-                    holder.release()
-                }
-                let _ = $1
-            }, connectFlags: flags)
-            return rv
-        }
-        let rv = _connect(signal: kind.name, flags: f, data: ClosureHolder(handler)) {
-            let ptr = UnsafeRawPointer($1)
-            let holder = Unmanaged<GLibObject.SignalHandlerClosureHolder>.fromOpaque(ptr).takeUnretainedValue()
-            holder.call(())
-        }
-        return rv
+    /// Connect a Swift signal handler to the given, typed `ValueSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - handler: The Swift signal handler (function or callback) to invoke on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: ValueSignalName, flags f: ConnectFlags = ConnectFlags(0), handler h: @escaping SignalHandler) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connect(s, flags: f, handler: h)
     }
+    
+    
+    /// Connect a C signal handler to the given, typed `ValueSignalName` signal
+    /// - Parameters:
+    ///   - signal: The signal to connect
+    ///   - flags: The connection flags to use
+    ///   - data: A pointer to user data to provide to the callback
+    ///   - destroyData: A `GClosureNotify` C function to destroy the data pointed to by `userData`
+    ///   - signalHandler: The C function to be called on the given signal
+    /// - Returns: The signal handler ID (always greater than 0 for successful connections)
+    @inlinable @discardableResult func connect(signal s: ValueSignalName, flags f: ConnectFlags = ConnectFlags(0), data userData: gpointer!, destroyData destructor: GClosureNotify? = nil, signalHandler h: @escaping GCallback) -> Int {
+        GLibObject.ObjectRef(raw: ptr).connectSignal(s, flags: f, data: userData, destroyData: destructor, handler: h)
+    }
+    
+    
+    /// The 'value-changed' signal is emitted when the current value
+    /// that represent the object changes. `value` is the numerical
+    /// representation of this new value.  `text` is the human
+    /// readable text alternative of `value`, and can be NULL if it is
+    /// not available. Note that if there is a textual description
+    /// associated with the new numeric value, that description
+    /// should be included regardless of whether or not it has also
+    /// changed.
+    /// 
+    /// Example: a password meter whose value changes as the user
+    /// types their new password. Appropiate value text would be
+    /// "weak", "acceptable" and "strong".
+    /// - Note: This represents the underlying `value-changed` signal
+    /// - Parameter flags: Flags
+    /// - Parameter unownedSelf: Reference to instance of self
+    /// - Parameter value: the new value in a numerical form.
+    /// - Parameter text: human readable text alternative (also called description) of this object. NULL if not available.
+    /// - Parameter handler: The signal handler to call
+    /// Run the given callback whenever the `valueChanged` signal is emitted
+    @discardableResult @inlinable func onValueChanged(flags: ConnectFlags = ConnectFlags(0), handler: @escaping ( _ unownedSelf: ValueRef, _ value: Double, _ text: String) -> Void ) -> Int {
+        typealias SwiftHandler = GLib.ClosureHolder3<ValueRef, Double, String, Void>
+        let cCallback: @convention(c) (gpointer, gdouble, UnsafeMutablePointer<gchar>?, gpointer) -> Void = { unownedSelf, arg1, arg2, userData in
+            let holder = Unmanaged<SwiftHandler>.fromOpaque(userData).takeUnretainedValue()
+            let output: Void = holder.call(ValueRef(raw: unownedSelf), Double(arg1), arg2.map({ String(cString: $0) })!)
+            return output
+        }
+        return connect(
+            signal: .valueChanged,
+            flags: flags,
+            data: Unmanaged.passRetained(SwiftHandler(handler)).toOpaque(),
+            destroyData: { userData, _ in UnsafeRawPointer(userData).flatMap(Unmanaged<SwiftHandler>.fromOpaque(_:))?.release() },
+            signalHandler: unsafeBitCast(cCallback, to: GCallback.self)
+        )
+    }
+    
+    /// Typed `value-changed` signal for using the `connect(signal:)` methods
+    static var valueChangedSignal: ValueSignalName { .valueChanged }
+    
+    // Value property signals were not generated due to unavailability of GObject during generation time
 }
 
 // MARK: Value Interface: ValueProtocol extension (methods and fields)
