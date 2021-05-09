@@ -18,6 +18,8 @@ public protocol ImplementorProtocol {
     /// Typed pointer to the underlying `AtkImplementor` instance.
     var _ptr: UnsafeMutablePointer<AtkImplementor>! { get }
 
+    /// Required Initialiser for types conforming to `ImplementorProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ImplementorRef` type acts as a lightweight Swift reference to an underlying `AtkImplementor` instance.
@@ -221,7 +223,7 @@ open class Implementor: ImplementorProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -289,6 +291,8 @@ public protocol KeyEventStructProtocol {
     /// Typed pointer to the underlying `AtkKeyEventStruct` instance.
     var _ptr: UnsafeMutablePointer<AtkKeyEventStruct>! { get }
 
+    /// Required Initialiser for types conforming to `KeyEventStructProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `KeyEventStructRef` type acts as a lightweight Swift reference to an underlying `AtkKeyEventStruct` instance.
@@ -492,7 +496,7 @@ open class KeyEventStruct: KeyEventStructProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `KeyEventStructProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

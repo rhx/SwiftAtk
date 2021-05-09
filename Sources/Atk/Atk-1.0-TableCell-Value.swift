@@ -22,6 +22,8 @@ public protocol TableCellProtocol: ObjectProtocol {
     /// Typed pointer to the underlying `AtkTableCell` instance.
     var table_cell_ptr: UnsafeMutablePointer<AtkTableCell>! { get }
 
+    /// Required Initialiser for types conforming to `TableCellProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TableCellRef` type acts as a lightweight Swift reference to an underlying `AtkTableCell` instance.
@@ -223,14 +225,14 @@ open class TableCell: Object, TableCellProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableCellProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -404,7 +406,7 @@ public enum TableCellSignalName: String, SignalNameProtocol {
     /// 
     /// Toolkit implementor note: ATK implementors should use
     /// `g_object_notify()` to emit property-changed
-    /// notifications. `AtkObject::property`-changed is needed by the
+    /// notifications. `AtkObject::property-changed` is needed by the
     /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"
@@ -596,6 +598,8 @@ public protocol TextProtocol {
     /// Typed pointer to the underlying `AtkText` instance.
     var text_ptr: UnsafeMutablePointer<AtkText>! { get }
 
+    /// Required Initialiser for types conforming to `TextProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TextRef` type acts as a lightweight Swift reference to an underlying `AtkText` instance.
@@ -835,7 +839,7 @@ open class Text: TextProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -1423,25 +1427,25 @@ public extension TextProtocol {
 /// behalf. `AtKValues` may be read-only, in which case attempts to
 /// alter the value return would fail.
 /// 
-/// <refsect1 id="current-value-text">
-/// <title>On the subject of current value text</title>
-/// <para>
+/// &lt;refsect1 id="current-value-text"&gt;
+/// &lt;title&gt;On the subject of current value text&lt;/title&gt;
+/// &lt;para&gt;
 /// In addition to providing the current value, implementors can
 /// optionally provide an end-user-consumable textual description
 /// associated with this value. This description should be included
 /// when the numeric value fails to convey the full, on-screen
 /// representation seen by users.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <example>
-/// <title>Password strength</title>
+/// &lt;example&gt;
+/// &lt;title&gt;Password strength&lt;/title&gt;
 /// A password strength meter whose value changes as the user types
 /// their new password. Red is used for values less than 4.0, yellow
 /// for values between 4.0 and 7.0, and green for values greater than
 /// 7.0. In this instance, value text should be provided by the
 /// implementor. Appropriate value text would be "weak", "acceptable,"
 /// and "strong" respectively.
-/// </example>
+/// &lt;/example&gt;
 /// 
 /// A level bar whose value changes to reflect the battery charge. The
 /// color remains the same regardless of the charge and there is no
@@ -1450,9 +1454,9 @@ public extension TextProtocol {
 /// the user has of the current charge, value text should not be
 /// provided by the implementor.
 /// 
-/// <refsect2 id="implementor-notes">
-/// <title>Implementor Notes</title>
-/// <para>
+/// &lt;refsect2 id="implementor-notes"&gt;
+/// &lt;title&gt;Implementor Notes&lt;/title&gt;
+/// &lt;para&gt;
 /// Implementors should bear in mind that assistive technologies will
 /// likely prefer the value text provided over the numeric value when
 /// presenting a widget's value. As a result, strings not intended for
@@ -1462,99 +1466,99 @@ public extension TextProtocol {
 /// in close proximity to the value-displaying widget, it is still
 /// expected that implementors will expose the value text using the
 /// above API.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <para>
+/// &lt;para&gt;
 /// `AtkValue` should NOT be implemented for widgets whose displayed
 /// value is not reflective of a meaningful amount. For instance, a
 /// progress pulse indicator whose value alternates between 0.0 and 1.0
 /// to indicate that some process is still taking place should not
 /// implement `AtkValue` because the current value does not reflect
 /// progress towards completion.
-/// </para>
-/// </refsect2>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect2&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="ranges">
-/// <title>On the subject of ranges</title>
-/// <para>
+/// &lt;refsect1 id="ranges"&gt;
+/// &lt;title&gt;On the subject of ranges&lt;/title&gt;
+/// &lt;para&gt;
 /// In addition to providing the minimum and maximum values,
 /// implementors can optionally provide details about subranges
 /// associated with the widget. These details should be provided by the
 /// implementor when both of the following are communicated visually to
 /// the end user:
-/// </para>
-/// <itemizedlist>
-///   <listitem>The existence of distinct ranges such as "weak",
+/// &lt;/para&gt;
+/// &lt;itemizedlist&gt;
+///   &lt;listitem&gt;The existence of distinct ranges such as "weak",
 ///   "acceptable", and "strong" indicated by color, bar tick marks,
-///   and/or on-screen text.</listitem>
-///   <listitem>Where the current value stands within a given subrange,
+///   and/or on-screen text.&lt;/listitem&gt;
+///   &lt;listitem&gt;Where the current value stands within a given subrange,
 ///   for instance illustrating progression from very "weak" towards
 ///   nearly "acceptable" through changes in shade and/or position on
-///   the bar within the "weak" subrange.</listitem>
-/// </itemizedlist>
-/// <para>
+///   the bar within the "weak" subrange.&lt;/listitem&gt;
+/// &lt;/itemizedlist&gt;
+/// &lt;para&gt;
 /// If both of the above do not apply to the widget, it should be
 /// sufficient to expose the numeric value, along with the value text
 /// if appropriate, to make the widget accessible.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <refsect2 id="ranges-implementor-notes">
-/// <title>Implementor Notes</title>
-/// <para>
+/// &lt;refsect2 id="ranges-implementor-notes"&gt;
+/// &lt;title&gt;Implementor Notes&lt;/title&gt;
+/// &lt;para&gt;
 /// If providing subrange details is deemed necessary, all possible
 /// values of the widget are expected to fall within one of the
 /// subranges defined by the implementor.
-/// </para>
-/// </refsect2>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect2&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="localization">
-/// <title>On the subject of localization of end-user-consumable text
-/// values</title>
-/// <para>
+/// &lt;refsect1 id="localization"&gt;
+/// &lt;title&gt;On the subject of localization of end-user-consumable text
+/// values&lt;/title&gt;
+/// &lt;para&gt;
 /// Because value text and subrange descriptors are human-consumable,
 /// implementors are expected to provide localized strings which can be
 /// directly presented to end users via their assistive technology. In
 /// order to simplify this for implementors, implementors can use
 /// `atk_value_type_get_localized_name()` with the following
 /// already-localized constants for commonly-needed values can be used:
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <itemizedlist>
-///   <listitem>ATK_VALUE_VERY_WEAK</listitem>
-///   <listitem>ATK_VALUE_WEAK</listitem>
-///   <listitem>ATK_VALUE_ACCEPTABLE</listitem>
-///   <listitem>ATK_VALUE_STRONG</listitem>
-///   <listitem>ATK_VALUE_VERY_STRONG</listitem>
-///   <listitem>ATK_VALUE_VERY_LOW</listitem>
-///   <listitem>ATK_VALUE_LOW</listitem>
-///   <listitem>ATK_VALUE_MEDIUM</listitem>
-///   <listitem>ATK_VALUE_HIGH</listitem>
-///   <listitem>ATK_VALUE_VERY_HIGH</listitem>
-///   <listitem>ATK_VALUE_VERY_BAD</listitem>
-///   <listitem>ATK_VALUE_BAD</listitem>
-///   <listitem>ATK_VALUE_GOOD</listitem>
-///   <listitem>ATK_VALUE_VERY_GOOD</listitem>
-///   <listitem>ATK_VALUE_BEST</listitem>
-///   <listitem>ATK_VALUE_SUBSUBOPTIMAL</listitem>
-///   <listitem>ATK_VALUE_SUBOPTIMAL</listitem>
-///   <listitem>ATK_VALUE_OPTIMAL</listitem>
-/// </itemizedlist>
-/// <para>
+/// &lt;itemizedlist&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_WEAK&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_WEAK&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_ACCEPTABLE&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_STRONG&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_STRONG&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_LOW&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_LOW&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_MEDIUM&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_HIGH&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_HIGH&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_BAD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_BAD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_GOOD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_GOOD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_BEST&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_SUBSUBOPTIMAL&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_SUBOPTIMAL&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_OPTIMAL&lt;/listitem&gt;
+/// &lt;/itemizedlist&gt;
+/// &lt;para&gt;
 /// Proposals for additional constants, along with their use cases,
 /// should be submitted to the GNOME Accessibility Team.
-/// </para>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="changes">
-/// <title>On the subject of changes</title>
-/// <para>
+/// &lt;refsect1 id="changes"&gt;
+/// &lt;title&gt;On the subject of changes&lt;/title&gt;
+/// &lt;para&gt;
 /// Note that if there is a textual description associated with the new
 /// numeric value, that description should be included regardless of
 /// whether or not it has also changed.
-/// </para>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect1&gt;
 public protocol ValueProtocol {
         /// Untyped pointer to the underlying `AtkValue` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -1562,6 +1566,8 @@ public protocol ValueProtocol {
     /// Typed pointer to the underlying `AtkValue` instance.
     var value_ptr: UnsafeMutablePointer<AtkValue>! { get }
 
+    /// Required Initialiser for types conforming to `ValueProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ValueRef` type acts as a lightweight Swift reference to an underlying `AtkValue` instance.
@@ -1576,25 +1582,25 @@ public protocol ValueProtocol {
 /// behalf. `AtKValues` may be read-only, in which case attempts to
 /// alter the value return would fail.
 /// 
-/// <refsect1 id="current-value-text">
-/// <title>On the subject of current value text</title>
-/// <para>
+/// &lt;refsect1 id="current-value-text"&gt;
+/// &lt;title&gt;On the subject of current value text&lt;/title&gt;
+/// &lt;para&gt;
 /// In addition to providing the current value, implementors can
 /// optionally provide an end-user-consumable textual description
 /// associated with this value. This description should be included
 /// when the numeric value fails to convey the full, on-screen
 /// representation seen by users.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <example>
-/// <title>Password strength</title>
+/// &lt;example&gt;
+/// &lt;title&gt;Password strength&lt;/title&gt;
 /// A password strength meter whose value changes as the user types
 /// their new password. Red is used for values less than 4.0, yellow
 /// for values between 4.0 and 7.0, and green for values greater than
 /// 7.0. In this instance, value text should be provided by the
 /// implementor. Appropriate value text would be "weak", "acceptable,"
 /// and "strong" respectively.
-/// </example>
+/// &lt;/example&gt;
 /// 
 /// A level bar whose value changes to reflect the battery charge. The
 /// color remains the same regardless of the charge and there is no
@@ -1603,9 +1609,9 @@ public protocol ValueProtocol {
 /// the user has of the current charge, value text should not be
 /// provided by the implementor.
 /// 
-/// <refsect2 id="implementor-notes">
-/// <title>Implementor Notes</title>
-/// <para>
+/// &lt;refsect2 id="implementor-notes"&gt;
+/// &lt;title&gt;Implementor Notes&lt;/title&gt;
+/// &lt;para&gt;
 /// Implementors should bear in mind that assistive technologies will
 /// likely prefer the value text provided over the numeric value when
 /// presenting a widget's value. As a result, strings not intended for
@@ -1615,99 +1621,99 @@ public protocol ValueProtocol {
 /// in close proximity to the value-displaying widget, it is still
 /// expected that implementors will expose the value text using the
 /// above API.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <para>
+/// &lt;para&gt;
 /// `AtkValue` should NOT be implemented for widgets whose displayed
 /// value is not reflective of a meaningful amount. For instance, a
 /// progress pulse indicator whose value alternates between 0.0 and 1.0
 /// to indicate that some process is still taking place should not
 /// implement `AtkValue` because the current value does not reflect
 /// progress towards completion.
-/// </para>
-/// </refsect2>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect2&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="ranges">
-/// <title>On the subject of ranges</title>
-/// <para>
+/// &lt;refsect1 id="ranges"&gt;
+/// &lt;title&gt;On the subject of ranges&lt;/title&gt;
+/// &lt;para&gt;
 /// In addition to providing the minimum and maximum values,
 /// implementors can optionally provide details about subranges
 /// associated with the widget. These details should be provided by the
 /// implementor when both of the following are communicated visually to
 /// the end user:
-/// </para>
-/// <itemizedlist>
-///   <listitem>The existence of distinct ranges such as "weak",
+/// &lt;/para&gt;
+/// &lt;itemizedlist&gt;
+///   &lt;listitem&gt;The existence of distinct ranges such as "weak",
 ///   "acceptable", and "strong" indicated by color, bar tick marks,
-///   and/or on-screen text.</listitem>
-///   <listitem>Where the current value stands within a given subrange,
+///   and/or on-screen text.&lt;/listitem&gt;
+///   &lt;listitem&gt;Where the current value stands within a given subrange,
 ///   for instance illustrating progression from very "weak" towards
 ///   nearly "acceptable" through changes in shade and/or position on
-///   the bar within the "weak" subrange.</listitem>
-/// </itemizedlist>
-/// <para>
+///   the bar within the "weak" subrange.&lt;/listitem&gt;
+/// &lt;/itemizedlist&gt;
+/// &lt;para&gt;
 /// If both of the above do not apply to the widget, it should be
 /// sufficient to expose the numeric value, along with the value text
 /// if appropriate, to make the widget accessible.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <refsect2 id="ranges-implementor-notes">
-/// <title>Implementor Notes</title>
-/// <para>
+/// &lt;refsect2 id="ranges-implementor-notes"&gt;
+/// &lt;title&gt;Implementor Notes&lt;/title&gt;
+/// &lt;para&gt;
 /// If providing subrange details is deemed necessary, all possible
 /// values of the widget are expected to fall within one of the
 /// subranges defined by the implementor.
-/// </para>
-/// </refsect2>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect2&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="localization">
-/// <title>On the subject of localization of end-user-consumable text
-/// values</title>
-/// <para>
+/// &lt;refsect1 id="localization"&gt;
+/// &lt;title&gt;On the subject of localization of end-user-consumable text
+/// values&lt;/title&gt;
+/// &lt;para&gt;
 /// Because value text and subrange descriptors are human-consumable,
 /// implementors are expected to provide localized strings which can be
 /// directly presented to end users via their assistive technology. In
 /// order to simplify this for implementors, implementors can use
 /// `atk_value_type_get_localized_name()` with the following
 /// already-localized constants for commonly-needed values can be used:
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <itemizedlist>
-///   <listitem>ATK_VALUE_VERY_WEAK</listitem>
-///   <listitem>ATK_VALUE_WEAK</listitem>
-///   <listitem>ATK_VALUE_ACCEPTABLE</listitem>
-///   <listitem>ATK_VALUE_STRONG</listitem>
-///   <listitem>ATK_VALUE_VERY_STRONG</listitem>
-///   <listitem>ATK_VALUE_VERY_LOW</listitem>
-///   <listitem>ATK_VALUE_LOW</listitem>
-///   <listitem>ATK_VALUE_MEDIUM</listitem>
-///   <listitem>ATK_VALUE_HIGH</listitem>
-///   <listitem>ATK_VALUE_VERY_HIGH</listitem>
-///   <listitem>ATK_VALUE_VERY_BAD</listitem>
-///   <listitem>ATK_VALUE_BAD</listitem>
-///   <listitem>ATK_VALUE_GOOD</listitem>
-///   <listitem>ATK_VALUE_VERY_GOOD</listitem>
-///   <listitem>ATK_VALUE_BEST</listitem>
-///   <listitem>ATK_VALUE_SUBSUBOPTIMAL</listitem>
-///   <listitem>ATK_VALUE_SUBOPTIMAL</listitem>
-///   <listitem>ATK_VALUE_OPTIMAL</listitem>
-/// </itemizedlist>
-/// <para>
+/// &lt;itemizedlist&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_WEAK&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_WEAK&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_ACCEPTABLE&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_STRONG&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_STRONG&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_LOW&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_LOW&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_MEDIUM&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_HIGH&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_HIGH&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_BAD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_BAD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_GOOD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_GOOD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_BEST&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_SUBSUBOPTIMAL&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_SUBOPTIMAL&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_OPTIMAL&lt;/listitem&gt;
+/// &lt;/itemizedlist&gt;
+/// &lt;para&gt;
 /// Proposals for additional constants, along with their use cases,
 /// should be submitted to the GNOME Accessibility Team.
-/// </para>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="changes">
-/// <title>On the subject of changes</title>
-/// <para>
+/// &lt;refsect1 id="changes"&gt;
+/// &lt;title&gt;On the subject of changes&lt;/title&gt;
+/// &lt;para&gt;
 /// Note that if there is a textual description associated with the new
 /// numeric value, that description should be included regardless of
 /// whether or not it has also changed.
-/// </para>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect1&gt;
 public struct ValueRef: ValueProtocol {
         /// Untyped pointer to the underlying `AtkValue` instance.
     /// For type-safe access, use the generated, typed pointer `value_ptr` property instead.
@@ -1798,25 +1804,25 @@ public extension ValueRef {
 /// behalf. `AtKValues` may be read-only, in which case attempts to
 /// alter the value return would fail.
 /// 
-/// <refsect1 id="current-value-text">
-/// <title>On the subject of current value text</title>
-/// <para>
+/// &lt;refsect1 id="current-value-text"&gt;
+/// &lt;title&gt;On the subject of current value text&lt;/title&gt;
+/// &lt;para&gt;
 /// In addition to providing the current value, implementors can
 /// optionally provide an end-user-consumable textual description
 /// associated with this value. This description should be included
 /// when the numeric value fails to convey the full, on-screen
 /// representation seen by users.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <example>
-/// <title>Password strength</title>
+/// &lt;example&gt;
+/// &lt;title&gt;Password strength&lt;/title&gt;
 /// A password strength meter whose value changes as the user types
 /// their new password. Red is used for values less than 4.0, yellow
 /// for values between 4.0 and 7.0, and green for values greater than
 /// 7.0. In this instance, value text should be provided by the
 /// implementor. Appropriate value text would be "weak", "acceptable,"
 /// and "strong" respectively.
-/// </example>
+/// &lt;/example&gt;
 /// 
 /// A level bar whose value changes to reflect the battery charge. The
 /// color remains the same regardless of the charge and there is no
@@ -1825,9 +1831,9 @@ public extension ValueRef {
 /// the user has of the current charge, value text should not be
 /// provided by the implementor.
 /// 
-/// <refsect2 id="implementor-notes">
-/// <title>Implementor Notes</title>
-/// <para>
+/// &lt;refsect2 id="implementor-notes"&gt;
+/// &lt;title&gt;Implementor Notes&lt;/title&gt;
+/// &lt;para&gt;
 /// Implementors should bear in mind that assistive technologies will
 /// likely prefer the value text provided over the numeric value when
 /// presenting a widget's value. As a result, strings not intended for
@@ -1837,99 +1843,99 @@ public extension ValueRef {
 /// in close proximity to the value-displaying widget, it is still
 /// expected that implementors will expose the value text using the
 /// above API.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <para>
+/// &lt;para&gt;
 /// `AtkValue` should NOT be implemented for widgets whose displayed
 /// value is not reflective of a meaningful amount. For instance, a
 /// progress pulse indicator whose value alternates between 0.0 and 1.0
 /// to indicate that some process is still taking place should not
 /// implement `AtkValue` because the current value does not reflect
 /// progress towards completion.
-/// </para>
-/// </refsect2>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect2&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="ranges">
-/// <title>On the subject of ranges</title>
-/// <para>
+/// &lt;refsect1 id="ranges"&gt;
+/// &lt;title&gt;On the subject of ranges&lt;/title&gt;
+/// &lt;para&gt;
 /// In addition to providing the minimum and maximum values,
 /// implementors can optionally provide details about subranges
 /// associated with the widget. These details should be provided by the
 /// implementor when both of the following are communicated visually to
 /// the end user:
-/// </para>
-/// <itemizedlist>
-///   <listitem>The existence of distinct ranges such as "weak",
+/// &lt;/para&gt;
+/// &lt;itemizedlist&gt;
+///   &lt;listitem&gt;The existence of distinct ranges such as "weak",
 ///   "acceptable", and "strong" indicated by color, bar tick marks,
-///   and/or on-screen text.</listitem>
-///   <listitem>Where the current value stands within a given subrange,
+///   and/or on-screen text.&lt;/listitem&gt;
+///   &lt;listitem&gt;Where the current value stands within a given subrange,
 ///   for instance illustrating progression from very "weak" towards
 ///   nearly "acceptable" through changes in shade and/or position on
-///   the bar within the "weak" subrange.</listitem>
-/// </itemizedlist>
-/// <para>
+///   the bar within the "weak" subrange.&lt;/listitem&gt;
+/// &lt;/itemizedlist&gt;
+/// &lt;para&gt;
 /// If both of the above do not apply to the widget, it should be
 /// sufficient to expose the numeric value, along with the value text
 /// if appropriate, to make the widget accessible.
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <refsect2 id="ranges-implementor-notes">
-/// <title>Implementor Notes</title>
-/// <para>
+/// &lt;refsect2 id="ranges-implementor-notes"&gt;
+/// &lt;title&gt;Implementor Notes&lt;/title&gt;
+/// &lt;para&gt;
 /// If providing subrange details is deemed necessary, all possible
 /// values of the widget are expected to fall within one of the
 /// subranges defined by the implementor.
-/// </para>
-/// </refsect2>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect2&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="localization">
-/// <title>On the subject of localization of end-user-consumable text
-/// values</title>
-/// <para>
+/// &lt;refsect1 id="localization"&gt;
+/// &lt;title&gt;On the subject of localization of end-user-consumable text
+/// values&lt;/title&gt;
+/// &lt;para&gt;
 /// Because value text and subrange descriptors are human-consumable,
 /// implementors are expected to provide localized strings which can be
 /// directly presented to end users via their assistive technology. In
 /// order to simplify this for implementors, implementors can use
 /// `atk_value_type_get_localized_name()` with the following
 /// already-localized constants for commonly-needed values can be used:
-/// </para>
+/// &lt;/para&gt;
 /// 
-/// <itemizedlist>
-///   <listitem>ATK_VALUE_VERY_WEAK</listitem>
-///   <listitem>ATK_VALUE_WEAK</listitem>
-///   <listitem>ATK_VALUE_ACCEPTABLE</listitem>
-///   <listitem>ATK_VALUE_STRONG</listitem>
-///   <listitem>ATK_VALUE_VERY_STRONG</listitem>
-///   <listitem>ATK_VALUE_VERY_LOW</listitem>
-///   <listitem>ATK_VALUE_LOW</listitem>
-///   <listitem>ATK_VALUE_MEDIUM</listitem>
-///   <listitem>ATK_VALUE_HIGH</listitem>
-///   <listitem>ATK_VALUE_VERY_HIGH</listitem>
-///   <listitem>ATK_VALUE_VERY_BAD</listitem>
-///   <listitem>ATK_VALUE_BAD</listitem>
-///   <listitem>ATK_VALUE_GOOD</listitem>
-///   <listitem>ATK_VALUE_VERY_GOOD</listitem>
-///   <listitem>ATK_VALUE_BEST</listitem>
-///   <listitem>ATK_VALUE_SUBSUBOPTIMAL</listitem>
-///   <listitem>ATK_VALUE_SUBOPTIMAL</listitem>
-///   <listitem>ATK_VALUE_OPTIMAL</listitem>
-/// </itemizedlist>
-/// <para>
+/// &lt;itemizedlist&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_WEAK&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_WEAK&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_ACCEPTABLE&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_STRONG&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_STRONG&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_LOW&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_LOW&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_MEDIUM&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_HIGH&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_HIGH&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_BAD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_BAD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_GOOD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_VERY_GOOD&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_BEST&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_SUBSUBOPTIMAL&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_SUBOPTIMAL&lt;/listitem&gt;
+///   &lt;listitem&gt;ATK_VALUE_OPTIMAL&lt;/listitem&gt;
+/// &lt;/itemizedlist&gt;
+/// &lt;para&gt;
 /// Proposals for additional constants, along with their use cases,
 /// should be submitted to the GNOME Accessibility Team.
-/// </para>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect1&gt;
 /// 
-/// <refsect1 id="changes">
-/// <title>On the subject of changes</title>
-/// <para>
+/// &lt;refsect1 id="changes"&gt;
+/// &lt;title&gt;On the subject of changes&lt;/title&gt;
+/// &lt;para&gt;
 /// Note that if there is a textual description associated with the new
 /// numeric value, that description should be included regardless of
 /// whether or not it has also changed.
-/// </para>
-/// </refsect1>
+/// &lt;/para&gt;
+/// &lt;/refsect1&gt;
 open class Value: ValueProtocol {
         /// Untyped pointer to the underlying `AtkValue` instance.
     /// For type-safe access, use the generated, typed pointer `value_ptr` property instead.
@@ -2043,7 +2049,7 @@ open class Value: ValueProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ValueProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -2251,7 +2257,7 @@ public extension ValueProtocol {
     /// object. In any case, it is possible that the value can't be
     /// modified (ie: a read-only component). If the value changes due this
     /// call, it is possible that the text could change, and will trigger
-    /// an `AtkValue::value`-changed signal emission.
+    /// an `AtkValue::value-changed` signal emission.
     /// 
     /// Note for implementors: the deprecated `atk_value_set_current_value()`
     /// method returned TRUE or FALSE depending if the value was assigned

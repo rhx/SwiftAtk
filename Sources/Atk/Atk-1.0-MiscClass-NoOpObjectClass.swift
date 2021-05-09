@@ -33,6 +33,8 @@ public protocol MiscClassProtocol {
     /// Typed pointer to the underlying `AtkMiscClass` instance.
     var _ptr: UnsafeMutablePointer<AtkMiscClass>! { get }
 
+    /// Required Initialiser for types conforming to `MiscClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `MiscClassRef` type acts as a lightweight Swift reference to an underlying `AtkMiscClass` instance.
@@ -176,6 +178,8 @@ public protocol NoOpObjectClassProtocol {
     /// Typed pointer to the underlying `AtkNoOpObjectClass` instance.
     var _ptr: UnsafeMutablePointer<AtkNoOpObjectClass>! { get }
 
+    /// Required Initialiser for types conforming to `NoOpObjectClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `NoOpObjectClassRef` type acts as a lightweight Swift reference to an underlying `AtkNoOpObjectClass` instance.

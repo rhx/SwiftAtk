@@ -33,6 +33,8 @@ public protocol ValueIfaceProtocol {
     /// Typed pointer to the underlying `AtkValueIface` instance.
     var _ptr: UnsafeMutablePointer<AtkValueIface>! { get }
 
+    /// Required Initialiser for types conforming to `ValueIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ValueIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkValueIface` instance.
@@ -185,6 +187,8 @@ public protocol WindowIfaceProtocol {
     /// Typed pointer to the underlying `AtkWindowIface` instance.
     var _ptr: UnsafeMutablePointer<AtkWindowIface>! { get }
 
+    /// Required Initialiser for types conforming to `WindowIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `WindowIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkWindowIface` instance.

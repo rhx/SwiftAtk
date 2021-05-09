@@ -34,6 +34,8 @@ public protocol ActionProtocol {
     /// Typed pointer to the underlying `AtkAction` instance.
     var action_ptr: UnsafeMutablePointer<AtkAction>! { get }
 
+    /// Required Initialiser for types conforming to `ActionProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ActionRef` type acts as a lightweight Swift reference to an underlying `AtkAction` instance.
@@ -269,7 +271,7 @@ open class Action: ActionProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ActionProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -429,6 +431,8 @@ public protocol ComponentProtocol {
     /// Typed pointer to the underlying `AtkComponent` instance.
     var component_ptr: UnsafeMutablePointer<AtkComponent>! { get }
 
+    /// Required Initialiser for types conforming to `ComponentProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ComponentRef` type acts as a lightweight Swift reference to an underlying `AtkComponent` instance.
@@ -650,7 +654,7 @@ open class Component: ComponentProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ComponentProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

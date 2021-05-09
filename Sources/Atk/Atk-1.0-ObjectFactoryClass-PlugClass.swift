@@ -33,6 +33,8 @@ public protocol ObjectFactoryClassProtocol {
     /// Typed pointer to the underlying `AtkObjectFactoryClass` instance.
     var _ptr: UnsafeMutablePointer<AtkObjectFactoryClass>! { get }
 
+    /// Required Initialiser for types conforming to `ObjectFactoryClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ObjectFactoryClassRef` type acts as a lightweight Swift reference to an underlying `AtkObjectFactoryClass` instance.
@@ -185,6 +187,8 @@ public protocol PlugClassProtocol {
     /// Typed pointer to the underlying `AtkPlugClass` instance.
     var _ptr: UnsafeMutablePointer<AtkPlugClass>! { get }
 
+    /// Required Initialiser for types conforming to `PlugClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `PlugClassRef` type acts as a lightweight Swift reference to an underlying `AtkPlugClass` instance.

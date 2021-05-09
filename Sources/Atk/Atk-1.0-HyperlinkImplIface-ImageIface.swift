@@ -33,6 +33,8 @@ public protocol HyperlinkImplIfaceProtocol {
     /// Typed pointer to the underlying `AtkHyperlinkImplIface` instance.
     var _ptr: UnsafeMutablePointer<AtkHyperlinkImplIface>! { get }
 
+    /// Required Initialiser for types conforming to `HyperlinkImplIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `HyperlinkImplIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkHyperlinkImplIface` instance.
@@ -167,6 +169,8 @@ public protocol HypertextIfaceProtocol {
     /// Typed pointer to the underlying `AtkHypertextIface` instance.
     var _ptr: UnsafeMutablePointer<AtkHypertextIface>! { get }
 
+    /// Required Initialiser for types conforming to `HypertextIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `HypertextIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkHypertextIface` instance.
@@ -307,6 +311,8 @@ public protocol ImageIfaceProtocol {
     /// Typed pointer to the underlying `AtkImageIface` instance.
     var _ptr: UnsafeMutablePointer<AtkImageIface>! { get }
 
+    /// Required Initialiser for types conforming to `ImageIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ImageIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkImageIface` instance.

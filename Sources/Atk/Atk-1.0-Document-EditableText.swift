@@ -24,6 +24,8 @@ public protocol DocumentProtocol {
     /// Typed pointer to the underlying `AtkDocument` instance.
     var document_ptr: UnsafeMutablePointer<AtkDocument>! { get }
 
+    /// Required Initialiser for types conforming to `DocumentProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `DocumentRef` type acts as a lightweight Swift reference to an underlying `AtkDocument` instance.
@@ -239,7 +241,7 @@ open class Document: DocumentProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `DocumentProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -645,6 +647,8 @@ public protocol EditableTextProtocol {
     /// Typed pointer to the underlying `AtkEditableText` instance.
     var editable_text_ptr: UnsafeMutablePointer<AtkEditableText>! { get }
 
+    /// Required Initialiser for types conforming to `EditableTextProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `EditableTextRef` type acts as a lightweight Swift reference to an underlying `AtkEditableText` instance.
@@ -864,7 +868,7 @@ open class EditableText: EditableTextProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EditableTextProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

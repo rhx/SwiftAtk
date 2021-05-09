@@ -19,6 +19,8 @@ public protocol MiscProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `AtkMisc` instance.
     var misc_ptr: UnsafeMutablePointer<AtkMisc>! { get }
 
+    /// Required Initialiser for types conforming to `MiscProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `MiscRef` type acts as a lightweight Swift reference to an underlying `AtkMisc` instance.
@@ -222,14 +224,14 @@ open class Misc: GLibObject.Object, MiscProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MiscProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MiscProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -355,6 +357,8 @@ public protocol NoOpObjectProtocol: ObjectProtocol, ActionProtocol, ComponentPro
     /// Typed pointer to the underlying `AtkNoOpObject` instance.
     var no_op_object_ptr: UnsafeMutablePointer<AtkNoOpObject>! { get }
 
+    /// Required Initialiser for types conforming to `NoOpObjectProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `NoOpObjectRef` type acts as a lightweight Swift reference to an underlying `AtkNoOpObject` instance.
@@ -560,14 +564,14 @@ open class NoOpObject: Object, NoOpObjectProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `NoOpObjectProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -748,7 +752,7 @@ public enum NoOpObjectSignalName: String, SignalNameProtocol {
     /// 
     /// Toolkit implementor note: ATK implementors should use
     /// `g_object_notify()` to emit property-changed
-    /// notifications. `AtkObject::property`-changed is needed by the
+    /// notifications. `AtkObject::property-changed` is needed by the
     /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"

@@ -33,6 +33,8 @@ public protocol NoOpObjectFactoryClassProtocol {
     /// Typed pointer to the underlying `AtkNoOpObjectFactoryClass` instance.
     var _ptr: UnsafeMutablePointer<AtkNoOpObjectFactoryClass>! { get }
 
+    /// Required Initialiser for types conforming to `NoOpObjectFactoryClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `NoOpObjectFactoryClassRef` type acts as a lightweight Swift reference to an underlying `AtkNoOpObjectFactoryClass` instance.
@@ -165,6 +167,8 @@ public protocol ObjectClassProtocol {
     /// Typed pointer to the underlying `AtkObjectClass` instance.
     var _ptr: UnsafeMutablePointer<AtkObjectClass>! { get }
 
+    /// Required Initialiser for types conforming to `ObjectClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ObjectClassRef` type acts as a lightweight Swift reference to an underlying `AtkObjectClass` instance.

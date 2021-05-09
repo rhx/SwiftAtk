@@ -20,6 +20,8 @@ public protocol StateSetProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `AtkStateSet` instance.
     var state_set_ptr: UnsafeMutablePointer<AtkStateSet>! { get }
 
+    /// Required Initialiser for types conforming to `StateSetProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `StateSetRef` type acts as a lightweight Swift reference to an underlying `AtkStateSet` instance.
@@ -222,14 +224,14 @@ open class StateSet: GLibObject.Object, StateSetProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StateSetProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StateSetProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -405,6 +407,8 @@ public protocol UtilProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `AtkUtil` instance.
     var util_ptr: UnsafeMutablePointer<AtkUtil>! { get }
 
+    /// Required Initialiser for types conforming to `UtilProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `UtilRef` type acts as a lightweight Swift reference to an underlying `AtkUtil` instance.
@@ -604,14 +608,14 @@ open class Util: GLibObject.Object, UtilProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `UtilProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 

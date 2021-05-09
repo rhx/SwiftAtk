@@ -20,6 +20,8 @@ public protocol PropertyValuesProtocol {
     /// Typed pointer to the underlying `AtkPropertyValues` instance.
     var _ptr: UnsafeMutablePointer<AtkPropertyValues>! { get }
 
+    /// Required Initialiser for types conforming to `PropertyValuesProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `PropertyValuesRef` type acts as a lightweight Swift reference to an underlying `AtkPropertyValues` instance.
@@ -227,7 +229,7 @@ open class PropertyValues: PropertyValuesProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PropertyValuesProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -331,6 +333,8 @@ public protocol RangeProtocol {
     /// Typed pointer to the underlying `AtkRange` instance.
     var range_ptr: UnsafeMutablePointer<AtkRange>! { get }
 
+    /// Required Initialiser for types conforming to `RangeProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RangeRef` type acts as a lightweight Swift reference to an underlying `AtkRange` instance.
@@ -547,7 +551,7 @@ open class Range: RangeProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RangeProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

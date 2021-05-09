@@ -19,6 +19,8 @@ public protocol RectangleProtocol {
     /// Typed pointer to the underlying `AtkRectangle` instance.
     var rectangle_ptr: UnsafeMutablePointer<AtkRectangle>! { get }
 
+    /// Required Initialiser for types conforming to `RectangleProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RectangleRef` type acts as a lightweight Swift reference to an underlying `AtkRectangle` instance.
@@ -224,7 +226,7 @@ open class Rectangle: RectangleProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RectangleProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -352,6 +354,8 @@ public protocol RegistryClassProtocol {
     /// Typed pointer to the underlying `AtkRegistryClass` instance.
     var _ptr: UnsafeMutablePointer<AtkRegistryClass>! { get }
 
+    /// Required Initialiser for types conforming to `RegistryClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RegistryClassRef` type acts as a lightweight Swift reference to an underlying `AtkRegistryClass` instance.
@@ -484,6 +488,8 @@ public protocol RelationClassProtocol {
     /// Typed pointer to the underlying `AtkRelationClass` instance.
     var _ptr: UnsafeMutablePointer<AtkRelationClass>! { get }
 
+    /// Required Initialiser for types conforming to `RelationClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RelationClassRef` type acts as a lightweight Swift reference to an underlying `AtkRelationClass` instance.
@@ -616,6 +622,8 @@ public protocol RelationSetClassProtocol {
     /// Typed pointer to the underlying `AtkRelationSetClass` instance.
     var _ptr: UnsafeMutablePointer<AtkRelationSetClass>! { get }
 
+    /// Required Initialiser for types conforming to `RelationSetClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RelationSetClassRef` type acts as a lightweight Swift reference to an underlying `AtkRelationSetClass` instance.
@@ -762,6 +770,8 @@ public protocol SelectionIfaceProtocol {
     /// Typed pointer to the underlying `AtkSelectionIface` instance.
     var _ptr: UnsafeMutablePointer<AtkSelectionIface>! { get }
 
+    /// Required Initialiser for types conforming to `SelectionIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `SelectionIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkSelectionIface` instance.

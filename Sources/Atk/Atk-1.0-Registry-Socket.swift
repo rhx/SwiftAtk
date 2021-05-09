@@ -23,6 +23,8 @@ public protocol RegistryProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `AtkRegistry` instance.
     var registry_ptr: UnsafeMutablePointer<AtkRegistry>! { get }
 
+    /// Required Initialiser for types conforming to `RegistryProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RegistryRef` type acts as a lightweight Swift reference to an underlying `AtkRegistry` instance.
@@ -226,14 +228,14 @@ open class Registry: GLibObject.Object, RegistryProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RegistryProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RegistryProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -358,6 +360,8 @@ public protocol RelationProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `AtkRelation` instance.
     var relation_ptr: UnsafeMutablePointer<AtkRelation>! { get }
 
+    /// Required Initialiser for types conforming to `RelationProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RelationRef` type acts as a lightweight Swift reference to an underlying `AtkRelation` instance.
@@ -563,14 +567,14 @@ open class Relation: GLibObject.Object, RelationProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RelationProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RelationProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -781,6 +785,8 @@ public protocol RelationSetProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `AtkRelationSet` instance.
     var relation_set_ptr: UnsafeMutablePointer<AtkRelationSet>! { get }
 
+    /// Required Initialiser for types conforming to `RelationSetProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `RelationSetRef` type acts as a lightweight Swift reference to an underlying `AtkRelationSet` instance.
@@ -993,14 +999,14 @@ open class RelationSet: GLibObject.Object, RelationSetProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RelationSetProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `RelationSetProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -1187,6 +1193,8 @@ public protocol SocketProtocol: ObjectProtocol, ComponentProtocol {
     /// Typed pointer to the underlying `AtkSocket` instance.
     var socket_ptr: UnsafeMutablePointer<AtkSocket>! { get }
 
+    /// Required Initialiser for types conforming to `SocketProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `SocketRef` type acts as a lightweight Swift reference to an underlying `AtkSocket` instance.
@@ -1427,14 +1435,14 @@ open class Socket: Object, SocketProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `SocketProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `SocketProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -1614,7 +1622,7 @@ public enum SocketSignalName: String, SignalNameProtocol {
     /// 
     /// Toolkit implementor note: ATK implementors should use
     /// `g_object_notify()` to emit property-changed
-    /// notifications. `AtkObject::property`-changed is needed by the
+    /// notifications. `AtkObject::property-changed` is needed by the
     /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"

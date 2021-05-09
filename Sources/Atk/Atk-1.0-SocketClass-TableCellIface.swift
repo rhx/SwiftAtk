@@ -33,6 +33,8 @@ public protocol SocketClassProtocol {
     /// Typed pointer to the underlying `AtkSocketClass` instance.
     var _ptr: UnsafeMutablePointer<AtkSocketClass>! { get }
 
+    /// Required Initialiser for types conforming to `SocketClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `SocketClassRef` type acts as a lightweight Swift reference to an underlying `AtkSocketClass` instance.
@@ -167,6 +169,8 @@ public protocol StateSetClassProtocol {
     /// Typed pointer to the underlying `AtkStateSetClass` instance.
     var _ptr: UnsafeMutablePointer<AtkStateSetClass>! { get }
 
+    /// Required Initialiser for types conforming to `StateSetClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `StateSetClassRef` type acts as a lightweight Swift reference to an underlying `AtkStateSetClass` instance.
@@ -299,6 +303,8 @@ public protocol StreamableContentIfaceProtocol {
     /// Typed pointer to the underlying `AtkStreamableContentIface` instance.
     var _ptr: UnsafeMutablePointer<AtkStreamableContentIface>! { get }
 
+    /// Required Initialiser for types conforming to `StreamableContentIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `StreamableContentIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkStreamableContentIface` instance.
@@ -460,6 +466,8 @@ public protocol TableCellIfaceProtocol {
     /// Typed pointer to the underlying `AtkTableCellIface` instance.
     var _ptr: UnsafeMutablePointer<AtkTableCellIface>! { get }
 
+    /// Required Initialiser for types conforming to `TableCellIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TableCellIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkTableCellIface` instance.

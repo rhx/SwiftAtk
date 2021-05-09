@@ -33,6 +33,8 @@ public protocol StreamableContentProtocol {
     /// Typed pointer to the underlying `AtkStreamableContent` instance.
     var streamable_content_ptr: UnsafeMutablePointer<AtkStreamableContent>! { get }
 
+    /// Required Initialiser for types conforming to `StreamableContentProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `StreamableContentRef` type acts as a lightweight Swift reference to an underlying `AtkStreamableContent` instance.
@@ -266,7 +268,7 @@ open class StreamableContent: StreamableContentProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `StreamableContentProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -394,6 +396,8 @@ public protocol TableProtocol {
     /// Typed pointer to the underlying `AtkTable` instance.
     var table_ptr: UnsafeMutablePointer<AtkTable>! { get }
 
+    /// Required Initialiser for types conforming to `TableProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TableRef` type acts as a lightweight Swift reference to an underlying `AtkTable` instance.
@@ -651,7 +655,7 @@ open class Table: TableProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TableProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

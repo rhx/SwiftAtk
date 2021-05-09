@@ -33,6 +33,8 @@ public protocol GObjectAccessibleClassProtocol {
     /// Typed pointer to the underlying `AtkGObjectAccessibleClass` instance.
     var _ptr: UnsafeMutablePointer<AtkGObjectAccessibleClass>! { get }
 
+    /// Required Initialiser for types conforming to `GObjectAccessibleClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `GObjectAccessibleClassRef` type acts as a lightweight Swift reference to an underlying `AtkGObjectAccessibleClass` instance.
@@ -179,6 +181,8 @@ public protocol HyperlinkClassProtocol {
     /// Typed pointer to the underlying `AtkHyperlinkClass` instance.
     var _ptr: UnsafeMutablePointer<AtkHyperlinkClass>! { get }
 
+    /// Required Initialiser for types conforming to `HyperlinkClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `HyperlinkClassRef` type acts as a lightweight Swift reference to an underlying `AtkHyperlinkClass` instance.

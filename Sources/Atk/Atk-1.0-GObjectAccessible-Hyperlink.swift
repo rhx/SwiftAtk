@@ -21,6 +21,8 @@ public protocol GObjectAccessibleProtocol: ObjectProtocol {
     /// Typed pointer to the underlying `AtkGObjectAccessible` instance.
     var gobject_accessible_ptr: UnsafeMutablePointer<AtkGObjectAccessible>! { get }
 
+    /// Required Initialiser for types conforming to `GObjectAccessibleProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `GObjectAccessibleRef` type acts as a lightweight Swift reference to an underlying `AtkGObjectAccessible` instance.
@@ -225,14 +227,14 @@ open class GObjectAccessible: Object, GObjectAccessibleProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GObjectAccessibleProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `GObjectAccessibleProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -412,7 +414,7 @@ public enum GObjectAccessibleSignalName: String, SignalNameProtocol {
     /// 
     /// Toolkit implementor note: ATK implementors should use
     /// `g_object_notify()` to emit property-changed
-    /// notifications. `AtkObject::property`-changed is needed by the
+    /// notifications. `AtkObject::property-changed` is needed by the
     /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"
@@ -521,6 +523,8 @@ public protocol HyperlinkProtocol: GLibObject.ObjectProtocol, ActionProtocol {
     /// Typed pointer to the underlying `AtkHyperlink` instance.
     var hyperlink_ptr: UnsafeMutablePointer<AtkHyperlink>! { get }
 
+    /// Required Initialiser for types conforming to `HyperlinkProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `HyperlinkRef` type acts as a lightweight Swift reference to an underlying `AtkHyperlink` instance.
@@ -724,14 +728,14 @@ open class Hyperlink: GLibObject.Object, HyperlinkProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 

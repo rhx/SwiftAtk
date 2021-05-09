@@ -22,6 +22,8 @@ public protocol ObjectFactoryProtocol: GLibObject.ObjectProtocol {
     /// Typed pointer to the underlying `AtkObjectFactory` instance.
     var object_factory_ptr: UnsafeMutablePointer<AtkObjectFactory>! { get }
 
+    /// Required Initialiser for types conforming to `ObjectFactoryProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ObjectFactoryRef` type acts as a lightweight Swift reference to an underlying `AtkObjectFactory` instance.
@@ -223,14 +225,14 @@ open class ObjectFactory: GLibObject.Object, ObjectFactoryProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ObjectFactoryProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -346,6 +348,8 @@ public protocol PlugProtocol: ObjectProtocol, ComponentProtocol {
     /// Typed pointer to the underlying `AtkPlug` instance.
     var plug_ptr: UnsafeMutablePointer<AtkPlug>! { get }
 
+    /// Required Initialiser for types conforming to `PlugProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `PlugRef` type acts as a lightweight Swift reference to an underlying `AtkPlug` instance.
@@ -544,14 +548,14 @@ open class Plug: Object, PlugProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `PlugProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -731,7 +735,7 @@ public enum PlugSignalName: String, SignalNameProtocol {
     /// 
     /// Toolkit implementor note: ATK implementors should use
     /// `g_object_notify()` to emit property-changed
-    /// notifications. `AtkObject::property`-changed is needed by the
+    /// notifications. `AtkObject::property-changed` is needed by the
     /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"

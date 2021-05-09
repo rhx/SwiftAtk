@@ -33,6 +33,8 @@ public protocol TableIfaceProtocol {
     /// Typed pointer to the underlying `AtkTableIface` instance.
     var _ptr: UnsafeMutablePointer<AtkTableIface>! { get }
 
+    /// Required Initialiser for types conforming to `TableIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TableIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkTableIface` instance.
@@ -237,6 +239,8 @@ public protocol TextIfaceProtocol {
     /// Typed pointer to the underlying `AtkTextIface` instance.
     var _ptr: UnsafeMutablePointer<AtkTextIface>! { get }
 
+    /// Required Initialiser for types conforming to `TextIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TextIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkTextIface` instance.
@@ -406,6 +410,8 @@ public protocol TextRangeProtocol {
     /// Typed pointer to the underlying `AtkTextRange` instance.
     var text_range_ptr: UnsafeMutablePointer<AtkTextRange>! { get }
 
+    /// Required Initialiser for types conforming to `TextRangeProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TextRangeRef` type acts as a lightweight Swift reference to an underlying `AtkTextRange` instance.
@@ -609,7 +615,7 @@ open class TextRange: TextRangeProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextRangeProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -722,6 +728,8 @@ public protocol TextRectangleProtocol {
     /// Typed pointer to the underlying `AtkTextRectangle` instance.
     var _ptr: UnsafeMutablePointer<AtkTextRectangle>! { get }
 
+    /// Required Initialiser for types conforming to `TextRectangleProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TextRectangleRef` type acts as a lightweight Swift reference to an underlying `AtkTextRectangle` instance.
@@ -925,7 +933,7 @@ open class TextRectangle: TextRectangleProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextRectangleProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -1053,6 +1061,8 @@ public protocol UtilClassProtocol {
     /// Typed pointer to the underlying `AtkUtilClass` instance.
     var _ptr: UnsafeMutablePointer<AtkUtilClass>! { get }
 
+    /// Required Initialiser for types conforming to `UtilClassProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `UtilClassRef` type acts as a lightweight Swift reference to an underlying `AtkUtilClass` instance.

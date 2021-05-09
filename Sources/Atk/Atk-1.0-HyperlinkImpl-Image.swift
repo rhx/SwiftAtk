@@ -45,6 +45,8 @@ public protocol HyperlinkImplProtocol {
     /// Typed pointer to the underlying `AtkHyperlinkImpl` instance.
     var hyperlink_impl_ptr: UnsafeMutablePointer<AtkHyperlinkImpl>! { get }
 
+    /// Required Initialiser for types conforming to `HyperlinkImplProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `HyperlinkImplRef` type acts as a lightweight Swift reference to an underlying `AtkHyperlinkImpl` instance.
@@ -302,7 +304,7 @@ open class HyperlinkImpl: HyperlinkImplProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HyperlinkImplProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -384,6 +386,8 @@ public protocol HypertextProtocol {
     /// Typed pointer to the underlying `AtkHypertext` instance.
     var hypertext_ptr: UnsafeMutablePointer<AtkHypertext>! { get }
 
+    /// Required Initialiser for types conforming to `HypertextProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `HypertextRef` type acts as a lightweight Swift reference to an underlying `AtkHypertext` instance.
@@ -601,7 +605,7 @@ open class Hypertext: HypertextProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `HypertextProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -766,6 +770,8 @@ public protocol ImageProtocol {
     /// Typed pointer to the underlying `AtkImage` instance.
     var image_ptr: UnsafeMutablePointer<AtkImage>! { get }
 
+    /// Required Initialiser for types conforming to `ImageProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ImageRef` type acts as a lightweight Swift reference to an underlying `AtkImage` instance.
@@ -993,7 +999,7 @@ open class Image: ImageProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImageProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 

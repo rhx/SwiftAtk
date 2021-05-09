@@ -20,6 +20,8 @@ public protocol WindowProtocol: ObjectProtocol {
     /// Typed pointer to the underlying `AtkWindow` instance.
     var window_ptr: UnsafeMutablePointer<AtkWindow>! { get }
 
+    /// Required Initialiser for types conforming to `WindowProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `WindowRef` type acts as a lightweight Swift reference to an underlying `AtkWindow` instance.
@@ -217,14 +219,14 @@ open class Window: Object, WindowProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `WindowProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable override public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         super.init(raw: p)
     }
 
     /// Unsafe untyped, retaining initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `WindowProtocol`.**
     /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable override public init(retainingRaw raw: UnsafeMutableRawPointer) {
+    @inlinable required public init(retainingRaw raw: UnsafeMutableRawPointer) {
         super.init(retainingRaw: raw)
     }
 
@@ -419,7 +421,7 @@ public enum WindowSignalName: String, SignalNameProtocol {
     /// 
     /// Toolkit implementor note: ATK implementors should use
     /// `g_object_notify()` to emit property-changed
-    /// notifications. `AtkObject::property`-changed is needed by the
+    /// notifications. `AtkObject::property-changed` is needed by the
     /// implementation of `atk_add_global_event_listener()` because GObject
     /// notify doesn't support emission hooks.
     case propertyChange = "property-change"

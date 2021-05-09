@@ -33,6 +33,8 @@ public protocol DocumentIfaceProtocol {
     /// Typed pointer to the underlying `AtkDocumentIface` instance.
     var _ptr: UnsafeMutablePointer<AtkDocumentIface>! { get }
 
+    /// Required Initialiser for types conforming to `DocumentIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `DocumentIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkDocumentIface` instance.
@@ -181,6 +183,8 @@ public protocol EditableTextIfaceProtocol {
     /// Typed pointer to the underlying `AtkEditableTextIface` instance.
     var _ptr: UnsafeMutablePointer<AtkEditableTextIface>! { get }
 
+    /// Required Initialiser for types conforming to `EditableTextIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `EditableTextIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkEditableTextIface` instance.

@@ -37,6 +37,8 @@ public protocol ActionIfaceProtocol {
     /// Typed pointer to the underlying `AtkActionIface` instance.
     var _ptr: UnsafeMutablePointer<AtkActionIface>! { get }
 
+    /// Required Initialiser for types conforming to `ActionIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ActionIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkActionIface` instance.
@@ -177,6 +179,8 @@ public protocol AttributeProtocol {
     /// Typed pointer to the underlying `AtkAttribute` instance.
     var _ptr: UnsafeMutablePointer<AtkAttribute>! { get }
 
+    /// Required Initialiser for types conforming to `AttributeProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `AttributeRef` type acts as a lightweight Swift reference to an underlying `AtkAttribute` instance.
@@ -400,7 +404,7 @@ open class Attribute: AttributeProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `AttributeProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -505,6 +509,8 @@ public protocol ComponentIfaceProtocol {
     /// Typed pointer to the underlying `AtkComponentIface` instance.
     var _ptr: UnsafeMutablePointer<AtkComponentIface>! { get }
 
+    /// Required Initialiser for types conforming to `ComponentIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ComponentIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkComponentIface` instance.

@@ -174,7 +174,7 @@ public extension RelationType {
 /// Describes the role of an object
 /// 
 /// These are the built-in enumerated roles that UI components can have
-/// in ATK.  Other roles may be added at runtime, so an AtkRole >=
+/// in ATK.  Other roles may be added at runtime, so an AtkRole &gt;=
 /// `ATK_ROLE_LAST_DEFINED` is not necessarily an error.
 public typealias Role = AtkRole
 

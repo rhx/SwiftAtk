@@ -12,7 +12,7 @@ import GLibObject
 ///
 /// The AtkImplementor interface is implemented by objects for which
 /// AtkObject peers may be obtained via calls to
-/// iface->(ref_accessible)(implementor);
+/// iface-&gt;(ref_accessible)(implementor);
 public protocol ImplementorIfaceProtocol {
         /// Untyped pointer to the underlying `AtkImplementorIface` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -20,6 +20,8 @@ public protocol ImplementorIfaceProtocol {
     /// Typed pointer to the underlying `AtkImplementorIface` instance.
     var implementor_ptr: UnsafeMutablePointer<AtkImplementorIface>! { get }
 
+    /// Required Initialiser for types conforming to `ImplementorIfaceProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ImplementorIfaceRef` type acts as a lightweight Swift reference to an underlying `AtkImplementorIface` instance.
@@ -28,7 +30,7 @@ public protocol ImplementorIfaceProtocol {
 ///
 /// The AtkImplementor interface is implemented by objects for which
 /// AtkObject peers may be obtained via calls to
-/// iface->(ref_accessible)(implementor);
+/// iface-&gt;(ref_accessible)(implementor);
 public struct ImplementorIfaceRef: ImplementorIfaceProtocol {
         /// Untyped pointer to the underlying `AtkImplementorIface` instance.
     /// For type-safe access, use the generated, typed pointer `implementor_ptr` property instead.
@@ -113,7 +115,7 @@ public extension ImplementorIfaceRef {
 ///
 /// The AtkImplementor interface is implemented by objects for which
 /// AtkObject peers may be obtained via calls to
-/// iface->(ref_accessible)(implementor);
+/// iface-&gt;(ref_accessible)(implementor);
 open class ImplementorIface: ImplementorIfaceProtocol {
         /// Untyped pointer to the underlying `AtkImplementorIface` instance.
     /// For type-safe access, use the generated, typed pointer `implementor_ptr` property instead.
@@ -227,7 +229,7 @@ open class ImplementorIface: ImplementorIfaceProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ImplementorIfaceProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -298,6 +300,8 @@ public protocol SelectionProtocol {
     /// Typed pointer to the underlying `AtkSelection` instance.
     var selection_ptr: UnsafeMutablePointer<AtkSelection>! { get }
 
+    /// Required Initialiser for types conforming to `SelectionProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `SelectionRef` type acts as a lightweight Swift reference to an underlying `AtkSelection` instance.
@@ -519,7 +523,7 @@ open class Selection: SelectionProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `SelectionProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
