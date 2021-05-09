@@ -947,25 +947,25 @@ representations which implement <code>AtkValue</code> on the component&rsquo;s
 behalf. <code>AtKValues</code> may be read-only, in which case attempts to
 alter the value return would fail.</p>
 
-<p><refsect1 id="current-value-text">
-<title>On the subject of current value text</title>
-<para>
+<p>&lt;refsect1 id=&ldquo;current-value-text&rdquo;&gt;
+&lt;title&gt;On the subject of current value text&lt;/title&gt;
+&lt;para&gt;
 In addition to providing the current value, implementors can
 optionally provide an end-user-consumable textual description
 associated with this value. This description should be included
 when the numeric value fails to convey the full, on-screen
 representation seen by users.
-</para></p>
+&lt;/para&gt;</p>
 
-<p><example>
-<title>Password strength</title>
+<p>&lt;example&gt;
+&lt;title&gt;Password strength&lt;/title&gt;
 A password strength meter whose value changes as the user types
 their new password. Red is used for values less than 4.0, yellow
 for values between 4.0 and 7.0, and green for values greater than
 7.0. In this instance, value text should be provided by the
 implementor. Appropriate value text would be &ldquo;weak&rdquo;, &ldquo;acceptable,&rdquo;
 and &ldquo;strong&rdquo; respectively.
-</example></p>
+&lt;/example&gt;</p>
 
 <p>A level bar whose value changes to reflect the battery charge. The
 color remains the same regardless of the charge and there is no
@@ -974,9 +974,9 @@ case, because the position within the bar is the only indication
 the user has of the current charge, value text should not be
 provided by the implementor.</p>
 
-<p><refsect2 id="implementor-notes">
-<title>Implementor Notes</title>
-<para>
+<p>&lt;refsect2 id=&ldquo;implementor-notes&rdquo;&gt;
+&lt;title&gt;Implementor Notes&lt;/title&gt;
+&lt;para&gt;
 Implementors should bear in mind that assistive technologies will
 likely prefer the value text provided over the numeric value when
 presenting a widget&rsquo;s value. As a result, strings not intended for
@@ -986,102 +986,102 @@ display value text on screen, for instance through a separate label
 in close proximity to the value-displaying widget, it is still
 expected that implementors will expose the value text using the
 above API.
-</para></p>
+&lt;/para&gt;</p>
 
-<p><para>
+<p>&lt;para&gt;
 <code>AtkValue</code> should NOT be implemented for widgets whose displayed
 value is not reflective of a meaningful amount. For instance, a
 progress pulse indicator whose value alternates between 0.0 and 1.0
 to indicate that some process is still taking place should not
 implement <code>AtkValue</code> because the current value does not reflect
 progress towards completion.
-</para>
-</refsect2>
-</refsect1></p>
+&lt;/para&gt;
+&lt;/refsect2&gt;
+&lt;/refsect1&gt;</p>
 
-<p><refsect1 id="ranges">
-<title>On the subject of ranges</title>
-<para>
+<p>&lt;refsect1 id=&ldquo;ranges&rdquo;&gt;
+&lt;title&gt;On the subject of ranges&lt;/title&gt;
+&lt;para&gt;
 In addition to providing the minimum and maximum values,
 implementors can optionally provide details about subranges
 associated with the widget. These details should be provided by the
 implementor when both of the following are communicated visually to
 the end user:
-</para>
-<itemizedlist>
-  <listitem>The existence of distinct ranges such as &ldquo;weak&rdquo;,
+&lt;/para&gt;
+&lt;itemizedlist&gt;
+  &lt;listitem&gt;The existence of distinct ranges such as &ldquo;weak&rdquo;,
   &ldquo;acceptable&rdquo;, and &ldquo;strong&rdquo; indicated by color, bar tick marks,
-  and/or on-screen text.</listitem>
-  <listitem>Where the current value stands within a given subrange,
+  and/or on-screen text.&lt;/listitem&gt;
+  &lt;listitem&gt;Where the current value stands within a given subrange,
   for instance illustrating progression from very &ldquo;weak&rdquo; towards
   nearly &ldquo;acceptable&rdquo; through changes in shade and/or position on
-  the bar within the &ldquo;weak&rdquo; subrange.</listitem>
-</itemizedlist>
-<para>
+  the bar within the &ldquo;weak&rdquo; subrange.&lt;/listitem&gt;
+&lt;/itemizedlist&gt;
+&lt;para&gt;
 If both of the above do not apply to the widget, it should be
 sufficient to expose the numeric value, along with the value text
 if appropriate, to make the widget accessible.
-</para></p>
+&lt;/para&gt;</p>
 
-<p><refsect2 id="ranges-implementor-notes">
-<title>Implementor Notes</title>
-<para>
+<p>&lt;refsect2 id=&ldquo;ranges-implementor-notes&rdquo;&gt;
+&lt;title&gt;Implementor Notes&lt;/title&gt;
+&lt;para&gt;
 If providing subrange details is deemed necessary, all possible
 values of the widget are expected to fall within one of the
 subranges defined by the implementor.
-</para>
-</refsect2>
-</refsect1></p>
+&lt;/para&gt;
+&lt;/refsect2&gt;
+&lt;/refsect1&gt;</p>
 
-<p><refsect1 id="localization">
-<title>On the subject of localization of end-user-consumable text
-values</title>
-<para>
+<p>&lt;refsect1 id=&ldquo;localization&rdquo;&gt;
+&lt;title&gt;On the subject of localization of end-user-consumable text
+values&lt;/title&gt;
+&lt;para&gt;
 Because value text and subrange descriptors are human-consumable,
 implementors are expected to provide localized strings which can be
 directly presented to end users via their assistive technology. In
 order to simplify this for implementors, implementors can use
 <code>atk_value_type_get_localized_name()</code> with the following
 already-localized constants for commonly-needed values can be used:
-</para></p>
+&lt;/para&gt;</p>
 
-<p><itemizedlist>
-  <listitem>ATK_VALUE_VERY_WEAK</listitem>
-  <listitem>ATK_VALUE_WEAK</listitem>
-  <listitem>ATK_VALUE_ACCEPTABLE</listitem>
-  <listitem>ATK_VALUE_STRONG</listitem>
-  <listitem>ATK_VALUE_VERY_STRONG</listitem>
-  <listitem>ATK_VALUE_VERY_LOW</listitem>
-  <listitem>ATK_VALUE_LOW</listitem>
-  <listitem>ATK_VALUE_MEDIUM</listitem>
-  <listitem>ATK_VALUE_HIGH</listitem>
-  <listitem>ATK_VALUE_VERY_HIGH</listitem>
-  <listitem>ATK_VALUE_VERY_BAD</listitem>
-  <listitem>ATK_VALUE_BAD</listitem>
-  <listitem>ATK_VALUE_GOOD</listitem>
-  <listitem>ATK_VALUE_VERY_GOOD</listitem>
-  <listitem>ATK_VALUE_BEST</listitem>
-  <listitem>ATK_VALUE_SUBSUBOPTIMAL</listitem>
-  <listitem>ATK_VALUE_SUBOPTIMAL</listitem>
-  <listitem>ATK_VALUE_OPTIMAL</listitem>
-</itemizedlist>
-<para>
+<p>&lt;itemizedlist&gt;
+  &lt;listitem&gt;ATK_VALUE_VERY_WEAK&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_WEAK&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_ACCEPTABLE&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_STRONG&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_VERY_STRONG&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_VERY_LOW&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_LOW&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_MEDIUM&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_HIGH&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_VERY_HIGH&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_VERY_BAD&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_BAD&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_GOOD&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_VERY_GOOD&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_BEST&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_SUBSUBOPTIMAL&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_SUBOPTIMAL&lt;/listitem&gt;
+  &lt;listitem&gt;ATK_VALUE_OPTIMAL&lt;/listitem&gt;
+&lt;/itemizedlist&gt;
+&lt;para&gt;
 Proposals for additional constants, along with their use cases,
 should be submitted to the GNOME Accessibility Team.
-</para>
-</refsect1></p>
+&lt;/para&gt;
+&lt;/refsect1&gt;</p>
 
-<p><refsect1 id="changes">
-<title>On the subject of changes</title>
-<para>
+<p>&lt;refsect1 id=&ldquo;changes&rdquo;&gt;
+&lt;title&gt;On the subject of changes&lt;/title&gt;
+&lt;para&gt;
 Note that if there is a textual description associated with the new
 numeric value, that description should be included regardless of
 whether or not it has also changed.
-</para>
-</refsect1></p>
+&lt;/para&gt;
+&lt;/refsect1&gt;</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1711-L1715">Show on GitHub</a>
+                <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1717-L1721">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -1118,7 +1118,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1714">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1720">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1162,7 +1162,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1719-L1721">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1725-L1727">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1193,7 +1193,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1724-L1726">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1730-L1732">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1224,7 +1224,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1729-L1732">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1735-L1738">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1255,7 +1255,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1735-L1738">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1741-L1744">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1286,7 +1286,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1741-L1744">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1747-L1750">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1317,7 +1317,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1747-L1750">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1753-L1756">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1348,7 +1348,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1753-L1755">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1759-L1761">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1380,7 +1380,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1759-L1761">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1765-L1767">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1412,7 +1412,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1765-L1767">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1771-L1773">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1444,7 +1444,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1771-L1773">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1777-L1779">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1476,7 +1476,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1777-L1779">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1783-L1785">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1508,7 +1508,7 @@ whether or not it has also changed.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1783-L1785">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftAtk/tree/generated/Sources/Atk/Atk-1.0-TableCell-Value.swift#L1789-L1791">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1521,8 +1521,8 @@ whether or not it has also changed.
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-01-17)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-05-09)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
