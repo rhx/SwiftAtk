@@ -47,7 +47,7 @@ was compiled against libraries built with earlier versions of `gir2swift`.
 
 ### Swift
 
-To build, you need at least Swift 5.2 (Swift 5.3+ should work fine), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
+To build, you need at least Swift 5.2 (Swift 5.3 is required for `gtk4`; also some Linux distributions have issues and seem to **require at least Swift 5.5**), download from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
 
 	$ swift --version
 	Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
