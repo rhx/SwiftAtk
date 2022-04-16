@@ -19,6 +19,7 @@ let package = Package(
             name: "Atk", 
             dependencies: [
                 "CAtk",
+                .product(name: "gir2swift",  package: "gir2swift"),
                 .product(name: "GLibObject", package: "SwiftGObject")
             ],
             swiftSettings: [
