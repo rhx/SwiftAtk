@@ -5,7 +5,7 @@
 #
 VER=1.0
 GLIB_VER=2.0
-JAZZY_VER=2.36.0
+JAZZY_VER=2.38.0
 Mod=`grep name: Package.swift | head -n1 | cut -d'"' -f2`
 Module=${Mod}-${VER}
 module=`echo "${Module}" | tr '[:upper:]' '[:lower:]'`

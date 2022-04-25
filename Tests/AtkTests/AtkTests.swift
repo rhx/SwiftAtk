@@ -9,10 +9,3 @@ class AtkTests: XCTestCase {
     }
 
 }
-extension AtkTests {
-    static var allTests : [(String, (AtkTests) -> () throws -> Void)] {
-        return [
-            ("testTextAttribute", testTextAttribute),
-        ]
-    }
-}
