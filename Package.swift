@@ -7,7 +7,8 @@ let package = Package(
     products: [ .library(name: "Atk", targets: ["Atk"]) ],
     dependencies: [
         .package(url: "https://github.com/rhx/gir2swift.git",    branch: "development"),
-        .package(url: "https://github.com/rhx/SwiftGObject.git", branch: "development")
+        .package(url: "https://github.com/rhx/SwiftGObject.git", branch: "development"),
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     targets: [
 	.systemLibrary(name: "CAtk", pkgConfig: "atk",
