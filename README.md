@@ -7,12 +7,12 @@ For up to date (auto-generated) reference documentation, see https://rhx.github.
 
 ## What is new?
 
-Version 15 of gir2swift provides a Package Manager Plugin.  This requires Swift 5.10 or higher.
+Version 15 of gir2swift provides a Package Manager Plugin.  This requires Swift 5.6 or higher.
 (older versions can be used via the [swift52](https://github.com/rhx/SwiftAtk/tree/swift52) branch).
 
 ## Prerequisites
 
-### Swift 5.10 or higher
+### Swift 5.6 or higher
 
 To build, download Swift from https://swift.org/download/ -- if you are using macOS, make sure you have the command line tools installed as well).  Test that your compiler works using `swift --version`, which should give you something like
 
@@ -57,7 +57,7 @@ On macOS, you can install atk using HomeBrew (for setup instructions, see http:/
 Normally, you don't build this package directly (but for testing you can - see 'Building' below). Instead you need to embed SwiftAtk into your own project using the [Swift Package Manager](https://swift.org/package-manager/).  After installing the prerequisites (see 'Prerequisites' below), add `SwiftAtk` as a dependency to your `Package.swift` file, e.g.:
 
 ```Swift
-// swift-tools-version:5.10
+// swift-tools-version:5.6
 
 import PackageDescription
 
