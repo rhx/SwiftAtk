@@ -2,8 +2,6 @@
 A Swift wrapper around atk-1.x that is largely auto-generated from gobject-introspection.
 For up to date (auto-generated) reference documentation, see https://rhx.github.io/SwiftAtk/
 
-![macOS](https://github.com/rhx/SwiftAtk/actions/workflows/macOS.yml/badge.svg?branch=development)
-![Linux](https://github.com/rhx/SwiftAtk/actions/workflows/Linux.yml/badge.svg?branch=development)
 ![macOS](https://github.com/rhx/SwiftAtk/actions/workflows/macOS.yml/badge.svg?branch=main)
 ![Linux](https://github.com/rhx/SwiftAtk/actions/workflows/Linux.yml/badge.svg?branch=main)
 
